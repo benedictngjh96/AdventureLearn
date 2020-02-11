@@ -1,0 +1,4 @@
+#Tue Feb 11 11:49:02 SGT 2020
+base.0=C\:\\Users\\benng\\OneDrive\\Desktop\\SSAD\\Adevnture_Learn\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+path.0=classes.dex
+renamed.0=classes.dex

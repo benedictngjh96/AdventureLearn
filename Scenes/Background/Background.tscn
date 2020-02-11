@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Background/ParallaxBackground.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Background/Cartoon_Forest_BG_01.png" type="Texture" id=3]
+
+[node name="Bg" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+script = ExtResource( 2 )
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 2000, 0 )
+
+[node name="Cartoon_Forest_BG_01" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1065.71, 474.111 )
+scale = Vector2( 1.10475, 1.26043 )
+texture = ExtResource( 3 )
