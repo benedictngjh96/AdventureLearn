@@ -10,15 +10,22 @@ public class StudentBL : Node
     {
         bool exist = studentDao.CheckStudentExist(Global.studentId);
         return exist;
-    } 
+    }
+    public bool CheckInGameNameExist(string ign)
+    {
+        bool exist = studentDao.CheckInGameNameExist(ign);
+        return exist;
+    }
     public List<Character> GetCharacterList()
     {
         List<Character> characterList = charSelectDao.GetAllCharacters();
         return characterList;
     }
-    public void InsertStudent(string studentId, string studentName, string inGameName, int charId)
+    public int InsertStudent(string studentId, string studentName, string inGameName, int charId)
     {
-        studentDao.InsertStudent(studentId, studentName, inGameName, charId);
+        int result = studentDao.InsertStudent(studentId, studentName, inGameName, charId);
+        return result;
     }
+    
 
 }

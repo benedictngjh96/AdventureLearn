@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Presentation/CharSelect/CharSelect.cs" type="Script" id=2]
@@ -20,25 +20,124 @@
 [ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_000.png" type="Texture" id=18]
 [ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_006.png" type="Texture" id=19]
 
-[sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 3 )
-
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 14 ), ExtResource( 9 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "Knight1",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 18 ), ExtResource( 8 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 19 ) ],
 "loop": true,
 "name": "Knight2",
 "speed": 10.0
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 9 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Knight1",
+"speed": 10.0
 } ]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 3 )
 
 [node name="CharSelect" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="Char" type="Node" parent="."]
+
+[node name="Knight1" type="Sprite" parent="Char"]
+position = Vector2( 106.287, 285.367 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Knight1" type="TextureButton" parent="Char/Knight1"]
+margin_left = -212.821
+margin_top = -259.086
+margin_right = 299.179
+margin_bottom = 234.914
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knight2" type="Sprite" parent="Char"]
+position = Vector2( 264.459, 286.65 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Knight2" type="TextureButton" parent="Char/Knight2"]
+margin_left = -207.0
+margin_top = -239.241
+margin_right = 336.0
+margin_bottom = 307.759
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Char"]
+position = Vector2( 360.79, 649.821 )
+scale = Vector2( 0.234724, 0.255487 )
+frames = SubResource( 2 )
+animation = "Knight2"
+frame = 1
+playing = true
+
+[node name="SkillDescription" type="Label" parent="Char"]
+margin_left = 63.9717
+margin_top = 780.789
+margin_right = 605.972
+margin_bottom = 937.789
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InGameName" type="Control" parent="."]
+margin_left = 82.3221
+margin_top = 76.8019
+margin_right = 122.322
+margin_bottom = 116.802
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLine" type="LineEdit" parent="InGameName"]
+margin_left = 225.95
+margin_top = 335.198
+margin_right = 354.95
+margin_bottom = 365.198
+max_length = 15
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="InGameName"]
+margin_left = 130.06
+margin_top = 327.452
+margin_right = 217.06
+margin_bottom = 370.452
+custom_fonts/font = SubResource( 3 )
+text = "Name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorLabel" type="Label" parent="InGameName"]
+margin_left = -63.2558
+margin_top = 368.98
+margin_right = 551.744
+margin_bottom = 411.98
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.858824, 0.239216, 0.239216, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Title" type="Label" parent="."]
 margin_left = 82.3221
@@ -52,71 +151,17 @@ __meta__ = {
 }
 
 [node name="Bg" parent="." instance=ExtResource( 1 )]
-position = Vector2( 247.161, -157.16 )
-
-[node name="Knight1" type="Sprite" parent="."]
-position = Vector2( 106.287, 285.367 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 4 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Knight1" type="TextureButton" parent="Knight1"]
-margin_left = -212.821
-margin_top = -259.086
-margin_right = 299.179
-margin_bottom = 234.914
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Knight2" type="Sprite" parent="."]
-position = Vector2( 264.459, 286.65 )
-scale = Vector2( 0.2, 0.2 )
-texture = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Knight2" type="TextureButton" parent="Knight2"]
-margin_left = -207.0
-margin_top = -239.241
-margin_right = 336.0
-margin_bottom = 307.759
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-visible = false
-position = Vector2( 359.358, 622.614 )
-scale = Vector2( 0.234724, 0.255487 )
-frames = SubResource( 2 )
-animation = "Knight2"
-frame = 6
-playing = true
-
-[node name="SkillDescription" type="Label" parent="."]
-margin_left = 63.9717
-margin_top = 780.789
-margin_right = 605.972
-margin_bottom = 937.789
-custom_fonts/font = SubResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+position = Vector2( 377.381, 22.4306 )
 
 [node name="EnterBtn" type="Button" parent="."]
-visible = false
-margin_left = 216.446
-margin_top = 914.114
-margin_right = 471.446
-margin_bottom = 1023.11
+margin_left = 211.902
+margin_top = 832.32
+margin_right = 466.902
+margin_bottom = 941.316
 text = "Enter"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Knight1/Knight1" to="." method="_on_Knight1Button_pressed"]
-[connection signal="pressed" from="Knight2/Knight2" to="." method="_on_Knight2Button_pressed"]
+[connection signal="pressed" from="Char/Knight1/Knight1" to="." method="_on_Knight1Button_pressed"]
+[connection signal="pressed" from="Char/Knight2/Knight2" to="." method="_on_Knight2Button_pressed"]
 [connection signal="pressed" from="EnterBtn" to="." method="_on_EnterBtn_pressed"]

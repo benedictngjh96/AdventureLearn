@@ -7,7 +7,8 @@ public class Global : Node
     public static string studentId;
     public static string charName;
     public static string studentName;
-
+    public static int worldId;
+    public static int sectionId;
     public static MySqlConnectionStringBuilder csb = new MySqlConnectionStringBuilder
     {
         Server = "35.198.238.34",

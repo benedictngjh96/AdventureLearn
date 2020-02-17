@@ -1,4 +1,3 @@
-D:\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.csprojAssemblyReference.cache
 D:\AdventureLearn\.mono\temp\bin\Debug\AdventureLearn.dll
 D:\AdventureLearn\.mono\temp\bin\Debug\AdventureLearn.pdb
 D:\AdventureLearn\.mono\temp\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
@@ -116,3 +115,4 @@ D:\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.dll
 D:\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.pdb
 D:\AdventureLearn\.mono\temp\bin\Debug\Dapper.dll
 D:\AdventureLearn\.mono\temp\bin\Debug\Dapper.xml
+D:\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.csprojAssemblyReference.cache

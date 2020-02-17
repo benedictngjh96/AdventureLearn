@@ -6,15 +6,24 @@ public class CharSelect : Node2D
 {
     StudentBL studentBL;
     int charId;
+
+    AnimatedSprite charSprite;
+    Button enterBtn;
+
     public override void _Ready()
     {
+        //Hide animated sprite and button when user has not selected a character
+        charSprite = GetNode<AnimatedSprite>("Char/AnimatedSprite");
+        enterBtn = GetNode<Button>("EnterBtn");
+        charSprite.SetVisible(false);
+        enterBtn.SetVisible(false);
+
         studentBL = new StudentBL();
         
         //Redirect user if has existing account
         if (studentBL.CheckStudentExist())
         {
-            //GetTree().ChangeScene("res://Presentation/Login/Login.tscn");
-            GD.Print("exist");
+            GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
         }
     }
 
@@ -28,9 +37,7 @@ public class CharSelect : Node2D
     }
     private void DisplayCharacter(String characterName)
     {
-        AnimatedSprite charSprite = GetNode<AnimatedSprite>("AnimatedSprite");
-        Button enterBtn = GetNode<Button>("EnterBtn");
-        Label skillDescription = GetNode<Label>("SkillDescription");
+        Label skillDescription = GetNode<Label>("Char/SkillDescription");
 
         charSprite.Play(characterName, false);
         charSprite.SetVisible(true);
@@ -46,8 +53,30 @@ public class CharSelect : Node2D
   
     private void _on_EnterBtn_pressed()
     {
-        GD.Print(studentBL.CheckStudentExist().ToString());
-        studentBL.InsertStudent(Global.studentId, Global.studentName, "testName", charId);
+        LineEdit nameLine = GetNode<LineEdit>("InGameName/NameLine");
+        Label errorLbl = GetNode<Label>("InGameName/ErrorLabel");
+        string ign = nameLine.Text;
+        bool exist = studentBL.CheckInGameNameExist(nameLine.Text);
+
+        //Validation
+        if (string.IsNullOrEmpty(ign))
+        {
+            errorLbl.Text = "Please enter ur in game name.";
+        }
+        else if (exist)
+        {
+            errorLbl.Text = "Name already exists.Choose another name";
+        }
+        else
+        {
+            //Redirect user to mainmenu if user record is successfully inserted
+            int result = studentBL.InsertStudent(Global.studentId, Global.studentName, ign, charId);
+            if(result != 0)
+            {
+                GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
+            }
+        }
+        
     }
 
 }

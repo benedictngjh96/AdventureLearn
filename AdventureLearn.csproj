@@ -81,20 +81,30 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\SectionBL.cs" />
     <Compile Include="BusinessLogic\StudentBL.cs" />
     <Compile Include="BusinessLogic\LoginBL.cs" />
     <Compile Include="DataAccess\BaseDao.cs" />
     <Compile Include="DataAccess\CharSelectDao.cs" />
+    <Compile Include="DataAccess\SectionDao.cs" />
     <Compile Include="DataAccess\StudentDao.cs" />
     <Compile Include="Entities\Character.cs" />
+    <Compile Include="Entities\Level.cs" />
+    <Compile Include="Entities\Section.cs" />
     <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\World.cs" />
     <Compile Include="Global\Global.cs" />
     <Compile Include="Presentation\CharSelect\CharSelect.cs" />
+    <Compile Include="Presentation\LevelSelection\LevelSelection.cs" />
+    <Compile Include="Presentation\MainMenu\MainMenu.cs" />
+    <Compile Include="Presentation\World\WorldScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Presentation\Section\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

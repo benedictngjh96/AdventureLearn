@@ -6,31 +6,31 @@ using Dapper;
 using Godot;
 public class StudentDao
 {
-	public void InsertStudent(string studentId, string studentName, string inGameName, int charId)
+	
+	public int InsertStudent(string studentId, string studentName, string inGameName, int charId)
 	{
+		BaseDAO<Student> baseDao = new BaseDAO<Student>();
 		string query = "INSERT INTO Student (StudentId, StudentName, InGameName, CharId) VALUES (@StudentId, @StudentName, @InGameName, @CharId)";
-		try
-		{
-			using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
-			{
-				Student student = new Student(studentId, studentName, inGameName, charId);
-				conn.Execute(query, student);
-			}
-		}
-		catch(Exception ex)
-		{
-			GD.Print(ex.Message);
-		}
+		Student student = new Student(studentId, studentName, inGameName, charId);
+		int result = baseDao.ExecuteQuery(query, student);
+		return result;
 
 	}
 	public bool CheckStudentExist(string studentId)
 	{
-		bool exist = false;
 		string query = "SELECT COUNT(1) FROM Student WHERE StudentId = @StudentId";
-		using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
-		{
-			exist = conn.ExecuteScalar<bool>(query, new {  StudentId = studentId });
-		}
+		BaseDAO<bool> baseDao = new BaseDAO<bool>();
+		var studentObj = new { StudentId = studentId };
+		bool exist = baseDao.ExecuteScalar(query, studentObj);
+		return exist;
+	}
+	public bool CheckInGameNameExist(string inGameName)
+	{
+		string query = "SELECT COUNT(1) FROM Student WHERE InGameName = @InGameName";
+		BaseDAO<bool> baseDao = new BaseDAO<bool>();
+		var nameObj = new { InGameName = inGameName };
+		bool exist = baseDao.ExecuteScalar(query, nameObj);
+		
 		return exist;
 	}
 

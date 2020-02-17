@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/World/world_map.png" type="Texture" id=1]
+[ext_resource path="res://Presentation/World/WorldScreen.cs" type="Script" id=2]
+[ext_resource path="res://Assets/World/world_2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/World/world_4.png" type="Texture" id=4]
+[ext_resource path="res://Assets/World/world_3.png" type="Texture" id=5]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Bg" type="Node2D" parent="."]
+
+[node name="world_map" type="Sprite" parent="Bg"]
+position = Vector2( 569.332, 649.075 )
+scale = Vector2( 1.27749, 1.55079 )
+texture = ExtResource( 1 )
+
+[node name="Btn_world" type="TextureButton" parent="Bg/world_map"]
+margin_left = -214.0
+margin_top = -417.325
+margin_right = 55.0
+margin_bottom = -175.325
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="world_2" type="Sprite" parent="Bg/world_map"]
+modulate = Color( 0.329412, 0.305882, 0.305882, 1 )
+position = Vector2( -312.065, -106 )
+texture = ExtResource( 3 )
+
+[node name="world_4" type="Sprite" parent="Bg/world_map"]
+modulate = Color( 0.329412, 0.305882, 0.305882, 1 )
+position = Vector2( -146.242, 165.266 )
+scale = Vector2( 1.0633, 1.08078 )
+texture = ExtResource( 4 )
+
+[node name="world_3" type="Sprite" parent="Bg/world_map"]
+modulate = Color( 0.329412, 0.305882, 0.305882, 1 )
+position = Vector2( -37.1684, -34.886 )
+texture = ExtResource( 5 )
+[connection signal="pressed" from="Bg/world_map/Btn_world" to="." method="_on_Btn_world_pressed"]
