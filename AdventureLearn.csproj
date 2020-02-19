@@ -81,20 +81,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\GamePlayBL.cs" />
     <Compile Include="BusinessLogic\SectionBL.cs" />
     <Compile Include="BusinessLogic\StudentBL.cs" />
     <Compile Include="BusinessLogic\LoginBL.cs" />
+    <Compile Include="BusinessLogic\StudentScoreBL.cs" />
     <Compile Include="DataAccess\BaseDao.cs" />
     <Compile Include="DataAccess\CharSelectDao.cs" />
+    <Compile Include="DataAccess\LevelDao.cs" />
     <Compile Include="DataAccess\SectionDao.cs" />
     <Compile Include="DataAccess\StudentDao.cs" />
+    <Compile Include="DataAccess\StudentScoreDao.cs" />
     <Compile Include="Entities\Character.cs" />
     <Compile Include="Entities\Level.cs" />
     <Compile Include="Entities\Section.cs" />
     <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\StudentScore.cs" />
     <Compile Include="Entities\World.cs" />
     <Compile Include="Global\Global.cs" />
     <Compile Include="Presentation\CharSelect\CharSelect.cs" />
+    <Compile Include="Presentation\GamePlay\GamePlay.cs" />
     <Compile Include="Presentation\LevelSelection\LevelSelection.cs" />
     <Compile Include="Presentation\MainMenu\MainMenu.cs" />
     <Compile Include="Presentation\World\WorldScreen.cs" />

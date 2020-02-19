@@ -21,9 +21,9 @@ public class StudentBL : Node
         List<Character> characterList = charSelectDao.GetAllCharacters();
         return characterList;
     }
-    public int InsertStudent(string studentId, string studentName, string inGameName, int charId)
+    public int InsertStudent(string studentName, int charId, string studentEmail, string studentUsername, string studentPassword)
     {
-        int result = studentDao.InsertStudent(studentId, studentName, inGameName, charId);
+        int result = studentDao.InsertStudent(studentName, charId, studentEmail, studentUsername, studentPassword);
         return result;
     }
     

@@ -7,16 +7,16 @@ using Godot;
 public class StudentDao
 {
 	
-	public int InsertStudent(string studentId, string studentName, string inGameName, int charId)
+	public int InsertStudent(string studentName, int charId, string studentEmail, string studentUsername, string studentPassword)
 	{
 		BaseDAO<Student> baseDao = new BaseDAO<Student>();
-		string query = "INSERT INTO Student (StudentId, StudentName, InGameName, CharId) VALUES (@StudentId, @StudentName, @InGameName, @CharId)";
-		Student student = new Student(studentId, studentName, inGameName, charId);
+		string query = "INSERT INTO Student (StudentName, CharId, StudentEmail, StudentUsername, StudentPassword) VALUES (@StudentName, @CharId, @StudentEmail, @StudentUsername, StudentPassword)";
+		Student student = new Student(studentName, charId, studentEmail, studentUsername, studentPassword);
 		int result = baseDao.ExecuteQuery(query, student);
 		return result;
 
 	}
-	public bool CheckStudentExist(string studentId)
+	public bool CheckStudentExist(int studentId)
 	{
 		string query = "SELECT COUNT(1) FROM Student WHERE StudentId = @StudentId";
 		BaseDAO<bool> baseDao = new BaseDAO<bool>();

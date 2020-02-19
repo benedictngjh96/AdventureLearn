@@ -20,7 +20,7 @@ modules="org/godotengine/godot/PlayGames"
 [application]
 
 config/name="AdventureLearn"
-run/main_scene="res://Presentation/Login/Login.tscn"
+run/main_scene="res://Presentation/LevelSelection/LevelSelection.tscn"
 config/icon="res://icon.png"
 
 [display]

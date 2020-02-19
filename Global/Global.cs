@@ -4,7 +4,7 @@ using MySql.Data.MySqlClient;
 
 public class Global : Node
 {
-    public static string studentId;
+    public static int studentId;
     public static string charName;
     public static string studentName;
     public static int worldId;
@@ -18,7 +18,7 @@ public class Global : Node
         SslMode = MySqlSslMode.None,
     };
 
-    public static void SetStudentId(string studentId)
+    public static void SetStudentId(int studentId)
     {
         Global.studentId = studentId;
     }

@@ -1,17 +1,27 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 
 public class Student : Node
 {
-    public Student(string studentId, string studentName, string inGameName, int charId)
+    public Student(string studentName, int charId, string studentEmail,string studentUsername, string studentPassword)
     {
-        this.StudentId = studentId;
         this.StudentName = studentName;
-        this.InGameName = inGameName;
         this.CharId = charId;
+        this.StudentEmail = StudentEmail;
+        this.StudentUserName = StudentUserName;
+        this.StudentPassword = StudentPassword;
     }
-    public string StudentId { get; set; }
+    public Student()
+    {
+
+    }
+    public int StudentId { get; set; }
     public string StudentName { get; set; }
-    public string InGameName { get; set; }
     public int CharId { get; set; }
+
+    public string StudentEmail { get; set; }
+    public string StudentUserName { get; set; }
+    public string StudentPassword { get; set; }
+    public List<StudentScore> StudentScore { get; set; }
 }
