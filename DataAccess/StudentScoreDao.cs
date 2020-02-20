@@ -53,4 +53,20 @@ public class StudentScoreDao : Node
 			return studentList;
 		}
 	}
+	public int InsertStudentScore(int studentId, int worldId, int sectionId, int levelId, int levelScore)
+	{
+		BaseDao<int> baseDao = new BaseDao<int>();
+		string query = String.Format("INSERT INTO StudentScore (StudentId, WorldId, SectionId, LevelId, LevelScore) " +
+			"VALUES (@StudentId, @WorldId, @SectionId, @LevelId, @LevelScore)",
+			studentId, worldId, sectionId, levelId, levelScore);
+		int result = baseDao.ExecuteQuery(query, new { StudentId = studentId, WorldId = worldId, SectionId = sectionId, LevelId = levelId, LevelScore = levelScore });
+		return result;
+	}
+	public int CheckScoreExist(int studentId, int levelId)
+	{
+		BaseDao<int> baseDao = new BaseDao<int>();
+		string query = "SELECT COUNT(*) FROM StudentScore ss WHERE ss.StudentId = @StudentId AND LevelId = @LevelId";
+		int result = baseDao.ExecuteScalar(query, new { StudentId = studentId , LevelId = levelId});
+		return result;
+	}
 }

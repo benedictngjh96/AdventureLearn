@@ -55,5 +55,18 @@ public class SectionDao : Node
 			return sect;
 		}
 	}
+	public int CheckSectionCleared(int worldId, int sectionId, int studentId)
+	{
+		string query = "SELECT COUNT(l.LevelId) FROM Level l WHERE l.WorldId = @WorldId " +
+			"AND l.SectionId = @SectionId AND l.LevelId NOT IN (SELECT ss.LevelId " +
+			"FROM StudentScore ss WHERE ss.WorldId = l.WorldId AND ss.SectionId = l.SectionId " +
+			"AND ss.StudentId = @StudentId)";
+
+		BaseDao<int> baseDao = new BaseDao<int>();
+		var queryObj = new { WorldId = worldId, SectionId = sectionId, StudentId = studentId};
+
+		int result = baseDao.ExecuteScalar(query, queryObj);
+		return result;
+	}
 
 }

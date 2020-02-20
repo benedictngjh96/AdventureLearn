@@ -6,9 +6,9 @@ using System.Data.SqlClient;
 using System.Net;
 using Dapper;
 
-public class BaseDAO <T>
+public class BaseDao <T>
 {
-	public int ExecuteQuery(string query, T t)
+	public int ExecuteQuery(string query, Object t)
 	{
 		int result = 0;
 		using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
@@ -17,13 +17,22 @@ public class BaseDAO <T>
 		}
 		return result;
 	}
-	public bool ExecuteScalar(string query, Object t)
+	public T RetrieveQuery(string query)
 	{
-		bool result;
+		T result;
+		using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
+		{
+			result = conn.QueryFirstOrDefault<T>(query);
+		}
+		return result;
+	}
+	public T ExecuteScalar(string query, Object t)
+	{
+		T result;
 		
 		using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
 		{
-			result = conn.ExecuteScalar<bool>(query, t);
+			result = conn.ExecuteScalar<T>(query, t);
 		}
 		return result;
 	}
