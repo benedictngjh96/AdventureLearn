@@ -1,14 +1,13 @@
-using Godot;
+
 using System;
 using System.Collections.Generic;
 
-public class StudentBL : Node
+public class StudentBL
 {
 	StudentDao studentDao = new StudentDao();
-	CharSelectDao charSelectDao = new CharSelectDao();
-	public bool CheckStudentExist()
+	public bool CheckStudentExist(int studentId)
 	{
-		bool exist = studentDao.CheckStudentExist(Global.StudentId);
+		bool exist = studentDao.CheckStudentExist(studentId);
 		return exist;
 	}
 	public bool CheckInGameNameExist(string ign)
@@ -16,11 +15,7 @@ public class StudentBL : Node
 		bool exist = studentDao.CheckInGameNameExist(ign);
 		return exist;
 	}
-	public List<Character> GetCharacterList()
-	{
-		List<Character> characterList = charSelectDao.GetAllCharacters();
-		return characterList;
-	}
+	
 	public int InsertStudent(string studentName, int charId, string studentEmail, string studentUsername, string studentPassword)
 	{
 		int result = studentDao.InsertStudent(studentName, charId, studentEmail, studentUsername, studentPassword);

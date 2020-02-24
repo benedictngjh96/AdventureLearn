@@ -1,30 +1,32 @@
-using Godot;
 using System;
 using System.Collections.Generic;
 
-public class SectionBL : Node
+public class SectionBL 
 {
-	SectionDao sectionDao = new SectionDao();
-	public List<Section> GetWorldSections()
+	public List<Section> GetWorldSections(int worldId)
 	{
+		SectionDao sectionDao = new SectionDao();
 		List<Section> sectionList = new List<Section>();
-		sectionList = sectionDao.GetWorldSections(Global.WorldId);
+		sectionList = sectionDao.GetWorldSections(worldId);
 		return sectionList;
 	}
-	public Section DisplaySectionLevels()
+	
+	public Section DisplaySectionLevels(int worldId, int sectionId)
 	{
-		List<Section> sectionList = GetWorldSections();
-		Section findSection  = sectionList.Find(x =>x.SectionId == Global.SectionId);
+		List<Section> sectionList = GetWorldSections(worldId);
+		Section findSection  = sectionList.Find(x =>x.SectionId == sectionId);
 		return findSection;
 	}
-	public Section GetSectionLevels()
+	public Section GetSectionLevels(int worldId, int sectionId)
 	{
-		Section findSection = sectionDao.GetSectionLevels(Global.WorldId, Global.SectionId);
+		SectionDao sectionDao = new SectionDao();
+		Section findSection = sectionDao.GetSectionLevels(worldId, sectionId);
 		return findSection;
 	}
-	public int CheckSectionCleared()
+	public int CheckSectionCleared(int worldId, int sectionId, int studentId)
 	{
-		int result = sectionDao.CheckSectionCleared(Global.WorldId, Global.SectionId-1, Global.StudentId);
+		SectionDao sectionDao = new SectionDao();
+		int result = sectionDao.CheckSectionCleared(worldId, sectionId-1, studentId);
 		return result;
 	}
 }

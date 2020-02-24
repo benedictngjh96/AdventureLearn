@@ -15,13 +15,13 @@ public class CharSelect : Node2D
 		//Hide animated sprite and button when user has not selected a character
 		charSprite = GetNode<AnimatedSprite>("Char/AnimatedSprite");
 		enterBtn = GetNode<Button>("EnterBtn");
-		charSprite.SetVisible(false);
-		enterBtn.SetVisible(false);
+		charSprite.Visible = false;
+		enterBtn.Visible = false;
 
 		studentBL = new StudentBL();
 		
 		//Redirect user if has existing account
-		if (studentBL.CheckStudentExist())
+		if (studentBL.CheckStudentExist(Global.StudentId))
 		{
 			GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
 		}
@@ -42,15 +42,16 @@ public class CharSelect : Node2D
 		Label skillDescription = GetNode<Label>("Char/SkillDescription");
 
 		charSprite.Play(characterName, false);
-		charSprite.SetVisible(true);
-		enterBtn.SetVisible(true);
+		charSprite.Visible = true;
+		enterBtn.Visible = true;
 
+		/*
 		//Find character obj in characterlist using charactername
-		List<Character> characterList = studentBL.GetCharacterList();
+		//List<Character> characterList = studentBL.GetCharacterList();
 		Character result = characterList.Find(item => item.CharName == characterName);
-		skillDescription.SetText(result.CharSkill);
+		skillDescription.Text = result.CharSkill;
 		charId = result.CharId;
-		
+		*/
 	}
   
 	private void _on_EnterBtn_pressed()

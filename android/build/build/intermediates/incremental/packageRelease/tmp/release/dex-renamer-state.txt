@@ -1,4 +1,4 @@
-#Tue Feb 18 14:54:16 SGT 2020
-base.0=D\:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+#Mon Feb 24 12:27:47 SGT 2020
+base.0=D\:\\backup\\220220 2300\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
 path.0=classes.dex
 renamed.0=classes.dex

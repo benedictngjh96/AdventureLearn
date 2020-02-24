@@ -6,40 +6,48 @@ using System.Linq;
 public class LevelSelection : Node2D
 {
 	//Asset path
-	string unlockedLvl = "res://Assets/LevelSelection/redround.png";
-	string lockedLvl = "res://Assets/LevelSelection/roundlocked.png";
 	string starsImagePath = "res://Assets/Level/";
 
 	SectionBL sectionBL;
 	List<Section> sectionList;
 	StudentScoreBL studentScoreBL;
-	Sprite forwardSprite;
 	TextureButton forwardBtn;
-	Sprite backwardSprite;
 	TextureButton backWardBtn;
 	Label sectionLbl;
 	int count = 1;
+
+	TextureButton level1;
+	TextureButton level2;
+	TextureButton level3;
+	TextureButton level4;
+	TextureButton level5;
+	TextureButton level6;
 
 	public override void _Ready()
 	{
 		//Intializing nodes
 		sectionBL = new SectionBL();
 		studentScoreBL = new StudentScoreBL();
-		forwardSprite = GetNode<Sprite>("ArrowNavigation/Forward");
-		forwardBtn = GetNode<TextureButton>("ArrowNavigation/Forward/ForwardBtn");
-		backwardSprite = GetNode<Sprite>("ArrowNavigation/Backward");
-		backWardBtn = GetNode<TextureButton>("ArrowNavigation/Backward/BackwardBtn");
+		forwardBtn = GetNode<TextureButton>("ArrowNavigation/ForwardButton");
+		backWardBtn = GetNode<TextureButton>("ArrowNavigation/BackwardButton");
 		sectionLbl = GetNode<Label>("Title/SectionName");
 
+		level1 = GetNode<TextureButton>("Levels/Level1");
+		level2 = GetNode<TextureButton>("Levels/Level2");
+		level3 = GetNode<TextureButton>("Levels/Level3");
+		level4 = GetNode<TextureButton>("Levels/Level4");
+		level5 = GetNode<TextureButton>("Levels/Level5");
+		level6 = GetNode<TextureButton>("Levels/Level6");
 		//REMOVE
 		Global.WorldId = 1;
 		//REMOVE 
 		Global.StudentId = 1;
-
+		Global.SectionId = 1;
+		
 
 		//On load set section id to 1 to display section 1
 		Global.SectionId = 1;
-		sectionList = sectionBL.GetWorldSections();
+		sectionList = sectionBL.GetWorldSections(Global.WorldId);
 		sectionLbl.Text = sectionList[count - 1].SectionName;
 
 		//Star path
@@ -50,32 +58,27 @@ public class LevelSelection : Node2D
 
 		//Disable forward n back btns if only have 1 level
 		DisableBothButtons();
-		DisableBackwardButton();
+		backWardBtn.Disabled = true;
+
 		HideLevels();
 		DisplayLevelScore();
 
 	}
 	private void HideLevels()
 	{
-		Section section = sectionBL.DisplaySectionLevels();
 		Node levelNode = GetNode<Node>("Levels");
 		foreach (Node n in levelNode.GetChildren())
 		{
-			if (n is Sprite)
+			if (n is TextureButton)
 			{
-				Sprite levelSprite = (Sprite)n;
-				levelSprite.SetVisible(false);
-				foreach (Node no in levelSprite.GetChildren())
+				TextureButton levelTexture = (TextureButton)n;
+				levelTexture.Visible = false;
+				foreach (Node no in levelTexture.GetChildren())
 				{
 					if (no is Sprite)
 					{
 						Sprite starSprite = (Sprite)no;
-						starSprite.SetVisible(false);
-					}
-					if (no is TextureButton)
-					{
-						TextureButton textureButton = (TextureButton)no;
-						textureButton.Disabled = true;
+						starSprite.Visible = false;
 					}
 				}
 			}
@@ -83,19 +86,13 @@ public class LevelSelection : Node2D
 	}
 	private void DisplayLevelScore()
 	{
-		string starPath;
-		int index = 1;
 		Node levelNode = GetNode<Node>("Levels");
-		TextureButton textureBtn;
-		var unlockedLevelTexture = ResourceLoader.Load(unlockedLvl) as Texture;
-		var lockedLevelTexture = ResourceLoader.Load(lockedLvl) as Texture;
 
 		//If student has not cleared a single level in the section
-		if (studentScoreBL.GetStudentScores() == null)
+		if (studentScoreBL.GetStudentScores(Global.SectionId, Global.StudentId) == null)
 		{
 			Node level;
-			Sprite levelSprite;
-			Section section = sectionBL.GetSectionLevels();
+			Section section = sectionBL.GetSectionLevels(Global.WorldId, Global.SectionId);
 
 			if(Global.SectionId == 1)
 			{
@@ -104,9 +101,9 @@ public class LevelSelection : Node2D
 				for (int i = 1; i < section.Level.Count(); i++)
 				{
 					level = levelNode.GetChild(i);
-					levelSprite = level as Sprite;
-					levelSprite.SetVisible(true);
-					levelSprite.Texture = lockedLevelTexture;
+					TextureButton levelTexture = level as TextureButton;
+					levelTexture.Visible = true;
+					levelTexture.Disabled = true;
 				}
 
 			}
@@ -116,49 +113,19 @@ public class LevelSelection : Node2D
 				for (int i = 0; i < section.Level.Count(); i++)
 				{
 					level = levelNode.GetChild(i);
-					levelSprite = level as Sprite;
-					levelSprite.SetVisible(true);
-					levelSprite.Texture = lockedLevelTexture;
+					TextureButton levelTexture = level as TextureButton;
+					levelTexture.Visible = true;
+					levelTexture.Disabled = true;
 				}
 			}
 			
-			/*
-			//Level 1 is always unlocked
-			level = levelNode.GetChild(0);
-			levelSprite = level as Sprite;
-			levelSprite.Texture = unlockedLevelTexture;
-			levelSprite.SetVisible(true);
-			
-
-			foreach(Node n in levelSprite.GetChildren())
-			{
-				if (n is TextureButton)
-				{	
-					textureBtn = n as TextureButton;
-					textureBtn.Disabled = false;
-					break;
-				}
-					
-			}
-			*/
-			//Locked remaining levels
-			/*
-			for (int i = 0; i < section.Level.Count(); i++)
-			{
-				level = levelNode.GetChild(i);
-				levelSprite = level as Sprite;
-				levelSprite.SetVisible(true);
-				levelSprite.Texture = lockedLevelTexture;
-			}
-			*/
 		}
 		else
 		{
-			Student student = studentScoreBL.GetStudentScores();
+			Student student = studentScoreBL.GetStudentScores(Global.SectionId, Global.StudentId);
 			int totalLevels = GetNode("Levels").GetChildCount();
-			Section section = sectionBL.GetSectionLevels();
+			Section section = sectionBL.GetSectionLevels(Global.WorldId, Global.SectionId);
 			Node level;
-			Sprite levelSprite;
 			int i = 0;
 			Node levelParent = GetNode("Levels");
 
@@ -166,9 +133,9 @@ public class LevelSelection : Node2D
 			foreach (Level lvl in section.Level)
 			{
 				level = levelNode.GetChild(i);
-				levelSprite = level as Sprite;
-				levelSprite.SetVisible(true);
-				levelSprite.Texture = lockedLevelTexture;
+				TextureButton levelTexture = level as TextureButton;
+				levelTexture.Visible = true;
+				levelTexture.Disabled = false;
 				i++;
 			}
 
@@ -176,23 +143,13 @@ public class LevelSelection : Node2D
 			int count = 0;
 			foreach (StudentScore score in student.StudentScore)
 			{
-				Node n = levelParent.GetChild(count);
-				Sprite lvlNode = n as Sprite;
-				lvlNode.Texture = unlockedLevelTexture;
-				Sprite starNode = null;
 				string starAssetPath = starsImagePath;
-				foreach (Node node in lvlNode.GetChildren())
-				{
-					if (node is Sprite)
-					{
-						starNode = node as Sprite;
-					}
-					if (node is TextureButton)
-					{
-						textureBtn = node as TextureButton;
-						textureBtn.Disabled = false;
-					}
-				}
+
+				TextureButton levelTexture = levelParent.GetChild(count) as TextureButton;
+				levelTexture.Disabled = false;
+				levelTexture.Visible = true;
+
+				Sprite starNode = levelTexture.GetChild(0) as Sprite;
 				
 				switch (score.LevelScore)
 				{
@@ -208,27 +165,18 @@ public class LevelSelection : Node2D
 				}
 				var texture = ResourceLoader.Load(starAssetPath) as Texture;
 				starNode.Texture = texture;
-				starNode.SetVisible(true);
+				starNode.Visible = true;
 
 				count++;
 			}
 			//Unlock nxt lvl
-			Node next = levelParent.GetChild(count);
-			Sprite nextLvlNode = next as Sprite;
-			nextLvlNode.Texture = unlockedLevelTexture;
-			foreach(Node no in nextLvlNode.GetChildren())
-			{
-				if(no is TextureButton)
-				{
-					TextureButton textBtn = no as TextureButton;
-					textBtn.Disabled = false;
-				}
-			}
+			TextureButton nextLevel = levelParent.GetChild(count) as TextureButton;
+			nextLevel.Disabled = false;
 		}
 	}
 	private void CheckSectionCleared()
 	{
-		int result = sectionBL.CheckSectionCleared();
+		int result = sectionBL.CheckSectionCleared(Global.WorldId, Global.SectionId, Global.StudentId);
 
 		if(result == 0)
 		{
@@ -239,89 +187,64 @@ public class LevelSelection : Node2D
 	private void UnlockFirstLevel()
 	{
 		Node levelNode = GetNode<Node>("Levels");
-		TextureButton textureBtn;
-		Node level;
-		Sprite levelSprite;
+		//Unlock first level
+		TextureButton level1Texture = levelNode.GetChild(0) as TextureButton;
+		level1Texture.Disabled = false;
+		level1Texture.Visible = true;
 
-		var unlockedLevelTexture = ResourceLoader.Load(unlockedLvl) as Texture;
-		level = levelNode.GetChild(0);
-		levelSprite = level as Sprite;
-		levelSprite.Texture = unlockedLevelTexture;
-		levelSprite.SetVisible(true);
-
-		foreach (Node n in levelSprite.GetChildren())
+		//Lock rest of the levels
+		for (int i = 1; i < levelNode.GetChildren().Count; i++)
 		{
-			if (n is TextureButton)
-			{
-				textureBtn = n as TextureButton;
-				textureBtn.Disabled = false;
-				break;
-			}
-
+			TextureButton levelTexture = levelNode.GetChild(i) as TextureButton;
+			levelTexture.Disabled = true;
+			Sprite starSprite = levelTexture.GetChild(0) as Sprite;
+			starSprite.Visible = false;
 		}
 	}
-	private void _on_ForwardBtn_pressed()
+	private void _on_ForwardButton_pressed()
 	{
 		count++;
 		if (count >= sectionList.Count())
-			DisableForwardButton();
+			forwardBtn.Disabled = true;
 		if (backWardBtn.Disabled == true)
-			EnableBackwardButton();
+			backWardBtn.Disabled = false;
 		Global.SectionId++;
 		DisplaySectionName();
 		HideLevels();
 		DisplayLevelScore();
 		CheckSectionCleared();
 	}
-	private void _on_BackwardBtn_pressed()
+	private void _on_BackwardButton_pressed()
 	{
 		count--;
 		if (count <= 1)
-			DisableBackwardButton();
+			backWardBtn.Disabled = true;
 		if (forwardBtn.Disabled == true)
-			EnableForwardButton();
+			forwardBtn.Disabled = false;
 		Global.SectionId--;
 		DisplaySectionName();
 		HideLevels();
 		DisplayLevelScore();
-		CheckSectionCleared();
+		if(Global.SectionId != 1)
+			CheckSectionCleared();
 	}
 
 	private void DisplaySectionName()
 	{
 		sectionLbl.Text = sectionList[count - 1].SectionName;
 	}
-	private void EnableForwardButton()
-	{
-		forwardSprite.Modulate = new Color(255, 255, 255);
-		forwardBtn.Disabled = false;
-	}
-	private void EnableBackwardButton()
-	{
-		backwardSprite.Modulate = new Color(255, 255, 255);
-		backWardBtn.Disabled = false;
-	}
-	private void DisableForwardButton()
-	{
-		forwardSprite.Modulate = new Color(0, 0, 0);
-		forwardBtn.Disabled = true;
-	}
-	private void DisableBackwardButton()
-	{
-		backwardSprite.Modulate = new Color(0, 0, 0);
-		backWardBtn.Disabled = true;
-	}
+	
 	private void DisableBothButtons()
 	{
 		if (sectionList.Count == 1)
 		{
-			DisableForwardButton();
-			DisableBackwardButton();
+			forwardBtn.Disabled = true;
+			backWardBtn.Disabled = true;
 		}
 	}
 	private void RedirectGamePlay()
 	{
-		GetTree().ChangeScene("res://Presentation/GamePlay/GamePlay.tscn");
+		GetTree().ChangeScene("res://Presentation/GamePlay/Campaign.tscn");
 
 	}
 	//Buttons signal
@@ -351,6 +274,36 @@ public class LevelSelection : Node2D
 		Global.LevelId = 5;
 	}
 	private void _on_Level6Btn_pressed()
+	{
+		RedirectGamePlay();
+		Global.LevelId = 6;
+	}
+	private void _on_Level1_pressed()
+	{
+		RedirectGamePlay();
+		Global.LevelId = 1;
+	}
+	private void _on_Level2_pressed()
+	{
+		RedirectGamePlay();
+		Global.LevelId = 2;
+	}
+	private void _on_Level3_pressed()
+	{
+		RedirectGamePlay();
+		Global.LevelId = 3;
+	}
+	private void _on_Level4_pressed()
+	{
+		RedirectGamePlay();
+		Global.LevelId = 4;
+	}
+	private void _on_Level5_pressed()
+	{
+		RedirectGamePlay();
+		Global.LevelId = 5;
+	}
+	private void _on_Level6_pressed()
 	{
 		RedirectGamePlay();
 		Global.LevelId = 6;

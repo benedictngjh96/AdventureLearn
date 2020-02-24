@@ -1,11 +1,10 @@
-using Godot;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using Dapper;
 using System.Linq;
 
-public class StudentScoreDao : Node
+public class StudentScoreDao 
 {
 	public Student GetStudentScores(int sectionId, int studentId)
 	{

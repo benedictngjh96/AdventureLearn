@@ -1,7 +1,7 @@
-using Godot;
+
 using System;
 
-public class LoginBL : Node
+public class LoginBL 
 {
 	StudentDao studentDao = new StudentDao();
 

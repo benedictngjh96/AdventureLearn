@@ -4,70 +4,44 @@ using System.Collections.Generic;
 
 public class GamePlay : Node2D
 {
-	GamePlayBL gamePlayBL;
-	StudentScoreBL studentScoreBL;
 	List<string> animationList;
-	List<CampaignQuestion> campaignQuestionList;
+	List<Question> questionList;
 	AnimatedSprite charSprite;
 	AnimatedSprite monsterSprite;
 	Question question;
-	Character character;
-	string monsterName;
 	Label timerLabel;
 	Label questionLabel;
-	int questionIndex = 0;
+	Label levelTitle;
+	Button option1;
+	Button option2;
+	Button option3;
+	Button option4;
 
+	int questionIndex = 0;
+	string spritePath = "res://CharSprites/";
+	int timeLimit = 0;
 	int s =0;
+
+
 	public override void _Ready()
 	{
-		gamePlayBL = new GamePlayBL();
-		studentScoreBL = new StudentScoreBL();
+		AddUserSignal("NoMoreQuestions");
+
 		charSprite = GetNode<AnimatedSprite>("CharSprite");
 		monsterSprite = GetNode<AnimatedSprite>("MonsterSprite");
 		timerLabel = GetNode<Label>("TimerLabel");
 		questionLabel = GetNode<Label>("QuestionLabel");
+		levelTitle = GetNode<Label>("LevelTitle");
+		option1 = GetNode<Button>("Buttons/Option1");
+		option2 = GetNode<Button>("Buttons/Option2");
+		option3 = GetNode<Button>("Buttons/Option3");
+		option4 = GetNode<Button>("Buttons/Option4");
+
 		animationList = new List<string>();
 		animationList.Add("Idle");
 		animationList.Add("Hurt");
 		animationList.Add("Die");
 		animationList.Add("Attack");
-		/*TODO
-		switch (Global.LevelSelected)
-		{
-			case "Campaign":
-				break;
-			case "Student":
-				break;
-			case "Teacher":
-				break;
-			
-		}
-		*/
-		Global.LevelSelected = "";
-		
-		/*
-		//REMOVE 
-		Global.WorldId = 1;
-		Global.SectionId = 1;
-		Global.LevelId = 1;
-		Global.StudentId = 1;
-		*/
-		SetTimeLimit();
-
-		GetMonsterName();
-
-		LoadCharacter();
-		var spritePath = "res://CharSprites/";
-		var charPath = String.Format(spritePath + "{0}/", GetCharacterName());
-		var monsterPath = String.Format(spritePath + "{0}/", GetMonsterName());
-
-		LoadSprite(charPath, charSprite);
-		LoadSprite(monsterPath, monsterSprite);
-		LoadLevelQuestions();
-		GD.Print("da3");
-
-		DisplayQuestion();
-		SetQuestionNum();
 	}
 	public override void _Process(float delta)
 	{
@@ -77,30 +51,34 @@ public class GamePlay : Node2D
 		if (s <= 0)
 			GetTree().ChangeScene("res://Presentation/World/World.tscn");
 	}
-	private void SetQuestionNum()
+	public void SetLevelTitle(string title)
 	{
-		questionLabel.Text = String.Format("{0}/{1}", questionIndex + 1, campaignQuestionList.Count);
+		levelTitle.Text = title;
 	}
-	private void SetTimeLimit()
+	public void SetQuestionNum()
 	{
-		s = gamePlayBL.GetTimeLimit();
-		
+		questionLabel.Text = String.Format("{0}/{1}", questionIndex + 1, questionList.Count);
 	}
-	private void LoadLevelQuestions()
+	public void SetTimeLimit(int timeLimit)
 	{
-		campaignQuestionList = gamePlayBL.GetLevelQuestions();
+		s = timeLimit;
+		this.timeLimit = timeLimit;
 	}
-	private void DisplayQuestion()
+	public void SetQuestionList(List<Question> questionList)
+	{
+		this.questionList = questionList;
+	}
+	public void DisplayQuestion()
 	{
 		Control controlParentNode = GetNode<Control>("Buttons");
 		List<string> optionList = new List<string>();
 		Label questionTitle = GetNode<Label>("QuestionTitle");
-		question = campaignQuestionList[questionIndex].Question;
+		question = questionList[questionIndex];
 		optionList.Add(question.Option1);
 		optionList.Add(question.Option2);
 		optionList.Add(question.Option3);
 		optionList.Add(question.CorrectOption);
-		questionTitle.Text = campaignQuestionList[questionIndex].Question.QuestionTitle;
+		questionTitle.Text = questionList[questionIndex].QuestionTitle;
 		Random r = new Random();
 
 		//Shuffle options
@@ -116,20 +94,8 @@ public class GamePlay : Node2D
 			}
 		}
 	}
-	private void LoadCharacter()
-	{
-		character = gamePlayBL.GetCharacter();
-	}
-	private string GetCharacterName()
-	{
-		return character.CharName;
-	}
-	private string GetMonsterName()
-	{
-		monsterName = gamePlayBL.GetMonsterName();
-		return monsterName;
-	}
-	private void LoadSprite(string spritePath, AnimatedSprite animatedSprite)
+
+	public void LoadSprite(string spritePath, AnimatedSprite animatedSprite)
 	{
 		SpriteFrames spriteFrames = new SpriteFrames();
 		foreach (string animation in animationList)
@@ -156,9 +122,19 @@ public class GamePlay : Node2D
 		}
 		animatedSprite.Play("Idle");
 	}
-	private void DisplayNextQuestion()
+	public void DisplayCharSprite(Character character)
 	{
-		if (questionIndex < campaignQuestionList.Count-1)
+		string charPath = String.Format(spritePath + "{0}/", character.CharName);
+		LoadSprite(charPath, charSprite);
+	}
+	public void DisplayMonsterSprite(Monster monster)
+	{
+		string monsterPath = String.Format(spritePath + "{0}/", monster.MonsterName);
+		LoadSprite(monsterPath, monsterSprite);
+	}
+	public void DisplayNextQuestion()
+	{
+		if (questionIndex < questionList.Count-1)
 		{
 			questionIndex++;
 			DisplayQuestion();
@@ -166,11 +142,11 @@ public class GamePlay : Node2D
 		}
 		else
 		{
-			studentScoreBL.InsertStudentScore(s, gamePlayBL.GetTimeLimit());
+			EmitSignal("NoMoreQuestions");
 			GetTree().ChangeScene("res://Presentation/World/World.tscn");
 		}
 	}
-	private void CheckCorrectAnswer(string option)
+	public void CheckCorrectAnswer(string option)
 	{
 		if (option == question.CorrectOption)
 		{
@@ -185,28 +161,28 @@ public class GamePlay : Node2D
 			s -= 10;
 		}
 	}
+	public int GetTimeLeft()
+	{
+		return s;
+	}
 	private void _on_Option1_pressed()
 	{
-		Button option = GetNode<Button>("Buttons/Option1");
-		CheckCorrectAnswer(option.Text);
+		CheckCorrectAnswer(option1.Text);
 	}
 
 	private void _on_Option2_pressed()
 	{
-		Button option = GetNode<Button>("Buttons/Option2");
-		CheckCorrectAnswer(option.Text);
+		CheckCorrectAnswer(option2.Text);
 	}
 
 	private void _on_Option3_pressed()
 	{
-		Button option = GetNode<Button>("Buttons/Option3");
-		CheckCorrectAnswer(option.Text);
+		CheckCorrectAnswer(option3.Text);
 	}
 
 	private void _on_Option4_pressed()
 	{
-		Button option = GetNode<Button>("Buttons/Option4");
-		CheckCorrectAnswer(option.Text);
+		CheckCorrectAnswer(option4.Text);
 	}
 
 	private void _on_CharSprite_animation_finished()
@@ -220,12 +196,10 @@ public class GamePlay : Node2D
 		if (monsterSprite.IsPlaying() && monsterSprite.Animation != "Idle")
 			monsterSprite.Play("Idle");
 	}
-
 	private void _on_Timer_timeout()
 	{
 		s -= 1;
 	}
-
 }
 
 

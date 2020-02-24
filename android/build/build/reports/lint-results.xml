@@ -12,7 +12,7 @@
         errorLine1="    private static PlayGames mInstance = null;"
         errorLine2="            ~~~~~~">
         <location
-            file="D:\AdventureLearn\AdventureLearn\android\GodotGPGSPlugin-master\src\PlayGames.java"
+            file="D:\backup\220220 2300\AdventureLearn\AdventureLearn\android\GodotGPGSPlugin-master\src\PlayGames.java"
             line="39"
             column="13"/>
     </issue>
