@@ -1,0 +1,4 @@
+#Tue Feb 25 19:08:45 SGT 2020
+base.0=D\:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+path.0=classes.dex
+renamed.0=classes.dex
