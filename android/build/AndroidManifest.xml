@@ -22,6 +22,7 @@
 
 <!-- Custom user permissions XML added by add-ons. It's recommended to add them from the export preset, though. -->
 <!--CHUNK_USER_PERMISSIONS_BEGIN-->
+<uses-permission android:name="android.permission.INTERNET"/>
 <!--CHUNK_USER_PERMISSIONS_END-->
 
     <!-- Any tag in this line after android:icon will be erased when doing custom builds. -->
@@ -55,6 +56,19 @@
 
 <!-- Custom application XML added by add-ons. -->
 <!--CHUNK_APPLICATION_BEGIN-->
+<activity android:name="com.facebook.FacebookActivity"
+          android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+          android:theme="@style/com_facebook_activity_theme" 
+          android:label="@string/godot_project_name_string" />
+<activity android:name="com.facebook.CustomTabActivity" android:exported="true"> 
+          <intent-filter> 
+                          <action android:name="android.intent.action.VIEW" /> 
+                          <category android:name="android.intent.category.DEFAULT" /> 
+                          <category android:name="android.intent.category.BROWSABLE" /> 
+                          <data android:scheme="@string/fb_login_protocol_scheme" /> 
+          </intent-filter> 
+</activity>
+<meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id" />
 <meta-data android:name="com.google.android.gms.games.APP_ID"
     android:value="@string/google_play_app_id" />
 <!--CHUNK_APPLICATION_END-->
@@ -62,6 +76,45 @@
     </application>
 
 </manifest>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,118 +1,118 @@
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\AdventureLearn.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\AdventureLearn.pdb
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.InteropServices.RuntimeInformation.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Cryptography.Algorithms.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ValueTuple.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\Microsoft.Win32.Primitives.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\netstandard.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.AppContext.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Collections.Concurrent.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Collections.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Collections.NonGeneric.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Collections.Specialized.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ComponentModel.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ComponentModel.EventBasedAsync.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ComponentModel.Primitives.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ComponentModel.TypeConverter.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Console.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Data.Common.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.Contracts.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.Debug.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.FileVersionInfo.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.Process.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.StackTrace.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.TextWriterTraceListener.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.Tools.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.TraceSource.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.Tracing.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Drawing.Primitives.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Dynamic.Runtime.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Globalization.Calendars.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Globalization.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Globalization.Extensions.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.Compression.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.Compression.ZipFile.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.FileSystem.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.FileSystem.DriveInfo.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.FileSystem.Primitives.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.FileSystem.Watcher.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.IsolatedStorage.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.MemoryMappedFiles.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.Pipes.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.UnmanagedMemoryStream.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Linq.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Linq.Expressions.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Linq.Parallel.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Linq.Queryable.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Http.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.NameResolution.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.NetworkInformation.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Ping.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Primitives.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Requests.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Security.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Sockets.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.WebHeaderCollection.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.WebSockets.Client.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.WebSockets.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ObjectModel.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Reflection.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Reflection.Extensions.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Reflection.Primitives.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Resources.Reader.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Resources.ResourceManager.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Resources.Writer.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.CompilerServices.VisualC.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Extensions.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Handles.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.InteropServices.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Numerics.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Serialization.Formatters.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Serialization.Json.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Serialization.Primitives.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Serialization.Xml.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Claims.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Cryptography.Csp.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Cryptography.Encoding.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Cryptography.Primitives.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Cryptography.X509Certificates.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Principal.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.SecureString.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Text.Encoding.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Text.Encoding.Extensions.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Text.RegularExpressions.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Overlapped.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Tasks.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Tasks.Parallel.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Thread.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.ThreadPool.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Timer.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.ReaderWriter.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.XDocument.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.XmlDocument.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.XmlSerializer.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.XPath.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.XPath.XDocument.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\Dapper.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\MySqlConnector.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Buffers.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Data.SqlClient.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Memory.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Numerics.Vectors.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.CompilerServices.Unsafe.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Tasks.Extensions.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\Dapper.xml
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\MySqlConnector.xml
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Buffers.xml
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Data.SqlClient.xml
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Memory.xml
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Numerics.Vectors.xml
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.CompilerServices.Unsafe.xml
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Tasks.Extensions.xml
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\obj\Tools\AdventureLearn.csprojAssemblyReference.cache
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\obj\Tools\AdventureLearn.csproj.CopyComplete
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\obj\Tools\AdventureLearn.dll
-D:\backup\220220 2300\AdventureLearn\AdventureLearn\.mono\temp\obj\Tools\AdventureLearn.pdb
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\AdventureLearn.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\AdventureLearn.pdb
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Cryptography.Algorithms.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ValueTuple.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\Microsoft.Win32.Primitives.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\netstandard.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.AppContext.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Collections.Concurrent.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Collections.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Collections.NonGeneric.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Collections.Specialized.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ComponentModel.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ComponentModel.EventBasedAsync.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ComponentModel.Primitives.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ComponentModel.TypeConverter.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Console.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Data.Common.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.Contracts.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.Debug.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.FileVersionInfo.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.Process.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.StackTrace.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.TextWriterTraceListener.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.Tools.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.TraceSource.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Diagnostics.Tracing.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Drawing.Primitives.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Dynamic.Runtime.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Globalization.Calendars.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Globalization.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Globalization.Extensions.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.Compression.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.Compression.ZipFile.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.FileSystem.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.FileSystem.DriveInfo.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.FileSystem.Primitives.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.FileSystem.Watcher.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.IsolatedStorage.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.MemoryMappedFiles.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.Pipes.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.IO.UnmanagedMemoryStream.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Linq.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Linq.Expressions.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Linq.Parallel.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Linq.Queryable.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Http.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.NameResolution.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.NetworkInformation.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Ping.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Primitives.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Requests.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Security.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.Sockets.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.WebHeaderCollection.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.WebSockets.Client.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Net.WebSockets.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.ObjectModel.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Reflection.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Reflection.Extensions.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Reflection.Primitives.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Resources.Reader.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Resources.ResourceManager.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Resources.Writer.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.CompilerServices.VisualC.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Extensions.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Handles.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.InteropServices.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Numerics.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Serialization.Formatters.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Serialization.Json.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Serialization.Primitives.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.Serialization.Xml.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Claims.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Cryptography.Csp.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Cryptography.Encoding.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Cryptography.Primitives.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Cryptography.X509Certificates.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.Principal.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Security.SecureString.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Text.Encoding.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Text.Encoding.Extensions.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Text.RegularExpressions.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Overlapped.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Tasks.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Tasks.Parallel.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Thread.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.ThreadPool.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Timer.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.ReaderWriter.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.XDocument.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.XmlDocument.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.XmlSerializer.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.XPath.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Xml.XPath.XDocument.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\Dapper.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\MySqlConnector.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Buffers.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Data.SqlClient.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Memory.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Numerics.Vectors.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.CompilerServices.Unsafe.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Tasks.Extensions.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\Dapper.xml
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\MySqlConnector.xml
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Buffers.xml
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Data.SqlClient.xml
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Memory.xml
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Numerics.Vectors.xml
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Runtime.CompilerServices.Unsafe.xml
+D:\AdventureLearn\AdventureLearn\.mono\temp\bin\Tools\System.Threading.Tasks.Extensions.xml
+D:\AdventureLearn\AdventureLearn\.mono\temp\obj\Tools\AdventureLearn.csprojAssemblyReference.cache
+D:\AdventureLearn\AdventureLearn\.mono\temp\obj\Tools\AdventureLearn.csproj.CopyComplete
+D:\AdventureLearn\AdventureLearn\.mono\temp\obj\Tools\AdventureLearn.dll
+D:\AdventureLearn\AdventureLearn\.mono\temp\obj\Tools\AdventureLearn.pdb

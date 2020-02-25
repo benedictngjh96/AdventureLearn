@@ -45,6 +45,8 @@ dependencies {
         releaseImplementation fileTree(dir: 'libs/release', include: ['*.jar', '*.aar'])
     }
 //CHUNK_DEPENDENCIES_BEGIN
+implementation 'com.facebook.android:facebook-android-sdk:[5,6)'
+implementation 'com.google.android.gms:play-services-ads:15.0.1'
 api ('com.google.android.gms:play-services-games:19.0.0') { exclude group: 'com.android.support' }
 api ('com.google.android.gms:play-services-auth:17.0.0') { exclude group: 'com.android.support' }
 //CHUNK_DEPENDENCIES_END
@@ -85,13 +87,15 @@ android {
             java.srcDirs = [
                     'src'
 //DIR_SRC_BEGIN
-,'D:/backup/220220 2300/AdventureLearn/AdventureLearn/android/GodotGPGSPlugin-master/src'
+,'D:/AdventureLearn/AdventureLearn/android/Facebook/src'
+,'D:/AdventureLearn/AdventureLearn/android/GodotGPGSPlugin-master/src'
 //DIR_SRC_END
             ]
             res.srcDirs = [
                     'res'
 //DIR_RES_BEGIN
-,'D:/backup/220220 2300/AdventureLearn/AdventureLearn/android/GodotGPGSPlugin-master/res'
+,'D:/AdventureLearn/AdventureLearn/android/Facebook/res'
+,'D:/AdventureLearn/AdventureLearn/android/GodotGPGSPlugin-master/res'
 //DIR_RES_END
             ]
             aidl.srcDirs = [
@@ -126,6 +130,45 @@ android {
 
 //CHUNK_GLOBAL_BEGIN
 //CHUNK_GLOBAL_END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
