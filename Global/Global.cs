@@ -9,7 +9,7 @@ public class Global : Node
     /// </summary>
     public static string GoogleId{ get; set;}
     public static string StudentName{ get; set;}
-    public static int StudentId { get; set; }
+    public static string StudentId { get; set; }
     public static int WorldId { get; set; }
     public static int SectionId { get; set; }
     public static int LevelId { get; set; }

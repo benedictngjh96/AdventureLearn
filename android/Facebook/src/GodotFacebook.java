@@ -15,6 +15,7 @@ import android.telephony.TelephonyManager;
 import android.view.WindowManager;
 import android.view.Display;
 import com.facebook.AccessToken;
+import com.facebook.Profile;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -47,7 +48,8 @@ import java.lang.Exception;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
+import com.facebook.share.model.ShareLinkContent;
+import com.facebook.share.widget.ShareDialog;
 public class GodotFacebook extends Godot.SingletonBase {
 
     private Godot activity = null;
@@ -81,6 +83,8 @@ public class GodotFacebook extends Godot.SingletonBase {
                 "log_event_params",
                 "log_event_value_params",
                 "advertising_id",
+				"getId",
+				"getName",
                 "extinfo"
             });
         activity = (Godot)p_activity;
@@ -152,6 +156,7 @@ public class GodotFacebook extends Godot.SingletonBase {
             }
         });
     }
+	
 
     public void setFacebookCallbackId(int facebookCallbackId) {
 		this.facebookCallbackId = facebookCallbackId;
@@ -185,19 +190,23 @@ public class GodotFacebook extends Godot.SingletonBase {
             }
         });
     }
-
-    public void login(String[] permissions)
-    {
+	public String getId(){
+		Profile profile = Profile.getCurrentProfile();
+		return profile.getId();
+	}
+	public String getName(){
+		Profile profile = Profile.getCurrentProfile();
+		return profile.getName();
+	}
+    public void login() {
         Log.i("godot", "Facebook login");
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         if(accessToken != null && !accessToken.isExpired()) {
             GodotLib.calldeferred(facebookCallbackId, "login_success", new Object[]{accessToken.getToken()});
         } else {
-            List<String> perm = Arrays.asList(permissions);
-            LoginManager.getInstance().logInWithReadPermissions(activity, perm);
+            LoginManager.getInstance().logInWithReadPermissions(activity, Arrays.asList("public_profile"));
         }
     }
-
     public void logout()
     {
         Log.i("godot", "Facebook logout");

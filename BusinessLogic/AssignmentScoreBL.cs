@@ -11,7 +11,7 @@ public class AssignmentScoreBL : Node
     /// <param name="timeRemaining"></param>
     /// <param name="timeLimit"></param>
     /// <returns></returns>
-    public int InsertAssignmentScore(int studentId, int assignmentId, int timeRemaining, int timeLimit)
+    public int InsertAssignmentScore(string studentId, int assignmentId, int timeRemaining, int timeLimit)
     {
         AssignmentScoreDao assignmentScoreDao = new AssignmentScoreDao();
         return assignmentScoreDao.InsertAssignmentScore(studentId, assignmentId, Global.CalculateScore(timeRemaining,timeLimit));

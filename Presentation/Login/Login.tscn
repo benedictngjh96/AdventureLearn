@@ -6,10 +6,10 @@
 script = ExtResource( 1 )
 
 [node name="LoginBtn" type="Button" parent="."]
-margin_left = 96.0273
-margin_top = 616.246
-margin_right = 523.027
-margin_bottom = 869.246
+margin_left = 94.4407
+margin_top = 322.712
+margin_right = 521.44
+margin_bottom = 575.712
 text = "Login"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -24,4 +24,24 @@ text = "AdventureLearn"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Button" type="Button" parent="."]
+margin_left = 142.801
+margin_top = 699.722
+margin_right = 470.801
+margin_bottom = 889.722
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="."]
+margin_left = 184.054
+margin_top = 940.896
+margin_right = 396.054
+margin_bottom = 1043.9
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="LoginBtn" to="." method="_on_LoginBtn_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]

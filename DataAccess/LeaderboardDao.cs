@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Dapper;
 using System.Linq;
 
-public class LeaderboardDao 
+public class LeaderboardDao
 {
     /// <summary>
     /// Return list of Leaderboard object
@@ -35,13 +35,16 @@ public class LeaderboardDao
 
         string query = String.Format("SELECT s.StudentName , c.CharName ,SUM(LevelScore) AS TotalScore " +
             "FROM StudentScore ss INNER JOIN Student s ON ss.StudentId = s.StudentId " +
-            "INNER JOIN `Characters` c ON c.CharId  = s.CharId  WHERE ss.WorldId = {0}" +
+            "INNER JOIN `Characters` c ON c.CharId  = s.CharId  WHERE ss.WorldId = {0} " +
             "GROUP BY ss.StudentId ORDER BY TotalScore DESC", worldId);
-        
+
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
         {
             leaderboardList = conn.Query<Leaderboard>(query).ToList();
         }
         return leaderboardList;
+
+
+
     }
 }

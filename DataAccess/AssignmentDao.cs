@@ -40,6 +40,15 @@ public class AssignmentDao
         }
         return assignmentDict[assignmentId];
     }
+    public List<Assignment> GetAssignments(){
+        string query = "SELECT * FROM Assignment";
+        List<Assignment> assignments;
+        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
+        {
+            assignments = conn.Query<Assignment>(query).ToList();
+        }
+        return assignments;
+    }
     /// <summary>
     /// Return int value 1 if InsertAssignment has executed successfully
     /// </summary>

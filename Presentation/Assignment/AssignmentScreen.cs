@@ -15,7 +15,7 @@ public class AssignmentScreen : Node2D
 		Global.WorldId = 1;
 		Global.SectionId = 1;
 		Global.LevelId = 1;
-		Global.StudentId = 1;
+		Global.StudentId = "1";
 		
 
 		assignmentBL = new AssignmentBL();

@@ -2,7 +2,7 @@ using System;
 
 public class CustomLevelScoreDao
 {
-    public int InsertCustomLevelScore(int studentId, int customLevelId, int levelScore)
+    public int InsertCustomLevelScore(string studentId, int customLevelId, int levelScore)
     {
         BaseDao<Object> baseDao = new BaseDao<Object>();
         string query = "INSERT INTO CustomLevelScore (StudentId , CustomLevelId ,LevelScore) " +

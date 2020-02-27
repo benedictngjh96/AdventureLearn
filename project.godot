@@ -20,7 +20,7 @@ modules="org/godotengine/godot/PlayGames,org/godotengine/godot/GodotFacebook"
 [application]
 
 config/name="AdventureLearn"
-run/main_scene="res://Presentation/Login/Login.tscn"
+run/main_scene="res://Presentation/Leaderboard/Leaderboard.tscn"
 config/icon="res://icon.png"
 
 [display]
@@ -32,6 +32,10 @@ window/size/test_height=1080
 window/dpi/allow_hidpi=true
 window/handheld/orientation="portrait"
 window/stretch/mode="2d"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "GDCharts" )
 
 [mono]
 

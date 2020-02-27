@@ -1,5 +1,5 @@
 #Internal package file, do not edit.
-#Tue Feb 25 19:08:49 SGT 2020
+#Tue Feb 25 21:10:47 SGT 2020
 5.base=D\:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\transforms\\stripDebugSymbol\\release\\0
 42.base=D\:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
 22.path=lib/armeabi-v7a/libc++_shared.so
