@@ -11,7 +11,7 @@ public class CharacterDao
 	/// </summary>
 	/// <param name="studentId"></param>
 	/// <returns></returns>
-	public Character GetCharacter(string studentId)
+	public Character GetCharacter(int studentId)
 	{
 		BaseDao<Character> baseDao = new BaseDao<Character>();
 		string query = String.Format("SELECT c.CharId, c.CharName, c.CharSkill FROM Student s "

@@ -7,19 +7,18 @@ public class CustomLevelScreen : Node2D
     GamePlay gamePlay;
     CustomLevelBL customLevelBL;
     CustomLevel customLevel;
-
+    CharacterBL characterBL;
+    Character character;
     public override void _Ready()
     {
         //REMOVE 
-        Global.AssignmentId = 1;
-        Global.WorldId = 1;
-        Global.SectionId = 1;
-        Global.LevelId = 1;
-        Global.StudentId = "1";
-        Global.CustomLevelId = 1;
-
+        Global.StudentId = 1;
+        Godot.GD.Print(Global.CustomLevelId);
         customLevelBL = new CustomLevelBL();
+        characterBL = new CharacterBL();
         customLevel = customLevelBL.GetCustomLevel(Global.CustomLevelId);
+        character = characterBL.GetCharacter(Global.StudentId);
+
         //Child node instance
         var gamePlayScene = ResourceLoader.Load("res://Presentation/GamePlay/GamePlay.tscn") as PackedScene;
         gamePlay = gamePlayScene?.Instance() as GamePlay;
@@ -27,6 +26,7 @@ public class CustomLevelScreen : Node2D
         gamePlay.Connect("NoMoreQuestions", this, nameof(InsertCustomLevelScore));
 
         SetSpritesPath();
+        gamePlay.SetCharacter(character);
         gamePlay.SetQuestionList(customLevel.Question);
         gamePlay.SetTimeLimit(customLevel.TimeLimit);
         gamePlay.SetLevelTitle(customLevel.CustomLevelName);
@@ -43,6 +43,6 @@ public class CustomLevelScreen : Node2D
     private void InsertCustomLevelScore()
     {
         CustomLevelScoreBL customLevelScoreBL = new CustomLevelScoreBL();
-        customLevelScoreBL.InsertCustomLevelScore(Global.StudentId, Global.AssignmentId, gamePlay.GetTimeLeft(), customLevel.TimeLimit);
+        customLevelScoreBL.InsertCustomLevelScore(Global.StudentId, Global.CustomLevelId, gamePlay.GetTimeLeft(), customLevel.TimeLimit);
     }
 }

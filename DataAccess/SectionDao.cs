@@ -71,7 +71,7 @@ public class SectionDao
     /// <param name="sectionId"></param>
     /// <param name="studentId"></param>
     /// <returns></returns>
-    public int CheckSectionCleared(int worldId, int sectionId, string studentId)
+    public int CheckSectionCleared(int worldId, int sectionId, int studentId)
     {
         string query = String.Format("SELECT LevelId FROM ( SELECT l.LevelId FROM Level l WHERE l.WorldId = {0} AND l.SectionId = {1} UNION ALL " +
             "SELECT ss.LevelId FROM StudentScore ss WHERE ss.WorldId = {0} AND ss.SectionId = {1} AND ss.StudentId = {2}) tbl " +

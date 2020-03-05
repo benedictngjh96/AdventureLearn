@@ -142,9 +142,7 @@ public class PlayGames extends Godot.SingletonBase {
 
     private void signInSilently() {
 		/*if (mAccount != null) { return; }
-
 		GoogleSignInClient signInClient = GoogleSignIn.getClient(activity, GoogleSignInOptions.DEFAULT_GAMES_SIGN_IN);
-
 		signInClient.silentSignIn().addOnCompleteListener(activity, new OnCompleteListener<GoogleSignInAccount>() {
 			@Override
 			public void onComplete(Task<GoogleSignInAccount> task) {

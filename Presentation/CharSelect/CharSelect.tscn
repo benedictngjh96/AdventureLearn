@@ -1,10 +1,10 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Presentation/CharSelect/CharSelect.cs" type="Script" id=2]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=3]
-[ext_resource path="res://CharSprites/Knight2/Head/3_head_.png" type="Texture" id=4]
-[ext_resource path="res://CharSprites/Knight1/Head/2_head_.png" type="Texture" id=5]
+[ext_resource path="res://CharSprites/Knight2/Head/head.png" type="Texture" id=4]
+[ext_resource path="res://CharSprites/Knight1/Head/head.png" type="Texture" id=5]
 [ext_resource path="res://CharSprites/Knight1/Idle/_IDLE_005.png" type="Texture" id=6]
 [ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_004.png" type="Texture" id=7]
 [ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_001.png" type="Texture" id=8]
@@ -37,14 +37,13 @@ animations = [ {
 size = 64
 font_data = ExtResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
-size = 32
-font_data = ExtResource( 3 )
-
 [node name="CharSelect" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Char" type="Node" parent="."]
+[node name="Char" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Knight1" type="TextureButton" parent="Char"]
 margin_left = 37.4182
@@ -73,7 +72,6 @@ position = Vector2( 360.79, 649.821 )
 scale = Vector2( 0.234724, 0.255487 )
 frames = SubResource( 1 )
 animation = "Knight2"
-frame = 5
 playing = true
 
 [node name="SkillDescription" type="Label" parent="Char"]
@@ -82,47 +80,6 @@ margin_top = 780.789
 margin_right = 605.972
 margin_bottom = 937.789
 custom_fonts/font = SubResource( 2 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="InGameName" type="Control" parent="."]
-margin_left = 82.3221
-margin_top = 76.8019
-margin_right = 122.322
-margin_bottom = 116.802
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="NameLine" type="LineEdit" parent="InGameName"]
-margin_left = 225.95
-margin_top = 335.198
-margin_right = 354.95
-margin_bottom = 365.198
-max_length = 15
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Name" type="Label" parent="InGameName"]
-margin_left = 130.06
-margin_top = 327.452
-margin_right = 217.06
-margin_bottom = 370.452
-custom_fonts/font = SubResource( 3 )
-text = "Name:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="ErrorLabel" type="Label" parent="InGameName"]
-margin_left = -63.2558
-margin_top = 368.98
-margin_right = 551.744
-margin_bottom = 411.98
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0.858824, 0.239216, 0.239216, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

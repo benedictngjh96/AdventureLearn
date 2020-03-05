@@ -12,7 +12,7 @@ public class StudentScoreDao
     /// <param name="sectionId"></param>
     /// <param name="studentId"></param>
     /// <returns></returns>
-    public Student GetStudentScores(int worldId, int sectionId, string studentId)
+    public Student GetStudentScores(int worldId, int sectionId, int studentId)
     {
         string query = String.Format("SELECT s.StudentId, ss.WorldId , ss.SectionId , ss.LevelId , " +
         "ss.LevelScore FROM Student s INNER JOIN StudentScore  ss ON s.StudentId  = ss.StudentId WHERE ss.WorldId = {0} AND " +
@@ -91,6 +91,16 @@ public class StudentScoreDao
         }
         return studentScores;
     }
+    public StudentScore GetAvgWorldScores(int studentId)
+    {
+        string query = String.Format("SELECT AVG(LevelScore) AS LevelScore , WorldId FROM StudentScore ss WHERE ss.StudentId = {0} GROUP BY ss.WorldId", studentId);
+        List<StudentScore> studentScores;
+        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
+        {
+            studentScores = conn.Query<StudentScore>(query).ToList();
+        }
+        return studentScores[0];
+    }
     /// <summary>
     /// Return int result 1 if InsertStudentScore has executed successfully
     /// </summary>
@@ -100,7 +110,7 @@ public class StudentScoreDao
     /// <param name="levelId"></param>
     /// <param name="levelScore"></param>
     /// <returns></returns>
-    public int InsertStudentScore(string studentId, int worldId, int sectionId, int levelId, int levelScore)
+    public int InsertStudentScore(int studentId, int worldId, int sectionId, int levelId, int levelScore)
     {
         BaseDao<int> baseDao = new BaseDao<int>();
         string query = String.Format("INSERT INTO StudentScore (StudentId, WorldId, SectionId, LevelId, LevelScore) " +

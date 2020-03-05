@@ -178,7 +178,7 @@ func initialize(show_label, points_color = {}, animation_duration = 1.0):
     }
 
 func set_labels(show_label):
-  current_show_label = show_label
+  current_show_label = 7
 
   # Reset values
   min_y = 0.0
@@ -363,7 +363,7 @@ func draw_line_chart():
 
   if current_show_label & LABELS_TO_SHOW.Y_LABEL:
     var ordinate_values = compute_ordinate_values(max_value, min_value)
-    var array = [10,20,30,40,50,60,70,80,90,100]
+    var array = [20,40,60,80,100]
     for ordinate_value in array:
       var label = format(ordinate_value)
       var position = Vector2(max(0, 6.0 -label.length()) * 9.5, min_y + max_y - compute_y(ordinate_value))

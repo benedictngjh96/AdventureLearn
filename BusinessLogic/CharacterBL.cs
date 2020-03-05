@@ -8,7 +8,7 @@ public class CharacterBL
     /// </summary>
     /// <param name="studentId"></param>
     /// <returns></returns>
-    public Character GetCharacter(string studentId)
+    public Character GetCharacter(int studentId)
     {
         CharacterDao characterDao = new CharacterDao();
         return characterDao.GetCharacter(studentId);

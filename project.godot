@@ -20,7 +20,7 @@ modules="org/godotengine/godot/PlayGames,org/godotengine/godot/GodotFacebook"
 [application]
 
 config/name="AdventureLearn"
-run/main_scene="res://Presentation/Leaderboard/Leaderboard.tscn"
+run/main_scene="res://Presentation/Login/Login.tscn"
 config/icon="res://icon.png"
 
 [display]

@@ -13,5 +13,9 @@ public class AssignmentBL
 		AssignmentDao assignmentDao = new AssignmentDao();
 		return assignmentDao.GetAssignment(assignmentId);
 	}
+	public List<PublishedAssignment> GetStudentAssignment(int studentId){
+		AssignmentDao assignmentDao = new AssignmentDao();
+		return assignmentDao.GetStudentAssignment(studentId);
+	}
 
 }

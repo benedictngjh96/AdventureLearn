@@ -1,6 +1,6 @@
 using Godot;
 using System;
-
+using System.Collections.Generic;
 public class AssignmentScoreBL : Node
 {
     /// <summary>
@@ -11,9 +11,15 @@ public class AssignmentScoreBL : Node
     /// <param name="timeRemaining"></param>
     /// <param name="timeLimit"></param>
     /// <returns></returns>
-    public int InsertAssignmentScore(string studentId, int assignmentId, int timeRemaining, int timeLimit)
+    public int InsertAssignmentScore(int studentId, int assignmentId, int timeRemaining, int timeLimit)
     {
         AssignmentScoreDao assignmentScoreDao = new AssignmentScoreDao();
         return assignmentScoreDao.InsertAssignmentScore(studentId, assignmentId, Global.CalculateScore(timeRemaining,timeLimit));
+    }
+    public List<AssignmentScore> GetStudentCompletedAssignment(int studentId){
+        AssignmentScoreDao assignmentScoreDao = new AssignmentScoreDao();
+        List<AssignmentScore> assignmentList = assignmentScoreDao.GetStudentCompletedAssignment(studentId);
+        GD.Print(assignmentList.Count);
+        return assignmentList;
     }
 }

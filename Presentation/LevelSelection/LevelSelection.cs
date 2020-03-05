@@ -38,11 +38,6 @@ public class LevelSelection : Node2D
         level4 = GetNode<TextureButton>("Levels/Level4");
         level5 = GetNode<TextureButton>("Levels/Level5");
         level6 = GetNode<TextureButton>("Levels/Level6");
-        //REMOVE
-        Global.WorldId = 1;
-        Global.StudentId = "1";
-        Global.SectionId = 1;
-        
 
         //On load set section id to 1 to display section 1
         Global.SectionId = 1;

@@ -33,7 +33,7 @@ margin_left = 30.0
 margin_top = 300.0
 margin_right = 296.0
 margin_bottom = 420.0
-text = "Select World"
+text = "World"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -53,28 +53,43 @@ margin_left = 32.2721
 margin_top = 488.582
 margin_right = 298.272
 margin_bottom = 608.582
-text = "View Challenges"
+text = "Custom Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AssigentBtn" type="Button" parent="Btns"]
-margin_left = 35.8821
-margin_top = 660.959
-margin_right = 301.882
-margin_bottom = 780.959
-text = "View LeaderBoards"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="LeaderboardsBtn" type="Button" parent="Btns"]
+[node name="AssignmentBtn" type="Button" parent="Btns"]
 margin_left = 370.811
 margin_top = 485.407
 margin_right = 636.811
 margin_bottom = 605.407
-text = "View Assignment"
+text = "Assignment"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeaderboardBtn" type="Button" parent="Btns"]
+margin_left = 35.8821
+margin_top = 660.959
+margin_right = 301.882
+margin_bottom = 780.959
+text = "Leaderboard"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UserProfileBtn" type="Button" parent="Btns"]
+margin_left = 373.396
+margin_top = 659.874
+margin_right = 639.396
+margin_bottom = 779.874
+text = "User Profile"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="pressed" from="Btns/WorldBtn" to="." method="_on_WorldBtn_pressed"]
+[connection signal="pressed" from="Btns/LvlBtn" to="." method="_on_LvlBtn_pressed"]
+[connection signal="pressed" from="Btns/ChallengeBtn" to="." method="_on_ChallengeBtn_pressed"]
+[connection signal="pressed" from="Btns/AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]
+[connection signal="pressed" from="Btns/LeaderboardBtn" to="." method="_on_LeaderboardBtn_pressed"]
+[connection signal="pressed" from="Btns/UserProfileBtn" to="." method="_on_UserProfileBtn_pressed"]

@@ -40,7 +40,8 @@ public class AssignmentDao
         }
         return assignmentDict[assignmentId];
     }
-    public List<Assignment> GetAssignments(){
+    public List<Assignment> GetAssignments()
+    {
         string query = "SELECT * FROM Assignment";
         List<Assignment> assignments;
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
@@ -48,6 +49,32 @@ public class AssignmentDao
             assignments = conn.Query<Assignment>(query).ToList();
         }
         return assignments;
+    }
+    public List<PublishedAssignment> GetStudentAssignment(int studentId)
+    {
+        string query = String.Format("SELECT DueDate, AssignmentId , AssignmentName , ClassId, TeacherId ,TeacherName " +
+        "FROM Assignment NATURAL JOIN Teacher NATURAL JOIN PublishedAssignment NATURAL JOIN BelongClass " +
+        "WHERE StudentId  = {0} ORDER BY DueDate DESC", studentId);
+        int count =0;
+        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
+        {
+            var lookup = new Dictionary<int, PublishedAssignment>();
+            conn.Query<PublishedAssignment, Assignment, Teacher, PublishedAssignment>(query, (pa, a, t) =>
+            {
+                PublishedAssignment assignment;
+                if (!lookup.TryGetValue(count, out assignment))
+                {
+                    lookup.Add(count, assignment = pa);
+                }
+                assignment.Assignment = a;
+                assignment.Assignment.Teacher = t;
+                count++;
+                return assignment;
+            }, splitOn: "AssignmentId, TeacherId").AsQueryable();
+            List<PublishedAssignment> assignmentList = new List<PublishedAssignment>();
+            assignmentList.AddRange(lookup.Values);
+            return assignmentList;
+        }
     }
     /// <summary>
     /// Return int value 1 if InsertAssignment has executed successfully

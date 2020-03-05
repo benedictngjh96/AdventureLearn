@@ -35,7 +35,7 @@ public class SectionBL
     /// <param name="sectionId"></param>
     /// <param name="studentId"></param>
     /// <returns></returns>
-    public int CheckSectionCleared(int worldId, int sectionId, string studentId)
+    public int CheckSectionCleared(int worldId, int sectionId, int studentId)
     {
         SectionDao sectionDao = new SectionDao();
         int result = sectionDao.CheckSectionCleared(worldId, sectionId-1, studentId);

@@ -22,14 +22,9 @@ public class CharSelect : Node2D
         characterBL = new CharacterBL();
 
         characterList = characterBL.GetAllCharacters();
-        
-        /*
-        //Redirect user if has existing account
-        if (studentBL.CheckStudentExist(Global.StudentId))
-        {
-            GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
-        }
-        */
+        Godot.GD.Print(Global.StudentId);
+       
+  
     }
 
     private void _on_Knight1_pressed()
@@ -55,36 +50,9 @@ public class CharSelect : Node2D
   
     private void _on_EnterBtn_pressed()
     {
-        LineEdit nameLine = GetNode<LineEdit>("InGameName/NameLine");
-        Label errorLbl = GetNode<Label>("InGameName/ErrorLabel");
-        string ign = nameLine.Text;
-        HashSalt hashSalt = HashSaltGen.GenerateSaltedHash(64, "kappa123");
         StudentBL studentBL = new StudentBL();
-        //studentBL.InsertStudent("da", 1, "da@gmail.com", "dada", "kappa123", hashSalt.Hash, hashSalt.Salt);
-        StudentDao studentDao = new StudentDao();
-        Student student = studentDao.GetStudent();
-        bool isPasswordMatched = HashSaltGen.VerifyPassword("kappa123", student.Hash, student.Salt);
-        GD.Print(isPasswordMatched);
-        /*
-        //Validation
-        if (string.IsNullOrEmpty(ign))
-        {
-            errorLbl.Text = "Please enter ur in game name.";
-        }
-    
-        else
-        {
-            //Redirect user to mainmenu if user record is successfully inserted
-            //int result = studentBL.InsertStudent(Global.studentId, Global.studentName, ign, charId);
-            /*
-            if(result != 0)
-            {
-                GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
-            }
-            
-        }
-    */
-
+        studentBL.UpdateStudentCharacter(charId, Global.StudentId);
+        GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
     }
 
 }

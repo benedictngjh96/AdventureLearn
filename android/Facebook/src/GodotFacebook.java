@@ -50,6 +50,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.widget.ShareDialog;
+import static java.util.Arrays.*;
+
+
+
 public class GodotFacebook extends Godot.SingletonBase {
 
     private Godot activity = null;
@@ -59,7 +63,9 @@ public class GodotFacebook extends Godot.SingletonBase {
     private AppEventsLogger fbLogger;
     private static long totalExternalStorageGB;
     private static long availableExternalStorageGB;
-
+	private static String fbEmail = "";
+	private static String[] fbProfile= new String[10];
+	
     static public Godot.SingletonBase initialize(Activity p_activity) 
     { 
         return new GodotFacebook(p_activity); 
@@ -85,6 +91,9 @@ public class GodotFacebook extends Godot.SingletonBase {
                 "advertising_id",
 				"getId",
 				"getName",
+				"getFbInfo",
+				"getEmail",
+				"getArray",
                 "extinfo"
             });
         activity = (Godot)p_activity;
@@ -133,8 +142,10 @@ public class GodotFacebook extends Godot.SingletonBase {
                     LoginManager.getInstance().registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
                             @Override
                             public void onSuccess(LoginResult loginResult) {
+								Log.d("godot", "dadda: ");
                                 AccessToken at = loginResult.getAccessToken();
-                                GodotLib.calldeferred(facebookCallbackId, "login_success", new Object[]{at.getToken()});
+								getFbInfo();
+                                GodotLib.calldeferred(facebookCallbackId, "login_success", new Object[]{});
                             }
 
                             @Override
@@ -156,8 +167,63 @@ public class GodotFacebook extends Godot.SingletonBase {
             }
         });
     }
-	
+	private String[] getArray()
+	{
+		return fbProfile;
+	}
+	private void getFbInfo() {
+		GraphRequest request = GraphRequest.newMeRequest(
+				AccessToken.getCurrentAccessToken(),
+				new GraphRequest.GraphJSONObjectCallback() {
+					@Override
+					public void onCompleted(
+							JSONObject object,
+							GraphResponse response) {
+						
+						try {
+							String[] cars = {object.getString("id"), object.getString("email"), object.getString("first_name")+ " " + object.getString("last_name")};
 
+							fbEmail = object.getString("id");
+							Log.d("godot", "fb emalemial: " + fbEmail);
+							Log.d("godot", "fb json object: " + object);
+							Log.d("godot", "fb graph response: " + response);
+							GodotLib.calldeferred(facebookCallbackId, "get_dada", new Object[]{cars});
+
+							String id = object.getString("id");
+							String first_name = object.getString("first_name");
+							String last_name = object.getString("last_name");
+							String gender = object.getString("gender");
+							String birthday = object.getString("birthday");
+							String image_url = "http://graph.facebook.com/" + id + "/picture?type=large";
+							//GodotLib.calldeferred(facebookCallbackId, "get_dada", new Object[]{id});
+							//GodotLib.calldeferred(facebookCallbackId, "get_dada", new Object[]{fbEmail});
+
+							String email;
+							Log.d("godot", "fb emalemial: " + fbEmail);
+							if (object.has("email")) {
+								email = object.getString("email");
+								fbProfile[0] = id;
+								fbProfile[1] = first_name + " " + last_name;
+								fbProfile[2] = email;
+								fbEmail = email;
+								Log.d("godot", "fb emalemial: " + fbEmail);
+							}
+							
+
+						} catch (JSONException e) {
+							//e.printStackTrace();
+						}
+					}
+				});
+		Bundle parameters = new Bundle();
+		parameters.putString("fields", "id,first_name,last_name,email,gender,birthday"); // id,first_name,last_name,email,gender,birthday,cover,picture.type(large)
+		request.setParameters(parameters);
+		request.executeAsync();
+		
+	}
+	public String getEmail(){
+		return fbEmail;
+	}
     public void setFacebookCallbackId(int facebookCallbackId) {
 		this.facebookCallbackId = facebookCallbackId;
 	}
@@ -200,11 +266,14 @@ public class GodotFacebook extends Godot.SingletonBase {
 	}
     public void login() {
         Log.i("godot", "Facebook login");
+		String[] strArray1 = new String[] {"A","B","C"};
+
         AccessToken accessToken = AccessToken.getCurrentAccessToken();
         if(accessToken != null && !accessToken.isExpired()) {
-            GodotLib.calldeferred(facebookCallbackId, "login_success", new Object[]{accessToken.getToken()});
+            GodotLib.calldeferred(facebookCallbackId, "login_success", new Object[]{"Error"});
         } else {
-            LoginManager.getInstance().logInWithReadPermissions(activity, Arrays.asList("public_profile"));
+            LoginManager.getInstance().logInWithReadPermissions(activity, 
+            Arrays.asList("public_profile", "email", "user_gender", "user_birthday", "user_friends"));
         }
     }
     public void logout()

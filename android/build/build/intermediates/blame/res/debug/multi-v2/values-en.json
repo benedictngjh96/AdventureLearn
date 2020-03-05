@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
+            "outputFile": "D:\\AdventureLearn\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en\\values-en.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\6b1934f5c4c214eb33b6e4021c369480\\res\\values-en\\values-en.xml",
+                    "source": "C:\\Users\\slay_\\.gradle\\caches\\transforms-2\\files-2.1\\b750f82fb953137474b1df945d5fc967\\res\\values-en\\values-en.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

@@ -7,7 +7,12 @@ onready var worldOption = get_node("TabContainer/Campaign/menu/world")
 onready var sectionOption = get_node("TabContainer/Campaign/menu/section")
 onready var studentOption = get_node("student")
 onready var assignmentOption = get_node("TabContainer/Assignment/assignment")
-
+onready var nameLbl = get_node("TabContainer/Assignment/Name")
+onready var studentNumLbl = get_node("TabContainer/Assignment/StudentNum")
+onready var maxScore = get_node("TabContainer/Assignment/Max")
+onready var minScore = get_node("TabContainer/Assignment/Min")
+onready var avgScore = get_node("TabContainer/Assignment/Avg")
+onready var title = get_node("TabContainer/Campaign/menu/Title")
 var assignment_list = statsBL.GetAssignments()
 var world_list = statsBL.GetWorldSections()
 var section_list;
@@ -48,7 +53,7 @@ func pie_chart():
   })
 func load_chart():
     chart_node.clear_chart()
-    chart_node.initialize(chart_node.LABELS_TO_SHOW.NO_LABEL,
+    chart_node.initialize(chart_node.LABELS_TO_SHOW.LEGEND_LABEL,
     {
         score = Color(0.58, 0.92, 0.07)
     })
@@ -100,7 +105,7 @@ func _on_AvgSectionBtn_pressed():
                }
            })
           count= count+1              
-    
+    title.text = worldOption.text + " " + sectionOption.text
     
 
     
@@ -117,7 +122,7 @@ func _on_AvgWorldBtn_pressed():
                }
            })
           count= count+1     
-    
+    title.text = worldOption.text
 func _on_world_item_selected(id):
     sectionOption.clear()
     w = id
@@ -129,7 +134,11 @@ func _on_AssignmentBtn_pressed():
     var count = 1
     load_chart()
     set_assignment()
+ 
     var avgScores = statsBL.GetAvgAssignmentScore()
+    var maxS = statsBL.GetMaxAssignmentScore(assignmentId)
+    var minS = statsBL.GetMinAssignmentScore(assignmentId)
+    var avgS = statsBL.GetAvgAssignmentScore(assignmentId)
     if avgScores != null:
         for item in avgScores: 
           chart_node.create_new_point({
@@ -139,13 +148,16 @@ func _on_AssignmentBtn_pressed():
                }
            })
           count= count+1    
-
+    nameLbl.text = assignmentOption.text
+    studentNumLbl.text = "Number of students:" + str(count)
+    maxScore.text = "HighestScore:" +str(maxS.Score)
+    minScore.text = "LowestScore:" +str(minS.Score)
+    avgScore.text = "AverageScore:" +str(avgS.Score)
 
 func _on_StudentAssignmentBtn_pressed():
     var count = 1
     load_chart()
     set_student()
-  
     var student_scores = statsBL.GetStudentAssignmentScores(studentId)
     if student_scores != null:
       for item in student_scores:

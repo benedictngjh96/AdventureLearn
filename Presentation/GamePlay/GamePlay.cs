@@ -8,6 +8,9 @@ public class GamePlay : Node2D
     List<Question> questionList;
     AnimatedSprite charSprite;
     AnimatedSprite monsterSprite;
+    AnimatedSprite charSkillSprite;
+    AnimatedSprite monsterSkillSprite;
+    Character character;
     Question question;
     Label timerLabel;
     Label questionLabel;
@@ -18,10 +21,11 @@ public class GamePlay : Node2D
     Button option4;
 
     int questionIndex = 0;
+    int correctAnsIndex = 0;
     string spritePath = "res://CharSprites/";
     int timeLimit = 0;
-    int s =0;
-
+    int s = 0;
+    bool shieldOn = false;
 
     public override void _Ready()
     {
@@ -29,6 +33,8 @@ public class GamePlay : Node2D
 
         charSprite = GetNode<AnimatedSprite>("CharSprite");
         monsterSprite = GetNode<AnimatedSprite>("MonsterSprite");
+        charSkillSprite = GetNode<AnimatedSprite>("CharSprite/CharSkillSprite");
+        monsterSkillSprite = GetNode<AnimatedSprite>("MonsterSprite/MonsterSkillSprite");
         timerLabel = GetNode<Label>("TimerLabel");
         questionLabel = GetNode<Label>("QuestionLabel");
         levelTitle = GetNode<Label>("LevelTitle");
@@ -84,57 +90,38 @@ public class GamePlay : Node2D
         //Shuffle options
         foreach (Node n in controlParentNode.GetChildren())
         {
-            if(n is Button)
+            if (n is Button)
             {
                 Button optionButton = n as Button;
                 int rng = r.Next(optionList.Count);
 
                 optionButton.Text = optionList[rng];
+                if (optionList[rng] == question.CorrectOption)
+                    correctAnsIndex = rng;
+
                 optionList.RemoveAt(rng);
             }
         }
     }
 
-    public void LoadSprite(string spritePath, AnimatedSprite animatedSprite)
-    {
-        SpriteFrames spriteFrames = new SpriteFrames();
-        foreach (string animation in animationList)
-        {
-            var dir = new Directory();
-            dir.Open(spritePath+animation);
-
-            dir.ListDirBegin();
-            var fileName = dir.GetNext();
-            string strFileExtention = System.IO.Path.GetExtension(fileName);
-            spriteFrames.AddAnimation(animation);
-            int count = 0;
-
-            while (!String.IsNullOrEmpty(fileName))
-            {
-                fileName = fileName.Replace(strFileExtention, "");
-                var sprite = ResourceLoader.Load(spritePath + animation+"/"+fileName) as Texture;
-                spriteFrames.AddFrame(animation, sprite);
-                fileName = dir.GetNext();
-                count++;
-            }
-            animatedSprite.Frames = spriteFrames;
-            animatedSprite.SpeedScale = 2;
-        }
-        animatedSprite.Play("Idle");
-    }
     public void DisplayCharSprite(Character character)
     {
         string charPath = String.Format(spritePath + "{0}/", character.CharName);
-        LoadSprite(charPath, charSprite);
+        Global.LoadSprite(charPath, charSprite, animationList);
     }
     public void DisplayMonsterSprite(Monster monster)
     {
         string monsterPath = String.Format(spritePath + "{0}/", monster.MonsterName);
-        LoadSprite(monsterPath, monsterSprite);
+        Global.LoadSprite(monsterPath, monsterSprite, animationList);
     }
     public void DisplayNextQuestion()
     {
-        if (questionIndex < questionList.Count-1)
+        Control ctr = GetNode<Control>("Buttons");
+        foreach (Node btn in ctr.GetChildren())
+        {
+            (btn as Button).Disabled = false;
+        }
+        if (questionIndex < questionList.Count - 1)
         {
             questionIndex++;
             DisplayQuestion();
@@ -148,22 +135,35 @@ public class GamePlay : Node2D
     }
     public void CheckCorrectAnswer(string option)
     {
+        Random r = new Random();
+        int random = r.Next(1, 4);
         if (option == question.CorrectOption)
         {
             charSprite.Play("Attack");
             monsterSprite.Play("Hurt");
+            monsterSkillSprite.Play(String.Format("Explosion{0}", random));
             DisplayNextQuestion();
         }
         else
         {
             monsterSprite.Play("Attack");
-            charSprite.Play("Hurt");
-            s -= 10;
+            charSkillSprite.Play(String.Format("Explosion{0}", random));
+            if (!shieldOn)
+            {
+                charSprite.Play("Hurt");
+                s -= 10;
+            }
+            else
+                shieldOn = false;
         }
     }
     public int GetTimeLeft()
     {
         return s;
+    }
+    public void SetCharacter(Character character)
+    {
+        this.character = character;
     }
     private void _on_Option1_pressed()
     {
@@ -200,7 +200,71 @@ public class GamePlay : Node2D
     {
         s -= 1;
     }
+
+    private void _on_CharSkillSprite_animation_finished()
+    {
+        if (!(charSkillSprite.Animation == "Shield"))
+            charSkillSprite.Play("Default");
+    }
+    private void _on_MonsterSkillSprite_animation_finished()
+    {
+        monsterSkillSprite.Play("Default");
+    }
+
+    private void _on_SkillBtn_pressed()
+    {
+        switch (character.CharSkill)
+        {
+            case "Shield":
+                charSkillSprite.Play("Shield");
+                shieldOn = true;
+                break;
+            case "Remove Option":
+                Random r = new Random();
+                int random;
+                do
+                {
+                    random = r.Next(1, 5);
+                } while (random == correctAnsIndex);
+                AnimatedSprite effect = GetNode<AnimatedSprite>(String.Format("Buttons/Option{0}/Effect{0}", random));
+                effect.Play("Explosion");
+                string option = String.Format("Buttons/Option{0}", random);
+                Button btn = GetNode<Button>(option);
+                btn.Disabled = true;
+                break;
+        }
+        Button skillBtn = GetNode<Button>("SkillBtn");
+        skillBtn.Disabled = true;
+    }
+    private void _on_Effect1_animation_finished()
+    {
+        AnimatedSprite effect = GetNode<AnimatedSprite>("Buttons/Option1/Effect1");
+        effect.Play("Default");
+    }
+
+
+    private void _on_Effect3_animation_finished()
+    {
+        AnimatedSprite effect = GetNode<AnimatedSprite>("Buttons/Option3/Effect3");
+        effect.Play("Default");
+    }
+
+
+    private void _on_Effect2_animation_finished()
+    {
+        AnimatedSprite effect = GetNode<AnimatedSprite>("Buttons/Option2/Effect2");
+        effect.Play("Default");
+    }
+
+
+    private void _on_Effect4_animation_finished()
+    {
+        AnimatedSprite effect = GetNode<AnimatedSprite>("Buttons/Option4/Effect4");
+        effect.Play("Default");
+    }
 }
+
+
 
 
 

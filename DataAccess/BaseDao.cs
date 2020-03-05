@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 using System.Net;
 using Dapper;
 
-public class BaseDao <T>
+public class BaseDao<T>
 {
     /// <summary>
     /// Generic method to return int result 1 if successful for execute sql query
@@ -19,7 +19,16 @@ public class BaseDao <T>
         int result = 0;
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
         {
-            result =conn.Execute(query, obj);
+            result = conn.Execute(query, obj);
+        }
+        return result;
+    }
+    public int ExecuteQuery(string query)
+    {
+        int result = 0;
+        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
+        {
+            result = conn.Execute(query);
         }
         return result;
     }
@@ -46,7 +55,7 @@ public class BaseDao <T>
     public T ExecuteScalar(string query, Object obj)
     {
         T result;
-        
+
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
         {
             result = conn.ExecuteScalar<T>(query, obj);

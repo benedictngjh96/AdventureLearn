@@ -1,44 +1,49 @@
 extends Node
-var google = load("res://BusinessLogic/Google.gd").new()
-var facebook= load("res://BusinessLogic/Facebook.gd").new()
-#var login = load("res://BusinessLogic/LoginBL.cs").new()
+var google = load("res://API/Google.gd").new()
+var facebook= load("res://API/Facebook.gd").new()
+var student = load("res://BusinessLogic/StudentBL.cs")
+var studentBL = student.new()
 var global = preload("res://Global/Global.cs");
+var email
+var googleId
+var fbId
 
 func _ready():
     facebook.facebook_connect()
-    #facebook.logout()
-    #if facebook.isLoggedIn():
-    #	facebook.logout()
-
+    facebook.connect("info", self, "insert_fb")
+    
+    #google.google_disconnect()    
+    var exist = facebook.isLoggedIn()
+    if exist:
+        facebook.logout()
 
 func _on_LoginBtn_pressed():
     google.google_connect()
-    global.SetGoogleId(google.get_id())
-    global.SetStudentName(google.get_name())
-    printNmae()
-    #login.InsertUser()
-    #google.achievement_unlock("CgkInLbspe0YEAIQAw")
-    #google.achievement_show()
-    #print(google.get_id())
-    #print(google.get_name())
-    #print(fb.getCurrentProfile())
-    #print(fb.isLoggedIn())
-    #print(fb.isLoggedIn())
-    #get_tree().change_scene("res://Presentation/LevelSelection/LevelSelection.tscn")
+    var exist = studentBL.CheckGoogleExist(google.get_id())
+    if exist:
+        global.SetStudentId(studentBL.GetGoogleStudentId(google.get_id()))
+        if studentBL.CheckGoogleCharExist(google.get_id()):
+            get_tree().change_scene("res://Presentation/MainMenu/MainMenu.tscn")
+        else:
+            get_tree().change_scene("res://Presentation/CharSelect/CharSelect.tscn")
+    else:
+        studentBL.InsertGoogleStudent(google.get_name(), google.get_email(), google.get_id())
+        global.SetStudentId(studentBL.GetGoogleStudentId(google.get_id()))
+        get_tree().change_scene("res://Presentation/CharSelect/CharSelect.tscn")
 
-
-func printNmae():
-    print(facebook.getName())
-    print(facebook.getId())
-    get_node("Label").text = facebook.getName()
-    
-func _on_Button_pressed():
+func insert_fb():
+    email = facebook.getEmail()
+    var exist = studentBL.CheckFacebookExist(facebook.getId())
+    if exist:
+        global.SetStudentId(studentBL.GetFacebookStudentId(facebook.getId()))
+        if studentBL.CheckFacebookCharExist(facebook.getId()):
+            get_tree().change_scene("res://Presentation/MainMenu/MainMenu.tscn")
+        else:
+            get_tree().change_scene("res://Presentation/CharSelect/CharSelect.tscn")
+    else:
+        studentBL.InsertFacebookStudent(facebook.getName(), email, facebook.getId())
+        global.SetStudentId(studentBL.GetFacebookStudentId(facebook.getId()))
+        get_tree().change_scene("res://Presentation/CharSelect/CharSelect.tscn")
+        
+func _on_FbLogin_pressed():
     facebook.login()
-    printNmae()
-    #print("da")
-    #emit_signal("fb")
-    #printNmae()
-
-
-func _on_Button2_pressed():
-    printNmae()

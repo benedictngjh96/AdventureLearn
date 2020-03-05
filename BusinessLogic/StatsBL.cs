@@ -13,11 +13,13 @@ public class StatsBL: Node
         return sectionDao.GetWorldSections(worldId);
 
     }
-    public static List<Student> GetStudents(){
+    public List<Student> GetStudents(){
         StudentDao studentDao = new StudentDao();
         return studentDao.GetStudents();
     }
-    public void printda(){
-        GD.Print("gdsgdsgdsgdsg");
+    public List<AssignmentScore> GetStudentAssignmentScores(int studentId){
+        AssignmentScoreDao assignmentScoreDao = new AssignmentScoreDao();
+        return assignmentScoreDao.GetStudentAssignmentScores(studentId);
     }
+
 }

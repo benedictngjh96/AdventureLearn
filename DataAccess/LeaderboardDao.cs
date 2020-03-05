@@ -37,7 +37,6 @@ public class LeaderboardDao
             "FROM StudentScore ss INNER JOIN Student s ON ss.StudentId = s.StudentId " +
             "INNER JOIN `Characters` c ON c.CharId  = s.CharId  WHERE ss.WorldId = {0} " +
             "GROUP BY ss.StudentId ORDER BY TotalScore DESC", worldId);
-
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
         {
             leaderboardList = conn.Query<Leaderboard>(query).ToList();
