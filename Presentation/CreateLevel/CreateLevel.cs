@@ -96,6 +96,7 @@ public class CreateLevel : Node2D
         {
             GD.Print("Start inserting into database.");
             createLevelBL.createLevel();
+            GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
         }
     }
 

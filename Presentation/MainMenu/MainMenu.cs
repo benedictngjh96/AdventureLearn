@@ -6,7 +6,6 @@ public class MainMenu : Node2D
 
     public override void _Ready()
     {
-        Godot.GD.Print(Global.StudentId);
 
     }
     private void _on_WorldBtn_pressed()

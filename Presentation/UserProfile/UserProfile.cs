@@ -7,7 +7,6 @@ public class UserProfile : Node2D
     public override void _Ready()
     {
         studentBL = new StudentBL();
-        Global.StudentId = 1;
         Student student = studentBL.GetStudentCharacter(Global.StudentId);
         Label lbl = GetNode<Label>("NameLbl");
         lbl.Text = student.StudentName;
@@ -23,7 +22,8 @@ public class UserProfile : Node2D
         Global.LoadSprite(charPath, character, animationList);
         StudentScoreBL studentScoreBL = new StudentScoreBL();
         Label avgScoreLbl = GetNode<Label>("AvgScoreLbl");
-        avgScoreLbl.Text = studentScoreBL.GetAvgWorldScores(Global.StudentId).LevelScore.ToString();
+        if(studentScoreBL.GetAvgWorldScores(Global.StudentId) != null)
+            avgScoreLbl.Text = studentScoreBL.GetAvgWorldScores(Global.StudentId).LevelScore.ToString();
 
     }
     private void _on_ChangeCharacter_pressed()

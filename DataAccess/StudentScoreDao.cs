@@ -99,7 +99,10 @@ public class StudentScoreDao
         {
             studentScores = conn.Query<StudentScore>(query).ToList();
         }
-        return studentScores[0];
+        if(studentScores.Count <=0)
+            return null;
+        else
+            return studentScores[0];
     }
     /// <summary>
     /// Return int result 1 if InsertStudentScore has executed successfully

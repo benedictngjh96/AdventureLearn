@@ -11,9 +11,6 @@ public class CustomLevelScreen : Node2D
     Character character;
     public override void _Ready()
     {
-        //REMOVE 
-        Global.StudentId = 1;
-        Godot.GD.Print(Global.CustomLevelId);
         customLevelBL = new CustomLevelBL();
         characterBL = new CharacterBL();
         customLevel = customLevelBL.GetCustomLevel(Global.CustomLevelId);

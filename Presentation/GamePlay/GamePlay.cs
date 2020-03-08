@@ -221,7 +221,7 @@ public class GamePlay : Node2D
                 break;
             case "Remove Option":
                 Random r = new Random();
-                int random;
+                int random = 0;
                 do
                 {
                     random = r.Next(1, 5);
