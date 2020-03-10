@@ -45,6 +45,9 @@
     <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Dapper.2.0.30\lib\net461\Dapper.dll</HintPath>
     </Reference>
+    <Reference Include="Facebook, Version=6.0.10.0, Culture=neutral, PublicKeyToken=58cb4f2111d1e6de, processorArchitecture=MSIL">
+      <HintPath>packages\Facebook.7.0.6\lib\net45\Facebook.dll</HintPath>
+    </Reference>
     <Reference Include="GodotSharp">
       <Private>False</Private>
       <HintPath>$(ProjectDir)/.mono/assemblies/$(ApiConfiguration)/GodotSharp.dll</HintPath>
@@ -81,35 +84,89 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusinessLogic\GamePlayBL.cs" />
+    <Compile Include="BusinessLogic\AssignmentBL.cs" />
+    <Compile Include="BusinessLogic\AssignmentScoreBL.cs" />
+    <Compile Include="BusinessLogic\CampaignBL.cs" />
+    <Compile Include="BusinessLogic\CharacterBL.cs" />
+    <Compile Include="BusinessLogic\CreateLevelBL.cs" />
+    <Compile Include="BusinessLogic\CustomLevelBL.cs" />
+    <Compile Include="BusinessLogic\CustomLevelScoreBL.cs" />
+    <Compile Include="BusinessLogic\GoogleBL.cs" />
+    <Compile Include="BusinessLogic\LeaderboardBL.cs" />
     <Compile Include="BusinessLogic\SectionBL.cs" />
+    <Compile Include="BusinessLogic\StatisticsBL.cs" />
     <Compile Include="BusinessLogic\StudentBL.cs" />
-    <Compile Include="BusinessLogic\LoginBL.cs" />
     <Compile Include="BusinessLogic\StudentScoreBL.cs" />
+    <Compile Include="BusinessLogic\TeacherBL.cs" />
+    <Compile Include="DataAccess\AssignmentDao.cs" />
+    <Compile Include="DataAccess\AssignmentScoreDao.cs" />
     <Compile Include="DataAccess\BaseDao.cs" />
-    <Compile Include="DataAccess\CharSelectDao.cs" />
-    <Compile Include="DataAccess\LevelDao.cs" />
+    <Compile Include="DataAccess\CharacterDao.cs" />
+    <Compile Include="DataAccess\CampaignDao.cs" />
+    <Compile Include="DataAccess\CreateLevelDAO.cs" />
+    <Compile Include="DataAccess\CustomLevelDao.cs" />
+    <Compile Include="DataAccess\CustomLevelScoreDao.cs" />
+    <Compile Include="DataAccess\LeaderboardDao.cs" />
     <Compile Include="DataAccess\SectionDao.cs" />
     <Compile Include="DataAccess\StudentDao.cs" />
     <Compile Include="DataAccess\StudentScoreDao.cs" />
+    <Compile Include="DataAccess\TeacherDao.cs" />
+    <Compile Include="DataAccess\WorldDao.cs" />
+    <Compile Include="Entities\Assignment.cs" />
+    <Compile Include="Entities\AssignmentScore.cs" />
+    <Compile Include="Entities\BelongClass.cs" />
+    <Compile Include="Entities\CampaignQuestion.cs" />
     <Compile Include="Entities\Character.cs" />
+    <Compile Include="Entities\ClassGroup.cs" />
+    <Compile Include="Entities\CustomLevel.cs" />
+    <Compile Include="Entities\CustomLevelDB.cs" />
+    <Compile Include="Entities\CustomLevelScore.cs" />
+    <Compile Include="Entities\Leaderboard.cs" />
     <Compile Include="Entities\Level.cs" />
+    <Compile Include="Entities\Monster.cs" />
+    <Compile Include="Entities\PublishedAssignment.cs" />
+    <Compile Include="Entities\Question.cs" />
     <Compile Include="Entities\Section.cs" />
+    <Compile Include="Entities\Skills.cs" />
     <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\StudentCustomQuestion.cs" />
     <Compile Include="Entities\StudentScore.cs" />
+    <Compile Include="Entities\Teacher.cs" />
+    <Compile Include="Entities\TeacherCustomQuestion.cs" />
+    <Compile Include="Entities\UserCreatedQuestion.cs" />
     <Compile Include="Entities\World.cs" />
     <Compile Include="Global\Global.cs" />
+    <Compile Include="HashSalt\HashSalt.cs" />
+    <Compile Include="HashSalt\HashSaltGen.cs" />
+    <Compile Include="Presentation\Assignment\AssignmentScreen.cs" />
+    <Compile Include="Presentation\Assignment\ViewAssignment.cs" />
+    <Compile Include="Presentation\BackButton.cs" />
     <Compile Include="Presentation\CharSelect\CharSelect.cs" />
+    <Compile Include="Presentation\CreateLevel\CreateLevel.cs" />
+    <Compile Include="Presentation\CreateLevel\CreateLevelInit.cs" />
+    <Compile Include="Presentation\CreateLevel\SimpleLogin.cs" />
+    <Compile Include="Presentation\CustomLevel\CustomLevelScreen.cs" />
+    <Compile Include="Presentation\CustomLevel\ViewCustomLevel.cs" />
+    <Compile Include="Presentation\GamePlay\Campaign.cs" />
     <Compile Include="Presentation\GamePlay\GamePlay.cs" />
+    <Compile Include="Presentation\Leaderboard\LeaderboardScreen.cs" />
     <Compile Include="Presentation\LevelSelection\LevelSelection.cs" />
     <Compile Include="Presentation\MainMenu\MainMenu.cs" />
+    <Compile Include="Presentation\SummaryReport\Chart.cs" />
+    <Compile Include="Presentation\UserProfile\UserProfile.cs" />
     <Compile Include="Presentation\World\WorldScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Presentation\Leaderboard\Leaderboard.tscn" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include=".vscode\launch.json" />
+    <Content Include="BusinessLogic\StatsBL.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation\Login\" />
     <Folder Include="Presentation\Section\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

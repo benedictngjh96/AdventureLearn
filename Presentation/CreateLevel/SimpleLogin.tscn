@@ -1,0 +1,62 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Presentation/CreateLevel/SimpleLogin.cs" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="LoginFields" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="LineEdit" parent="LoginFields"]
+margin_left = 111.138
+margin_top = 64.7395
+margin_right = 269.138
+margin_bottom = 88.7395
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Email" type="LineEdit" parent="LoginFields"]
+margin_left = 111.138
+margin_top = 102.464
+margin_right = 269.138
+margin_bottom = 126.464
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoginBtn" type="Button" parent="."]
+margin_left = 113.745
+margin_top = 143.413
+margin_right = 163.745
+margin_bottom = 163.413
+text = "Login"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="."]
+margin_left = 61.3434
+margin_top = 71.2672
+margin_right = 103.343
+margin_bottom = 85.2672
+text = "Name:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EmailLabel" type="Label" parent="."]
+margin_left = 62.152
+margin_top = 107.544
+margin_right = 102.152
+margin_bottom = 121.544
+text = "Email:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="LoginBtn" to="." method="_on_LoginBtn_pressed"]

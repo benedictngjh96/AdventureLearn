@@ -19,9 +19,11 @@ public class Student : Node
     public int StudentId { get; set; }
     public string StudentName { get; set; }
     public int CharId { get; set; }
-
+    public Character Character{get;set;}
     public string StudentEmail { get; set; }
     public string StudentUserName { get; set; }
     public string StudentPassword { get; set; }
+    public string Hash { get; set; }
+    public string Salt { get; set; }
     public List<StudentScore> StudentScore { get; set; }
 }
