@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=2]
@@ -20,10 +20,19 @@
 [ext_resource path="res://Assets/UnlockedLevels/unlocked6.png" type="Texture" id=18]
 [ext_resource path="res://Assets/LevelSelection/ForwardButton.png" type="Texture" id=19]
 [ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Fonts/DK Cover Up.otf" type="DynamicFontData" id=21]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 70
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 40
+font_data = ExtResource( 21 )
 
 [node name="LevelSelection" type="Node2D"]
 script = ExtResource( 3 )
@@ -44,14 +53,37 @@ __meta__ = {
 }
 
 [node name="SectionName" type="Label" parent="Title"]
-margin_left = 119.0
-margin_top = 256.0
-margin_right = 541.0
-margin_bottom = 340.0
+margin_left = 131.303
+margin_top = 331.87
+margin_right = 553.303
+margin_bottom = 415.87
 custom_fonts/font = SubResource( 1 )
+text = "Section 1"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Campaign" type="Label" parent="Title"]
+margin_left = 180.448
+margin_top = 8.20213
+margin_right = 477.448
+margin_bottom = 100.202
+custom_fonts/font = SubResource( 2 )
+text = "Campaign"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelSelection" type="Label" parent="Title"]
+margin_left = 153.791
+margin_top = 125.083
+margin_right = 513.791
+margin_bottom = 172.083
+custom_fonts/font = SubResource( 3 )
+text = "Section/Level Selection"
+align = 1
 
 [node name="ArrowNavigation" type="Control" parent="."]
 __meta__ = {

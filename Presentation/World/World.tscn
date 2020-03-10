@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Assets/World/world_map.png" type="Texture" id=1]
 [ext_resource path="res://Presentation/World/WorldScreen.cs" type="Script" id=2]
@@ -6,14 +6,29 @@
 [ext_resource path="res://Assets/World/world_4.png" type="Texture" id=4]
 [ext_resource path="res://Assets/World/world_3.png" type="Texture" id=5]
 [ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://Fonts/DK Cover Up.otf" type="DynamicFontData" id=8]
 
-[node name="World" type="Node2D"]
+[sub_resource type="DynamicFont" id=1]
+size = 40
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 25
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+outline_color = Color( 0.917647, 0.376471, 0.376471, 1 )
+font_data = ExtResource( 8 )
+
+[node name="campaign" type="Node2D"]
 script = ExtResource( 2 )
 
 [node name="Bg" type="Node2D" parent="."]
 
 [node name="world_map" type="Sprite" parent="Bg"]
-position = Vector2( 569.332, 649.075 )
+position = Vector2( 611.043, 680.166 )
 scale = Vector2( 1.27749, 1.55079 )
 texture = ExtResource( 1 )
 
@@ -27,20 +42,98 @@ __meta__ = {
 }
 
 [node name="world_2" type="Sprite" parent="Bg/world_map"]
-modulate = Color( 0.329412, 0.305882, 0.305882, 1 )
-position = Vector2( -312.065, -106 )
+modulate = Color( 0.701961, 0.65098, 0.65098, 1 )
+position = Vector2( -315.275, -106 )
 texture = ExtResource( 3 )
 
 [node name="world_4" type="Sprite" parent="Bg/world_map"]
-modulate = Color( 0.329412, 0.305882, 0.305882, 1 )
-position = Vector2( -146.242, 165.266 )
+modulate = Color( 0.968627, 0.898039, 0.898039, 1 )
+position = Vector2( -144.967, 135.482 )
 scale = Vector2( 1.0633, 1.08078 )
 texture = ExtResource( 4 )
 
 [node name="world_3" type="Sprite" parent="Bg/world_map"]
-modulate = Color( 0.329412, 0.305882, 0.305882, 1 )
-position = Vector2( -37.1684, -34.886 )
+modulate = Color( 0.772549, 0.737255, 0.737255, 1 )
+position = Vector2( -40.2705, -34.886 )
 texture = ExtResource( 5 )
+
+[node name="Label" type="Label" parent="Bg/world_map"]
+margin_left = -330.335
+margin_top = -447.934
+margin_right = -158.335
+margin_bottom = -394.934
+custom_fonts/font = SubResource( 1 )
+text = "Campaign"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Bg/world_map"]
+margin_left = -329.198
+margin_top = -381.988
+margin_right = -151.198
+margin_bottom = -345.988
+custom_fonts/font = SubResource( 2 )
+text = "World Selection"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="Bg/world_map"]
+margin_left = -80.3319
+margin_top = -318.635
+margin_right = 2.66806
+margin_bottom = -282.635
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.976471, 0.364706, 0.364706, 1 )
+text = "World 1"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label6" type="Label" parent="Bg/world_map"]
+margin_left = -256.832
+margin_top = 89.2737
+margin_right = -173.832
+margin_bottom = 164.274
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.976471, 0.364706, 0.364706, 1 )
+text = "World 4
+"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label5" type="Label" parent="Bg/world_map"]
+margin_left = -68.4629
+margin_top = -74.9543
+margin_right = 14.5371
+margin_bottom = -38.9543
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.976471, 0.364706, 0.364706, 1 )
+text = "World 3"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label4" type="Label" parent="Bg/world_map"]
+margin_left = -347.841
+margin_top = -143.395
+margin_right = -264.841
+margin_bottom = -107.395
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.976471, 0.364706, 0.364706, 1 )
+text = "World 2
+"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
 
 [node name="BackBtn" parent="." instance=ExtResource( 6 )]
 [connection signal="pressed" from="Bg/world_map/Btn_world" to="." method="_on_Btn_world_pressed"]

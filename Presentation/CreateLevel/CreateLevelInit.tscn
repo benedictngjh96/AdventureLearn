@@ -1,87 +1,155 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Presentation/CreateLevel/CreateLevelInit.cs" type="Script" id=1]
 [ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/UnlockedLevels/ForwardUnlocked.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/DK Cover Up.otf" type="DynamicFontData" id=5]
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=6]
+[ext_resource path="res://CharSprites/Slime/Idle/e001a_01idle_05.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 5 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 60
+font_data = ExtResource( 6 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="LevelName" type="LineEdit" parent="."]
-margin_left = 187.663
-margin_top = 48.3366
-margin_right = 368.663
-margin_bottom = 107.337
+margin_left = 128.501
+margin_top = 194.499
+margin_right = 552.501
+margin_bottom = 246.499
 max_length = 30
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="NextStepBtn" type="Button" parent="."]
-margin_left = 189.01
-margin_top = 275.547
-margin_right = 361.01
-margin_bottom = 295.547
+margin_left = 263.117
+margin_top = 639.477
+margin_right = 435.117
+margin_bottom = 701.477
 text = "Next Step"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TimeLimit" type="OptionButton" parent="."]
-margin_left = 190.888
-margin_top = 204.078
-margin_right = 303.888
-margin_bottom = 224.078
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MonsterId" type="OptionButton" parent="."]
-margin_left = 190.224
-margin_top = 140.39
-margin_right = 303.224
-margin_bottom = 160.39
+margin_left = 149.919
+margin_top = 534.721
+margin_right = 564.919
+margin_bottom = 580.721
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LevelNameLabel" type="Label" parent="."]
-margin_left = 100.356
-margin_top = 66.3366
-margin_right = 180.356
-margin_bottom = 107.337
-text = "Level Name:"
+margin_left = 128.392
+margin_top = 149.946
+margin_right = 337.392
+margin_bottom = 190.946
+custom_fonts/font = SubResource( 1 )
+text = "Enter Level Name:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ErrorMessageLabel" type="Label" parent="."]
-margin_left = 191.0
-margin_top = 242.0
-margin_right = 400.0
-margin_bottom = 270.0
+margin_left = 135.429
+margin_top = 243.292
+margin_right = 344.429
+margin_bottom = 271.292
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MonsterIdLabel" type="Label" parent="."]
-margin_left = 102.346
-margin_top = 143.957
-margin_right = 182.346
-margin_bottom = 184.957
-text = "MonsterId:"
+margin_left = 132.777
+margin_top = 271.806
+margin_right = 315.777
+margin_bottom = 312.806
+custom_fonts/font = SubResource( 2 )
+text = "Select Monster:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="TimeLimitLabel" type="Label" parent="."]
-margin_left = 103.01
-margin_top = 208.308
-margin_right = 183.01
-margin_bottom = 249.308
-text = "TIme limit:"
+margin_left = 149.024
+margin_top = 479.856
+margin_right = 229.024
+margin_bottom = 520.856
+custom_fonts/font = SubResource( 3 )
+text = "Set Time Limit:"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BackBtn" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 5.84409 )
+
+[node name="CreateLevel" type="Label" parent="."]
+margin_left = 153.907
+margin_top = 19.0401
+margin_right = 505.907
+margin_bottom = 98.0401
+custom_fonts/font = SubResource( 4 )
+text = "Create Level"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="preBtn" type="Button" parent="."]
+margin_left = 135.0
+margin_top = 343.0
+margin_right = 158.0
+margin_bottom = 383.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="preBtn"]
+position = Vector2( 8.16228, 14.9642 )
+scale = Vector2( 0.575988, 0.564681 )
+texture = ExtResource( 4 )
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+margin_left = 186.505
+margin_top = 738.3
+margin_right = 186.505
+margin_bottom = 844.3
+
+[node name="Sprite" type="Sprite" parent="CenterContainer"]
+position = Vector2( 156.131, -510.998 )
+scale = Vector2( 0.912528, 1.39457 )
+texture = ExtResource( 7 )
+
+[node name="nextBtn" type="Button" parent="."]
+margin_left = 510.0
+margin_top = 336.0
+margin_right = 536.0
+margin_bottom = 373.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="nextBtn"]
+position = Vector2( 21.0858, 19.0451 )
+scale = Vector2( 0.522985, 0.537474 )
+texture = ExtResource( 3 )
 [connection signal="pressed" from="NextStepBtn" to="." method="_on_NextStepBtn_pressed"]

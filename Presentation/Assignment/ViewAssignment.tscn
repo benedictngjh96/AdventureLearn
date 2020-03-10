@@ -1,16 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Presentation/Assignment/ViewAssignment.cs" type="Script" id=1]
 [ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Assets/UnlockedLevels/ForwardUnlocked.png" type="Texture" id=3]
-[ext_resource path="res://Assets/LockedLevels/BackwardLocked.png" type="Texture" id=4]
-[ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=5]
-[ext_resource path="res://Assets/LockedLevels/ForwardLocked.png" type="Texture" id=6]
+[ext_resource path="res://Fonts/DK Cover Up.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
 font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 3 )
 
 [node name="ViewAssignment" type="Node2D"]
 script = ExtResource( 1 )
@@ -30,37 +31,39 @@ columns = 4
 
 [node name="BackBtn" parent="." instance=ExtResource( 2 )]
 
-[node name="NextBtn" type="TextureButton" parent="."]
-margin_left = 551.207
-margin_top = 188.152
-margin_right = 628.207
-margin_bottom = 288.152
-texture_normal = ExtResource( 3 )
-texture_disabled = ExtResource( 6 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="PrevBtn" type="TextureButton" parent="."]
-margin_left = -1.45105
-margin_top = 193.105
-margin_right = 75.549
-margin_bottom = 293.105
-texture_normal = ExtResource( 5 )
-texture_disabled = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Title" type="Label" parent="."]
-margin_left = 163.198
-margin_top = 200.803
-margin_right = 509.198
-margin_bottom = 279.803
+margin_left = 130.036
+margin_top = 105.841
+margin_right = 476.036
+margin_bottom = 184.841
 custom_fonts/font = SubResource( 1 )
 text = "Assignments"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="NextBtn" to="." method="_on_NextBtn_pressed"]
-[connection signal="pressed" from="PrevBtn" to="." method="_on_PrevBtn_pressed"]
+
+[node name="PrePgBtn" type="Button" parent="."]
+modulate = Color( 0.937255, 0.556863, 0.0745098, 1 )
+self_modulate = Color( 0.988235, 0.643137, 0.0588235, 1 )
+margin_left = 99.0
+margin_top = 836.0
+margin_right = 289.0
+margin_bottom = 913.0
+custom_fonts/font = SubResource( 2 )
+text = "Previuous Page"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NxtPgnBtn" type="Button" parent="."]
+modulate = Color( 0.937255, 0.556863, 0.0745098, 1 )
+self_modulate = Color( 0.988235, 0.643137, 0.0588235, 1 )
+margin_left = 338.606
+margin_top = 832.104
+margin_right = 528.606
+margin_bottom = 909.104
+custom_fonts/font = SubResource( 2 )
+text = "Next Page"
+__meta__ = {
+"_edit_use_anchors_": false
+}

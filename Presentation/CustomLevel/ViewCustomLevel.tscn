@@ -1,16 +1,17 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Presentation/CustomLevel/ViewCustomLevel.cs" type="Script" id=1]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/LockedLevels/ForwardLocked.png" type="Texture" id=4]
-[ext_resource path="res://Assets/LockedLevels/BackwardLocked.png" type="Texture" id=5]
-[ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=6]
-[ext_resource path="res://Assets/UnlockedLevels/ForwardUnlocked.png" type="Texture" id=7]
+[ext_resource path="res://Fonts/DK Cover Up.otf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
 font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = ExtResource( 4 )
 
 [node name="ViewCustomLevel" type="Node2D"]
 script = ExtResource( 1 )
@@ -18,10 +19,10 @@ script = ExtResource( 1 )
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 51.9269
-margin_top = 368.576
-margin_right = 693.927
-margin_bottom = 1047.58
+margin_left = 4.0
+margin_top = 263.0
+margin_right = 646.0
+margin_bottom = 844.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -33,38 +34,51 @@ custom_constants/hseparation = 10
 columns = 3
 
 [node name="Title" type="Label" parent="."]
-margin_left = 136.393
-margin_top = 180.0
-margin_right = 521.393
-margin_bottom = 268.0
+margin_left = 43.8622
+margin_top = 115.228
+margin_right = 594.862
+margin_bottom = 203.228
 custom_fonts/font = SubResource( 1 )
-text = "Custom Game"
+text = "Your Created Levels"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="BackBtn" parent="." instance=ExtResource( 3 )]
 
-[node name="NextBtn" type="TextureButton" parent="."]
-margin_left = 563.677
-margin_top = 168.735
-margin_right = 640.677
-margin_bottom = 268.735
-texture_normal = ExtResource( 7 )
-texture_disabled = ExtResource( 4 )
+[node name="CreateLvlBtn" type="Button" parent="."]
+self_modulate = Color( 0.294118, 0.741176, 0.807843, 1 )
+margin_left = 145.661
+margin_top = 854.515
+margin_right = 514.661
+margin_bottom = 937.515
+custom_fonts/font = SubResource( 2 )
+text = "Create level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PrevBtn" type="TextureButton" parent="."]
-margin_left = 10.9869
-margin_top = 171.466
-margin_right = 145.987
-margin_bottom = 346.466
-texture_normal = ExtResource( 6 )
-texture_disabled = ExtResource( 5 )
+[node name="CreateLvlBtn2" type="Button" parent="."]
+self_modulate = Color( 0.807843, 0.521569, 0.294118, 1 )
+margin_left = 68.2721
+margin_top = 970.721
+margin_right = 323.272
+margin_bottom = 1023.72
+custom_fonts/font = SubResource( 2 )
+text = "Previous Page"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="NextBtn" to="." method="_on_NextBtn_pressed"]
-[connection signal="pressed" from="PrevBtn" to="." method="_on_PrevBtn_pressed"]
+
+[node name="CreateLvlBtn3" type="Button" parent="."]
+self_modulate = Color( 0.807843, 0.584314, 0.294118, 1 )
+margin_left = 337.356
+margin_top = 968.449
+margin_right = 592.356
+margin_bottom = 1021.45
+custom_fonts/font = SubResource( 2 )
+text = "Next Page"
+__meta__ = {
+"_edit_use_anchors_": false
+}

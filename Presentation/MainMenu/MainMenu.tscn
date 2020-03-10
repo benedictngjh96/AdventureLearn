@@ -31,17 +31,17 @@ __meta__ = {
 [node name="VBoxContainer" type="VBoxContainer" parent="Btns"]
 anchor_left = 0.232
 anchor_right = 0.552
-margin_left = 93.2456
-margin_top = 237.29
-margin_right = 195.246
-margin_bottom = 377.29
+margin_left = 114.871
+margin_top = 303.913
+margin_right = 204.071
+margin_bottom = 443.913
 rect_scale = Vector2( 3.51451, 3.95622 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="WorldBtn" type="Button" parent="Btns/VBoxContainer"]
-margin_right = 122.0
+margin_right = 109.0
 margin_bottom = 20.0
 text = "Campaign"
 __meta__ = {
@@ -51,7 +51,7 @@ __meta__ = {
 
 [node name="LvlBtn" type="Button" parent="Btns/VBoxContainer"]
 margin_top = 24.0
-margin_right = 122.0
+margin_right = 109.0
 margin_bottom = 44.0
 text = "Create Level"
 __meta__ = {
@@ -60,7 +60,7 @@ __meta__ = {
 
 [node name="ChallengeBtn" type="Button" parent="Btns/VBoxContainer"]
 margin_top = 48.0
-margin_right = 122.0
+margin_right = 109.0
 margin_bottom = 68.0
 text = "Custom Level"
 __meta__ = {
@@ -69,7 +69,7 @@ __meta__ = {
 
 [node name="AssignmentBtn" type="Button" parent="Btns/VBoxContainer"]
 margin_top = 72.0
-margin_right = 122.0
+margin_right = 109.0
 margin_bottom = 92.0
 text = "Assignment"
 __meta__ = {
@@ -78,7 +78,7 @@ __meta__ = {
 
 [node name="LeaderboardBtn" type="Button" parent="Btns/VBoxContainer"]
 margin_top = 96.0
-margin_right = 122.0
+margin_right = 109.0
 margin_bottom = 116.0
 text = "Leaderboard"
 __meta__ = {
@@ -87,7 +87,7 @@ __meta__ = {
 
 [node name="UserProfileBtn" type="Button" parent="Btns/VBoxContainer"]
 margin_top = 120.0
-margin_right = 122.0
+margin_right = 109.0
 margin_bottom = 140.0
 text = "User Profile"
 __meta__ = {
