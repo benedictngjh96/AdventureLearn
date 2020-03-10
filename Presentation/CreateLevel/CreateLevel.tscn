@@ -73,9 +73,9 @@ __meta__ = {
 }
 
 [node name="Option3" type="LineEdit" parent="Options"]
-margin_left = 76.9886
+margin_left = 75.9886
 margin_top = 325.368
-margin_right = 260.989
+margin_right = 259.989
 margin_bottom = 375.368
 max_length = 50
 __meta__ = {

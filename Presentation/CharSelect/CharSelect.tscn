@@ -72,6 +72,7 @@ position = Vector2( 360.79, 649.821 )
 scale = Vector2( 0.234724, 0.255487 )
 frames = SubResource( 1 )
 animation = "Knight2"
+frame = 5
 playing = true
 
 [node name="SkillDescription" type="Label" parent="Char"]

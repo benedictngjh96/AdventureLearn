@@ -22,74 +22,80 @@ __meta__ = {
 }
 
 [node name="Btns" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_right = 65.0
+margin_bottom = 64.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WorldBtn" type="Button" parent="Btns"]
-margin_left = 30.0
-margin_top = 300.0
-margin_right = 296.0
-margin_bottom = 420.0
-text = "World"
+[node name="VBoxContainer" type="VBoxContainer" parent="Btns"]
+anchor_left = 0.232
+anchor_right = 0.552
+margin_left = 93.2456
+margin_top = 237.29
+margin_right = 195.246
+margin_bottom = 377.29
+rect_scale = Vector2( 3.51451, 3.95622 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LvlBtn" type="Button" parent="Btns"]
-margin_left = 375.355
-margin_top = 300.0
-margin_right = 641.355
-margin_bottom = 420.0
+[node name="WorldBtn" type="Button" parent="Btns/VBoxContainer"]
+margin_right = 122.0
+margin_bottom = 20.0
+text = "Campaign"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="LvlBtn" type="Button" parent="Btns/VBoxContainer"]
+margin_top = 24.0
+margin_right = 122.0
+margin_bottom = 44.0
 text = "Create Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ChallengeBtn" type="Button" parent="Btns"]
-margin_left = 32.2721
-margin_top = 488.582
-margin_right = 298.272
-margin_bottom = 608.582
+[node name="ChallengeBtn" type="Button" parent="Btns/VBoxContainer"]
+margin_top = 48.0
+margin_right = 122.0
+margin_bottom = 68.0
 text = "Custom Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AssignmentBtn" type="Button" parent="Btns"]
-margin_left = 370.811
-margin_top = 485.407
-margin_right = 636.811
-margin_bottom = 605.407
+[node name="AssignmentBtn" type="Button" parent="Btns/VBoxContainer"]
+margin_top = 72.0
+margin_right = 122.0
+margin_bottom = 92.0
 text = "Assignment"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LeaderboardBtn" type="Button" parent="Btns"]
-margin_left = 35.8821
-margin_top = 660.959
-margin_right = 301.882
-margin_bottom = 780.959
+[node name="LeaderboardBtn" type="Button" parent="Btns/VBoxContainer"]
+margin_top = 96.0
+margin_right = 122.0
+margin_bottom = 116.0
 text = "Leaderboard"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UserProfileBtn" type="Button" parent="Btns"]
-margin_left = 373.396
-margin_top = 659.874
-margin_right = 639.396
-margin_bottom = 779.874
+[node name="UserProfileBtn" type="Button" parent="Btns/VBoxContainer"]
+margin_top = 120.0
+margin_right = 122.0
+margin_bottom = 140.0
 text = "User Profile"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Btns/WorldBtn" to="." method="_on_WorldBtn_pressed"]
-[connection signal="pressed" from="Btns/LvlBtn" to="." method="_on_LvlBtn_pressed"]
-[connection signal="pressed" from="Btns/ChallengeBtn" to="." method="_on_ChallengeBtn_pressed"]
-[connection signal="pressed" from="Btns/AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]
-[connection signal="pressed" from="Btns/LeaderboardBtn" to="." method="_on_LeaderboardBtn_pressed"]
-[connection signal="pressed" from="Btns/UserProfileBtn" to="." method="_on_UserProfileBtn_pressed"]
+[connection signal="pressed" from="Btns/VBoxContainer/WorldBtn" to="." method="_on_WorldBtn_pressed"]
+[connection signal="pressed" from="Btns/VBoxContainer/LvlBtn" to="." method="_on_LvlBtn_pressed"]
+[connection signal="pressed" from="Btns/VBoxContainer/ChallengeBtn" to="." method="_on_ChallengeBtn_pressed"]
+[connection signal="pressed" from="Btns/VBoxContainer/AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]
+[connection signal="pressed" from="Btns/VBoxContainer/LeaderboardBtn" to="." method="_on_LeaderboardBtn_pressed"]
+[connection signal="pressed" from="Btns/VBoxContainer/UserProfileBtn" to="." method="_on_UserProfileBtn_pressed"]
