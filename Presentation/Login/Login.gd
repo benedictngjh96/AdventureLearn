@@ -11,7 +11,7 @@ var fbId
 func _ready():
     facebook.facebook_connect()
     facebook.connect("info", self, "insert_fb")
-    
+    google.connect("info2", self, "insert_google")
     #google.google_disconnect()    
     var exist = facebook.isLoggedIn()
     if exist:
@@ -19,6 +19,8 @@ func _ready():
 
 func _on_LoginBtn_pressed():
     google.google_connect()
+    google.gconnect()
+func insert_google():
     var exist = studentBL.CheckGoogleExist(google.get_id())
     if exist:
         global.SetStudentId(studentBL.GetGoogleStudentId(google.get_id()))
@@ -30,7 +32,6 @@ func _on_LoginBtn_pressed():
         studentBL.InsertGoogleStudent(google.get_name(), google.get_email(), google.get_id())
         global.SetStudentId(studentBL.GetGoogleStudentId(google.get_id()))
         get_tree().change_scene("res://Presentation/CharSelect/CharSelect.tscn")
-
 func insert_fb():
     email = facebook.getEmail()
     var exist = studentBL.CheckFacebookExist(facebook.getId())

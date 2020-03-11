@@ -77,7 +77,9 @@ public class PlayGames extends Godot.SingletonBase {
       }
       else{
         Log.d(TAG,"Accounted logged in already");
-        successSignIn();
+		GodotLib.calldeferred(instanceId, "_on_successful_sign_in", new Object[]{ });
+		//disconnect();
+        //successSignIn();
       }
     }
 	public String getEmail(){
@@ -108,12 +110,13 @@ public class PlayGames extends Godot.SingletonBase {
     public void connect(){
       if (mAccount != null){
         Log.d(TAG,"Already connected");
+		GodotLib.calldeferred(instanceId, "_on_successful_sign_in", new Object[]{ });
         return;
       }
       Log.d(TAG,"Tries to sign in");
       Intent intent = mClient.getSignInIntent();
       activity.startActivityForResult(intent, GOOGLE_SIGN_IN_REQUEST);
-
+	  GodotLib.calldeferred(instanceId, "_on_successful_sign_in", new Object[]{ });
     }
     public void disconnect(){
       mClient.signOut();
