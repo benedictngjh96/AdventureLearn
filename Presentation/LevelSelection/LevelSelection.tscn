@@ -1,37 +1,24 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=9 format=2]
 
-[ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=1]
+[ext_resource path="res://Assets/LevelSelection/redround.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Presentation/LevelSelection/LevelSelection.cs" type="Script" id=3]
-[ext_resource path="res://Assets/LockedLevels/ForwardLocked.png" type="Texture" id=4]
-[ext_resource path="res://Assets/LockedLevels/BackwardLocked.png" type="Texture" id=5]
+[ext_resource path="res://Assets/LevelSelection/Forward.png" type="Texture" id=4]
+[ext_resource path="res://Assets/LevelSelection/Backward.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Level/3 stars.png" type="Texture" id=6]
-[ext_resource path="res://Assets/LockedLevels/locked1.png" type="Texture" id=7]
-[ext_resource path="res://Assets/UnlockedLevels/unlocked2.png" type="Texture" id=8]
-[ext_resource path="res://Assets/UnlockedLevels/unlocked1.png" type="Texture" id=9]
-[ext_resource path="res://Assets/UnlockedLevels/unlocked4.png" type="Texture" id=10]
-[ext_resource path="res://Assets/UnlockedLevels/unlocked5.png" type="Texture" id=11]
-[ext_resource path="res://Assets/UnlockedLevels/unlocked3.png" type="Texture" id=12]
-[ext_resource path="res://Assets/LockedLevels/locked3.png" type="Texture" id=13]
-[ext_resource path="res://Assets/LockedLevels/locked2.png" type="Texture" id=14]
-[ext_resource path="res://Assets/LockedLevels/locked4.png" type="Texture" id=15]
-[ext_resource path="res://Assets/LockedLevels/locked5.png" type="Texture" id=16]
-[ext_resource path="res://Assets/LockedLevels/locked6.png" type="Texture" id=17]
-[ext_resource path="res://Assets/UnlockedLevels/unlocked6.png" type="Texture" id=18]
-[ext_resource path="res://Assets/LevelSelection/ForwardButton.png" type="Texture" id=19]
-[ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=2]
+size = 325
+font_data = ExtResource( 2 )
+
 [node name="LevelSelection" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Title" type="Control" parent="."]
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Title" type="Node" parent="."]
 
 [node name="WorldName" type="Label" parent="Title"]
 margin_left = 114.399
@@ -53,142 +40,251 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ArrowNavigation" type="Control" parent="."]
+[node name="Levels" type="Node" parent="."]
+
+[node name="Level1" type="Sprite" parent="Levels"]
+position = Vector2( 121.168, 627.724 )
+scale = Vector2( 0.196499, 0.184449 )
+texture = ExtResource( 1 )
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_group_": true
 }
 
-[node name="ForwardButton" type="TextureButton" parent="ArrowNavigation"]
-margin_left = 563.927
-margin_top = 329.797
-margin_right = 640.927
-margin_bottom = 429.797
-texture_normal = ExtResource( 19 )
-texture_disabled = ExtResource( 4 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="BackwardButton" type="TextureButton" parent="ArrowNavigation"]
-margin_left = 32.4529
-margin_top = 328.485
-margin_right = 109.453
-margin_bottom = 428.485
-texture_normal = ExtResource( 1 )
-texture_disabled = ExtResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Levels" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Level1" type="TextureButton" parent="Levels"]
-margin_left = 35.0739
-margin_top = 517.757
-margin_right = 185.074
-margin_bottom = 667.757
-texture_normal = ExtResource( 9 )
-texture_disabled = ExtResource( 7 )
+[node name="Level1Label" type="Label" parent="Levels/Level1"]
+margin_left = -58.9832
+margin_top = -216.976
+margin_right = 32.0168
+margin_bottom = 208.024
+custom_fonts/font = SubResource( 2 )
+text = "1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Stars" type="Sprite" parent="Levels/Level1"]
-position = Vector2( 76.4525, 168.093 )
-scale = Vector2( 0.437422, 0.341505 )
+visible = false
+position = Vector2( 9.17792, 454.955 )
+scale = Vector2( 2.22608, 1.85149 )
 texture = ExtResource( 6 )
 
-[node name="Level2" type="TextureButton" parent="Levels"]
-margin_left = 249.41
-margin_top = 512.746
-margin_right = 399.41
-margin_bottom = 662.746
-texture_normal = ExtResource( 8 )
-texture_disabled = ExtResource( 14 )
+[node name="Level1Btn" type="TextureButton" parent="Levels/Level1"]
+margin_left = -333.0
+margin_top = -391.0
+margin_right = 370.0
+margin_bottom = 386.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level2" type="Sprite" parent="Levels"]
+position = Vector2( 296.489, 629.672 )
+scale = Vector2( 0.196499, 0.184449 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Level2Label" type="Label" parent="Levels/Level2"]
+margin_left = -58.9832
+margin_top = -216.976
+margin_right = 32.0168
+margin_bottom = 208.024
+custom_fonts/font = SubResource( 2 )
+text = "2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Stars" type="Sprite" parent="Levels/Level2"]
-position = Vector2( 80.7047, 173.103 )
-scale = Vector2( 0.437422, 0.341505 )
+visible = false
+position = Vector2( 49.7452, 444.394 )
+scale = Vector2( 2.22608, 1.85149 )
 texture = ExtResource( 6 )
 
-[node name="Level3" type="TextureButton" parent="Levels"]
-margin_left = 455.303
-margin_top = 515.927
-margin_right = 605.303
-margin_bottom = 665.927
-texture_normal = ExtResource( 12 )
-texture_disabled = ExtResource( 13 )
+[node name="Level2Btn" type="TextureButton" parent="Levels/Level2"]
+margin_left = -340.427
+margin_top = -370.637
+margin_right = 362.574
+margin_bottom = 406.363
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level3" type="Sprite" parent="Levels"]
+position = Vector2( 473.758, 629.672 )
+scale = Vector2( 0.196499, 0.184449 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Level3Label" type="Label" parent="Levels/Level3"]
+margin_left = -58.9832
+margin_top = -216.976
+margin_right = 32.0168
+margin_bottom = 208.024
+custom_fonts/font = SubResource( 2 )
+text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Stars" type="Sprite" parent="Levels/Level3"]
-position = Vector2( 80.5482, 166.579 )
-scale = Vector2( 0.437422, 0.341505 )
+visible = false
+position = Vector2( 58.5371, 436.63 )
+scale = Vector2( 2.22608, 1.85149 )
 texture = ExtResource( 6 )
 
-[node name="Level4" type="TextureButton" parent="Levels"]
-margin_left = 31.5018
-margin_top = 753.121
-margin_right = 181.502
-margin_bottom = 903.121
-texture_normal = ExtResource( 10 )
-texture_disabled = ExtResource( 15 )
+[node name="Level3Btn" type="TextureButton" parent="Levels/Level3"]
+margin_left = -344.168
+margin_top = -346.725
+margin_right = 358.832
+margin_bottom = 430.275
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level4" type="Sprite" parent="Levels"]
+position = Vector2( 127.012, 826.421 )
+scale = Vector2( 0.196499, 0.184449 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Level4Label" type="Label" parent="Levels/Level4"]
+margin_left = -58.9832
+margin_top = -216.976
+margin_right = 32.0168
+margin_bottom = 208.024
+custom_fonts/font = SubResource( 2 )
+text = "4"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Stars" type="Sprite" parent="Levels/Level4"]
-position = Vector2( 77.974, 162.39 )
-scale = Vector2( 0.437422, 0.341505 )
+visible = false
+position = Vector2( 23.1616, 456.838 )
+scale = Vector2( 2.22608, 1.85149 )
 texture = ExtResource( 6 )
 
-[node name="Level5" type="TextureButton" parent="Levels"]
-margin_left = 239.504
-margin_top = 727.883
-margin_right = 389.504
-margin_bottom = 877.883
-texture_normal = ExtResource( 11 )
-texture_disabled = ExtResource( 16 )
+[node name="Level4Btn" type="TextureButton" parent="Levels/Level4"]
+margin_left = -338.333
+margin_top = -366.443
+margin_right = 364.667
+margin_bottom = 410.557
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level5" type="Sprite" parent="Levels"]
+position = Vector2( 302.333, 832.265 )
+scale = Vector2( 0.196499, 0.184449 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Level5Label" type="Label" parent="Levels/Level5"]
+margin_left = -58.9832
+margin_top = -216.976
+margin_right = 32.0168
+margin_bottom = 208.024
+custom_fonts/font = SubResource( 2 )
+text = "5"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Stars" type="Sprite" parent="Levels/Level5"]
-position = Vector2( 80.8227, 166.718 )
-scale = Vector2( 0.437422, 0.341505 )
+visible = false
+position = Vector2( 34.58, 448.444 )
+scale = Vector2( 2.22608, 1.85149 )
 texture = ExtResource( 6 )
 
-[node name="Level6" type="TextureButton" parent="Levels"]
-margin_left = 442.45
-margin_top = 748.11
-margin_right = 592.45
-margin_bottom = 898.11
-texture_normal = ExtResource( 18 )
-texture_disabled = ExtResource( 17 )
+[node name="Level5Btn" type="TextureButton" parent="Levels/Level5"]
+margin_left = -339.23
+margin_top = -339.266
+margin_right = 363.77
+margin_bottom = 437.734
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level6" type="Sprite" parent="Levels"]
+position = Vector2( 485.447, 824.473 )
+scale = Vector2( 0.196499, 0.184449 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Level6Label" type="Label" parent="Levels/Level6"]
+margin_left = -58.9832
+margin_top = -216.976
+margin_right = 32.0168
+margin_bottom = 208.024
+custom_fonts/font = SubResource( 2 )
+text = "6"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Stars" type="Sprite" parent="Levels/Level6"]
-position = Vector2( 79.1859, 167.4 )
-scale = Vector2( 0.437422, 0.341505 )
+visible = false
+position = Vector2( 57.3503, 451.872 )
+scale = Vector2( 2.22608, 1.85149 )
 texture = ExtResource( 6 )
 
-[node name="BackBtn" parent="." instance=ExtResource( 20 )]
-[connection signal="pressed" from="ArrowNavigation/ForwardButton" to="." method="_on_ForwardButton_pressed"]
-[connection signal="pressed" from="ArrowNavigation/BackwardButton" to="." method="_on_BackwardButton_pressed"]
-[connection signal="pressed" from="Levels/Level1" to="." method="_on_Level1_pressed"]
-[connection signal="pressed" from="Levels/Level2" to="." method="_on_Level2_pressed"]
-[connection signal="pressed" from="Levels/Level3" to="." method="_on_Level3_pressed"]
-[connection signal="pressed" from="Levels/Level4" to="." method="_on_Level4_pressed"]
-[connection signal="pressed" from="Levels/Level5" to="." method="_on_Level5_pressed"]
-[connection signal="pressed" from="Levels/Level6" to="." method="_on_Level6_pressed"]
+[node name="Level6Btn" type="TextureButton" parent="Levels/Level6"]
+margin_left = -339.23
+margin_top = -383.518
+margin_right = 363.77
+margin_bottom = 393.482
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowNavigation" type="Node" parent="."]
+
+[node name="Forward" type="Sprite" parent="ArrowNavigation"]
+position = Vector2( 606.813, 380.865 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="ForwardBtn" type="TextureButton" parent="ArrowNavigation/Forward"]
+margin_left = -75.6299
+margin_top = -86.9742
+margin_right = 72.3701
+margin_bottom = 87.0258
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Backward" type="Sprite" parent="ArrowNavigation"]
+position = Vector2( 48.9117, 381.984 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BackwardBtn" type="TextureButton" parent="ArrowNavigation/Backward"]
+margin_left = -67.3445
+margin_top = -91.7815
+margin_right = 80.6555
+margin_bottom = 82.2185
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Levels/Level1/Level1Btn" to="." method="_on_Level1Btn_pressed"]
+[connection signal="pressed" from="Levels/Level2/Level2Btn" to="." method="_on_Level2Btn_pressed"]
+[connection signal="pressed" from="Levels/Level3/Level3Btn" to="." method="_on_Level3Btn_pressed"]
+[connection signal="pressed" from="Levels/Level4/Level4Btn" to="." method="_on_Level4Btn_pressed"]
+[connection signal="pressed" from="Levels/Level5/Level5Btn" to="." method="_on_Level5Btn_pressed"]
+[connection signal="pressed" from="ArrowNavigation/Forward/ForwardBtn" to="." method="_on_ForwardBtn_pressed"]
+[connection signal="pressed" from="ArrowNavigation/Backward/BackwardBtn" to="." method="_on_BackwardBtn_pressed"]

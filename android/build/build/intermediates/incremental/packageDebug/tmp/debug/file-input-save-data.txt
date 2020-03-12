@@ -1,5 +1,9 @@
 #Internal package file, do not edit.
+<<<<<<< HEAD
 #Tue Mar 10 16:02:48 SGT 2020
+=======
+#Tue Feb 18 14:53:21 SGT 2020
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 5.base=D\:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 42.base=D\:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\transforms\\stripDebugSymbol\\debug\\0
 22.path=lib/x86/libmonosgen-2.0.so

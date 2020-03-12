@@ -4,6 +4,7 @@
             "outputFile": "D:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v16\\values-v16.xml",
             "map": [
                 {
+<<<<<<< HEAD
                     "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\118067ded0276cd701de750788e37e5e\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",
@@ -23,6 +24,8 @@
                     }
                 },
                 {
+=======
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
                     "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\28104f19e918fbf3ae8caed481e60777\\res\\values-v16\\values-v16.xml",
                     "from": {
                         "startLines": "2",

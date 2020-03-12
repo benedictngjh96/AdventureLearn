@@ -13,11 +13,19 @@
                         "endOffsets": "435"
                     },
                     "to": {
+<<<<<<< HEAD
                         "startLines": "37",
                         "startColumns": "4",
                         "startOffsets": "3972",
                         "endColumns": "188",
                         "endOffsets": "4156"
+=======
+                        "startLines": "10",
+                        "startColumns": "4",
+                        "startOffsets": "1256",
+                        "endColumns": "188",
+                        "endOffsets": "1440"
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
                     }
                 },
                 {
@@ -30,11 +38,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "56",
+                        "startLines": "21",
                         "startColumns": "4",
-                        "startOffsets": "6261",
+                        "startOffsets": "2840",
                         "endColumns": "100",
-                        "endOffsets": "6357"
+                        "endOffsets": "2936"
                     }
                 },
                 {
@@ -47,11 +55,19 @@
                         "endOffsets": "348,536,660,768,981,1106,1244,1371,1579,1684,1875,2000,2208,2376,2470,2561,2666"
                     },
                     "to": {
+<<<<<<< HEAD
                         "startLines": "29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
                         "startOffsets": "2821,2929,3117,3245,3357,3570,3699,3841,4161,4369,4478,4669,4798,5006,5178,5276,5371",
                         "endColumns": "107,187,127,111,212,128,141,130,207,108,190,128,207,171,97,94,108",
                         "endOffsets": "2924,3112,3240,3352,3565,3694,3836,3967,4364,4473,4664,4793,5001,5173,5271,5366,5475"
+=======
+                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,213,401,529,641,854,983,1125,1445,1653,1762,1953,2082,2290,2462,2560,2655",
+                        "endColumns": "107,187,127,111,212,128,141,130,207,108,190,128,207,171,97,94,108",
+                        "endOffsets": "208,396,524,636,849,978,1120,1251,1648,1757,1948,2077,2285,2457,2555,2650,2759"
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
                     }
                 },
                 {
@@ -64,10 +80,11 @@
                         "endOffsets": "126"
                     },
                     "to": {
-                        "startLines": "47",
+                        "startLines": "20",
                         "startColumns": "4",
-                        "startOffsets": "5480",
+                        "startOffsets": "2764",
                         "endColumns": "75",
+<<<<<<< HEAD
                         "endOffsets": "5551"
                     }
                 },
@@ -103,6 +120,9 @@
                         "startOffsets": "5556,5629,5753,5823,5890,5981,6103",
                         "endColumns": "72,123,69,66,90,121,73",
                         "endOffsets": "5624,5748,5818,5885,5976,6098,6172"
+=======
+                        "endOffsets": "2835"
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
                     }
                 }
             ]

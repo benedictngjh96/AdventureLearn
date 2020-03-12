@@ -2,6 +2,7 @@
 <issues format="5" by="lint 3.4.2">
 
     <issue
+<<<<<<< HEAD
         id="DefaultLocale"
         severity="Warning"
         message="Implicitly using the default locale is a common source of bugs: Use `String.format(Locale, ...)` instead"
@@ -52,6 +53,8 @@
     </issue>
 
     <issue
+=======
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
         id="StaticFieldLeak"
         severity="Warning"
         message="Do not place Android context classes in static fields (static reference to `PlayGames` which has field `activity` pointing to `Activity`); this is a memory leak"

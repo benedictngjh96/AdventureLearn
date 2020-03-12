@@ -1,9 +1,16 @@
 -- Merging decision tree log ---
 manifest
+<<<<<<< HEAD
 ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
 INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
 INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
 INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
+=======
+ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-64:12
+INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-64:12
+INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-64:12
+INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-64:12
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 MERGED from [godot-lib.release.aar] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\d4f93839b6bfd2dca6373857eaac7b58\AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.android.gms:play-services-games:19.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\40d8aabac32bb3e0d228070613756c5b\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\7ac70f34eb4e839ac75ef04f271b872b\AndroidManifest.xml:17:1-39:12
@@ -11,6 +18,7 @@ MERGED from [com.google.android.gms:play-services-drive:17.0.0] C:\Users\benng\.
 MERGED from [com.google.android.gms:play-services-auth-api-phone:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\1ad634b06be0e2814db95925b15f17f0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\e98997bc37ba595ab7105d8d75c34b42\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\2e4feb32c294a1e2a45eef81b9cf9df6\AndroidManifest.xml:17:1-29:12
+<<<<<<< HEAD
 MERGED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\c8cf722c534c72c94b7b8474bbee20f5\AndroidManifest.xml:17:1-25:12
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\8f42994cf89530d857542c3fea12d9a7\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\60768712b80ce0fa899b61b715c64ba7\AndroidManifest.xml:17:1-24:12
@@ -30,6 +38,11 @@ MERGED from [com.facebook.android:facebook-messenger:5.15.3] C:\Users\benng\.gra
 MERGED from [com.facebook.android:facebook-core:5.15.3] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\12057d0f3fcf4abeda7bba555db5e0d1\AndroidManifest.xml:21:1-53:12
 MERGED from [androidx.browser:browser:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\59015df3e1d858d7e763710d4215321d\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\1e221c1b117f4efcf94c3d0d7644f1ec\AndroidManifest.xml:17:1-22:12
+=======
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\8f42994cf89530d857542c3fea12d9a7\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\165e6d6ed04266f5c70b93d5ac5576ba\AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\8c957b2a01e58fb8053e6db77a76bead\AndroidManifest.xml:17:1-22:12
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\b30900c95015caadcb4e34b5bd7701ef\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\1c6f0ec2657c43293675cd8719cd54a8\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\f24c4c6108c3c3b59cfc1708a35b140a\AndroidManifest.xml:17:1-22:12
@@ -40,8 +53,11 @@ MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\benng\
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\36556a4381ea455db7c737f0529fc1e7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\16f700b3dcdabeb195b2c3080da4b839\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\0ea92bb2b1d98a7d508e72fcac87ec42\AndroidManifest.xml:17:1-22:12
+<<<<<<< HEAD
 MERGED from [androidx.media:media:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\d6a6265e8942382fddfe8e416e6db538\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\79734011f065ca970cf7a56218777996\AndroidManifest.xml:17:1-22:12
+=======
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 MERGED from [androidx.core:core:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\28104f19e918fbf3ae8caed481e60777\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\b66ecd84ee9824dd349e177a2199a137\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\67790860c21d8df4ce1c8969cd991ff7\AndroidManifest.xml:17:1-22:12
@@ -49,17 +65,26 @@ MERGED from [androidx.print:print:1.0.0] C:\Users\benng\.gradle\caches\transform
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\2977704927fbdcb9068faa01d6d49640\AndroidManifest.xml:17:1-25:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\867a294ae777d28f64e21e75b14bd966\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\1a443f8006ec2a74e78d1dddc5f47a60\AndroidManifest.xml:17:1-22:12
+<<<<<<< HEAD
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\9df4809ebed43453c0fc619157302797\AndroidManifest.xml:17:1-22:12
+=======
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\20236f9446b0e4dae7f7f7b4bc7edbe7\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\884b5af0f4c49d741827adc0c1f90402\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\7804119db8dd4aba6b8847d79c62a467\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\a3a4e3a961bf3a2e674cfb2d414435a6\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\cd1d80de9e018bc44b323a9b1062c5fd\AndroidManifest.xml:17:1-22:12
+<<<<<<< HEAD
 MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\e8cffbc60ae9ea866e4cbbbe3ef191f8\AndroidManifest.xml:17:1-24:12
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\c78e94a14264d4534cda745c6422cf5b\AndroidManifest.xml:2:1-13:12
 INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
 INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
 INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
+=======
+INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-64:12
+INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-64:12
+INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:2:1-64:12
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 	package
 		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:4:5-29
 		INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml
@@ -94,6 +119,7 @@ ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:19
 		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:20:9-41
 	android:required
 		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:21:9-32
+<<<<<<< HEAD
 uses-permission#android.permission.INTERNET
 ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:25:1-62
 MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\a967aaf17f2d84487bd188a17c123741\AndroidManifest.xml:23:5-67
@@ -102,6 +128,10 @@ MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\benn
 		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:25:18-60
 application
 ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:31:5-76:19
+=======
+application
+ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:30:5-62:19
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 MERGED from [godot-lib.release.aar] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\d4f93839b6bfd2dca6373857eaac7b58\AndroidManifest.xml:17:5-19:19
 MERGED from [godot-lib.release.aar] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\d4f93839b6bfd2dca6373857eaac7b58\AndroidManifest.xml:17:5-19:19
 MERGED from [com.google.android.gms:play-services-games:19.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\40d8aabac32bb3e0d228070613756c5b\AndroidManifest.xml:22:5-20
@@ -114,6 +144,7 @@ MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\benng\.g
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\2e4feb32c294a1e2a45eef81b9cf9df6\AndroidManifest.xml:22:5-27:19
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\8f42994cf89530d857542c3fea12d9a7\AndroidManifest.xml:7:5-20
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\8f42994cf89530d857542c3fea12d9a7\AndroidManifest.xml:7:5-20
+<<<<<<< HEAD
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\60768712b80ce0fa899b61b715c64ba7\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-ads-identifier:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\60768712b80ce0fa899b61b715c64ba7\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\a967aaf17f2d84487bd188a17c123741\AndroidManifest.xml:26:5-34:19
@@ -138,10 +169,15 @@ MERGED from [com.facebook.android:facebook-messenger:5.15.3] C:\Users\benng\.gra
 MERGED from [com.facebook.android:facebook-messenger:5.15.3] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\6a166bb3506f39f29ac6e9d95fcefb8f\AndroidManifest.xml:28:5-29:19
 MERGED from [com.facebook.android:facebook-core:5.15.3] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\12057d0f3fcf4abeda7bba555db5e0d1\AndroidManifest.xml:28:5-51:19
 MERGED from [com.facebook.android:facebook-core:5.15.3] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\12057d0f3fcf4abeda7bba555db5e0d1\AndroidManifest.xml:28:5-51:19
+=======
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\165e6d6ed04266f5c70b93d5ac5576ba\AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\165e6d6ed04266f5c70b93d5ac5576ba\AndroidManifest.xml:22:5-26:19
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 MERGED from [androidx.core:core:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\28104f19e918fbf3ae8caed481e60777\AndroidManifest.xml:22:5-89
 MERGED from [androidx.core:core:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\28104f19e918fbf3ae8caed481e60777\AndroidManifest.xml:22:5-89
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\2977704927fbdcb9068faa01d6d49640\AndroidManifest.xml:22:5-23:19
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\2977704927fbdcb9068faa01d6d49640\AndroidManifest.xml:22:5-23:19
+<<<<<<< HEAD
 MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\e8cffbc60ae9ea866e4cbbbe3ef191f8\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\e8cffbc60ae9ea866e4cbbbe3ef191f8\AndroidManifest.xml:22:5-20
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\c78e94a14264d4534cda745c6422cf5b\AndroidManifest.xml:11:5-20
@@ -244,6 +280,58 @@ ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:72
 		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:73:5-47
 	android:name
 		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:72:12-62
+=======
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\28104f19e918fbf3ae8caed481e60777\AndroidManifest.xml:22:18-86
+	android:label
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:30:18-67
+	tools:ignore
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:30:96-135
+	android:icon
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:30:136-163
+	android:allowBackup
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:30:68-95
+meta-data#xr_mode_metadata_name
+ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:36:9-38:54
+	android:value
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:38:13-51
+	android:name
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:37:13-49
+activity#com.godot.game.GodotApp
+ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:40:9-54:20
+	android:screenOrientation
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:45:13-50
+	android:label
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:42:13-62
+	android:launchMode
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:44:13-44
+	android:resizeableActivity
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:47:13-47
+	tools:ignore
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:48:13-43
+	android:configChanges
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:46:13-141
+	android:theme
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:43:13-77
+	android:name
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:41:13-37
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:50:13-53:29
+action#android.intent.action.MAIN
+ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:51:17-69
+	android:name
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:51:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:52:17-77
+	android:name
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:52:27-74
+meta-data#com.google.android.gms.games.APP_ID
+ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:58:1-59:50
+	android:value
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:59:5-47
+	android:name
+		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml:58:12-62
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 uses-sdk
 INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml
@@ -262,6 +350,7 @@ MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\ben
 MERGED from [com.google.android.gms:play-services-auth-base:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\e98997bc37ba595ab7105d8d75c34b42\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\2e4feb32c294a1e2a45eef81b9cf9df6\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\2e4feb32c294a1e2a45eef81b9cf9df6\AndroidManifest.xml:20:5-44
+<<<<<<< HEAD
 MERGED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\c8cf722c534c72c94b7b8474bbee20f5\AndroidManifest.xml:21:5-23:52
 MERGED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\c8cf722c534c72c94b7b8474bbee20f5\AndroidManifest.xml:21:5-23:52
 MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\8f42994cf89530d857542c3fea12d9a7\AndroidManifest.xml:5:5-44
@@ -300,6 +389,14 @@ MERGED from [androidx.browser:browser:1.0.0] C:\Users\benng\.gradle\caches\trans
 MERGED from [androidx.browser:browser:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\59015df3e1d858d7e763710d4215321d\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\1e221c1b117f4efcf94c3d0d7644f1ec\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\1e221c1b117f4efcf94c3d0d7644f1ec\AndroidManifest.xml:20:5-44
+=======
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\8f42994cf89530d857542c3fea12d9a7\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\8f42994cf89530d857542c3fea12d9a7\AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\165e6d6ed04266f5c70b93d5ac5576ba\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\165e6d6ed04266f5c70b93d5ac5576ba\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\8c957b2a01e58fb8053e6db77a76bead\AndroidManifest.xml:20:5-44
+MERGED from [androidx.fragment:fragment:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\8c957b2a01e58fb8053e6db77a76bead\AndroidManifest.xml:20:5-44
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\b30900c95015caadcb4e34b5bd7701ef\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\b30900c95015caadcb4e34b5bd7701ef\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\1c6f0ec2657c43293675cd8719cd54a8\AndroidManifest.xml:20:5-44
@@ -320,10 +417,13 @@ MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\benn
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\16f700b3dcdabeb195b2c3080da4b839\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\0ea92bb2b1d98a7d508e72fcac87ec42\AndroidManifest.xml:20:5-44
 MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\0ea92bb2b1d98a7d508e72fcac87ec42\AndroidManifest.xml:20:5-44
+<<<<<<< HEAD
 MERGED from [androidx.media:media:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\d6a6265e8942382fddfe8e416e6db538\AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\d6a6265e8942382fddfe8e416e6db538\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\79734011f065ca970cf7a56218777996\AndroidManifest.xml:20:5-44
 MERGED from [androidx.vectordrawable:vectordrawable:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\79734011f065ca970cf7a56218777996\AndroidManifest.xml:20:5-44
+=======
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 MERGED from [androidx.core:core:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\28104f19e918fbf3ae8caed481e60777\AndroidManifest.xml:20:5-44
 MERGED from [androidx.core:core:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\28104f19e918fbf3ae8caed481e60777\AndroidManifest.xml:20:5-44
 MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\b66ecd84ee9824dd349e177a2199a137\AndroidManifest.xml:20:5-44
@@ -338,8 +438,11 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\benng\.gradl
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\867a294ae777d28f64e21e75b14bd966\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\1a443f8006ec2a74e78d1dddc5f47a60\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\1a443f8006ec2a74e78d1dddc5f47a60\AndroidManifest.xml:20:5-44
+<<<<<<< HEAD
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\9df4809ebed43453c0fc619157302797\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\9df4809ebed43453c0fc619157302797\AndroidManifest.xml:20:5-44
+=======
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\20236f9446b0e4dae7f7f7b4bc7edbe7\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\20236f9446b0e4dae7f7f7b4bc7edbe7\AndroidManifest.xml:20:5-44
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\884b5af0f4c49d741827adc0c1f90402\AndroidManifest.xml:20:5-44
@@ -350,6 +453,7 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\benng\.g
 MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\a3a4e3a961bf3a2e674cfb2d414435a6\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\cd1d80de9e018bc44b323a9b1062c5fd\AndroidManifest.xml:20:5-44
 MERGED from [androidx.arch.core:core-runtime:2.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\cd1d80de9e018bc44b323a9b1062c5fd\AndroidManifest.xml:20:5-44
+<<<<<<< HEAD
 MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\e8cffbc60ae9ea866e4cbbbe3ef191f8\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-ads-base:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\e8cffbc60ae9ea866e4cbbbe3ef191f8\AndroidManifest.xml:20:5-44
 MERGED from [com.android.installreferrer:installreferrer:1.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\c78e94a14264d4534cda745c6422cf5b\AndroidManifest.xml:5:5-7:41
@@ -358,6 +462,10 @@ INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml
 INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml
 	tools:overrideLibrary
 		ADDED from [com.google.android.gms:play-services-ads:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\c8cf722c534c72c94b7b8474bbee20f5\AndroidManifest.xml:23:9-49
+=======
+INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml
+INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 	android:targetSdkVersion
 		INJECTED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml
 		ADDED from D:\AdventureLearn\AdventureLearn\android\build\AndroidManifest.xml
@@ -406,6 +514,7 @@ ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\benng\.gr
 		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\2e4feb32c294a1e2a45eef81b9cf9df6\AndroidManifest.xml:26:13-72
 	android:name
 		ADDED from [com.google.android.gms:play-services-base:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\2e4feb32c294a1e2a45eef81b9cf9df6\AndroidManifest.xml:24:13-79
+<<<<<<< HEAD
 uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\a967aaf17f2d84487bd188a17c123741\AndroidManifest.xml:24:5-79
 	android:name
@@ -420,10 +529,13 @@ ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\benng
 		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\a967aaf17f2d84487bd188a17c123741\AndroidManifest.xml:33:13-61
 	android:name
 		ADDED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\a967aaf17f2d84487bd188a17c123741\AndroidManifest.xml:30:13-65
+=======
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
 meta-data#com.google.android.gms.version
 ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\165e6d6ed04266f5c70b93d5ac5576ba\AndroidManifest.xml:23:9-25:69
 	android:value
 		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\165e6d6ed04266f5c70b93d5ac5576ba\AndroidManifest.xml:25:13-66
+<<<<<<< HEAD
 	android:name
 		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\165e6d6ed04266f5c70b93d5ac5576ba\AndroidManifest.xml:24:13-58
 activity#com.facebook.CustomTabMainActivity
@@ -458,3 +570,7 @@ uses-permission#com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_S
 ADDED from [com.android.installreferrer:installreferrer:1.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\c78e94a14264d4534cda745c6422cf5b\AndroidManifest.xml:9:5-110
 	android:name
 		ADDED from [com.android.installreferrer:installreferrer:1.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\c78e94a14264d4534cda745c6422cf5b\AndroidManifest.xml:9:22-107
+=======
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] C:\Users\benng\.gradle\caches\transforms-2\files-2.1\165e6d6ed04266f5c70b93d5ac5576ba\AndroidManifest.xml:24:13-58
+>>>>>>> parent of 1584b42... initial create assignment/customLevel
