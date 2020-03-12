@@ -1,0 +1,112 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Presentation/CharSelect/CharSelect.cs" type="Script" id=2]
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://CharSprites/Knight2/Head/head.png" type="Texture" id=4]
+[ext_resource path="res://CharSprites/Knight1/Head/head.png" type="Texture" id=5]
+[ext_resource path="res://CharSprites/Knight1/Idle/_IDLE_005.png" type="Texture" id=6]
+[ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_004.png" type="Texture" id=7]
+[ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_001.png" type="Texture" id=8]
+[ext_resource path="res://CharSprites/Knight1/Idle/_IDLE_001.png" type="Texture" id=9]
+[ext_resource path="res://CharSprites/Knight1/Idle/_IDLE_006.png" type="Texture" id=10]
+[ext_resource path="res://CharSprites/Knight1/Idle/_IDLE_003.png" type="Texture" id=11]
+[ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_003.png" type="Texture" id=12]
+[ext_resource path="res://CharSprites/Knight1/Idle/_IDLE_004.png" type="Texture" id=13]
+[ext_resource path="res://CharSprites/Knight1/Idle/_IDLE_000.png" type="Texture" id=14]
+[ext_resource path="res://CharSprites/Knight1/Idle/_IDLE_002.png" type="Texture" id=15]
+[ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_005.png" type="Texture" id=16]
+[ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_002.png" type="Texture" id=17]
+[ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_000.png" type="Texture" id=18]
+[ext_resource path="res://CharSprites/Knight2/Idle/_IDLE_006.png" type="Texture" id=19]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 9 ), ExtResource( 15 ), ExtResource( 11 ), ExtResource( 13 ), ExtResource( 6 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "Knight1",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 8 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 19 ) ],
+"loop": true,
+"name": "Knight2",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 3 )
+
+[node name="CharSelect" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Char" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knight1" type="TextureButton" parent="Char"]
+margin_left = 37.4182
+margin_top = 230.868
+margin_right = 580.418
+margin_bottom = 818.868
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Knight2" type="TextureButton" parent="Char"]
+margin_left = 195.858
+margin_top = 242.359
+margin_right = 929.858
+margin_bottom = 796.359
+rect_scale = Vector2( 0.25, 0.25 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Char"]
+position = Vector2( 360.79, 649.821 )
+scale = Vector2( 0.234724, 0.255487 )
+frames = SubResource( 1 )
+animation = "Knight2"
+playing = true
+
+[node name="SkillDescription" type="Label" parent="Char"]
+margin_left = 63.9717
+margin_top = 780.789
+margin_right = 605.972
+margin_bottom = 937.789
+custom_fonts/font = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Label" parent="."]
+margin_left = 82.3221
+margin_top = 76.8019
+margin_right = 586.322
+margin_bottom = 160.802
+custom_fonts/font = SubResource( 2 )
+text = "Select Character"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1227.44, 79.0089 )
+
+[node name="EnterBtn" type="Button" parent="."]
+margin_left = 203.093
+margin_top = 876.365
+margin_right = 458.093
+margin_bottom = 985.361
+text = "Enter"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Char/Knight1" to="." method="_on_Knight1_pressed"]
+[connection signal="pressed" from="Char/Knight2" to="." method="_on_Knight2_pressed"]
+[connection signal="pressed" from="EnterBtn" to="." method="_on_EnterBtn_pressed"]
