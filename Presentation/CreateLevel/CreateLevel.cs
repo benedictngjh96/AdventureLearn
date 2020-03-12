@@ -30,9 +30,14 @@ public class CreateLevel : Node2D
 	LineEdit option3Line;
 	LineEdit option4Line;
 
+<<<<<<< Updated upstream
 	static string levelName;
 	static int monsterId;
 	static int timeLimit;
+=======
+	string levelName;
+	int monsterId;
+>>>>>>> Stashed changes
 
 	/// <summary>
 	/// Initialization
@@ -87,6 +92,7 @@ public class CreateLevel : Node2D
 	}
 
 	/// <summary>
+<<<<<<< Updated upstream
 	/// Get levelName, monsterId, and timeLimit from CreateLevelInit
 	/// </summary>
 	/// <returns></returns>
@@ -100,6 +106,8 @@ public class CreateLevel : Node2D
 	}
 
 	/// <summary>
+=======
+>>>>>>> Stashed changes
 	/// Validates the user created questions and insert them into database
 	/// </summary>
 	/// <returns></returns>
@@ -109,7 +117,11 @@ public class CreateLevel : Node2D
 		if (findEmptyFields() == 0)
 		{
 			GD.Print("Start inserting into database.");
+<<<<<<< Updated upstream
 			createLevelBL.createLevel(levelName, monsterId, timeLimit);
+=======
+			createLevelBL.createLevel();
+>>>>>>> Stashed changes
 			GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
 		}
 	}

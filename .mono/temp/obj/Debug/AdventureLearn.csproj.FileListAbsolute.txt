@@ -215,7 +215,10 @@ D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Xml.XmlSerializer.dll
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Xml.XPath.dll
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Xml.XPath.XDocument.dll
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\Dapper.dll
+<<<<<<< Updated upstream
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\Facebook.dll
+=======
+>>>>>>> Stashed changes
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\MySqlConnector.dll
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Buffers.dll
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Data.SqlClient.dll
@@ -224,7 +227,10 @@ D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Numerics.Vectors.dll
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Threading.Tasks.Extensions.dll
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\Dapper.xml
+<<<<<<< Updated upstream
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\Facebook.xml
+=======
+>>>>>>> Stashed changes
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\MySqlConnector.xml
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Buffers.xml
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Data.SqlClient.xml
@@ -232,7 +238,14 @@ D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Memory.xml
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Numerics.Vectors.xml
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\SSAD\AdventureLearn\.mono\temp\bin\Debug\System.Threading.Tasks.Extensions.xml
+<<<<<<< Updated upstream
 D:\SSAD\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.csproj.CopyComplete
 D:\SSAD\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.dll
 D:\SSAD\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.pdb
 D:\SSAD\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.csprojAssemblyReference.cache
+=======
+D:\SSAD\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.csprojAssemblyReference.cache
+D:\SSAD\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.csproj.CopyComplete
+D:\SSAD\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.dll
+D:\SSAD\AdventureLearn\.mono\temp\obj\Debug\AdventureLearn.pdb
+>>>>>>> Stashed changes
