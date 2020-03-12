@@ -1,8 +1,0 @@
-<<<<<<< HEAD
-#Tue Mar 10 21:22:42 SGT 2020
-=======
-#Tue Feb 18 14:54:16 SGT 2020
->>>>>>> parent of 1584b42... initial create assignment/customLevel
-base.0=D\:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
-path.0=classes.dex
-renamed.0=classes.dex

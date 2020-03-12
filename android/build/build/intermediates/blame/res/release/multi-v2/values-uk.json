@@ -13,15 +13,11 @@
                         "endOffsets": "451"
                     },
                     "to": {
-                        "startLines": "10",
+                        "startLines": "37",
                         "startColumns": "4",
-                        "startOffsets": "1274",
+                        "startOffsets": "3988",
                         "endColumns": "204",
-<<<<<<< HEAD
                         "endOffsets": "4188"
-=======
-                        "endOffsets": "1474"
->>>>>>> parent of 1584b42... initial create assignment/customLevel
                     }
                 },
                 {
@@ -34,11 +30,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "21",
+                        "startLines": "56",
                         "startColumns": "4",
-                        "startOffsets": "2896",
+                        "startOffsets": "6299",
                         "endColumns": "100",
-                        "endOffsets": "2992"
+                        "endOffsets": "6395"
                     }
                 },
                 {
@@ -51,15 +47,14 @@
                         "endOffsets": "126"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "47",
                         "startColumns": "4",
-                        "startOffsets": "2820",
+                        "startOffsets": "5534",
                         "endColumns": "75",
-                        "endOffsets": "2891"
+                        "endOffsets": "5605"
                     }
                 },
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\c8cf722c534c72c94b7b8474bbee20f5\\res\\values-uk\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
@@ -94,8 +89,6 @@
                     }
                 },
                 {
-=======
->>>>>>> parent of 1584b42... initial create assignment/customLevel
                     "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\2e4feb32c294a1e2a45eef81b9cf9df6\\res\\values-uk\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
@@ -105,11 +98,11 @@
                         "endOffsets": "350,545,670,778,991,1118,1259,1389,1616,1720,1913,2036,2242,2410,2506,2593,2706"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startLines": "29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,215,410,539,651,864,995,1140,1479,1706,1814,2007,2134,2340,2512,2612,2703",
+                        "startOffsets": "2819,2929,3124,3253,3365,3578,3709,3854,4193,4420,4528,4721,4848,5054,5226,5326,5417",
                         "endColumns": "109,194,128,111,212,130,144,133,226,107,192,126,205,171,99,90,116",
-                        "endOffsets": "210,405,534,646,859,990,1135,1269,1701,1809,2002,2129,2335,2507,2607,2698,2815"
+                        "endOffsets": "2924,3119,3248,3360,3573,3704,3849,3983,4415,4523,4716,4843,5049,5221,5321,5412,5529"
                     }
                 }
             ]

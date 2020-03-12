@@ -4,7 +4,6 @@
             "outputFile": "D:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\118067ded0276cd701de750788e37e5e\\res\\values-watch-v20\\values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
@@ -24,8 +23,6 @@
                     }
                 },
                 {
-=======
->>>>>>> parent of 1584b42... initial create assignment/customLevel
                     "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\7ac70f34eb4e839ac75ef04f271b872b\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",

@@ -4,7 +4,6 @@
             "outputFile": "D:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-sv\\values-sv.xml",
             "map": [
                 {
-<<<<<<< HEAD
                     "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\c8cf722c534c72c94b7b8474bbee20f5\\res\\values-sv\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
@@ -22,8 +21,6 @@
                     }
                 },
                 {
-=======
->>>>>>> parent of 1584b42... initial create assignment/customLevel
                     "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\d4f93839b6bfd2dca6373857eaac7b58\\res\\values-sv\\values-sv.xml",
                     "from": {
                         "startLines": "2",
@@ -33,15 +30,11 @@
                         "endOffsets": "126"
                     },
                     "to": {
-                        "startLines": "20",
+                        "startLines": "70",
                         "startColumns": "4",
-                        "startOffsets": "2800",
+                        "startOffsets": "7974",
                         "endColumns": "75",
-<<<<<<< HEAD
                         "endOffsets": "8045"
-=======
-                        "endOffsets": "2871"
->>>>>>> parent of 1584b42... initial create assignment/customLevel
                     }
                 },
                 {
@@ -54,7 +47,6 @@
                         "endOffsets": "453"
                     },
                     "to": {
-<<<<<<< HEAD
                         "startLines": "60",
                         "startColumns": "4",
                         "startOffsets": "6431",
@@ -77,13 +69,6 @@
                         "startOffsets": "105,211,314,425,510,612,725,801,877,970,1065,1161,1255,1358,1453,1550,1648,1744,1837,1917,2023,2123,2219,2324,2426,2528,2682,8651",
                         "endColumns": "105,102,110,84,101,112,75,75,92,94,95,93,102,94,96,97,95,92,79,105,99,95,104,101,101,153,101,78",
                         "endOffsets": "206,309,420,505,607,720,796,872,965,1060,1156,1250,1353,1448,1545,1643,1739,1832,1912,2018,2118,2214,2319,2421,2523,2677,2779,8725"
-=======
-                        "startLines": "10",
-                        "startColumns": "4",
-                        "startOffsets": "1257",
-                        "endColumns": "206",
-                        "endOffsets": "1459"
->>>>>>> parent of 1584b42... initial create assignment/customLevel
                     }
                 },
                 {
@@ -96,28 +81,11 @@
                         "endOffsets": "349,538,663,771,971,1094,1243,1372,1579,1685,1878,2004,2217,2399,2491,2580,2684"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19",
+                        "startLines": "52,53,54,55,56,57,58,59,61,62,63,64,65,66,67,68,69",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,214,403,532,644,844,971,1124,1464,1671,1781,1974,2104,2317,2503,2599,2692",
+                        "startOffsets": "5279,5388,5577,5706,5818,6018,6145,6298,6638,6845,6955,7148,7278,7491,7677,7773,7866",
                         "endColumns": "108,188,128,111,199,126,152,132,206,109,192,129,212,185,95,92,107",
-                        "endOffsets": "209,398,527,639,839,966,1119,1252,1666,1776,1969,2099,2312,2498,2594,2687,2795"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\28104f19e918fbf3ae8caed481e60777\\res\\values-sv\\values-sv.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "100",
-                        "endOffsets": "151"
-                    },
-                    "to": {
-                        "startLines": "21",
-                        "startColumns": "4",
-                        "startOffsets": "2876",
-                        "endColumns": "100",
-                        "endOffsets": "2972"
+                        "endOffsets": "5383,5572,5701,5813,6013,6140,6293,6426,6840,6950,7143,7273,7486,7672,7768,7861,7969"
                     }
                 },
                 {
