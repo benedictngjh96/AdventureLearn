@@ -66,5 +66,16 @@ texture_disabled = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ViewCreatedBtn" type="Button" parent="."]
+margin_left = 222.075
+margin_top = 938.947
+margin_right = 417.075
+margin_bottom = 1022.95
+text = "View Created Levels"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="NextBtn" to="." method="_on_NextBtn_pressed"]
 [connection signal="pressed" from="PrevBtn" to="." method="_on_PrevBtn_pressed"]
+[connection signal="pressed" from="ViewCreatedBtn" to="." method="_on_ViewCreatedBtn_pressed"]

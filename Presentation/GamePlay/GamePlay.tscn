@@ -79,11 +79,6 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "Explosion2",
-"speed": 12.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "Default",
@@ -97,6 +92,11 @@ animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Explosion1",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Explosion2",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
@@ -115,11 +115,6 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "Explosion2",
-"speed": 12.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "Default",
@@ -128,6 +123,11 @@ animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Explosion1",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Explosion2",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
@@ -316,6 +316,8 @@ text = "USE SKILL"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Timer" type="Timer" parent="."]
 [connection signal="animation_finished" from="CharSprite" to="." method="_on_CharSprite_animation_finished"]
 [connection signal="animation_finished" from="CharSprite/CharSkillSprite" to="." method="_on_CharSkillSprite_animation_finished"]
 [connection signal="animation_finished" from="MonsterSprite" to="." method="_on_MonsterSprite_animation_finished"]

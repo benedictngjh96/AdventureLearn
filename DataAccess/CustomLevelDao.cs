@@ -122,4 +122,22 @@ public class CustomLevelDao
         customLevels.AddRange(customLevelDict.Values);
         return customLevels;
     }
+    public List<CustomLevel> GetStudentCustomLevel(int studentId)
+    {
+        string query = String.Format("SELECT * FROM CustomLevel cl WHERE cl.StudentId = {0}", studentId);
+        List<CustomLevel> customLevel;
+        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
+        {
+            customLevel = conn.Query<CustomLevel>(query).ToList();
+        }
+        return customLevel;
+    }
+    public int DeleteCustomLevel(int customLevelId)
+    {
+        BaseDao<Object> baseDao = new BaseDao<Object>();
+        string query = String.Format("DELETE FROM CustomLevel WHERE CustomLevelId = @CustomLevelId", customLevelId);
+
+        int result = baseDao.ExecuteQuery(query, new { CustomLevelId = customLevelId });
+        return result;
+    }
 }

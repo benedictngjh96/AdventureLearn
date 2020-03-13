@@ -15,7 +15,6 @@ public class ViewCustomLevel : Node2D
     Label title;
     public override void _Ready()
     {
-
         customLevelBL = new CustomLevelBL();
         customLevelList = customLevelBL.GetCustomLevels();
         vbox = GetNode<VBoxContainer>("VBoxContainer");
@@ -171,6 +170,10 @@ public class ViewCustomLevel : Node2D
         DisplayGameList();
         prevBtn.Disabled = true;
         nextBtn.Disabled = false;
+    }
+    private void _on_ViewCreatedBtn_pressed()
+    {
+        GetTree().ChangeScene("res://Presentation/CustomLevel/ViewCustomLevel.tscn");
     }
 }
 

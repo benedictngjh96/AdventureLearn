@@ -49,13 +49,23 @@ public class GamePlay : Node2D
         animationList.Add("Die");
         animationList.Add("Attack");
     }
+
     public override void _Process(float delta)
     {
-        Timer timer = new Timer();
         timerLabel.Text = s.ToString();
 
         if (s <= 0)
             GetTree().ChangeScene("res://Presentation/World/World.tscn");
+        if (s <= 10)
+        {
+            //RED
+            float r = 0.73f;
+            float g = 0.03f;
+            float b = 0.11f;
+            timerLabel.AddColorOverride("font_color", new Color(r, g, b));
+        }
+
+
     }
     public void SetLevelTitle(string title)
     {

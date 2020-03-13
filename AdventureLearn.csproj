@@ -141,6 +141,7 @@
     <Compile Include="Presentation\CreateLevel\CreateLevel.cs" />
     <Compile Include="Presentation\CreateLevel\CreateLevelInit.cs" />
     <Compile Include="Presentation\CustomLevel\CustomLevelScreen.cs" />
+    <Compile Include="Presentation\CustomLevel\ViewCreatedLevels.cs" />
     <Compile Include="Presentation\CustomLevel\ViewCustomLevel.cs" />
     <Compile Include="Presentation\GamePlay\Campaign.cs" />
     <Compile Include="Presentation\GamePlay\GamePlay.cs" />
