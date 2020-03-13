@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Presentation/CreateLevel/CreateLevelInit.cs" type="Script" id=1]
+[ext_resource path="res://Presentation/EditLevel/EditLevelInit.cs" type="Script" id=1]
 [ext_resource path="res://Assets/LockedLevels/BackwardLocked.png" type="Texture" id=2]
-[ext_resource path="res://Assets/UnlockedLevels/ForwardUnlocked.png" type="Texture" id=3]
-[ext_resource path="res://Assets/LockedLevels/ForwardLocked.png" type="Texture" id=4]
+[ext_resource path="res://Assets/LockedLevels/ForwardLocked.png" type="Texture" id=3]
+[ext_resource path="res://Assets/UnlockedLevels/ForwardUnlocked.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=5]
 
 [sub_resource type="SpriteFrames" id=1]
@@ -113,8 +113,8 @@ margin_top = 129.642
 margin_right = 449.928
 margin_bottom = 229.642
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 3 )
-texture_disabled = ExtResource( 4 )
+texture_normal = ExtResource( 4 )
+texture_disabled = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

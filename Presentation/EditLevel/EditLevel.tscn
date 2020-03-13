@@ -1,0 +1,205 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Presentation/EditLevel/EditLevel.cs" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="UpdateBtn" type="Button" parent="."]
+margin_left = 282.977
+margin_top = 499.68
+margin_right = 380.977
+margin_bottom = 519.68
+text = "Update"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionTitle" type="LineEdit" parent="."]
+margin_left = 129.545
+margin_top = 78.0542
+margin_right = 541.545
+margin_bottom = 202.054
+max_length = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Control" parent="."]
+margin_left = 55.2066
+margin_top = 27.9618
+margin_right = 95.2066
+margin_bottom = 67.9618
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option1" type="LineEdit" parent="Options"]
+margin_left = 80.1465
+margin_top = 245.368
+margin_right = 264.146
+margin_bottom = 295.368
+max_length = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox1" type="CheckBox" parent="Options/Option1"]
+margin_left = -23.2886
+margin_top = 13.1656
+margin_right = 0.711395
+margin_bottom = 37.1656
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option2" type="LineEdit" parent="Options"]
+margin_left = 300.736
+margin_top = 243.893
+margin_right = 484.736
+margin_bottom = 293.893
+max_length = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox2" type="CheckBox" parent="Options/Option2"]
+margin_left = -23.9219
+margin_top = 15.2708
+margin_right = 0.078125
+margin_bottom = 39.2708
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option3" type="LineEdit" parent="Options"]
+margin_left = 76.9886
+margin_top = 325.368
+margin_right = 260.989
+margin_bottom = 375.368
+max_length = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox3" type="CheckBox" parent="Options/Option3"]
+margin_left = -22.6517
+margin_top = 13.2072
+margin_right = 1.34828
+margin_bottom = 37.2072
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option4" type="LineEdit" parent="Options"]
+margin_left = 300.099
+margin_top = 322.808
+margin_right = 484.099
+margin_bottom = 372.808
+max_length = 50
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox4" type="CheckBox" parent="Options/Option4"]
+margin_left = -25.806
+margin_top = 14.2599
+margin_right = -1.80597
+margin_bottom = 38.2599
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionSelect" type="Control" parent="."]
+margin_left = 50.5463
+margin_top = 27.2448
+margin_right = 90.5463
+margin_bottom = 67.2448
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question1" type="Button" parent="QuestionSelect"]
+margin_left = 210.236
+margin_top = 433.561
+margin_right = 230.236
+margin_bottom = 453.561
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question2" type="Button" parent="QuestionSelect"]
+margin_left = 242.92
+margin_top = 432.591
+margin_right = 262.92
+margin_bottom = 452.591
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question3" type="Button" parent="QuestionSelect"]
+margin_left = 275.972
+margin_top = 432.59
+margin_right = 295.972
+margin_bottom = 452.59
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question4" type="Button" parent="QuestionSelect"]
+margin_left = 309.891
+margin_top = 432.59
+margin_right = 329.891
+margin_bottom = 452.59
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question5" type="Button" parent="QuestionSelect"]
+margin_left = 344.561
+margin_top = 433.238
+margin_right = 364.561
+margin_bottom = 453.238
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionNumberLabel" type="Label" parent="."]
+margin_left = 130.947
+margin_top = 57.0
+margin_right = 246.947
+margin_bottom = 78.0
+text = "Update Question 1:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionLevel" type="Label" parent="."]
+margin_left = 136.287
+margin_top = 232.047
+margin_right = 276.287
+margin_bottom = 263.047
+text = "Update Options & Correct Answer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorMessageLabel" type="Label" parent="."]
+margin_left = 250.351
+margin_top = 420.384
+margin_right = 420.351
+margin_bottom = 444.384
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="UpdateBtn" to="." method="_on_UpdateBtn_pressed"]
+[connection signal="pressed" from="QuestionSelect/Question1" to="." method="_on_Question1_pressed"]
+[connection signal="pressed" from="QuestionSelect/Question2" to="." method="_on_Question2_pressed"]
+[connection signal="pressed" from="QuestionSelect/Question3" to="." method="_on_Question3_pressed"]
+[connection signal="pressed" from="QuestionSelect/Question4" to="." method="_on_Question4_pressed"]
+[connection signal="pressed" from="QuestionSelect/Question5" to="." method="_on_Question5_pressed"]

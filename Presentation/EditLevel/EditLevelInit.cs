@@ -2,8 +2,10 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
-public class CreateLevelInit : Node2D
+public class EditLevelInit : Node2D
 {
+	EditLevelBL editLevelBL;
+
 	OptionButton timeLimitBtn;
 	LineEdit levelNameLine;
 	//OptionButton monsterIdBtn;
@@ -21,6 +23,8 @@ public class CreateLevelInit : Node2D
 	int numberOfChar;
 	int count = 0;
 
+	string oldName;
+
 	int[] timeLimitOptions;
 	//int[] monsterIdOptions;
 
@@ -28,8 +32,15 @@ public class CreateLevelInit : Node2D
 	/// Initialization
 	/// </summary>
 	/// <returns></returns>
-	public override void _Ready()
+	public override void _Ready()	
 	{
+		//testing
+		Global.CustomLevelId = 47;
+		Global.StudentId = 1;
+		//testing
+
+		editLevelBL = new EditLevelBL();
+
 		timeLimitOptions = new int[] { 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 };
 		//monsterIdOptions = new int[] { 1, 2, 3, 4, 5 };
 
@@ -46,6 +57,39 @@ public class CreateLevelInit : Node2D
 		animationList.Add("Idle");
 
 		addOptions();
+
+		displayOriginalLevelInit();
+	}
+
+	/// <summary>
+	/// Display original level name, selected monster, selected time limit
+	/// </summary>
+	/// <returns></returns>
+	private void displayOriginalLevelInit()
+	{
+		CustomLevel levelInfo = editLevelBL.loadCustomLevelInfo();
+		levelNameLine.Text = levelInfo.CustomLevelName;
+
+		int i = 0;
+		foreach (int a in timeLimitOptions)
+		{
+			if (a == levelInfo.TimeLimit)
+			{
+				GD.Print("Found time: " + a);
+				break;
+			}
+			i++;
+		}
+		timeLimitBtn.Select(i);
+		
+		GD.Print("\nCustom Level Id: " + levelInfo.CustomLevelId + "\nCustom Level Name: " + levelInfo.CustomLevelName + "\nMonster Id: " + levelInfo.Monster.MonsterId +
+			"\nTimeLimit: " + levelInfo.TimeLimit); 
+
+		count = levelInfo.Monster.MonsterId - 1;
+		changeArrowButtonStatues();
+		displayCharacter();
+
+		oldName = levelInfo.CustomLevelName;
 	}
 
 	/// <summary>
@@ -55,6 +99,7 @@ public class CreateLevelInit : Node2D
 	private void _on_ArrowLeft_pressed()
 	{
 		count--;
+		GD.Print("Count: " + count);
 		changeArrowButtonStatues();
 		displayCharacter();
 	}
@@ -66,6 +111,7 @@ public class CreateLevelInit : Node2D
 	private void _on_ArrowRight_pressed()
 	{
 		count++;
+		GD.Print("Count: " + count);
 		changeArrowButtonStatues();
 		displayCharacter();
 	}
@@ -96,8 +142,6 @@ public class CreateLevelInit : Node2D
 
 		numberOfChar = characterList.Count;
 		GD.Print("Number of characters: " + numberOfChar);
-
-		GD.Print("CharName: " + characterList[count].CharName);
 
 		changeArrowButtonStatues();
 
@@ -136,30 +180,25 @@ public class CreateLevelInit : Node2D
 	private void _on_NextStepBtn_pressed()
 	{
 		string levelName = levelNameLine.Text;
-		//int monsterId = Int32.Parse(monsterIdBtn.Text);
 		int monsterId = characterList[count].CharId;
 		int timeLimit = Int32.Parse(timeLimitBtn.Text);
 
 		//GD.Print("Level Name: " + levelName + "\nMonsterId: " + monsterId + "\nTimeLimit: " + timeLimit);
-
-		//Global.StudentId = 1; //testing purposes, remember to remove
-		GD.Print("\nStudent Id: " + Global.StudentId);
 
 		if (levelName == "")
 		{
 			GD.Print("Level name field is empty!");
 			errorMessageLabel.SetText("Level name field is empty!");
 		}
-		else if (CreateLevelBL.checkValidLevelName(levelName) != 1)
+		else if (EditLevelBL.checkValidLevelName(oldName, levelName) != 1)
 		{
 			GD.Print("Level name already exist!");
 			errorMessageLabel.SetText("Level name already exist!");
 		}
 		else
 		{
-			GetTree().ChangeScene("res://Presentation/CreateLevel/CreateLevel.tscn");
-			CreateLevel.setLevelInitInfo(levelName, monsterId, timeLimit);
+			EditLevel.setLevelInitInfo(levelName, monsterId, timeLimit);
+			GetTree().ChangeScene("res://Presentation/EditLevel/EditLevel.tscn");
 		}
 	}
 }
-
