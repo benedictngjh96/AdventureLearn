@@ -22,9 +22,16 @@ public class LevelSelection : Node2D
     TextureButton level4;
     TextureButton level5;
     TextureButton level6;
+    Sprite bg;
+    List<string> bgList;
 
     public override void _Ready()
     {
+        //REMOVE
+        Global.StudentId = 18;
+        Global.WorldId = 1;
+        Global.SectionId = 1;
+
         //Intializing nodes
         sectionBL = new SectionBL();
         studentScoreBL = new StudentScoreBL();
@@ -38,7 +45,12 @@ public class LevelSelection : Node2D
         level4 = GetNode<TextureButton>("Levels/Level4");
         level5 = GetNode<TextureButton>("Levels/Level5");
         level6 = GetNode<TextureButton>("Levels/Level6");
+        bg = GetNode<Sprite>("Bg");
+        bgList = new List<string>();
 
+        bgList.Add("res://Assets/LevelUI/LvlMap03.png");
+        bgList.Add("res://Assets/LevelUI/LvlMap01.png");
+        bgList.Add("res://Assets/LevelUI/LvlMap02.png");
         //On load set section id to 1 to display section 1
         Global.SectionId = 1;
         sectionList = sectionBL.GetWorldSections(Global.WorldId);
@@ -56,6 +68,7 @@ public class LevelSelection : Node2D
 
         HideLevels();
         DisplayLevelScore();
+
 
     }
     private void HideLevels()
@@ -78,6 +91,7 @@ public class LevelSelection : Node2D
             }
         }
     }
+
     private void DisplayLevelScore()
     {
         Node levelNode = GetNode<Node>("Levels");
@@ -88,7 +102,7 @@ public class LevelSelection : Node2D
             Node level;
             Section section = sectionBL.GetSectionLevels(Global.WorldId, Global.SectionId);
 
-            if(Global.SectionId == 1)
+            if (Global.SectionId == 1)
             {
                 //Unlock first level of section 1 by default
                 UnlockFirstLevel();
@@ -115,7 +129,7 @@ public class LevelSelection : Node2D
                 CheckSectionCleared();
 
             }
-            
+
         }
         else
         {
@@ -147,7 +161,7 @@ public class LevelSelection : Node2D
                 levelTexture.Visible = true;
 
                 Sprite starNode = levelTexture.GetChild(0) as Sprite;
-                
+
                 switch (score.LevelScore)
                 {
                     case int ls when (ls >= 1 && ls <= 50):
@@ -174,13 +188,14 @@ public class LevelSelection : Node2D
     private void CheckSectionCleared()
     {
         int result = sectionBL.CheckSectionCleared(Global.WorldId, Global.SectionId, Global.StudentId);
-         Student student = studentScoreBL.GetStudentScores(Global.WorldId, Global.SectionId, Global.StudentId);
+        Student student = studentScoreBL.GetStudentScores(Global.WorldId, Global.SectionId, Global.StudentId);
         //Student cleared previous section
-        if(result == 0 )
+        if (result == 0)
         {
             UnlockFirstLevel();
         }
     }
+
     private void UnlockFirstLevel()
     {
         Node levelNode = GetNode<Node>("Levels");
@@ -198,6 +213,51 @@ public class LevelSelection : Node2D
             starSprite.Visible = false;
         }
     }
+    private void LoadBg()
+    {
+        switch (Global.SectionId)
+        {
+            case 1:
+                var texture = ResourceLoader.Load(bgList[0]) as Texture;
+                bg.Texture = texture;
+                LoadFirstSection();
+                break;
+            case 2:
+                var texture2 = ResourceLoader.Load(bgList[1]) as Texture;
+                bg.Texture = texture2;
+                LoadSecondSection();
+                break;
+            case 3:
+                var texture3 = ResourceLoader.Load(bgList[2]) as Texture;
+                bg.Texture = texture3;
+                LoadThirdSection();
+                break;
+        }
+    }
+    private void LoadFirstSection()
+    {
+        level1.SetPosition(new Vector2(896, 352));
+        level2.SetPosition(new Vector2(678, 418));
+        level3.SetPosition(new Vector2(540, 212));
+        level4.SetPosition(new Vector2(337, 331));
+        level5.SetPosition(new Vector2(192, 249));
+    }
+    private void LoadSecondSection()
+    {
+        level1.SetPosition(new Vector2(821, 326));
+        level2.SetPosition(new Vector2(674, 390));
+        level3.SetPosition(new Vector2(487, 216));
+        level4.SetPosition(new Vector2(336, 202));
+        level5.SetPosition(new Vector2(99, 196));
+    }
+    private void LoadThirdSection()
+    {
+        level1.SetPosition(new Vector2(870, 332));
+        level2.SetPosition(new Vector2(671, 387));
+        level3.SetPosition(new Vector2(540, 212));
+        level4.SetPosition(new Vector2(383, 70));
+        level5.SetPosition(new Vector2(227, 234));
+    }
     private void _on_ForwardButton_pressed()
     {
         count++;
@@ -206,6 +266,7 @@ public class LevelSelection : Node2D
         if (backWardBtn.Disabled == true)
             backWardBtn.Disabled = false;
         Global.SectionId++;
+        LoadBg();
         DisplaySectionName();
         HideLevels();
         DisplayLevelScore();
@@ -218,6 +279,7 @@ public class LevelSelection : Node2D
         if (forwardBtn.Disabled == true)
             forwardBtn.Disabled = false;
         Global.SectionId--;
+        LoadBg();
         DisplaySectionName();
         HideLevels();
         DisplayLevelScore();
@@ -227,7 +289,7 @@ public class LevelSelection : Node2D
     {
         sectionLbl.Text = sectionList[count - 1].SectionName;
     }
-    
+
     private void DisableBothButtons()
     {
         if (sectionList.Count == 1)
