@@ -64,7 +64,7 @@ public class Global : Node
 				var sprite = ResourceLoader.Load(spritePath + animation + "/" + fileName) as Texture;
 				spriteFrames.AddFrame(animation, sprite);
 				fileName = dir.GetNext();
-				GD.Print(fileName);
+				//GD.Print(fileName);
 				count++;
 			}
 			animatedSprite.Frames = spriteFrames;

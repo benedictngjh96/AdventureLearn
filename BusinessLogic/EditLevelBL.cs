@@ -1,22 +1,12 @@
 using Godot;
-using System.Collections.Generic;
 using System;
+using System.Collections.Generic;
 
-public class CreateLevelBL : Node
+public class EditLevelBL : Node
 {
-	CreateLevelDAO createLevelDAO = new CreateLevelDAO();
+	EditLevelDao editLevelDao = new EditLevelDao();
 	List<UserCreatedQuestion> TempQuestionList = new List<UserCreatedQuestion>();
-
-	/// <summary>
-	/// Intialize 5 questions
-	/// </summary>
-	/// <returns></returns>
-	public void initializeQuestions()
-	{
-		for (int i = 0; i < 5; i++)
-			TempQuestionList.Add(new UserCreatedQuestion(i, "", "", "", "", 1, ""));
-	}
-
+		
 	/// <summary>
 	/// Save current question to List
 	/// </summary>
@@ -42,20 +32,42 @@ public class CreateLevelBL : Node
 	}
 
 	/// <summary>
-	/// Insert new level and all questions associated with it into database
+	/// Update questions in the selected custom level
 	/// </summary>
 	/// <param name="int questionNumber"></param>
 	/// <returns></returns>
-	public void createLevel(string levelName, int monsterId, int timeLimit)
+	public void updateLevel()
 	{
-		//student
-		createLevelDAO.InsertCustomLevel(levelName, monsterId, timeLimit);
-
-		//teacher
-		//createLevelDAO.InsertAssignment(levelName, monsterId, timeLimit);
-
 		foreach (UserCreatedQuestion q in TempQuestionList)
-			createLevelDAO.InsertQuestion(q.Option1, q.Option2, q.Option3, q.Option4, q.CorrectOption, q.QuestionTitle);
+			editLevelDao.updateQuestion(q.Option1, q.Option2, q.Option3, q.Option4, q.CorrectOption, q.QuestionTitle, q.QuestionId);
+	}
+
+	/// <summary>
+	/// List all questions in List
+	/// </summary>
+	/// <returns></returns>
+	private void listQuestions()
+	{
+		foreach (UserCreatedQuestion q in TempQuestionList)
+			GD.Print("\nQuestion Id: " + q.QuestionId
+				+ "\nQuestion Title: " + q.QuestionTitle
+				+ "\nOption 1: " + q.Option1
+				+ "\nOption 2: " + q.Option2
+				+ "\nOption 3: " + q.Option3
+				+ "\nOption 4: " + q.Option4
+				+ "\nCorrect Option: Option " + q.CorrectOption);
+	}
+
+	/// <summary>
+	/// Check if levelName already exists
+	/// Return -1 if there is existing level name, else return 1
+	/// </summary>
+	/// <param name="string oldName"></param>
+	/// <param name="string newName"></param>
+	/// <returns></returns>
+	public static int checkValidLevelName(string oldName, string newName)
+	{
+		return EditLevelDao.checkValidLevelName(oldName, newName);
 	}
 
 	/// <summary>
@@ -85,13 +97,35 @@ public class CreateLevelBL : Node
 	}
 
 	/// <summary>
-	/// Check if levelName already exists
-	/// Return -1 if there is existing level name, else return 1
+	/// Load selected custom level information
 	/// </summary>
 	/// <returns></returns>
-	public static int checkValidLevelName(string levelName)
+	public CustomLevel loadCustomLevelInfo()
 	{
-		return CreateLevelDAO.checkValidLevelName(levelName);
+		int i = 0;
+
+		CustomLevel levelInfo = editLevelDao.getLevelInfo();
+		//GD.Print(levelInfo.Question.Count);
+
+		List<Question> levelQuestions = levelInfo.Question;
+		foreach (Question q in levelQuestions)
+		{
+			TempQuestionList.Add(new UserCreatedQuestion(i, q.Option1, q.Option2, q.Option3, q.CorrectOption, 4, q.QuestionTitle));
+			i++;
+		}
+
+		/*GD.Print("\nCustom Level Id: " + levelInfo.CustomLevelId + "\nMonster Id: " + levelInfo.Monster.MonsterId + 
+			"\nTimeLimit: " + levelInfo.TimeLimit);*/
+
+		/*foreach (Question q in levelQuestions)
+		{
+			GD.Print("Question id: " + q.QuestionId + "\nQuestionTitle: " + q.QuestionTitle
+				+ "\nOption1: " + q.Option1 + "\nOption2: " + q.Option2 + "\nOption3:" + q.Option3 + "\nCorrectOption: " + q.CorrectOption + "\n");
+		}*/
+
+		//listQuestions();
+
+		return levelInfo;
 	}
 
 	/// <summary>
@@ -101,7 +135,7 @@ public class CreateLevelBL : Node
 	/// <returns></returns>
 	public int checkDuplicationOptions()
 	{
-		foreach (UserCreatedQuestion q in TempQuestionList)
+		foreach(UserCreatedQuestion q in TempQuestionList)
 		{
 			if (q.Option1 == q.Option2 || q.Option1 == q.Option3 || q.Option1 == q.Option4 || q.Option2 == q.Option3 || q.Option2 == q.Option4
 				|| q.Option3 == q.Option4)
@@ -109,21 +143,5 @@ public class CreateLevelBL : Node
 		}
 
 		return -1;
-	}
-
-	/// <summary>
-	/// List all questions in List
-	/// </summary>
-	/// <returns></returns>
-	private void listQuestions()
-	{
-		foreach (UserCreatedQuestion q in TempQuestionList)
-			GD.Print("\nQuestion Id: " + q.QuestionId
-				+ "\nQuestion Title: " + q.QuestionTitle
-				+ "\nOption 1: " + q.Option1
-				+ "\nOption 2: " + q.Option2
-				+ "\nOption 3: " + q.Option3
-				+ "\nOption 4: " + q.Option4
-				+ "\nCorrect Option: Option " + q.CorrectOption);
 	}
 }

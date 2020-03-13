@@ -88,6 +88,7 @@
     <Compile Include="BusinessLogic\CreateLevelBL.cs" />
     <Compile Include="BusinessLogic\CustomLevelBL.cs" />
     <Compile Include="BusinessLogic\CustomLevelScoreBL.cs" />
+    <Compile Include="BusinessLogic\EditLevelBL.cs" />
     <Compile Include="BusinessLogic\GoogleBL.cs" />
     <Compile Include="BusinessLogic\LeaderboardBL.cs" />
     <Compile Include="BusinessLogic\SectionBL.cs" />
@@ -103,6 +104,7 @@
     <Compile Include="DataAccess\CreateLevelDAO.cs" />
     <Compile Include="DataAccess\CustomLevelDao.cs" />
     <Compile Include="DataAccess\CustomLevelScoreDao.cs" />
+    <Compile Include="DataAccess\EditLevelDao.cs" />
     <Compile Include="DataAccess\LeaderboardDao.cs" />
     <Compile Include="DataAccess\SectionDao.cs" />
     <Compile Include="DataAccess\StudentDao.cs" />
@@ -142,6 +144,8 @@
     <Compile Include="Presentation\CreateLevel\CreateLevelInit.cs" />
     <Compile Include="Presentation\CustomLevel\CustomLevelScreen.cs" />
     <Compile Include="Presentation\CustomLevel\ViewCustomLevel.cs" />
+    <Compile Include="Presentation\EditLevel\EditLevel.cs" />
+    <Compile Include="Presentation\EditLevel\EditLevelInit.cs" />
     <Compile Include="Presentation\GamePlay\Campaign.cs" />
     <Compile Include="Presentation\GamePlay\GamePlay.cs" />
     <Compile Include="Presentation\Leaderboard\LeaderboardScreen.cs" />
@@ -154,6 +158,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Presentation\EditLevel\EditLevel.tscn" />
+    <None Include="Presentation\EditLevel\EditLevelInit.tscn" />
     <None Include="Presentation\Leaderboard\Leaderboard.tscn" />
   </ItemGroup>
   <ItemGroup>
