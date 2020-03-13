@@ -1,7 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Presentation/CreateLevel/CreateLevelInit.cs" type="Script" id=1]
-[ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/LockedLevels/BackwardLocked.png" type="Texture" id=2]
+[ext_resource path="res://Assets/UnlockedLevels/ForwardUnlocked.png" type="Texture" id=3]
+[ext_resource path="res://Assets/LockedLevels/ForwardLocked.png" type="Texture" id=4]
+[ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=5]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -17,31 +28,24 @@ __meta__ = {
 }
 
 [node name="NextStepBtn" type="Button" parent="."]
-margin_left = 189.01
-margin_top = 275.547
-margin_right = 361.01
-margin_bottom = 295.547
+margin_left = 190.337
+margin_top = 276.21
+margin_right = 362.337
+margin_bottom = 296.21
 text = "Next Step"
 __meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="TimeLimit" type="OptionButton" parent="."]
 margin_left = 190.888
-margin_top = 204.078
+margin_top = 203.448
 margin_right = 303.888
-margin_bottom = 224.078
+margin_bottom = 223.448
 __meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="MonsterId" type="OptionButton" parent="."]
-margin_left = 190.224
-margin_top = 140.39
-margin_right = 303.224
-margin_bottom = 160.39
-__meta__ = {
-"_edit_use_anchors_": false
+"_edit_use_anchors_": false,
+"_editor_description_": ""
 }
 
 [node name="LevelNameLabel" type="Label" parent="."]
@@ -78,10 +82,51 @@ margin_left = 103.01
 margin_top = 208.308
 margin_right = 183.01
 margin_bottom = 249.308
-text = "TIme limit:"
+text = "Time limit:"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="MonsterSelect" type="Node" parent="."]
+
+[node name="MonsterSprite" type="AnimatedSprite" parent="MonsterSelect"]
+position = Vector2( 305.27, 150.893 )
+scale = Vector2( 0.0578066, 0.056661 )
+frames = SubResource( 1 )
+
+[node name="ArrowLeft" type="TextureButton" parent="MonsterSelect"]
+margin_left = 187.478
+margin_top = 129.392
+margin_right = 264.478
+margin_bottom = 229.392
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 5 )
+texture_disabled = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BackBtn" parent="." instance=ExtResource( 2 )]
+[node name="ArrowRight" type="TextureButton" parent="MonsterSelect"]
+margin_left = 372.928
+margin_top = 129.642
+margin_right = 449.928
+margin_bottom = 229.642
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MonsterName" type="Label" parent="MonsterSelect"]
+margin_left = 269.899
+margin_top = 174.979
+margin_right = 355.899
+margin_bottom = 188.979
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="NextStepBtn" to="." method="_on_NextStepBtn_pressed"]
+[connection signal="pressed" from="MonsterSelect/ArrowLeft" to="." method="_on_ArrowLeft_pressed"]
+[connection signal="pressed" from="MonsterSelect/ArrowRight" to="." method="_on_ArrowRight_pressed"]
