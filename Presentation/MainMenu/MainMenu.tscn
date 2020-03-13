@@ -11,10 +11,10 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
-margin_left = 179.081
-margin_top = 73.1765
-margin_right = 471.081
-margin_bottom = 174.177
+margin_left = 370.414
+margin_top = 25.3433
+margin_right = 662.414
+margin_bottom = 126.344
 custom_fonts/font = SubResource( 1 )
 text = "Main Menu"
 __meta__ = {
@@ -29,60 +29,60 @@ __meta__ = {
 }
 
 [node name="WorldBtn" type="Button" parent="Btns"]
-margin_left = 30.0
-margin_top = 300.0
-margin_right = 296.0
-margin_bottom = 420.0
+margin_left = 37.1749
+margin_top = 178.025
+margin_right = 303.175
+margin_bottom = 298.025
 text = "World"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LvlBtn" type="Button" parent="Btns"]
-margin_left = 375.355
-margin_top = 300.0
-margin_right = 641.355
-margin_bottom = 420.0
+margin_left = 380.138
+margin_top = 187.592
+margin_right = 646.138
+margin_bottom = 307.592
 text = "Create Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ChallengeBtn" type="Button" parent="Btns"]
-margin_left = 32.2721
-margin_top = 488.582
-margin_right = 298.272
-margin_bottom = 608.582
+margin_left = 718.679
+margin_top = 187.233
+margin_right = 984.678
+margin_bottom = 307.233
 text = "Custom Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AssignmentBtn" type="Button" parent="Btns"]
-margin_left = 370.811
-margin_top = 485.407
-margin_right = 636.811
-margin_bottom = 605.407
+margin_left = 45.681
+margin_top = 356.171
+margin_right = 311.681
+margin_bottom = 476.171
 text = "Assignment"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LeaderboardBtn" type="Button" parent="Btns"]
-margin_left = 35.8821
-margin_top = 660.959
-margin_right = 301.882
-margin_bottom = 780.959
+margin_left = 380.057
+margin_top = 355.861
+margin_right = 646.057
+margin_bottom = 475.861
 text = "Leaderboard"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="UserProfileBtn" type="Button" parent="Btns"]
-margin_left = 373.396
-margin_top = 659.874
-margin_right = 639.396
-margin_bottom = 779.874
+margin_left = 742.058
+margin_top = 351.069
+margin_right = 1008.06
+margin_bottom = 471.069
 text = "User Profile"
 __meta__ = {
 "_edit_use_anchors_": false

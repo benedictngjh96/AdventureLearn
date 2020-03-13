@@ -68,10 +68,10 @@ __meta__ = {
 }
 
 [node name="ViewCreatedBtn" type="Button" parent="."]
-margin_left = 222.075
-margin_top = 938.947
-margin_right = 417.075
-margin_bottom = 1022.95
+margin_left = 781.148
+margin_top = 386.907
+margin_right = 976.148
+margin_bottom = 470.91
 text = "View Created Levels"
 __meta__ = {
 "_edit_use_anchors_": false

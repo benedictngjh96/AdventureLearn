@@ -173,7 +173,7 @@ public class ViewCustomLevel : Node2D
     }
     private void _on_ViewCreatedBtn_pressed()
     {
-        GetTree().ChangeScene("res://Presentation/CustomLevel/ViewCustomLevel.tscn");
+        GetTree().ChangeScene("res://Presentation/CustomLevel/ViewCreatedLevels.tscn");
     }
 }
 
