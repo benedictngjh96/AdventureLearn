@@ -96,6 +96,7 @@
     <Compile Include="BusinessLogic\StudentBL.cs" />
     <Compile Include="BusinessLogic\StudentScoreBL.cs" />
     <Compile Include="BusinessLogic\TeacherBL.cs" />
+    <Compile Include="BusinessLogic\WorldBL.cs" />
     <Compile Include="DataAccess\AssignmentDao.cs" />
     <Compile Include="DataAccess\AssignmentScoreDao.cs" />
     <Compile Include="DataAccess\BaseDao.cs" />

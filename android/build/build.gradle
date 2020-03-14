@@ -87,15 +87,15 @@ android {
             java.srcDirs = [
                     'src'
 //DIR_SRC_BEGIN
-,'D:/AdventureLearn/AdventureLearn/android/Facebook/src'
-,'D:/AdventureLearn/AdventureLearn/android/GodotGPGSPlugin-master/src'
+,'D:/SSAD/AdventureLearn/android/Facebook/src'
+,'D:/SSAD/AdventureLearn/android/GodotGPGSPlugin-master/src'
 //DIR_SRC_END
             ]
             res.srcDirs = [
                     'res'
 //DIR_RES_BEGIN
-,'D:/AdventureLearn/AdventureLearn/android/Facebook/res'
-,'D:/AdventureLearn/AdventureLearn/android/GodotGPGSPlugin-master/res'
+,'D:/SSAD/AdventureLearn/android/Facebook/res'
+,'D:/SSAD/AdventureLearn/android/GodotGPGSPlugin-master/res'
 //DIR_RES_END
             ]
             aidl.srcDirs = [
@@ -1146,3 +1146,73 @@ android {
 
 
 
+<<<<<<< Updated upstream
+=======
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> Stashed changes

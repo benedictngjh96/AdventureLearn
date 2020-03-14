@@ -1,4 +1,9 @@
+<<<<<<< Updated upstream
 #Tue Mar 10 21:22:37 SGT 2020
 base.0=D\:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+=======
+#Sat Mar 14 13:29:25 SGT 2020
+base.0=D\:\\SSAD\\AdventureLearn\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
+>>>>>>> Stashed changes
 path.0=classes.dex
 renamed.0=classes.dex
