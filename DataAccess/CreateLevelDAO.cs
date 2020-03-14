@@ -141,7 +141,7 @@ public class CreateLevelDAO : Node
             "SELECT DISTINCT QuestionId FROM Question NATURAL JOIN CustomLevel " +
             "WHERE StudentId = {0} AND CustomLevelName = '{1}' AND QuestionTitle = '{2}' " +
             "AND Option1 = '{3}' AND Option2 = '{4}' AND Option3 = '{5}' AND CorrectOption = '{6}' " +
-            "AND MonsterId = {7} AND TimeLimit = {8} AND PublicLevel = 0;",
+            "AND MonsterId = {7} AND TimeLimit = {8};",
             Global.StudentId, levelName, questionTitle, option1,
             option2, option3, correctOption, monsterId, timeLimit);
 
@@ -197,7 +197,7 @@ public class CreateLevelDAO : Node
             "SELECT DISTINCT CustomLevelId FROM Question NATURAL JOIN CustomLevel " +
             "WHERE StudentId = {0} AND CustomLevelName = '{1}' AND QuestionTitle = '{2}' " +
             "AND Option1 = '{3}' AND Option2 = '{4}' AND Option3 = '{5}' AND CorrectOption = '{6}' " +
-            "AND MonsterId = {7} AND TimeLimit = {8} AND PublicLevel = 0;",
+            "AND MonsterId = {7} AND TimeLimit = {8};",
             Global.StudentId, levelName, questionTitle, option1,
             option2, option3, correctOption, monsterId, timeLimit);
 
