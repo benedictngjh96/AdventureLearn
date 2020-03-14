@@ -21,7 +21,7 @@ public class CustomLevelBL
     public List<CustomLevel> GetStudentCustomLevel(int studentId)
     {
         CustomLevelDao customLevelDao = new CustomLevelDao();
-        return customLevelDao.GetCustomLevels();
+        return customLevelDao.GetStudentCustomLevel(studentId);
     }
     public List<CustomLevelScore> GetClearedCustomLevels(int studentId)
     {

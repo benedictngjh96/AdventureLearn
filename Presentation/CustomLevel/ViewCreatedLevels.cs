@@ -10,9 +10,6 @@ public class ViewCreatedLevels : Node2D
     CustomLevelBL customLevelBL;
     public override void _Ready()
     {
-        //REMOVE
-        Global.StudentId = 1;
-
         vbox = GetNode<VBoxContainer>("VBoxContainer");
         gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
 
@@ -60,6 +57,8 @@ public class ViewCreatedLevels : Node2D
     {
         GD.Print(btn.Name);
         CustomLevel cl = customLevelList.Find(item => item.CustomLevelName == btn.Name.Trim());
+        Global.CustomLevelId = cl.CustomLevelId;
+        GetTree().ChangeScene("res://Presentation/EditLevel/EditLevelInit.tscn");
         //Redirect to edit page
     }
     private void DeleteLevel(Button btn)

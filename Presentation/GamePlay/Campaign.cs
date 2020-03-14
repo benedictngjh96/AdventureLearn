@@ -13,6 +13,12 @@ public class Campaign : Node2D
 	Character character;
 	public override void _Ready()
 	{
+		//REMOVE
+		Global.StudentId = 1;
+		Global.WorldId = 1;
+		Global.SectionId = 1;
+		Global.LevelId = 1;
+
 		campaignBL = new CampaignBL();
 		characterBL = new CharacterBL();
 		level = campaignBL.GetLevel(Global.WorldId, Global.SectionId, Global.LevelId);
@@ -28,6 +34,7 @@ public class Campaign : Node2D
 		gamePlay.SetTimeLimit(level.TimeLimit);
 		gamePlay.DisplayQuestion();
 		gamePlay.SetQuestionNum();
+		//gamePlay.SetBg();
 	
 	}
 	private void SetSpritesPath()

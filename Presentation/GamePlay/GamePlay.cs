@@ -272,6 +272,15 @@ public class GamePlay : Node2D
         AnimatedSprite effect = GetNode<AnimatedSprite>("Buttons/Option4/Effect4");
         effect.Play("Default");
     }
+    public void SetBg()
+    {
+        Node2D n = GetNode<Node2D>("Bg");
+        Sprite s = GetNode<Sprite>("Bg/ParallaxBackground/ParallaxLayer/Sprite");
+        Random r = new Random();
+        int rng = r.Next(4);
+        var texture2 = ResourceLoader.Load(String.Format("res://Assets/LevelUI/Bg/bg{0}.png",rng)) as Texture;
+        s.Texture = texture2;
+    }
 }
 
 

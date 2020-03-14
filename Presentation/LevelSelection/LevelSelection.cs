@@ -27,11 +27,6 @@ public class LevelSelection : Node2D
 
     public override void _Ready()
     {
-        //REMOVE
-        Global.StudentId = 18;
-        Global.WorldId = 1;
-        Global.SectionId = 1;
-
         //Intializing nodes
         sectionBL = new SectionBL();
         studentScoreBL = new StudentScoreBL();
