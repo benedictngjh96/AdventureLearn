@@ -13,12 +13,6 @@ public class Campaign : Node2D
 	Character character;
 	public override void _Ready()
 	{
-		//REMOVE
-		Global.StudentId = 1;
-		Global.WorldId = 1;
-		Global.SectionId = 1;
-		Global.LevelId = 1;
-
 		campaignBL = new CampaignBL();
 		characterBL = new CharacterBL();
 		level = campaignBL.GetLevel(Global.WorldId, Global.SectionId, Global.LevelId);
@@ -34,7 +28,8 @@ public class Campaign : Node2D
 		gamePlay.SetTimeLimit(level.TimeLimit);
 		gamePlay.DisplayQuestion();
 		gamePlay.SetQuestionNum();
-		//gamePlay.SetBg();
+		gamePlay.SetBg();
+		gamePlay.LoadStart(character,level.Monster);
 	
 	}
 	private void SetSpritesPath()
@@ -47,6 +42,7 @@ public class Campaign : Node2D
 	{
 		StudentScoreBL studentScoreBL = new StudentScoreBL();
 		int result = studentScoreBL.InsertStudentScore(Global.StudentId, Global.WorldId, Global.SectionId, Global.LevelId, gamePlay.GetTimeLeft(), level.TimeLimit);
+		GetTree().ChangeScene("res://Presentation/World/World.tscn");
 	}
 
 }

@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=217 format=2]
 
 [ext_resource path="res://Presentation/GamePlay/GamePlay.cs" type="Script" id=1]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=2]
@@ -68,18 +68,150 @@
 [ext_resource path="res://Skills/Explosion3/h_0011.png" type="Texture" id=66]
 [ext_resource path="res://Skills/Explosion3/h_0006.png" type="Texture" id=67]
 [ext_resource path="res://Skills/Explosion3/h_0007.png" type="Texture" id=68]
-[ext_resource path="res://CharSprites/Warrior1/Attack/Attack_00.png" type="Texture" id=69]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_09.png" type="Texture" id=69]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_03.png" type="Texture" id=70]
+[ext_resource path="res://Assets/GameplayUI/Versus/Vs.png" type="Texture" id=71]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_01.png" type="Texture" id=72]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_04.png" type="Texture" id=73]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_13.png" type="Texture" id=74]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_14.png" type="Texture" id=75]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_02.png" type="Texture" id=76]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_00.png" type="Texture" id=77]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_12.png" type="Texture" id=78]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_28.png" type="Texture" id=79]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_18.png" type="Texture" id=80]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_35.png" type="Texture" id=81]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_23.png" type="Texture" id=82]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_37.png" type="Texture" id=83]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_19.png" type="Texture" id=84]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_16.png" type="Texture" id=85]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_27.png" type="Texture" id=86]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_06.png" type="Texture" id=87]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_10.png" type="Texture" id=88]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_07.png" type="Texture" id=89]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_19.png" type="Texture" id=90]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_21.png" type="Texture" id=91]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_29.png" type="Texture" id=92]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_20.png" type="Texture" id=93]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_33.png" type="Texture" id=94]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_34.png" type="Texture" id=95]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_36.png" type="Texture" id=96]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_38.png" type="Texture" id=97]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_22.png" type="Texture" id=98]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_15.png" type="Texture" id=99]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_17.png" type="Texture" id=100]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_14.png" type="Texture" id=101]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_17.png" type="Texture" id=102]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_15.png" type="Texture" id=103]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_18.png" type="Texture" id=104]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_30.png" type="Texture" id=105]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_26.png" type="Texture" id=106]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_25.png" type="Texture" id=107]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_24.png" type="Texture" id=108]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_31.png" type="Texture" id=109]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_32.png" type="Texture" id=110]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_41.png" type="Texture" id=111]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_40.png" type="Texture" id=112]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_46.png" type="Texture" id=113]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_43.png" type="Texture" id=114]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_39.png" type="Texture" id=115]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_42.png" type="Texture" id=116]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_45.png" type="Texture" id=117]
+[ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_44.png" type="Texture" id=118]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_13.png" type="Texture" id=119]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_14.png" type="Texture" id=120]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_00.png" type="Texture" id=121]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_02.png" type="Texture" id=122]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_01.png" type="Texture" id=123]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_03.png" type="Texture" id=124]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_05.png" type="Texture" id=125]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_06.png" type="Texture" id=126]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_07.png" type="Texture" id=127]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_09.png" type="Texture" id=128]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_04.png" type="Texture" id=129]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_08.png" type="Texture" id=130]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_10.png" type="Texture" id=131]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_11.png" type="Texture" id=132]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_12.png" type="Texture" id=133]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_31.png" type="Texture" id=134]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_20.png" type="Texture" id=135]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_39.png" type="Texture" id=136]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_16.png" type="Texture" id=137]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_19.png" type="Texture" id=138]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_24.png" type="Texture" id=139]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_17.png" type="Texture" id=140]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_29.png" type="Texture" id=141]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_36.png" type="Texture" id=142]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_33.png" type="Texture" id=143]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_25.png" type="Texture" id=144]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_32.png" type="Texture" id=145]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_30.png" type="Texture" id=146]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_37.png" type="Texture" id=147]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_21.png" type="Texture" id=148]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_34.png" type="Texture" id=149]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_18.png" type="Texture" id=150]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_38.png" type="Texture" id=151]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_27.png" type="Texture" id=152]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_22.png" type="Texture" id=153]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_26.png" type="Texture" id=154]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_23.png" type="Texture" id=155]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_28.png" type="Texture" id=156]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_35.png" type="Texture" id=157]
+[ext_resource path="res://Assets/GameplayUI/GetReady/GetReady_15.png" type="Texture" id=158]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_20.png" type="Texture" id=159]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_21.png" type="Texture" id=160]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_11.png" type="Texture" id=161]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_16.png" type="Texture" id=162]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_08.png" type="Texture" id=163]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_22.png" type="Texture" id=164]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_05.png" type="Texture" id=165]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_12.png" type="Texture" id=166]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_31.png" type="Texture" id=167]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_27.png" type="Texture" id=168]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_06.png" type="Texture" id=169]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_13.png" type="Texture" id=170]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_20.png" type="Texture" id=171]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_02.png" type="Texture" id=172]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_25.png" type="Texture" id=173]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_01.png" type="Texture" id=174]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_05.png" type="Texture" id=175]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_07.png" type="Texture" id=176]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_29.png" type="Texture" id=177]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_10.png" type="Texture" id=178]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_17.png" type="Texture" id=179]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_32.png" type="Texture" id=180]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_04.png" type="Texture" id=181]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_24.png" type="Texture" id=182]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_30.png" type="Texture" id=183]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_33.png" type="Texture" id=184]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_15.png" type="Texture" id=185]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_00.png" type="Texture" id=186]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_08.png" type="Texture" id=187]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_23.png" type="Texture" id=188]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_28.png" type="Texture" id=189]
+[ext_resource path="res://Assets/GameplayUI/Victory/Victory_26.png" type="Texture" id=190]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_09.png" type="Texture" id=191]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_11.png" type="Texture" id=192]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_03.png" type="Texture" id=193]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_14.png" type="Texture" id=194]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_16.png" type="Texture" id=195]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_18.png" type="Texture" id=196]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_19.png" type="Texture" id=197]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_24.png" type="Texture" id=198]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_25.png" type="Texture" id=199]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_23.png" type="Texture" id=200]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_26.png" type="Texture" id=201]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_21.png" type="Texture" id=202]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_27.png" type="Texture" id=203]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_22.png" type="Texture" id=204]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_28.png" type="Texture" id=205]
+[ext_resource path="res://Assets/GameplayUI/YouLose/YouLose_29.png" type="Texture" id=206]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 69 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
 "frames": [  ],
 "loop": true,
-"name": "New Anim",
+"name": "default",
 "speed": 5.0
 } ]
 
@@ -143,7 +275,7 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=5]
-size = 48
+size = 30
 font_data = ExtResource( 3 )
 
 [sub_resource type="SpriteFrames" id=6]
@@ -160,13 +292,58 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=7]
-size = 100
+size = 60
 font_data = ExtResource( 3 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 121 ), ExtResource( 123 ), ExtResource( 122 ), ExtResource( 124 ), ExtResource( 129 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 127 ), ExtResource( 130 ), ExtResource( 128 ), ExtResource( 131 ), ExtResource( 132 ), ExtResource( 133 ), ExtResource( 119 ), ExtResource( 120 ), ExtResource( 158 ), ExtResource( 137 ), ExtResource( 140 ), ExtResource( 150 ), ExtResource( 138 ), ExtResource( 135 ), ExtResource( 148 ), ExtResource( 153 ), ExtResource( 155 ), ExtResource( 139 ), ExtResource( 144 ), ExtResource( 154 ), ExtResource( 152 ), ExtResource( 156 ), ExtResource( 141 ), ExtResource( 146 ), ExtResource( 134 ), ExtResource( 145 ), ExtResource( 143 ), ExtResource( 149 ), ExtResource( 157 ), ExtResource( 142 ), ExtResource( 147 ), ExtResource( 151 ), ExtResource( 136 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 30.0
+}, {
+"frames": [ ExtResource( 101 ), ExtResource( 103 ), ExtResource( 85 ), ExtResource( 100 ), ExtResource( 104 ), ExtResource( 90 ), ExtResource( 93 ), ExtResource( 91 ), ExtResource( 98 ), ExtResource( 82 ), ExtResource( 108 ), ExtResource( 107 ), ExtResource( 106 ), ExtResource( 86 ), ExtResource( 79 ), ExtResource( 92 ), ExtResource( 105 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 81 ), ExtResource( 96 ), ExtResource( 83 ), ExtResource( 97 ), ExtResource( 115 ), ExtResource( 112 ), ExtResource( 111 ), ExtResource( 116 ), ExtResource( 114 ), ExtResource( 118 ), ExtResource( 117 ), ExtResource( 113 ) ],
+"loop": true,
+"name": "Countdown",
+"speed": 17.0
+} ]
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 77 ), ExtResource( 72 ), ExtResource( 76 ), ExtResource( 70 ), ExtResource( 73 ), ExtResource( 165 ), ExtResource( 87 ), ExtResource( 89 ), ExtResource( 163 ), ExtResource( 69 ), ExtResource( 88 ), ExtResource( 161 ), ExtResource( 78 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 99 ), ExtResource( 162 ), ExtResource( 102 ), ExtResource( 80 ), ExtResource( 84 ), ExtResource( 159 ), ExtResource( 160 ), ExtResource( 164 ), ExtResource( 188 ), ExtResource( 182 ), ExtResource( 173 ), ExtResource( 190 ), ExtResource( 168 ), ExtResource( 189 ), ExtResource( 177 ), ExtResource( 183 ), ExtResource( 167 ), ExtResource( 180 ), ExtResource( 184 ) ],
+"loop": true,
+"name": "Win",
+"speed": 20.0
+} ]
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 186 ), ExtResource( 174 ), ExtResource( 172 ), ExtResource( 193 ), ExtResource( 181 ), ExtResource( 175 ), ExtResource( 169 ), ExtResource( 176 ), ExtResource( 187 ), ExtResource( 191 ), ExtResource( 178 ), ExtResource( 192 ), ExtResource( 166 ), ExtResource( 170 ), ExtResource( 194 ), ExtResource( 185 ), ExtResource( 195 ), ExtResource( 179 ), ExtResource( 196 ), ExtResource( 197 ), ExtResource( 171 ), ExtResource( 202 ), ExtResource( 204 ), ExtResource( 200 ), ExtResource( 198 ), ExtResource( 199 ), ExtResource( 201 ), ExtResource( 203 ), ExtResource( 205 ), ExtResource( 206 ) ],
+"loop": true,
+"name": "Lose",
+"speed": 20.0
+} ]
 
 [node name="Fight" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="CharSprite" type="AnimatedSprite" parent="."]
+visible = false
 position = Vector2( 351.939, 342.259 )
 scale = Vector2( 0.920093, 0.881289 )
 frames = SubResource( 1 )
@@ -174,35 +351,37 @@ playing = true
 flip_h = true
 
 [node name="CharSkillSprite" type="AnimatedSprite" parent="CharSprite"]
-position = Vector2( -148.146, -40.8029 )
-scale = Vector2( 2.90562, 2.38047 )
+position = Vector2( -29.6777, 27.0241 )
 frames = SubResource( 2 )
 animation = "Default"
 
 [node name="MonsterSprite" type="AnimatedSprite" parent="."]
-position = Vector2( 698.201, 290.671 )
+visible = false
+position = Vector2( 701.359, 272.776 )
 scale = Vector2( 1.03812, 0.94601 )
 frames = SubResource( 3 )
 playing = true
 
 [node name="MonsterSkillSprite" type="AnimatedSprite" parent="MonsterSprite"]
-position = Vector2( -27.0298, 29.6615 )
+position = Vector2( 0.0668335, 74.2639 )
 scale = Vector2( 0.577661, 0.5508 )
 frames = SubResource( 4 )
 animation = "Default"
 playing = true
 
 [node name="QuestionTitle" type="Label" parent="."]
-margin_left = 227.414
-margin_top = 103.04
-margin_right = 831.414
-margin_bottom = 187.04
+visible = false
+margin_left = 254.071
+margin_top = 182.04
+margin_right = 858.071
+margin_bottom = 266.04
 custom_fonts/font = SubResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LevelTitle" type="Label" parent="."]
+visible = false
 margin_left = 33.8154
 margin_top = 12.9424
 margin_right = 637.815
@@ -213,6 +392,7 @@ __meta__ = {
 }
 
 [node name="Buttons" type="Control" parent="."]
+visible = false
 margin_left = 188.516
 margin_top = -55.1144
 margin_right = 228.516
@@ -290,10 +470,11 @@ animation = "Default"
 playing = true
 
 [node name="TimerLabel" type="Label" parent="."]
-margin_left = 267.087
-margin_top = 211.998
-margin_right = 426.087
-margin_bottom = 379.998
+visible = false
+margin_left = 473.964
+margin_top = 106.734
+margin_right = 632.964
+margin_bottom = 274.734
 custom_fonts/font = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -303,16 +484,18 @@ __meta__ = {
 autostart = true
 
 [node name="QuestionLabel" type="Label" parent="."]
-margin_left = 258.453
-margin_top = 84.6479
-margin_right = 417.453
-margin_bottom = 252.648
+visible = false
+margin_left = 475.896
+margin_top = 12.3681
+margin_right = 694.896
+margin_bottom = 144.368
 custom_fonts/font = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SkillBtn" type="Button" parent="."]
+visible = false
 margin_left = 1187.9
 margin_top = 574.943
 margin_right = 1350.9
@@ -322,10 +505,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="Bg" parent="." instance=ExtResource( 2 )]
-position = Vector2( -30.727, -67.0406 )
+position = Vector2( 69.6538, -182.919 )
+
+[node name="Countdown" type="AnimatedSprite" parent="."]
+position = Vector2( 489.26, 147.233 )
+scale = Vector2( 0.78578, 0.701813 )
+frames = SubResource( 8 )
+playing = true
+
+[node name="Versus" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Head1" type="Sprite" parent="Versus"]
+position = Vector2( 302.419, 301.326 )
+
+[node name="Versus" type="Sprite" parent="Versus"]
+position = Vector2( 493.63, 302.973 )
+scale = Vector2( 0.946071, 0.857802 )
+texture = ExtResource( 71 )
+
+[node name="Head2" type="Sprite" parent="Versus"]
+position = Vector2( 719.408, 296.805 )
+flip_h = true
+
+[node name="Win" type="AnimatedSprite" parent="."]
+position = Vector2( 522.39, 295.811 )
+scale = Vector2( 0.789153, 0.883564 )
+frames = SubResource( 9 )
+
+[node name="Lose" type="AnimatedSprite" parent="."]
+position = Vector2( 551.292, 261.036 )
+frames = SubResource( 10 )
+
+[node name="TimeLimit" type="Timer" parent="."]
+wait_time = 0.1
 [connection signal="animation_finished" from="CharSprite" to="." method="_on_CharSprite_animation_finished"]
 [connection signal="animation_finished" from="CharSprite/CharSkillSprite" to="." method="_on_CharSkillSprite_animation_finished"]
 [connection signal="animation_finished" from="MonsterSprite" to="." method="_on_MonsterSprite_animation_finished"]
@@ -340,3 +558,7 @@ position = Vector2( -30.727, -67.0406 )
 [connection signal="animation_finished" from="Buttons/Option4/Effect4" to="." method="_on_Effect4_animation_finished"]
 [connection signal="timeout" from="TimerLabel/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="SkillBtn" to="." method="_on_SkillBtn_pressed"]
+[connection signal="animation_finished" from="Countdown" to="." method="_on_Countdown_animation_finished"]
+[connection signal="animation_finished" from="Win" to="." method="_on_Win_animation_finished"]
+[connection signal="animation_finished" from="Lose" to="." method="_on_Lose_animation_finished"]
+[connection signal="timeout" from="TimeLimit" to="." method="_on_Timer_timeout"]

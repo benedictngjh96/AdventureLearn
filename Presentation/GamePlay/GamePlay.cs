@@ -9,7 +9,10 @@ public class GamePlay : Node2D
     AnimatedSprite charSprite;
     AnimatedSprite monsterSprite;
     AnimatedSprite charSkillSprite;
+    AnimatedSprite countDown;
     AnimatedSprite monsterSkillSprite;
+    AnimatedSprite win;
+    AnimatedSprite lose;
     Character character;
     Question question;
     Label timerLabel;
@@ -20,11 +23,15 @@ public class GamePlay : Node2D
     Button option3;
     Button option4;
 
+    Timer timer;
+
     int questionIndex = 0;
     int correctAnsIndex = 0;
     string spritePath = "res://CharSprites/";
     int timeLimit = 0;
     int s = 0;
+    int ms = 0;
+
     bool shieldOn = false;
 
     public override void _Ready()
@@ -35,6 +42,7 @@ public class GamePlay : Node2D
         monsterSprite = GetNode<AnimatedSprite>("MonsterSprite");
         charSkillSprite = GetNode<AnimatedSprite>("CharSprite/CharSkillSprite");
         monsterSkillSprite = GetNode<AnimatedSprite>("MonsterSprite/MonsterSkillSprite");
+        countDown = GetNode<AnimatedSprite>("Countdown");
         timerLabel = GetNode<Label>("TimerLabel");
         questionLabel = GetNode<Label>("QuestionLabel");
         levelTitle = GetNode<Label>("LevelTitle");
@@ -42,20 +50,35 @@ public class GamePlay : Node2D
         option2 = GetNode<Button>("Buttons/Option2");
         option3 = GetNode<Button>("Buttons/Option3");
         option4 = GetNode<Button>("Buttons/Option4");
-
+        win = GetNode<AnimatedSprite>("Win");
+        lose = GetNode<AnimatedSprite>("Lose");
         animationList = new List<string>();
         animationList.Add("Idle");
         animationList.Add("Hurt");
         animationList.Add("Die");
         animationList.Add("Attack");
+
+        countDown.Play("Countdown");
+        timer = GetNode<Timer>("TimeLimit");
     }
 
     public override void _Process(float delta)
     {
-        timerLabel.Text = s.ToString();
 
         if (s <= 0)
-            GetTree().ChangeScene("res://Presentation/World/World.tscn");
+        {
+            //GetTree().ChangeScene("res://Presentation/World/World.tscn");
+            charSprite.Play("Die");
+            lose.Play("Lose");
+            timerLabel.Visible = false;
+        }
+        if (ms <= 0)
+        {
+            s -= 1;
+            ms = 9;
+        }
+        timerLabel.Text = String.Format("{0}:{1}", s, ms);
+
         if (s <= 10)
         {
             //RED
@@ -118,6 +141,12 @@ public class GamePlay : Node2D
     {
         string charPath = String.Format(spritePath + "{0}/", character.CharName);
         Global.LoadSprite(charPath, charSprite, animationList);
+        if (character.CharName == "Warrior2")
+            charSprite.Position = new Vector2(351, 289);
+        else if (character.CharName == "Zeus")
+            charSprite.Position = new Vector2(355, 289);
+        else if (character.CharName == "Knight1")
+            charSprite.Position = new Vector2(370, 280);
     }
     public void DisplayMonsterSprite(Monster monster)
     {
@@ -139,9 +168,19 @@ public class GamePlay : Node2D
         }
         else
         {
-            EmitSignal("NoMoreQuestions");
-            GetTree().ChangeScene("res://Presentation/World/World.tscn");
+            //EmitSignal("NoMoreQuestions");
+            timerLabel.Visible = false;
+            monsterSprite.Play("Die");
+            win.Play("Win");
         }
+    }
+    private void _on_Win_animation_finished()
+    {
+        EmitSignal("NoMoreQuestions");
+    }
+    private void _on_Lose_animation_finished()
+    {
+        GetTree().ChangeScene("res://Presentation/World/World.tscn");
     }
     public void CheckCorrectAnswer(string option)
     {
@@ -197,18 +236,25 @@ public class GamePlay : Node2D
 
     private void _on_CharSprite_animation_finished()
     {
-        if (charSprite.IsPlaying() && charSprite.Animation != "Idle")
+        if (charSprite.IsPlaying() && charSprite.Animation != "Idle" && charSprite.Animation !="Die")
             charSprite.Play("Idle");
     }
 
     private void _on_MonsterSprite_animation_finished()
     {
-        if (monsterSprite.IsPlaying() && monsterSprite.Animation != "Idle")
+        if (monsterSprite.IsPlaying() && monsterSprite.Animation != "Idle" && monsterSprite.Animation !="Die")
             monsterSprite.Play("Idle");
+ 
+    }
+    private void _on_TimeLimit_timeout()
+    {
+        //s -= 1;
+        ms -= 1;
     }
     private void _on_Timer_timeout()
     {
-        s -= 1;
+        //s -= 1;
+        ms -= 1;
     }
 
     private void _on_CharSkillSprite_animation_finished()
@@ -277,9 +323,45 @@ public class GamePlay : Node2D
         Node2D n = GetNode<Node2D>("Bg");
         Sprite s = GetNode<Sprite>("Bg/ParallaxBackground/ParallaxLayer/Sprite");
         Random r = new Random();
-        int rng = r.Next(4);
-        var texture2 = ResourceLoader.Load(String.Format("res://Assets/LevelUI/Bg/bg{0}.png",rng)) as Texture;
+        int rng = r.Next(1, 4);
+        var texture2 = ResourceLoader.Load(String.Format("res://Assets/LevelUI/Bg/bg{0}.png", rng)) as Texture;
         s.Texture = texture2;
+    }
+    public void LoadStart(Character character, Monster monster)
+    {
+        string charHead = spritePath + character.CharName + "/Head/head.png";
+        string mobHead = spritePath + monster.MonsterName + "/Head/head.png";
+        var texture1 = ResourceLoader.Load(charHead) as Texture;
+        var texture2 = ResourceLoader.Load(mobHead) as Texture;
+        Sprite charSprite = GetNode<Sprite>("Versus/Head1");
+        Sprite mobSprite = GetNode<Sprite>("Versus/Head2");
+        charSprite.Texture = texture1;
+        mobSprite.Texture = texture2;
+
+    }
+    private void _on_Countdown_animation_finished()
+    {
+        //Unhide
+        charSprite.Visible = true;
+        monsterSprite.Visible = true;
+        Label questionTitle = GetNode<Label>("QuestionTitle");
+        questionTitle.Visible = true;
+        levelTitle.Visible = true;
+        Control ctr = GetNode<Control>("Buttons");
+        ctr.Visible = true;
+        timerLabel.Visible = true;
+        questionLabel.Visible = true;
+        Button skillBtn = GetNode<Button>("SkillBtn");
+        skillBtn.Visible = true;
+
+        //Hide
+        Control versus = GetNode<Control>("Versus");
+        versus.Visible = false;
+
+        countDown.Visible = false;
+
+        timer.Start();
+
     }
 }
 

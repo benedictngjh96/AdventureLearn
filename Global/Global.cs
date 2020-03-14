@@ -67,7 +67,7 @@ public class Global : Node
 				count++;
 			}
 			animatedSprite.Frames = spriteFrames;
-			animatedSprite.SpeedScale = 10;
+			animatedSprite.SpeedScale = 7;
 		}
 		animatedSprite.Play("Idle");
 	}

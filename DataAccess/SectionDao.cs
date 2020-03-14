@@ -42,7 +42,7 @@ public class SectionDao
     /// <returns></returns>
     public Section GetSectionLevels(int worldId, int sectionId)
     {
-        string query = String.Format("SELECT s.WorldId, s.SectionId, s.SectionName , l.LevelId FROM Section s INNER JOIN Level l ON s.SectionId = l.SectionId WHERE s.WorldId = {0} AND s.sectionId = {1}", worldId, sectionId);
+        string query = String.Format("SELECT WorldId, SectionId, SectionName , LevelId FROM World NATURAL JOIN Section NATURAL JOIN Level WHERE World.WorldId  = {0} AND Section.SectionId  = {1}", worldId, sectionId);
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
         {
             var lookup = new Dictionary<int, Section>();
