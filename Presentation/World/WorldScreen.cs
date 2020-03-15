@@ -21,47 +21,7 @@ public class WorldScreen : Node
 		worldBl = new WorldBL();
 
 		disableInaccessibleWorlds();
-
-		GD.Print("Start injecting data");
-
-		//QuestionId, WorldId, SectionId, LevelId
-		//INSERT INTO CampaignQuestion VALUES(1, 1, 1, 1), (2, 2, 2, 2);
-
-		string query = "INSERT INTO CampaignQuestion VALUES ";
-
-		int w = 3;
-		int s = 3;
-		int l = 5;
-		int q = 225;
-		int e = 1;
-
-		for(int a = 1; a <= w ; a++)
-		{
-			for(int b = 1; b <= s; b++)
-			{
-				for (int c = 1; c <= l; c++)
-				{
-					for(int i = 1; i <= 5; i++)
-					{
-						query += String.Format("({0}, {1}, {2}, {3}),", e, a, b, c);
-						e++;
-					}
-						
-					
-				}
-			}
-		}
-		string newQ = query.TrimEnd(',');
-		newQ += ";";
-
-
-
-		GD.Print(newQ);
-
-		BaseDao<int> baseDao = new BaseDao<int>();
-		int result = baseDao.ExecuteQuery(newQ);
-
-		GD.Print("No crash super good");
+		
 	}
 
 	private void disableInaccessibleWorlds()
