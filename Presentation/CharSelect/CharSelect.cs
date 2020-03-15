@@ -12,7 +12,7 @@ public class CharSelect : Node2D
     int charId;
     string charSelected = "";
     AnimatedSprite charSprite;
-	Label charName;
+    Label charName;
     public override void _Ready()
     {
         //Hide animated sprite and button when user has not selected a character
@@ -22,7 +22,7 @@ public class CharSelect : Node2D
         enterBtn.Visible = false;
         studentBL = new StudentBL();
         characterBL = new CharacterBL();
-		charName= GetNode<Label>("Char/CharName");
+        charName= GetNode<Label>("Char/CharName");
         characterList = characterBL.GetAllCharacters();
         Godot.GD.Print(Global.StudentId);
 
@@ -54,7 +54,7 @@ public class CharSelect : Node2D
         charSprite.Play(characterName + "Walk", false);
         charSprite.Visible = true;
         enterBtn.Visible = true;
-		charName.Text = characterName;
+        charName.Text = characterName;
         if (characterName == "Athena")
             charSprite.Position = new Vector2(478.243f, 323.009f);
         else

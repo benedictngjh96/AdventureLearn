@@ -177,10 +177,11 @@ public class GamePlay : Node2D
     private void _on_Win_animation_finished()
     {
         EmitSignal("NoMoreQuestions");
+        GetTree().ChangeScene("res://Presentation/LevelSelection/LevelSelection.tscn");
     }
     private void _on_Lose_animation_finished()
     {
-        GetTree().ChangeScene("res://Presentation/World/World.tscn");
+        GetTree().ChangeScene("res://Presentation/LevelSelection/LevelSelection.tscn");
     }
     public void CheckCorrectAnswer(string option)
     {
@@ -364,13 +365,6 @@ public class GamePlay : Node2D
 
     }
 }
-
-
-
-
-
-
-
 
 
 

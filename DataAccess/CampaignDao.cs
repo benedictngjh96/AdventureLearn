@@ -16,9 +16,9 @@ public class CampaignDao
     public Level GetLevel(int worldId, int sectionId, int levelId)
     {
         string query = String.Format("SELECT l.LevelId , l.TimeLimit, m.MonsterId , m.MonsterName , q.QuestionId, q.QuestionTitle, q.Option1, q.Option2, q.Option3, q.CorrectOption " +
-            "FROM Level l INNER JOIN Monster m ON l.MonsterId = m.MonsterId INNER JOIN CampaignQuestion cq ON cq.LevelId  = l.LevelId " +
-            "INNER JOIN Question q ON q.QuestionId  = cq.QuestionId WHERE l.WorldId ={0} AND l.SectionId = {1} AND l.LevelId = {2}"
-            , worldId, sectionId, levelId);
+            "FROM Level l NATURAL JOIN Monster m NATURAL JOIN CampaignQuestion cq NATURAL JOIN Question q " +
+            "WHERE l.WorldId ={0} AND l.SectionId = {1} AND l.LevelId = {2}", worldId,sectionId,levelId);
+        Godot.GD.Print(query);
         Dictionary<int, Level> levelDict;
 
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))

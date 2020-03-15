@@ -47,18 +47,16 @@ public class WorldDao
     }
 
     /// <summary>
-    /// Return all the list of Completed Worlds
+    /// Return the number of Completed Worlds
     /// </summary>
     /// <returns></returns>
-    public List<int> getCompletedWorlds()
+    public int getCompletedWorldCount()
     {
-        List<int> worldList = new List<int>();
-        string query = String.Format("SELECT WorldId FROM StudentScore WHERE StudentId = {0} AND SectionId = 3 AND LevelId = 5; "
+        string query = String.Format("SELECT COUNT(1) FROM World_LastSection_LastLevel w, StudentScore s " +
+            "WHERE s.StudentId = {0} AND w.WorldId = s.WorldId AND w.LastSectionId = s.SectionId AND w.LastSectionId = s.LevelId;"
             , Global.StudentId);
-        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
-        {
-            worldList = conn.Query<int>(query).ToList();
-        }
-        return worldList;
+
+        BaseDao<int> baseDao = new BaseDao<int>();
+        return baseDao.RetrieveQuery(query);
     }
 }

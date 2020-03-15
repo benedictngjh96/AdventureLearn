@@ -87,15 +87,15 @@ android {
             java.srcDirs = [
                     'src'
 //DIR_SRC_BEGIN
-,'D:/SSAD/AdventureLearn/android/Facebook/src'
-,'D:/SSAD/AdventureLearn/android/GodotGPGSPlugin-master/src'
+,'D:/AdventureLearn/android/Facebook/src'
+,'D:/AdventureLearn/android/GodotGPGSPlugin-master/src'
 //DIR_SRC_END
             ]
             res.srcDirs = [
                     'res'
 //DIR_RES_BEGIN
-,'D:/SSAD/AdventureLearn/android/Facebook/res'
-,'D:/SSAD/AdventureLearn/android/GodotGPGSPlugin-master/res'
+,'D:/AdventureLearn/android/Facebook/res'
+,'D:/AdventureLearn/android/GodotGPGSPlugin-master/res'
 //DIR_RES_END
             ]
             aidl.srcDirs = [
@@ -130,3 +130,38 @@ android {
 
 //CHUNK_GLOBAL_BEGIN
 //CHUNK_GLOBAL_END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
