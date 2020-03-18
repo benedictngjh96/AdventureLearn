@@ -5,23 +5,22 @@ using System.Linq;
 
 public class WorldScreen : Node
 {
-	TextureButton world1Btn, world2Btn, world3Btn; 
+	TextureButton world1Btn, world2Btn, world3Btn;
 	WorldBL worldBl;
 
 	public override void _Ready()
 	{
 		//Testing
-		//Global.StudentId = 29;
+		Global.StudentId = 27;
 		//Testing
 
-		world1Btn = GetNode<TextureButton>("Bg/World1");
-		world2Btn = GetNode<TextureButton>("Bg/World2");
-		world3Btn = GetNode<TextureButton>("Bg/World3");
+		world1Btn = GetNode<TextureButton>("World1");
+		world2Btn = GetNode<TextureButton>("World2");
+		world3Btn = GetNode<TextureButton>("World3");
 
 		worldBl = new WorldBL();
 
 		disableInaccessibleWorlds();
-		
 	}
 
 	private void disableInaccessibleWorlds()
@@ -32,10 +31,16 @@ public class WorldScreen : Node
 		GD.Print("Number of Completed Worlds: " + completedWorldCount);
 		GD.Print("Number of Total Worlds: " + totalWorldCount);
 
-		for (int i = totalWorldCount; i > completedWorldCount + 1 ; i--)
+		int unavailableWorldCount = totalWorldCount - (completedWorldCount + 1);  //(completedWorldCount + 1) = totalAvailableWorld
+		for (int i = 0; i < unavailableWorldCount ; i++)												
 		{
-			TextureButton disabler = GetNode<TextureButton>("Bg/World" + i);
-			disabler.Disabled = true;
+			TextureButton disableWorld = GetNode<TextureButton>("World" + (totalWorldCount - i));
+			Sprite darkFrame = GetNode<Sprite>("World" + (totalWorldCount - i) + "/BorderDark");
+			Sprite lockIcon = GetNode<Sprite>("World" + (totalWorldCount - i) + "/Lock");
+
+			disableWorld.Disabled = true;
+			darkFrame.Visible = true;
+			lockIcon.Visible = true;
 		}
 	}
 
