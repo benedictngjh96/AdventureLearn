@@ -6,7 +6,13 @@ public class MainMenu : Node2D
 
 	public override void _Ready()
 	{
+		Node2D n = GetNode<Node2D>("Bg");
+		Sprite s = GetNode<Sprite>("Bg/ParallaxBackground/ParallaxLayer/Sprite");
 
+	
+		var texture2 = ResourceLoader.Load("res://Assets/Background/bg.png") as Texture;
+		s.Texture = texture2;
+		
 	}
 	private void _on_WorldBtn_pressed()
 	{

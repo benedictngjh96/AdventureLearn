@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Presentation/MainMenu/MainMenu.cs" type="Script" id=2]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Assets/GUI/Buttons/5.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -84,6 +86,31 @@ margin_top = 659.874
 margin_right = 639.396
 margin_bottom = 779.874
 text = "User Profile"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" parent="." instance=ExtResource( 3 )]
+position = Vector2( 15.7083, -2.94316 )
+
+[node name="TextureButton" type="TextureButton" parent="."]
+margin_left = 60.6642
+margin_top = 125.952
+margin_right = 540.664
+margin_bottom = 605.952
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 130.442
+margin_top = 233.569
+margin_right = 223.442
+margin_bottom = 253.569
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "put text inside"
 __meta__ = {
 "_edit_use_anchors_": false
 }
