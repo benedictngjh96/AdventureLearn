@@ -28,8 +28,7 @@ public class WorldScreen : Node
 
         int completedWorldCount = worldBl.getCompletedWorldCount();
         int totalWorldCount = worldBl.getTotalWorldCount();
-        GD.Print("Number of Completed Worlds: " + completedWorldCount);
-        GD.Print("Number of Total Worlds: " + totalWorldCount);
+
 
         for (int i = totalWorldCount; i > completedWorldCount + 1 ; i--)
         {

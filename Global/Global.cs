@@ -20,6 +20,8 @@ public class Global : Node
     public static string AssignmentName { get; set; }
     public static int MonsterId { get; set; }
     public static int TimeLimit { get; set; }
+    public static bool GoogleLoggedIn { get; set; }
+    public static bool FbLoggedIn { get; set; }
     /// <summary>
     /// Global connection string
     /// </summary>
@@ -33,7 +35,7 @@ public class Global : Node
     };
     public static int CalculateScore(int timeRemaining, int timeLimit)
     {
-        double levelScore = Convert.ToDouble(timeRemaining) / Convert.ToDouble(timeLimit) * 100;
+        double levelScore = (Convert.ToDouble(timeRemaining) / Convert.ToDouble(timeLimit)) * 100;
         return Convert.ToInt32(levelScore);
     }
     public static void SetStudentId(int id)
@@ -43,6 +45,16 @@ public class Global : Node
     public static void SetStudentName(string name)
     {
         StudentName = name;
+    }
+    public static void SetGoogleLoggedIn()
+    {
+        GoogleLoggedIn = true;
+        FbLoggedIn = false;
+    }
+    public static void SetFbLoggedIn()
+    {
+        FbLoggedIn = true;
+        GoogleLoggedIn = false;
     }
     public static void LoadSprite(string spritePath, AnimatedSprite animatedSprite, List<string> animationList)
     {

@@ -85,16 +85,16 @@ __meta__ = {
 }
 
 [node name="Character" type="AnimatedSprite" parent="."]
-position = Vector2( 185.436, 773.57 )
-scale = Vector2( 0.286169, 0.254457 )
+position = Vector2( 759.589, 194.99 )
 frames = SubResource( 2 )
 animation = "New Anim"
+flip_h = true
 
 [node name="ChangeCharacter" type="Button" parent="."]
-margin_left = 165.024
-margin_top = 961.444
-margin_right = 507.024
-margin_bottom = 1069.44
+margin_left = 581.982
+margin_top = 479.886
+margin_right = 923.982
+margin_bottom = 587.882
 text = "Change Character"
 __meta__ = {
 "_edit_use_anchors_": false

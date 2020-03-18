@@ -22,8 +22,10 @@ __meta__ = {
 }
 
 [node name="Btns" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 2.45538
+margin_top = -51.565
+margin_right = 42.4554
+margin_bottom = -11.565
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -87,9 +89,17 @@ text = "User Profile"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Logout" type="Button" parent="Btns"]
+margin_left = 382.727
+margin_top = 510.501
+margin_right = 648.727
+margin_bottom = 630.501
+text = "Log Out"
 [connection signal="pressed" from="Btns/WorldBtn" to="." method="_on_WorldBtn_pressed"]
 [connection signal="pressed" from="Btns/LvlBtn" to="." method="_on_LvlBtn_pressed"]
 [connection signal="pressed" from="Btns/ChallengeBtn" to="." method="_on_ChallengeBtn_pressed"]
 [connection signal="pressed" from="Btns/AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]
 [connection signal="pressed" from="Btns/LeaderboardBtn" to="." method="_on_LeaderboardBtn_pressed"]
 [connection signal="pressed" from="Btns/UserProfileBtn" to="." method="_on_UserProfileBtn_pressed"]
+[connection signal="pressed" from="Btns/Logout" to="." method="_on_Logout_pressed"]

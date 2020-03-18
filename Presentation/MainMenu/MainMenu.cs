@@ -34,6 +34,26 @@ public class MainMenu : Node2D
     {
         GetTree().ChangeScene("res://Presentation/CreateLevel/CreateLevelInit.tscn");
     }
+    private void _on_Logout_pressed()
+    {
+        GDScript fb = (GDScript)GD.Load("res://API/Facebook.gd");
+        GDScript google = (GDScript)GD.Load("res://API/Google.gd");
+
+        if (Global.GoogleLoggedIn)
+        {
+            Godot.Object googleScript = (Godot.Object)google.New(); // This is a Godot.Object
+            googleScript.Call("google_connect");
+            googleScript.Call("google_disconnect");
+        }
+        else if (Global.FbLoggedIn)
+        {
+            Godot.Object fbScript = (Godot.Object)fb.New(); // This is a Godot.Object
+            fbScript.Call("facebook_connect");
+            fbScript.Call("logout");
+        }
+
+        GetTree().ChangeScene("res://Presentation/Login/Login.tscn");
+    }
 
 }
 

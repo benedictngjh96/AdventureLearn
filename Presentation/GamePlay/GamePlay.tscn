@@ -1,4 +1,4 @@
-[gd_scene load_steps=192 format=2]
+[gd_scene load_steps=205 format=2]
 
 [ext_resource path="res://Presentation/GamePlay/GamePlay.cs" type="Script" id=1]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=2]
@@ -68,13 +68,26 @@
 [ext_resource path="res://Skills/Explosion3/h_0011.png" type="Texture" id=66]
 [ext_resource path="res://Skills/Explosion3/h_0006.png" type="Texture" id=67]
 [ext_resource path="res://Skills/Explosion3/h_0007.png" type="Texture" id=68]
+[ext_resource path="res://Assets/GameplayUI/Popup/window_1.png" type="Texture" id=70]
 [ext_resource path="res://Assets/GameplayUI/Versus/Vs.png" type="Texture" id=71]
+[ext_resource path="res://Assets/GameplayUI/Popup/star_1.png" type="Texture" id=72]
+[ext_resource path="res://Assets/GameplayUI/Popup/header.png" type="Texture" id=73]
+[ext_resource path="res://Assets/GameplayUI/Popup/restart.png" type="Texture" id=74]
+[ext_resource path="res://Assets/GameplayUI/Popup/play.png" type="Texture" id=75]
+[ext_resource path="res://Assets/GameplayUI/Popup/menu.png" type="Texture" id=76]
+[ext_resource path="res://Assets/GameplayUI/Popup/loseheader.png" type="Texture" id=77]
+[ext_resource path="res://Assets/GameplayUI/Popup/star_4.png" type="Texture" id=78]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_28.png" type="Texture" id=79]
+[ext_resource path="res://Assets/GameplayUI/tickicon.png" type="Texture" id=80]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_35.png" type="Texture" id=81]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_23.png" type="Texture" id=82]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_37.png" type="Texture" id=83]
+[ext_resource path="res://Assets/GameplayUI/xicon.png" type="Texture" id=84]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_16.png" type="Texture" id=85]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_27.png" type="Texture" id=86]
+[ext_resource path="res://Assets/GUI/Btn.tres" type="Theme" id=87]
+[ext_resource path="res://Assets/GUI/Btn3.tres" type="Theme" id=88]
+[ext_resource path="res://Assets/GUI/Btn2.tres" type="Theme" id=89]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_19.png" type="Texture" id=90]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_21.png" type="Texture" id=91]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_29.png" type="Texture" id=92]
@@ -202,6 +215,11 @@ animations = [ {
 "name": "Default",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Explosion2",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Explosion1",
@@ -211,11 +229,6 @@ animations = [ {
 "loop": true,
 "name": "Shield",
 "speed": 10.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "Explosion2",
-"speed": 12.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -238,14 +251,14 @@ animations = [ {
 "name": "Default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "Explosion1",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "Explosion2",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Explosion1",
 "speed": 12.0
 } ]
 
@@ -253,7 +266,7 @@ animations = [ {
 size = 30
 font_data = ExtResource( 3 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
 "frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
 "loop": true,
@@ -266,11 +279,11 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=8]
 size = 60
 font_data = ExtResource( 3 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -283,7 +296,7 @@ animations = [ {
 "speed": 17.0
 } ]
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -296,7 +309,7 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -364,77 +377,85 @@ __meta__ = {
 
 [node name="Buttons" type="Control" parent="."]
 visible = false
-margin_left = 188.516
-margin_top = -55.1144
-margin_right = 228.516
-margin_bottom = -15.1154
+margin_right = 40.0
+margin_bottom = 40.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Option1" type="Button" parent="Buttons"]
-anchor_left = -0.0237499
-anchor_right = -0.02375
-margin_left = -153.05
-margin_top = 568.0
-margin_right = 48.95
-margin_bottom = 646.0
+margin_left = 1.00464
+margin_top = 398.258
+margin_right = 280.005
+margin_bottom = 696.258
+focus_mode = 0
+theme = ExtResource( 87 )
+enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Effect1" type="AnimatedSprite" parent="Buttons/Option1"]
-position = Vector2( 25.8078, -99.7321 )
-scale = Vector2( 0.837165, 0.5939 )
-frames = SubResource( 6 )
+position = Vector2( 26.6919, 270.9 )
+scale = Vector2( 0.697635, 0.5939 )
+frames = SubResource( 7 )
 animation = "Default"
 playing = true
 
 [node name="Option2" type="Button" parent="Buttons"]
-margin_left = 107.935
-margin_top = 568.0
-margin_right = 309.935
-margin_bottom = 646.0
+margin_left = 255.407
+margin_top = 398.258
+margin_right = 534.407
+margin_bottom = 696.258
+focus_mode = 0
+theme = ExtResource( 89 )
+enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Effect2" type="AnimatedSprite" parent="Buttons/Option2"]
-position = Vector2( 276.282, -110.723 )
-scale = Vector2( 0.837165, 0.5939 )
-frames = SubResource( 6 )
+position = Vector2( 226.778, 191.569 )
+scale = Vector2( 0.697635, 0.5939 )
+frames = SubResource( 7 )
 animation = "Default"
 playing = true
 
 [node name="Option3" type="Button" parent="Buttons"]
-margin_left = 365.695
-margin_top = 568.0
-margin_right = 567.695
-margin_bottom = 646.0
+margin_left = 521.76
+margin_top = 397.205
+margin_right = 800.76
+margin_bottom = 695.205
+focus_mode = 0
+theme = ExtResource( 88 )
+enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Effect3" type="AnimatedSprite" parent="Buttons/Option3"]
-position = Vector2( 547.866, -82.9977 )
-scale = Vector2( 0.837165, 0.5939 )
-frames = SubResource( 6 )
+position = Vector2( 456.428, 266.223 )
+scale = Vector2( 0.697635, 0.5939 )
+frames = SubResource( 7 )
 animation = "Default"
 playing = true
 
 [node name="Option4" type="Button" parent="Buttons"]
-margin_left = 619.149
-margin_top = 568.0
-margin_right = 821.149
-margin_bottom = 646.0
+margin_left = 775.18
+margin_top = 398.258
+margin_right = 1054.18
+margin_bottom = 696.258
+focus_mode = 0
+theme = ExtResource( 88 )
+enabled_focus_mode = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Effect4" type="AnimatedSprite" parent="Buttons/Option4"]
-position = Vector2( 803.84, -89.8878 )
-scale = Vector2( 0.837165, 0.5939 )
-frames = SubResource( 6 )
+position = Vector2( 688.377, 68.082 )
+scale = Vector2( 0.697635, 0.5939 )
+frames = SubResource( 7 )
 animation = "Default"
 playing = true
 
@@ -444,12 +465,27 @@ margin_left = 473.964
 margin_top = 106.734
 margin_right = 632.964
 margin_bottom = 274.734
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Timer" type="Timer" parent="TimerLabel"]
+autostart = true
+
+[node name="TimerLabel2" type="Label" parent="."]
+visible = false
+margin_left = 601.608
+margin_top = 109.367
+margin_right = 761.608
+margin_bottom = 188.367
+custom_fonts/font = SubResource( 8 )
+text = "-10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="TimerLabel2"]
 autostart = true
 
 [node name="QuestionLabel" type="Label" parent="."]
@@ -458,7 +494,7 @@ margin_left = 475.896
 margin_top = 12.3681
 margin_right = 694.896
 margin_bottom = 144.368
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 8 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -475,12 +511,12 @@ __meta__ = {
 }
 
 [node name="Bg" parent="." instance=ExtResource( 2 )]
-position = Vector2( -62.2298, -90.8921 )
+position = Vector2( -232.514, 72.908 )
 
 [node name="Countdown" type="AnimatedSprite" parent="."]
-position = Vector2( 489.26, 147.233 )
+position = Vector2( 502.671, 138.947 )
 scale = Vector2( 0.78578, 0.701813 )
-frames = SubResource( 8 )
+frames = SubResource( 9 )
 playing = true
 
 [node name="Versus" type="Control" parent="."]
@@ -505,15 +541,165 @@ flip_h = true
 [node name="Win" type="AnimatedSprite" parent="."]
 position = Vector2( 522.39, 295.811 )
 scale = Vector2( 0.789153, 0.883564 )
-frames = SubResource( 9 )
+frames = SubResource( 10 )
 
 [node name="Lose" type="AnimatedSprite" parent="."]
 position = Vector2( 553.143, 295.272 )
 scale = Vector2( 0.845575, 0.803659 )
-frames = SubResource( 10 )
+frames = SubResource( 11 )
 
 [node name="TimeLimit" type="Timer" parent="."]
 wait_time = 0.1
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="PopupMenu"]
+position = Vector2( 535.856, 285.084 )
+scale = Vector2( 0.639612, 0.662985 )
+texture = ExtResource( 70 )
+
+[node name="Sprite2" type="Sprite" parent="PopupMenu"]
+position = Vector2( 527.481, 91.6451 )
+scale = Vector2( 0.531075, 0.559075 )
+texture = ExtResource( 73 )
+
+[node name="Star" type="Sprite" parent="PopupMenu"]
+position = Vector2( 529, 237 )
+texture = ExtResource( 72 )
+
+[node name="Menu" type="TextureButton" parent="PopupMenu"]
+margin_left = 616.031
+margin_top = 357.895
+margin_right = 774.031
+margin_bottom = 523.895
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 76 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Next" type="TextureButton" parent="PopupMenu"]
+margin_left = 482.0
+margin_top = 407.263
+margin_right = 640.0
+margin_bottom = 573.263
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 75 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Replay" type="TextureButton" parent="PopupMenu"]
+margin_left = 345.263
+margin_top = 357.895
+margin_right = 503.263
+margin_bottom = 523.895
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 74 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LosePopup" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite3" type="Sprite" parent="LosePopup"]
+position = Vector2( 535.856, 285.084 )
+scale = Vector2( 0.639612, 0.662985 )
+texture = ExtResource( 70 )
+
+[node name="Star" type="Sprite" parent="LosePopup"]
+position = Vector2( 529, 237 )
+texture = ExtResource( 78 )
+
+[node name="Menu" type="TextureButton" parent="LosePopup"]
+margin_left = 616.031
+margin_top = 357.895
+margin_right = 774.031
+margin_bottom = 523.895
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 76 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Replay" type="TextureButton" parent="LosePopup"]
+margin_left = 345.263
+margin_top = 357.895
+margin_right = 503.263
+margin_bottom = 523.895
+rect_scale = Vector2( 0.7, 0.7 )
+texture_normal = ExtResource( 74 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="LosePopup"]
+position = Vector2( 527, 91 )
+scale = Vector2( 0.531, 0.559 )
+texture = ExtResource( 77 )
+
+[node name="Timer2" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Ans" type="Node2D" parent="."]
+
+[node name="Tick" type="Sprite" parent="Ans"]
+visible = false
+position = Vector2( 135.095, 527.426 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 80 )
+
+[node name="Tick2" type="Sprite" parent="Ans"]
+visible = false
+position = Vector2( 390.48, 525.576 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 80 )
+
+[node name="Tick3" type="Sprite" parent="Ans"]
+visible = false
+position = Vector2( 649.567, 527.426 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 80 )
+
+[node name="Tick4" type="Sprite" parent="Ans"]
+visible = false
+position = Vector2( 906.803, 518.173 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 80 )
+
+[node name="Cross" type="Sprite" parent="Ans"]
+visible = false
+position = Vector2( 129.543, 529.277 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 84 )
+
+[node name="Cross2" type="Sprite" parent="Ans"]
+visible = false
+position = Vector2( 392.331, 521.874 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 84 )
+
+[node name="Cross3" type="Sprite" parent="Ans"]
+visible = false
+position = Vector2( 647.716, 520.024 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 84 )
+
+[node name="Cross4" type="Sprite" parent="Ans"]
+visible = false
+position = Vector2( 906.803, 516.322 )
+scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 84 )
 [connection signal="animation_finished" from="CharSprite" to="." method="_on_CharSprite_animation_finished"]
 [connection signal="animation_finished" from="CharSprite/CharSkillSprite" to="." method="_on_CharSkillSprite_animation_finished"]
 [connection signal="animation_finished" from="MonsterSprite" to="." method="_on_MonsterSprite_animation_finished"]
@@ -527,8 +713,15 @@ wait_time = 0.1
 [connection signal="pressed" from="Buttons/Option4" to="." method="_on_Option4_pressed"]
 [connection signal="animation_finished" from="Buttons/Option4/Effect4" to="." method="_on_Effect4_animation_finished"]
 [connection signal="timeout" from="TimerLabel/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerLabel2/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="SkillBtn" to="." method="_on_SkillBtn_pressed"]
 [connection signal="animation_finished" from="Countdown" to="." method="_on_Countdown_animation_finished"]
 [connection signal="animation_finished" from="Win" to="." method="_on_Win_animation_finished"]
 [connection signal="animation_finished" from="Lose" to="." method="_on_Lose_animation_finished"]
 [connection signal="timeout" from="TimeLimit" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="PopupMenu/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="PopupMenu/Next" to="." method="_on_Next_pressed"]
+[connection signal="pressed" from="PopupMenu/Replay" to="." method="_on_Replay_pressed"]
+[connection signal="pressed" from="LosePopup/Menu" to="." method="_on_Menu_pressed"]
+[connection signal="pressed" from="LosePopup/Replay" to="." method="_on_Replay_pressed"]
+[connection signal="timeout" from="Timer2" to="." method="_on_Timer2_timeout"]
