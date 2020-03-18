@@ -1,20 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\SSAD\\AdventureLearn\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
+            "outputFile": "D:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v24\\values-v24.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-2\\files-2.1\\3ea4e8ac107f4e057230d779f3202e43\\res\\values-v24\\values-v24.xml",
-                    "from": {
-                        "startLines": "2,3",
-                        "startColumns": "4,4",
-                        "startOffsets": "55,212",
-                        "endColumns": "156,134",
-                        "endOffsets": "207,342"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\User\\.gradle\\caches\\transforms-2\\files-2.1\\95ee1ad98da2524ef77bcf5a0fbf9749\\res\\values-v24\\values-v24.xml",
+                    "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\d6a6265e8942382fddfe8e416e6db538\\res\\values-v24\\values-v24.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",
@@ -28,6 +18,16 @@
                         "startOffsets": "347,413,474,540",
                         "endColumns": "65,60,65,66",
                         "endOffsets": "408,469,535,602"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\118067ded0276cd701de750788e37e5e\\res\\values-v24\\values-v24.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,212",
+                        "endColumns": "156,134",
+                        "endOffsets": "207,342"
                     }
                 }
             ]

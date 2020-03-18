@@ -34,11 +34,6 @@ public class EditLevelInit : Node2D
 	/// <returns></returns>
 	public override void _Ready()	
 	{
-		//testing
-		Global.CustomLevelId = 47;
-		Global.StudentId = 1;
-		//testing
-
 		editLevelBL = new EditLevelBL();
 
 		timeLimitOptions = new int[] { 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 };

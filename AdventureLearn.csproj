@@ -135,8 +135,6 @@
     <Compile Include="Entities\UserCreatedQuestion.cs" />
     <Compile Include="Entities\World.cs" />
     <Compile Include="Global\Global.cs" />
-    <Compile Include="HashSalt\HashSalt.cs" />
-    <Compile Include="HashSalt\HashSaltGen.cs" />
     <Compile Include="Presentation\Assignment\AssignmentScreen.cs" />
     <Compile Include="Presentation\Assignment\ViewAssignment.cs" />
     <Compile Include="Presentation\BackButton.cs" />
@@ -144,6 +142,7 @@
     <Compile Include="Presentation\CreateLevel\CreateLevel.cs" />
     <Compile Include="Presentation\CreateLevel\CreateLevelInit.cs" />
     <Compile Include="Presentation\CustomLevel\CustomLevelScreen.cs" />
+    <Compile Include="Presentation\CustomLevel\ViewCreatedLevels.cs" />
     <Compile Include="Presentation\CustomLevel\ViewCustomLevel.cs" />
     <Compile Include="Presentation\EditLevel\EditLevel.cs" />
     <Compile Include="Presentation\EditLevel\EditLevelInit.cs" />

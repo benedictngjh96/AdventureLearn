@@ -57,8 +57,9 @@ public class CustomLevelDao
     }
     public List<CustomLevel> GetCustomLevels()
     {
-        string query = "SELECT cl.CustomLevelId, cl.CustomLevelName , cl.TimeLimit , s.StudentId , s.StudentName " +
-        "FROM CustomLevel cl  INNER JOIN Student s ON s.StudentId  = cl.StudentId WHERE PublicLevel = true";
+        string query = String.Format("SELECT cl.CustomLevelId, cl.CustomLevelName , cl.TimeLimit , s.StudentId , s.StudentName " +
+        "FROM CustomLevel cl  INNER JOIN Student s ON s.StudentId  = cl.StudentId");
+        Godot.GD.Print(query);
         Dictionary<int, CustomLevel> customLevelDict;
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
         {
@@ -121,5 +122,24 @@ public class CustomLevelDao
         List<CustomLevelScore> customLevels = new List<CustomLevelScore>();
         customLevels.AddRange(customLevelDict.Values);
         return customLevels;
+    }
+    public List<CustomLevel> GetStudentCustomLevel(int studentId)
+    {
+        string query = String.Format("SELECT * FROM CustomLevel cl WHERE cl.StudentId = {0}", studentId);
+        Godot.GD.Print(query);
+        List<CustomLevel> customLevel;
+        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
+        {
+            customLevel = conn.Query<CustomLevel>(query).ToList();
+        }
+        return customLevel;
+    }
+    public int DeleteCustomLevel(int customLevelId)
+    {
+        BaseDao<Object> baseDao = new BaseDao<Object>();
+        string query = String.Format("DELETE FROM CustomLevel WHERE CustomLevelId = @CustomLevelId", customLevelId);
+
+        int result = baseDao.ExecuteQuery(query, new { CustomLevelId = customLevelId });
+        return result;
     }
 }

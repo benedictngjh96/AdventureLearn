@@ -1,0 +1,105 @@
+\hypertarget{class_student_score_dao}{}\doxysection{Student\+Score\+Dao Class Reference}
+\label{class_student_score_dao}\index{StudentScoreDao@{StudentScoreDao}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Student \mbox{\hyperlink{class_student_score_dao_a4dc755db31baf4e83fdeaf00962af2a1}{Get\+Student\+Scores}} (int section\+Id, int student\+Id)
+\begin{DoxyCompactList}\small\item\em Return student object containing Student\+Score object filtered by section\+Id and student\+Id \end{DoxyCompactList}\item 
+List$<$ Student $>$ \mbox{\hyperlink{class_student_score_dao_a1df0784fd1a9f61898c875d6eeec77af}{Get\+All\+Student\+Scores}} (int section\+Id)
+\begin{DoxyCompactList}\small\item\em Return list of student containing Student\+Score object filtered by section\+Id \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_student_score_dao_ad400938a06c16c40ff314d0bcf22503c}{Insert\+Student\+Score}} (int student\+Id, int world\+Id, int section\+Id, int level\+Id, int level\+Score)
+\begin{DoxyCompactList}\small\item\em Return int result 1 if Insert\+Student\+Score has executed successfully \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_student_score_dao_a87ab1c080f980aeb034f2134d8c59ecb}{Check\+Score\+Exist}} (int student\+Id, int level\+Id)
+\begin{DoxyCompactList}\small\item\em Return int result 1 if student has existing level score \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_student_score_dao_a87ab1c080f980aeb034f2134d8c59ecb}\label{class_student_score_dao_a87ab1c080f980aeb034f2134d8c59ecb}} 
+\index{StudentScoreDao@{StudentScoreDao}!CheckScoreExist@{CheckScoreExist}}
+\index{CheckScoreExist@{CheckScoreExist}!StudentScoreDao@{StudentScoreDao}}
+\doxysubsubsection{\texorpdfstring{CheckScoreExist()}{CheckScoreExist()}}
+{\footnotesize\ttfamily int Student\+Score\+Dao.\+Check\+Score\+Exist (\begin{DoxyParamCaption}\item[{int}]{student\+Id,  }\item[{int}]{level\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return int result 1 if student has existing level score 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Id} & \\
+\hline
+{\em level\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_student_score_dao_a1df0784fd1a9f61898c875d6eeec77af}\label{class_student_score_dao_a1df0784fd1a9f61898c875d6eeec77af}} 
+\index{StudentScoreDao@{StudentScoreDao}!GetAllStudentScores@{GetAllStudentScores}}
+\index{GetAllStudentScores@{GetAllStudentScores}!StudentScoreDao@{StudentScoreDao}}
+\doxysubsubsection{\texorpdfstring{GetAllStudentScores()}{GetAllStudentScores()}}
+{\footnotesize\ttfamily List$<$Student$>$ Student\+Score\+Dao.\+Get\+All\+Student\+Scores (\begin{DoxyParamCaption}\item[{int}]{section\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return list of student containing Student\+Score object filtered by section\+Id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_student_score_dao_a4dc755db31baf4e83fdeaf00962af2a1}\label{class_student_score_dao_a4dc755db31baf4e83fdeaf00962af2a1}} 
+\index{StudentScoreDao@{StudentScoreDao}!GetStudentScores@{GetStudentScores}}
+\index{GetStudentScores@{GetStudentScores}!StudentScoreDao@{StudentScoreDao}}
+\doxysubsubsection{\texorpdfstring{GetStudentScores()}{GetStudentScores()}}
+{\footnotesize\ttfamily Student Student\+Score\+Dao.\+Get\+Student\+Scores (\begin{DoxyParamCaption}\item[{int}]{section\+Id,  }\item[{int}]{student\+Id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return student object containing Student\+Score object filtered by section\+Id and student\+Id 
+
+
+\begin{DoxyParams}{Parameters}
+{\em section\+Id} & \\
+\hline
+{\em student\+Id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_student_score_dao_ad400938a06c16c40ff314d0bcf22503c}\label{class_student_score_dao_ad400938a06c16c40ff314d0bcf22503c}} 
+\index{StudentScoreDao@{StudentScoreDao}!InsertStudentScore@{InsertStudentScore}}
+\index{InsertStudentScore@{InsertStudentScore}!StudentScoreDao@{StudentScoreDao}}
+\doxysubsubsection{\texorpdfstring{InsertStudentScore()}{InsertStudentScore()}}
+{\footnotesize\ttfamily int Student\+Score\+Dao.\+Insert\+Student\+Score (\begin{DoxyParamCaption}\item[{int}]{student\+Id,  }\item[{int}]{world\+Id,  }\item[{int}]{section\+Id,  }\item[{int}]{level\+Id,  }\item[{int}]{level\+Score }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return int result 1 if Insert\+Student\+Score has executed successfully 
+
+
+\begin{DoxyParams}{Parameters}
+{\em student\+Id} & \\
+\hline
+{\em world\+Id} & \\
+\hline
+{\em section\+Id} & \\
+\hline
+{\em level\+Id} & \\
+\hline
+{\em level\+Score} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Public\+A\+P\+I/Student\+Score\+Dao.\+cs\end{DoxyCompactItemize}
