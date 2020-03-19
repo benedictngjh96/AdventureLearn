@@ -8,12 +8,13 @@
     <OutputPath>.mono\temp\bin\$(Configuration)</OutputPath>
     <RootNamespace>AdventureLearn</RootNamespace>
     <AssemblyName>AdventureLearn</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <GodotProjectGeneratorVersion>1.0.7333.3918</GodotProjectGeneratorVersion>
     <BaseIntermediateOutputPath>.mono\temp\obj</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)\$(Configuration)</IntermediateOutputPath>
     <ApiConfiguration Condition=" '$(Configuration)' != 'Release' ">Debug</ApiConfiguration>
     <ApiConfiguration Condition=" '$(Configuration)' == 'Release' ">Release</ApiConfiguration>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>

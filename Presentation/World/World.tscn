@@ -74,7 +74,6 @@ margin_right = 177.608
 margin_bottom = 51.5245
 custom_fonts/font = SubResource( 1 )
 text = "World 1"
-percent_visible = -0.166667
 __meta__ = {
 "_edit_use_anchors_": false
 }

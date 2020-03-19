@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=1]
 [ext_resource path="res://Presentation/MainMenu/MainMenu.cs" type="Script" id=2]
-[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/GUI/Buttons/5.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/setting2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Background/bg2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/setting1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Background/title.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -13,15 +15,25 @@ font_data = ExtResource( 1 )
 script = ExtResource( 2 )
 
 [node name="Title" type="Label" parent="."]
-margin_left = 370.414
-margin_top = 25.3433
-margin_right = 662.414
-margin_bottom = 126.344
+margin_left = 398.846
+margin_top = -93.5534
+margin_right = 690.846
+margin_bottom = 7.44731
 custom_fonts/font = SubResource( 1 )
 text = "Main Menu"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 324.191, 376.816 )
+scale = Vector2( 1.10275, 0.952365 )
+texture = ExtResource( 4 )
+
+[node name="AdventureLearn" type="Sprite" parent="."]
+position = Vector2( 520, 118.892 )
+scale = Vector2( 0.29212, 0.255959 )
+texture = ExtResource( 7 )
 
 [node name="Btns" type="Control" parent="."]
 margin_left = 2.45538
@@ -33,71 +45,101 @@ __meta__ = {
 }
 
 [node name="WorldBtn" type="Button" parent="Btns"]
-margin_left = 37.1749
-margin_top = 178.025
-margin_right = 303.175
-margin_bottom = 298.025
+anchor_left = 0.0969253
+anchor_top = -0.032309
+anchor_right = 0.0969253
+anchor_bottom = -0.032309
+margin_left = 105.398
+margin_top = 961.396
+margin_right = 371.398
+margin_bottom = 1081.4
 text = "World"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LvlBtn" type="Button" parent="Btns"]
-margin_left = 380.138
-margin_top = 187.592
-margin_right = 646.138
-margin_bottom = 307.592
+margin_left = 448.361
+margin_top = 970.963
+margin_right = 714.361
+margin_bottom = 1090.96
 text = "Create Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ChallengeBtn" type="Button" parent="Btns"]
-margin_left = 718.679
-margin_top = 187.233
-margin_right = 984.678
-margin_bottom = 307.233
+margin_left = 786.902
+margin_top = 970.604
+margin_right = 1052.9
+margin_bottom = 1090.6
 text = "Custom Level"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="AssignmentBtn" type="Button" parent="Btns"]
-margin_left = 45.681
-margin_top = 356.171
-margin_right = 311.681
-margin_bottom = 476.171
+margin_left = 113.904
+margin_top = 1139.54
+margin_right = 379.904
+margin_bottom = 1259.54
 text = "Assignment"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="LeaderboardBtn" type="Button" parent="Btns"]
-margin_left = 380.057
-margin_top = 355.861
-margin_right = 646.057
-margin_bottom = 475.861
+margin_left = 448.28
+margin_top = 1139.23
+margin_right = 714.28
+margin_bottom = 1259.23
 text = "Leaderboard"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="UserProfileBtn" type="Button" parent="Btns"]
-margin_left = 742.058
-margin_top = 351.069
-margin_right = 1008.06
-margin_bottom = 471.069
+margin_left = 810.281
+margin_top = 1134.44
+margin_right = 1076.28
+margin_bottom = 1254.44
 text = "User Profile"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Logout" type="Button" parent="Btns"]
-margin_left = 382.727
-margin_top = 510.501
-margin_right = 648.727
-margin_bottom = 630.501
+margin_left = 450.95
+margin_top = 1293.87
+margin_right = 716.95
+margin_bottom = 1413.87
 text = "Log Out"
+
+[node name="MainMenuBtns" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsBtn" type="TextureButton" parent="MainMenuBtns"]
+margin_left = 950.0
+margin_top = 30.0
+margin_right = 1462.0
+margin_bottom = 542.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 5 )
+texture_pressed = ExtResource( 3 )
+texture_hover = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureButton" type="TextureButton" parent="MainMenuBtns"]
+margin_left = 491.167
+margin_top = 230.548
+margin_right = 531.167
+margin_bottom = 270.548
 [connection signal="pressed" from="Btns/WorldBtn" to="." method="_on_WorldBtn_pressed"]
 [connection signal="pressed" from="Btns/LvlBtn" to="." method="_on_LvlBtn_pressed"]
 [connection signal="pressed" from="Btns/ChallengeBtn" to="." method="_on_ChallengeBtn_pressed"]

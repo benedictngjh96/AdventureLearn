@@ -205,21 +205,6 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
-"loop": true,
-"name": "Explosion3",
-"speed": 12.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Default",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "Explosion2",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "Explosion1",
@@ -229,6 +214,21 @@ animations = [ {
 "loop": true,
 "name": "Shield",
 "speed": 10.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "Explosion3",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Explosion2",
+"speed": 12.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -241,9 +241,9 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "Explosion3",
+"name": "Explosion1",
 "speed": 12.0
 }, {
 "frames": [  ],
@@ -251,14 +251,14 @@ animations = [ {
 "name": "Default",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "Explosion3",
+"speed": 12.0
+}, {
 "frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "Explosion2",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "Explosion1",
 "speed": 12.0
 } ]
 
@@ -266,24 +266,24 @@ animations = [ {
 size = 30
 font_data = ExtResource( 3 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=6]
 animations = [ {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
-"loop": true,
-"name": "Explosion",
-"speed": 12.0
-}, {
 "frames": [  ],
 "loop": true,
 "name": "Default",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "Explosion",
+"speed": 12.0
 } ]
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=7]
 size = 60
 font_data = ExtResource( 3 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -296,7 +296,7 @@ animations = [ {
 "speed": 17.0
 } ]
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -309,7 +309,7 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[sub_resource type="SpriteFrames" id=11]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -398,7 +398,7 @@ __meta__ = {
 [node name="Effect1" type="AnimatedSprite" parent="Buttons/Option1"]
 position = Vector2( 26.6919, 270.9 )
 scale = Vector2( 0.697635, 0.5939 )
-frames = SubResource( 7 )
+frames = SubResource( 6 )
 animation = "Default"
 playing = true
 
@@ -417,7 +417,7 @@ __meta__ = {
 [node name="Effect2" type="AnimatedSprite" parent="Buttons/Option2"]
 position = Vector2( 226.778, 191.569 )
 scale = Vector2( 0.697635, 0.5939 )
-frames = SubResource( 7 )
+frames = SubResource( 6 )
 animation = "Default"
 playing = true
 
@@ -436,7 +436,7 @@ __meta__ = {
 [node name="Effect3" type="AnimatedSprite" parent="Buttons/Option3"]
 position = Vector2( 456.428, 266.223 )
 scale = Vector2( 0.697635, 0.5939 )
-frames = SubResource( 7 )
+frames = SubResource( 6 )
 animation = "Default"
 playing = true
 
@@ -455,7 +455,7 @@ __meta__ = {
 [node name="Effect4" type="AnimatedSprite" parent="Buttons/Option4"]
 position = Vector2( 688.377, 68.082 )
 scale = Vector2( 0.697635, 0.5939 )
-frames = SubResource( 7 )
+frames = SubResource( 6 )
 animation = "Default"
 playing = true
 
@@ -465,7 +465,7 @@ margin_left = 473.964
 margin_top = 106.734
 margin_right = 632.964
 margin_bottom = 274.734
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -479,7 +479,7 @@ margin_left = 601.608
 margin_top = 109.367
 margin_right = 761.608
 margin_bottom = 188.367
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 text = "-10"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -494,7 +494,7 @@ margin_left = 475.896
 margin_top = 12.3681
 margin_right = 694.896
 margin_bottom = 144.368
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -516,7 +516,7 @@ position = Vector2( -232.514, 72.908 )
 [node name="Countdown" type="AnimatedSprite" parent="."]
 position = Vector2( 502.671, 138.947 )
 scale = Vector2( 0.78578, 0.701813 )
-frames = SubResource( 9 )
+frames = SubResource( 8 )
 playing = true
 
 [node name="Versus" type="Control" parent="."]
@@ -541,12 +541,12 @@ flip_h = true
 [node name="Win" type="AnimatedSprite" parent="."]
 position = Vector2( 522.39, 295.811 )
 scale = Vector2( 0.789153, 0.883564 )
-frames = SubResource( 10 )
+frames = SubResource( 9 )
 
 [node name="Lose" type="AnimatedSprite" parent="."]
 position = Vector2( 553.143, 295.272 )
 scale = Vector2( 0.845575, 0.803659 )
-frames = SubResource( 11 )
+frames = SubResource( 10 )
 
 [node name="TimeLimit" type="Timer" parent="."]
 wait_time = 0.1
