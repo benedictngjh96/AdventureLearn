@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Presentation/MainMenu/MainMenu.cs" type="Script" id=2]
+=======
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=1]
@@ -6,6 +12,7 @@
 [ext_resource path="res://Assets/Background/bg2.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/setting1.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Background/title.png" type="Texture" id=7]
+>>>>>>> d2310c65f66c956cba5c8b9583ad14022d5d76f9
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -109,6 +116,13 @@ __meta__ = {
 }
 
 [node name="Logout" type="Button" parent="Btns"]
+<<<<<<< HEAD
+margin_left = 382.727
+margin_top = 510.501
+margin_right = 648.727
+margin_bottom = 630.501
+text = "Log Out"
+=======
 margin_left = 450.95
 margin_top = 1293.87
 margin_right = 716.95
@@ -140,6 +154,7 @@ margin_left = 491.167
 margin_top = 230.548
 margin_right = 531.167
 margin_bottom = 270.548
+>>>>>>> d2310c65f66c956cba5c8b9583ad14022d5d76f9
 [connection signal="pressed" from="Btns/WorldBtn" to="." method="_on_WorldBtn_pressed"]
 [connection signal="pressed" from="Btns/LvlBtn" to="." method="_on_LvlBtn_pressed"]
 [connection signal="pressed" from="Btns/ChallengeBtn" to="." method="_on_ChallengeBtn_pressed"]

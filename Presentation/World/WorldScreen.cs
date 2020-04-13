@@ -5,13 +5,21 @@ using System.Linq;
 
 public class WorldScreen : Node
 {
+<<<<<<< HEAD
+	TextureButton world1Btn, world2Btn, world3Btn;
+=======
 	TextureButton world1Btn, world2Btn, world3Btn; 
+>>>>>>> d2310c65f66c956cba5c8b9583ad14022d5d76f9
 	WorldBL worldBl;
 
 	public override void _Ready()
 	{
 		//Testing
+<<<<<<< HEAD
+		//Global.StudentId = 27;
+=======
 		//Global.StudentId = 29;
+>>>>>>> d2310c65f66c956cba5c8b9583ad14022d5d76f9
 		//Testing
 
 		world1Btn = GetNode<TextureButton>("Bg/World1");

@@ -1,12 +1,20 @@
-[gd_resource type="Theme" load_steps=7 format=2]
+[gd_resource type="Theme" load_steps=9 format=2]
 
 [ext_resource path="res://Assets/GUI/Buttons/ice.png" type="Texture" id=1]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Assets/GUI/Buttons/18disable.png" type="Texture" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 50
 font_data = ExtResource( 2 )
 
+<<<<<<< HEAD
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 480, 480 )
+
+=======
+>>>>>>> d2310c65f66c956cba5c8b9583ad14022d5d76f9
 [sub_resource type="StyleBoxTexture" id=2]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 480, 480 )
@@ -26,7 +34,11 @@ Button/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
 Button/colors/font_color_pressed = Color( 1, 1, 1, 1 )
 Button/constants/hseparation = 2
 Button/fonts/font = SubResource( 1 )
+<<<<<<< HEAD
+Button/styles/disabled = SubResource( 5 )
+=======
 Button/styles/disabled = null
+>>>>>>> d2310c65f66c956cba5c8b9583ad14022d5d76f9
 Button/styles/focus = null
 Button/styles/hover = SubResource( 2 )
 Button/styles/normal = SubResource( 3 )

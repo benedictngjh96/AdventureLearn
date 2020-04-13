@@ -53,7 +53,7 @@ public class WorldDao
     public int getCompletedWorldCount()
     {
         string query = String.Format("SELECT COUNT(1) FROM World_LastSection_LastLevel w, StudentScore s " +
-            "WHERE s.StudentId = {0} AND w.WorldId = s.WorldId AND w.LastSectionId = s.SectionId AND w.LastSectionId = s.LevelId;"
+            "WHERE s.StudentId = {0} AND w.WorldId = s.WorldId AND w.LastSectionId = s.SectionId AND w.LastLevelId = s.LevelId;"
             , Global.StudentId);
 
         BaseDao<int> baseDao = new BaseDao<int>();
