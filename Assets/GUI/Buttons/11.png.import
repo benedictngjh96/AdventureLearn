@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Cartoon_Forest_BG_01.png-30f5d99b70a9a16b6f36f511e66635b7.stex"
+path="res://.import/11.png-ea57832fdeec2a30c6179fc28a92a0a5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/Cartoon_Forest_BG_01.png"
-dest_files=[ "res://.import/Cartoon_Forest_BG_01.png-30f5d99b70a9a16b6f36f511e66635b7.stex" ]
+source_file="res://Assets/GUI/Buttons/11.png"
+dest_files=[ "res://.import/11.png-ea57832fdeec2a30c6179fc28a92a0a5.stex" ]
 
 [params]
 
