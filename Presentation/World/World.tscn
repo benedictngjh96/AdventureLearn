@@ -32,10 +32,7 @@ position = Vector2( 513.791, 302.062 )
 scale = Vector2( 0.961085, 0.999816 )
 texture = ExtResource( 3 )
 
-[node name="BackBtn" parent="." instance=ExtResource( 6 )]
-position = Vector2( -3.6522, -8.30834 )
-
-[node name="World1" type="TextureButton" parent="."]
+[node name="World1" type="TextureButton" parent="Bg"]
 margin_left = 69.7633
 margin_top = 55.0699
 margin_right = 349.763
@@ -48,26 +45,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BorderGold" type="Sprite" parent="World1"]
+[node name="BorderGold" type="Sprite" parent="Bg/World1"]
 position = Vector2( 139.43, 241.868 )
 rotation = 1.5708
 scale = Vector2( 0.479861, 0.453988 )
 texture = ExtResource( 15 )
 
-[node name="BorderDark" type="Sprite" parent="World1"]
+[node name="BorderDark" type="Sprite" parent="Bg/World1"]
 visible = false
 position = Vector2( 139.43, 241.868 )
 rotation = 1.5708
 scale = Vector2( 0.479861, 0.453988 )
 texture = ExtResource( 16 )
 
-[node name="Lock" type="Sprite" parent="World1"]
+[node name="Lock" type="Sprite" parent="Bg/World1"]
 visible = false
 position = Vector2( 129.796, 228.604 )
 scale = Vector2( 0.334613, 0.30403 )
 texture = ExtResource( 14 )
 
-[node name="Label" type="Label" parent="World1"]
+[node name="Label" type="Label" parent="Bg/World1"]
 margin_left = 99.6077
 margin_top = 17.5245
 margin_right = 177.608
@@ -78,7 +75,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="World2" type="TextureButton" parent="."]
+[node name="World2" type="TextureButton" parent="Bg"]
 margin_left = 378.706
 margin_top = 54.7847
 margin_right = 660.706
@@ -91,26 +88,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BorderGold" type="Sprite" parent="World2"]
+[node name="BorderGold" type="Sprite" parent="Bg/World2"]
 position = Vector2( 139.43, 241.868 )
 rotation = 1.5708
 scale = Vector2( 0.479861, 0.453988 )
 texture = ExtResource( 15 )
 
-[node name="BorderDark" type="Sprite" parent="World2"]
+[node name="BorderDark" type="Sprite" parent="Bg/World2"]
 visible = false
 position = Vector2( 139.43, 241.868 )
 rotation = 1.5708
 scale = Vector2( 0.479861, 0.453988 )
 texture = ExtResource( 16 )
 
-[node name="Lock" type="Sprite" parent="World2"]
+[node name="Lock" type="Sprite" parent="Bg/World2"]
 visible = false
 position = Vector2( 136.942, 226.684 )
 scale = Vector2( 0.334613, 0.30403 )
 texture = ExtResource( 14 )
 
-[node name="Label" type="Label" parent="World2"]
+[node name="Label" type="Label" parent="Bg/World2"]
 margin_left = 104.0
 margin_top = 23.0
 margin_right = 184.0
@@ -122,7 +119,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="World3" type="TextureButton" parent="."]
+[node name="World3" type="TextureButton" parent="Bg"]
 margin_left = 687.705
 margin_top = 55.7847
 margin_right = 974.705
@@ -135,26 +132,26 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="BorderGold" type="Sprite" parent="World3"]
+[node name="BorderGold" type="Sprite" parent="Bg/World3"]
 position = Vector2( 139.43, 241.868 )
 rotation = 1.5708
 scale = Vector2( 0.479861, 0.453988 )
 texture = ExtResource( 15 )
 
-[node name="BorderDark" type="Sprite" parent="World3"]
+[node name="BorderDark" type="Sprite" parent="Bg/World3"]
 visible = false
 position = Vector2( 139.43, 241.868 )
 rotation = 1.5708
 scale = Vector2( 0.479861, 0.453988 )
 texture = ExtResource( 16 )
 
-[node name="Lock" type="Sprite" parent="World3"]
+[node name="Lock" type="Sprite" parent="Bg/World3"]
 visible = false
 position = Vector2( 136.681, 230.83 )
 scale = Vector2( 0.334613, 0.30403 )
 texture = ExtResource( 14 )
 
-[node name="Label" type="Label" parent="World3"]
+[node name="Label" type="Label" parent="Bg/World3"]
 margin_left = 108.421
 margin_top = 27.009
 margin_right = 188.421
@@ -164,6 +161,9 @@ text = "World 3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="World1" to="." method="_on_World1_pressed"]
-[connection signal="pressed" from="World2" to="." method="_on_World2_pressed"]
-[connection signal="pressed" from="World3" to="." method="_on_World3_pressed"]
+
+[node name="BackBtn" parent="." instance=ExtResource( 6 )]
+position = Vector2( -3.6522, -8.30834 )
+[connection signal="pressed" from="Bg/World1" to="." method="_on_World1_pressed"]
+[connection signal="pressed" from="Bg/World2" to="." method="_on_World2_pressed"]
+[connection signal="pressed" from="Bg/World3" to="." method="_on_World3_pressed"]

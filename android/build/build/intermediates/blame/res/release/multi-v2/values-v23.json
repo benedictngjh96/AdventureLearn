@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "D:\\AdventureLearn\\AdventureLearn\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v23\\values-v23.xml",
+            "outputFile": "D:\\AdventureLearn\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-v23\\values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\9df4809ebed43453c0fc619157302797\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\slay_\\.gradle\\caches\\transforms-2\\files-2.1\\1e4ccbb344a5b93a4cfbc30aa0e76cc7\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\benng\\.gradle\\caches\\transforms-2\\files-2.1\\118067ded0276cd701de750788e37e5e\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\slay_\\.gradle\\caches\\transforms-2\\files-2.1\\e0b1ac7b76fbdd94bc0f6aec0a7872a1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,19,32,33,34,35,36",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",

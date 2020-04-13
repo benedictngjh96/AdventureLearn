@@ -85,9 +85,9 @@
 [ext_resource path="res://Assets/GameplayUI/xicon.png" type="Texture" id=84]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_16.png" type="Texture" id=85]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_27.png" type="Texture" id=86]
-[ext_resource path="res://Assets/GUI/Btn.tres" type="Theme" id=87]
-[ext_resource path="res://Assets/GUI/Btn3.tres" type="Theme" id=88]
-[ext_resource path="res://Assets/GUI/Btn2.tres" type="Theme" id=89]
+[ext_resource path="res://Assets/GUI/BtnUI.tres" type="Theme" id=87]
+[ext_resource path="res://Assets/GUI/BtnUI2.tres" type="Theme" id=88]
+[ext_resource path="res://Assets/GUI/BtnUI3.tres" type="Theme" id=89]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_19.png" type="Texture" id=90]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_21.png" type="Texture" id=91]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_29.png" type="Texture" id=92]
@@ -205,48 +205,30 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-<<<<<<< HEAD
-"frames": [ ExtResource( 48 ), ExtResource( 48 ), ExtResource( 44 ), ExtResource( 49 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 40 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 51 ) ],
-"loop": true,
-"name": "Shield",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "Explosion2",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
-=======
 "frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
->>>>>>> d2310c65f66c956cba5c8b9583ad14022d5d76f9
 "loop": true,
 "name": "Explosion1",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 48 ), ExtResource( 48 ), ExtResource( 44 ), ExtResource( 49 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 40 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 51 ) ],
-"loop": true,
-"name": "Shield",
-"speed": 10.0
-}, {
-"frames": [  ],
-"loop": true,
-"name": "Default",
-"speed": 5.0
-}, {
-<<<<<<< HEAD
-"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
-=======
 "frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
 "loop": true,
 "name": "Explosion3",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
->>>>>>> d2310c65f66c956cba5c8b9583ad14022d5d76f9
 "loop": true,
 "name": "Explosion2",
 "speed": 12.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 48 ), ExtResource( 48 ), ExtResource( 44 ), ExtResource( 49 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 40 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 51 ) ],
+"loop": true,
+"name": "Shield",
+"speed": 10.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -259,38 +241,25 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
-<<<<<<< HEAD
-"frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
-"loop": true,
-"name": "Explosion2",
-"speed": 12.0
-}, {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
-=======
 "frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
->>>>>>> d2310c65f66c956cba5c8b9583ad14022d5d76f9
 "loop": true,
 "name": "Explosion1",
 "speed": 12.0
 }, {
-"frames": [  ],
-"loop": true,
-"name": "Default",
-"speed": 5.0
-}, {
-<<<<<<< HEAD
-"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
-=======
 "frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
 "loop": true,
 "name": "Explosion3",
 "speed": 12.0
 }, {
 "frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
->>>>>>> d2310c65f66c956cba5c8b9583ad14022d5d76f9
 "loop": true,
 "name": "Explosion2",
 "speed": 12.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Default",
+"speed": 5.0
 } ]
 
 [sub_resource type="DynamicFont" id=5]
@@ -365,11 +334,10 @@ playing = true
 flip_h = true
 
 [node name="CharSkillSprite" type="AnimatedSprite" parent="CharSprite"]
-position = Vector2( -7.88895, 30.2738 )
+position = Vector2( -29.6777, 27.0241 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 2 )
 animation = "Default"
-playing = true
 
 [node name="MonsterSprite" type="AnimatedSprite" parent="."]
 visible = false
@@ -428,7 +396,7 @@ __meta__ = {
 }
 
 [node name="Effect1" type="AnimatedSprite" parent="Buttons/Option1"]
-position = Vector2( 136.954, 140.59 )
+position = Vector2( 26.6919, 270.9 )
 scale = Vector2( 0.697635, 0.5939 )
 frames = SubResource( 6 )
 animation = "Default"
@@ -447,7 +415,7 @@ __meta__ = {
 }
 
 [node name="Effect2" type="AnimatedSprite" parent="Buttons/Option2"]
-position = Vector2( 154.96, 126.432 )
+position = Vector2( 226.778, 191.569 )
 scale = Vector2( 0.697635, 0.5939 )
 frames = SubResource( 6 )
 animation = "Default"
@@ -466,7 +434,7 @@ __meta__ = {
 }
 
 [node name="Effect3" type="AnimatedSprite" parent="Buttons/Option3"]
-position = Vector2( 131.666, 136.134 )
+position = Vector2( 456.428, 266.223 )
 scale = Vector2( 0.697635, 0.5939 )
 frames = SubResource( 6 )
 animation = "Default"
@@ -485,7 +453,7 @@ __meta__ = {
 }
 
 [node name="Effect4" type="AnimatedSprite" parent="Buttons/Option4"]
-position = Vector2( 137.037, 141.09 )
+position = Vector2( 688.377, 68.082 )
 scale = Vector2( 0.697635, 0.5939 )
 frames = SubResource( 6 )
 animation = "Default"
@@ -532,17 +500,18 @@ __meta__ = {
 }
 
 [node name="SkillBtn" type="Button" parent="."]
-margin_left = -1.31342
-margin_top = 29.9983
-margin_right = 161.687
-margin_bottom = 142.997
+visible = false
+margin_left = 1187.9
+margin_top = 574.943
+margin_right = 1350.9
+margin_bottom = 687.942
 text = "USE SKILL"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Bg" parent="." instance=ExtResource( 2 )]
-position = Vector2( -222.49, 72.908 )
+position = Vector2( -232.514, 72.908 )
 
 [node name="Countdown" type="AnimatedSprite" parent="."]
 position = Vector2( 502.671, 138.947 )

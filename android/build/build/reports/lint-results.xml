@@ -14,7 +14,7 @@
         errorLine1="        String densityStr = String.format(&quot;%.2f&quot;, density);"
         errorLine2="                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\AdventureLearn\AdventureLearn\android\Facebook\src\GodotFacebook.java"
+            file="D:\AdventureLearn\android\Facebook\src\GodotFacebook.java"
             line="496"
             column="29"/>
     </issue>
@@ -30,7 +30,7 @@
         errorLine1="implementation &apos;com.facebook.android:facebook-android-sdk:[5,6)&apos;"
         errorLine2="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\AdventureLearn\AdventureLearn\android\build\build.gradle"
+            file="D:\AdventureLearn\android\build\build.gradle"
             line="48"
             column="1"/>
     </issue>
@@ -46,7 +46,7 @@
         errorLine1="implementation &apos;com.google.android.gms:play-services-ads:15.0.1&apos;"
         errorLine2="~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~">
         <location
-            file="D:\AdventureLearn\AdventureLearn\android\build\build.gradle"
+            file="D:\AdventureLearn\android\build\build.gradle"
             line="49"
             column="1"/>
     </issue>
@@ -62,7 +62,7 @@
         errorLine1="    private static PlayGames mInstance = null;"
         errorLine2="            ~~~~~~">
         <location
-            file="D:\AdventureLearn\AdventureLearn\android\GodotGPGSPlugin-master\src\PlayGames.java"
+            file="D:\AdventureLearn\android\GodotGPGSPlugin-master\src\PlayGames.java"
             line="39"
             column="13"/>
     </issue>
