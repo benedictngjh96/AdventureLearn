@@ -36,12 +36,12 @@ public class LeaderboardScreen : Node
 
         Label rank = new Label();
         rank.AddFontOverride("font", dFont);
-        rank.Text = "Rank                   ";
+        rank.Text = "Rank                               ";
         gridContainer.AddChild(rank);
 
         Label lbl = new Label();
         lbl.AddFontOverride("font", dFont);
-        lbl.Text = "Name                    ";
+        lbl.Text = "Name                                    ";
         gridContainer.AddChild(lbl);
 
         Label lbl2 = new Label();

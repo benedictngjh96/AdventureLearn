@@ -88,9 +88,9 @@ public class GamePlay : Node2D
         op2 = GetNode<Button>("Buttons/Option2");
         op3 = GetNode<Button>("Buttons/Option3");
         op4 = GetNode<Button>("Buttons/Option4");
-        theme1 = ResourceLoader.Load("res://Assets/GUI/Btn.tres") as Theme;
-        theme2 = ResourceLoader.Load("res://Assets/GUI/Btn2.tres") as Theme;
-        theme3 = ResourceLoader.Load("res://Assets/GUI/Btn3.tres") as Theme;
+        theme1 = ResourceLoader.Load("res://Assets/GUI/BtnUI.tres") as Theme;
+        theme2 = ResourceLoader.Load("res://Assets/GUI/BtnUI2.tres") as Theme;
+        theme3 = ResourceLoader.Load("res://Assets/GUI/BtnUI3.tres") as Theme;
         DisplayBtnDesign();
         countDown.Play("Countdown");
         timer = GetNode<Timer>("TimeLimit");

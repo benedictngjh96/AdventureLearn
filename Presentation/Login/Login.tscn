@@ -270,21 +270,21 @@ __meta__ = {
 [node name="Athena" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 382.778, 321.12 )
 frames = SubResource( 1 )
-frame = 10
+frame = 3
 playing = true
 flip_h = true
 
 [node name="Escanor" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 123.919, 257.317 )
 frames = SubResource( 2 )
-frame = 12
+frame = 5
 playing = true
 flip_h = true
 
 [node name="Zeus" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 95.5976, 97.7057 )
 frames = SubResource( 3 )
-frame = 18
+frame = 11
 playing = true
 flip_h = true
 
@@ -292,32 +292,31 @@ flip_h = true
 position = Vector2( 255.107, 276.986 )
 scale = Vector2( 1, 0.879158 )
 frames = SubResource( 4 )
-frame = 9
+frame = 2
 playing = true
 flip_h = true
 
 [node name="Mage" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 893.065, 33.9787 )
 frames = SubResource( 5 )
-frame = 2
+frame = 15
 playing = true
 
 [node name="Mage2" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 958.258, 248.182 )
 frames = SubResource( 6 )
-frame = 14
+frame = 7
 playing = true
 
 [node name="Ogre" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 613.67, 257.064 )
 frames = SubResource( 7 )
-frame = 5
+frame = 18
 playing = true
 
 [node name="BullWarrior" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 826.873, 282.483 )
 frames = SubResource( 8 )
-frame = 7
 playing = true
 [connection signal="pressed" from="GoogleLogin" to="." method="_on_LoginBtn_pressed"]
 [connection signal="pressed" from="FbLogin" to="." method="_on_FbLogin_pressed"]
