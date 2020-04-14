@@ -6,23 +6,26 @@ public class MainMenu : Node2D
 
 	public override void _Ready()
 	{
+		//SetBg();
+	}
+
+	public void SetBg()
+	{
+		Node2D n = GetNode<Node2D>("Bg");
+		Sprite s = GetNode<Sprite>("Bg/ParallaxBackground/ParallaxLayer/Sprite");
+
+		var texture2 = ResourceLoader.Load("res://Assets/Background/Middle2.png") as Texture;
+		s.Texture = texture2;
 
 	}
-	private void _on_WorldBtn_pressed()
+	private void _on_CampaignBtn_pressed()
 	{
 		GetTree().ChangeScene("res://Presentation/World/World.tscn");
 	}
-	private void _on_ChallengeBtn_pressed()
+
+	private void _on_CustomLevelBtn_pressed()
 	{
 		GetTree().ChangeScene("res://Presentation/CustomLevel/ViewCustomLevel.tscn");
-	}
-	private void _on_LeaderboardBtn_pressed()
-	{
-		GetTree().ChangeScene("res://Presentation/Leaderboard/Leaderboard.tscn");
-	}
-	private void _on_UserProfileBtn_pressed()
-	{
-		GetTree().ChangeScene("res://Presentation/UserProfile/UserProfile.tscn");
 	}
 
 	private void _on_AssignmentBtn_pressed()
@@ -30,11 +33,17 @@ public class MainMenu : Node2D
 		GetTree().ChangeScene("res://Presentation/Assignment/ViewAssignment.tscn");
 	}
 
-	private void _on_LvlBtn_pressed()
+	private void _on_LeaderboardBtn_pressed()
 	{
-		GetTree().ChangeScene("res://Presentation/CreateLevel/CreateLevelInit.tscn");
+		GetTree().ChangeScene("res://Presentation/Leaderboard/Leaderboard.tscn");
 	}
-	private void _on_Logout_pressed()
+
+	private void _on_UserProfileBtn_pressed()
+	{
+		GetTree().ChangeScene("res://Presentation/UserProfile/UserProfile.tscn");
+	}
+
+	private void _on_LogoutBtn_pressed()
 	{
 		GDScript fb = (GDScript)GD.Load("res://API/Facebook.gd");
 		GDScript google = (GDScript)GD.Load("res://API/Google.gd");
@@ -55,8 +64,8 @@ public class MainMenu : Node2D
 		GetTree().ChangeScene("res://Presentation/Login/Login.tscn");
 	}
 
-}
 
+}
 
 
 
