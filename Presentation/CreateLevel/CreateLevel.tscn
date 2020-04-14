@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Presentation/CreateLevel/CreateLevel.cs" type="Script" id=1]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=2]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -198,6 +199,8 @@ margin_bottom = 445.384
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Bg" parent="." instance=ExtResource( 2 )]
 [connection signal="pressed" from="CreateBtn" to="." method="_on_CreateBtn_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question1" to="." method="_on_Question1_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question2" to="." method="_on_Question2_pressed"]
