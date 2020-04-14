@@ -34,4 +34,20 @@ public class CharacterDao
 		}
 		return characterList;
 	}
+
+	/// <summary>
+	/// Return list of Monster
+	/// </summary>
+	/// <returns></returns>
+	public List<Monster> GetAllMonsters()
+	{
+		List<Monster> monsterList;
+
+		string query = "SELECT * FROM Monster";
+		using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
+		{
+			monsterList = conn.Query<Monster>(query).ToList();
+		}
+		return monsterList;
+	}
 }
