@@ -1,12 +1,16 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Presentation/CustomLevel/ViewCustomLevel.cs" type="Script" id=1]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Assets/LockedLevels/ForwardLocked.png" type="Texture" id=4]
-[ext_resource path="res://Assets/LockedLevels/BackwardLocked.png" type="Texture" id=5]
-[ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=6]
-[ext_resource path="res://Assets/UnlockedLevels/ForwardUnlocked.png" type="Texture" id=7]
+[ext_resource path="res://Assets/GUI/button_r.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GUI/button_l.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GUI/lockedleftbtn.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GUI/lockedrightbtn.png" type="Texture" id=7]
+[ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Assets/GUI/customlvltitle.png" type="Texture" id=10]
+[ext_resource path="res://Assets/GUI/BtnUI4.tres" type="Theme" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 size = 60
@@ -15,28 +19,31 @@ font_data = ExtResource( 2 )
 [node name="ViewCustomLevel" type="Node2D"]
 script = ExtResource( 1 )
 
+[node name="Menu" parent="." instance=ExtResource( 8 )]
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 51.9269
-margin_top = 368.576
-margin_right = 693.927
-margin_bottom = 1047.58
+margin_left = 211.032
+margin_top = 209.661
+margin_right = 804.032
+margin_bottom = 396.661
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
-margin_right = 642.0
+margin_right = 593.0
 custom_constants/vseparation = 20
 custom_constants/hseparation = 10
 columns = 3
 
-[node name="Title" type="Label" parent="."]
-margin_left = 136.393
-margin_top = 180.0
-margin_right = 521.393
-margin_bottom = 268.0
+[node name="Title3" type="Label" parent="."]
+visible = false
+margin_left = 345.166
+margin_top = 48.0556
+margin_right = 730.166
+margin_bottom = 136.056
 custom_fonts/font = SubResource( 1 )
 text = "Custom Game"
 __meta__ = {
@@ -46,36 +53,46 @@ __meta__ = {
 [node name="BackBtn" parent="." instance=ExtResource( 3 )]
 
 [node name="NextBtn" type="TextureButton" parent="."]
-margin_left = 563.677
-margin_top = 168.735
-margin_right = 640.677
-margin_bottom = 268.735
-texture_normal = ExtResource( 7 )
-texture_disabled = ExtResource( 4 )
+margin_left = 897.321
+margin_top = 273.965
+margin_right = 1020.32
+margin_bottom = 406.965
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 4 )
+texture_disabled = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PrevBtn" type="TextureButton" parent="."]
-margin_left = 10.9869
-margin_top = 171.466
-margin_right = 145.987
-margin_bottom = 346.466
-texture_normal = ExtResource( 6 )
-texture_disabled = ExtResource( 5 )
+margin_left = 50.1778
+margin_top = 273.965
+margin_right = 185.178
+margin_bottom = 448.965
+rect_scale = Vector2( 0.6, 0.6 )
+texture_normal = ExtResource( 5 )
+texture_disabled = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ViewCreatedBtn" type="Button" parent="."]
-margin_left = 781.148
-margin_top = 386.907
-margin_right = 976.148
-margin_bottom = 470.91
+margin_left = 437.611
+margin_top = 450.401
+margin_right = 580.611
+margin_bottom = 514.401
+theme = ExtResource( 11 )
 text = "View Created Levels"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Title" type="Sprite" parent="."]
+position = Vector2( 524.274, 110.84 )
+scale = Vector2( 0.454165, 0.491577 )
+texture = ExtResource( 10 )
+
+[node name="Bg" parent="." instance=ExtResource( 9 )]
 [connection signal="pressed" from="NextBtn" to="." method="_on_NextBtn_pressed"]
 [connection signal="pressed" from="PrevBtn" to="." method="_on_PrevBtn_pressed"]
 [connection signal="pressed" from="ViewCreatedBtn" to="." method="_on_ViewCreatedBtn_pressed"]

@@ -99,7 +99,7 @@ public class StudentScoreDao
         {
             studentScores = conn.Query<StudentScore>(query).ToList();
         }
-        if(studentScores.Count <=0)
+        if (studentScores.Count <= 0)
             return null;
         else
             return studentScores[0];
@@ -133,6 +133,22 @@ public class StudentScoreDao
         BaseDao<int> baseDao = new BaseDao<int>();
         string query = "SELECT COUNT(*) FROM StudentScore ss WHERE ss.StudentId = @StudentId AND LevelId = @LevelId";
         int result = baseDao.ExecuteScalar(query, new { StudentId = studentId, LevelId = levelId });
+        return result;
+    }
+    public int GetCampaignRanking(int studentId)
+    {
+        BaseDao<int> baseDao = new BaseDao<int>();
+        string query = "SELECT (COUNT(0)+1) AS StudentRank FROM StudentLevelTotalScore s1, StudentLevelTotalScore s2 "+
+        "WHERE s1.StudentId = @StudentId AND s2.totalLevelScore > s1.totalLevelScore";
+        int result = baseDao.ExecuteScalar(query, new { StudentId = studentId });
+        return result;
+    }
+    public int GetAssignmentRanking(int studentId)
+    {
+        BaseDao<int> baseDao = new BaseDao<int>();
+        string query = "SELECT (COUNT(0)+1) AS StudentRank FROM StudentAssignmentTotalScore s1, StudentAssignmentTotalScore s2 " +
+        "WHERE s1.StudentId = @StudentId AND s2.totalAssignmentScore > s1.totalAssignmentScore";
+        int result = baseDao.ExecuteScalar(query, new { StudentId = studentId });
         return result;
     }
 }

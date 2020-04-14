@@ -7,25 +7,29 @@ public class CharSelect : Node2D
 
     StudentBL studentBL;
     List<Character> characterList;
-    Button enterBtn;
+    TextureButton enterBtn;
     CharacterBL characterBL;
     int charId;
     string charSelected = "";
     AnimatedSprite charSprite;
     Label charName;
+    Label nameLbl;
+    Label skillLbl;
+    Label enterLbl;
     public override void _Ready()
     {
         //Hide animated sprite and button when user has not selected a character
         charSprite = GetNode<AnimatedSprite>("Char/AnimatedSprite");
-        enterBtn = GetNode<Button>("EnterBtn");
+        enterBtn = GetNode<TextureButton>("EnterBtn");
         charSprite.Visible = false;
         enterBtn.Visible = false;
         studentBL = new StudentBL();
         characterBL = new CharacterBL();
-        charName= GetNode<Label>("Char/CharName");
+        charName = GetNode<Label>("Char/CharName");
+        nameLbl = GetNode<Label>("Char/Name");
+        skillLbl = GetNode<Label>("Char/SkillLbl");
+        enterLbl = GetNode<Label>("EnterBtnLbl");
         characterList = characterBL.GetAllCharacters();
-        Godot.GD.Print(Global.StudentId);
-
 
     }
     private void _on_Knight1_pressed()
@@ -54,6 +58,9 @@ public class CharSelect : Node2D
         charSprite.Play(characterName + "Walk", false);
         charSprite.Visible = true;
         enterBtn.Visible = true;
+        nameLbl.Visible = true;
+        skillLbl.Visible = true;
+        enterLbl.Visible = true;
         charName.Text = characterName;
         if (characterName == "Athena")
             charSprite.Position = new Vector2(478.243f, 323.009f);

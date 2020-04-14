@@ -14,8 +14,7 @@ public class ViewAssignment : Node2D
     AssignmentScoreBL assignmentScoreBL;
     TextureButton nextBtn;
     TextureButton prevBtn;
-    Label title;
-
+    Sprite title;
     public override void _Ready()
     {
         vbox = GetNode<VBoxContainer>("VBoxContainer");
@@ -24,14 +23,16 @@ public class ViewAssignment : Node2D
         assignmentScoreBL = new AssignmentScoreBL();
         nextBtn = GetNode<TextureButton>("NextBtn");
         prevBtn = GetNode<TextureButton>("PrevBtn");
-        title = GetNode<Label>("Title");
+        title = GetNode<Sprite>("Title");
+        gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
         dFont = new DynamicFont();
         dFont.FontData = ResourceLoader.Load("res://Fonts/Candy Beans.otf") as DynamicFontData;
         dFont.Size = 26;
 
+
         dFont2 = new DynamicFont();
         dFont2.FontData = ResourceLoader.Load("res://Fonts/Candy Beans.otf") as DynamicFontData;
-        dFont2.Size = 15;
+        dFont2.Size = 18;
         assignmentList = assignmentBL.GetStudentAssignment(Global.StudentId);
         DisplayHeader();
         DisplayAssignment();
@@ -43,16 +44,19 @@ public class ViewAssignment : Node2D
             Label name = new Label();
             name.AddFontOverride("font", dFont2);
             name.Text = assignment.Assignment.AssignmentName;
+            name.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(name);
 
             Label teacher = new Label();
             teacher.AddFontOverride("font", dFont2);
             teacher.Text = assignment.Assignment.Teacher.TeacherName;
+            teacher.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(teacher);
 
             Label date = new Label();
             date.AddFontOverride("font", dFont2);
             date.Text = assignment.DueDate.ToString();
+            date.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(date);
 
             if (DateTime.Compare(DateTime.Now, assignment.DueDate) > 0)
@@ -60,13 +64,16 @@ public class ViewAssignment : Node2D
                 Label expire = new Label();
                 expire.AddFontOverride("font", dFont);
                 expire.Text = "";
+                expire.AddColorOverride("font_color", new Color(0, 0, 0));
                 gridContainer.AddChild(expire);
             }
             else
             {
+                Theme theme = ResourceLoader.Load("res://Assets/GUI/BtnUI4.tres") as Theme;
                 Button btn = new Button();
                 btn.RectMinSize = new Vector2(80, 30);
                 btn.Text = "Play";
+                btn.Theme = theme;
                 string[] arr = new string[1] { btn.Name };
                 Godot.Collections.Array ar = new Godot.Collections.Array();
                 ar.Add(btn);
@@ -80,27 +87,30 @@ public class ViewAssignment : Node2D
     private void DisplayCompletedAssignments()
     {
         List<AssignmentScore> completedAssignments = assignmentScoreBL.GetStudentCompletedAssignment(Global.StudentId);
-        GD.Print("AA");
         foreach (AssignmentScore as2 in completedAssignments)
         {
             Label name = new Label();
             name.AddFontOverride("font", dFont2);
             name.Text = as2.PublishedAssignment.Assignment.AssignmentName;
+            name.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(name);
 
             Label teacher = new Label();
             teacher.AddFontOverride("font", dFont2);
             teacher.Text = as2.PublishedAssignment.Assignment.Teacher.TeacherName;
+            teacher.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(teacher);
 
             Label date = new Label();
             date.AddFontOverride("font", dFont2);
-            date.Text = as2.PublishedAssignment.DueDate.ToString();
+            date.Text = as2.PublishedAssignment.DueDate.ToString()+"     ";
+            date.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(date);
 
             Label score = new Label();
             score.AddFontOverride("font", dFont2);
             score.Text = as2.Score.ToString();
+            score.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(score);
 
 
@@ -117,21 +127,25 @@ public class ViewAssignment : Node2D
         Label lbl = new Label();
         lbl.AddFontOverride("font", dFont);
         lbl.Text = "Assignment" + "       ";
+        lbl.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl);
 
         Label lbl3 = new Label();
         lbl3.AddFontOverride("font", dFont);
         lbl3.Text = "Teacher" + "      ";
+        lbl3.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl3);
 
         Label date = new Label();
         date.AddFontOverride("font", dFont);
         date.Text = "DueDate" + "      ";
+        date.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(date);
 
         Label lbl2 = new Label();
         lbl2.AddFontOverride("font", dFont);
         lbl2.Text = " ";
+        lbl2.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl2);
     }
     private void DisplayCompletedHeader()
@@ -140,21 +154,25 @@ public class ViewAssignment : Node2D
         Label lbl = new Label();
         lbl.AddFontOverride("font", dFont);
         lbl.Text = "Assignment" + "       ";
+        lbl.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl);
 
         Label lbl3 = new Label();
         lbl3.AddFontOverride("font", dFont);
         lbl3.Text = "Teacher" + "      ";
+        lbl3.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl3);
 
         Label date = new Label();
         date.AddFontOverride("font", dFont);
         date.Text = "DueDate" + "      ";
+        date.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(date);
 
         Label lbl2 = new Label();
         lbl2.AddFontOverride("font", dFont);
         lbl2.Text = "Score";
+        lbl2.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl2);
     }
     private void ClearGrid()
@@ -164,7 +182,9 @@ public class ViewAssignment : Node2D
     }
     private void _on_NextBtn_pressed()
     {
-        title.Text = "Completed";
+        Texture texture = ResourceLoader.Load("res://Assets/GUI/clearedtitle.png") as Texture;
+        title.Texture = texture;
+
         ClearGrid();
         DisplayCompletedHeader();
         DisplayCompletedAssignments();
@@ -174,7 +194,9 @@ public class ViewAssignment : Node2D
 
     private void _on_PrevBtn_pressed()
     {
-        title.Text = "Assignments";
+        Texture texture = ResourceLoader.Load("res://Assets/GUI/assignmenttitle.png") as Texture;
+        title.Texture = texture;
+
         ClearGrid();
         DisplayHeader();
         DisplayAssignment();

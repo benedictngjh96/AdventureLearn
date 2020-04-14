@@ -5,13 +5,13 @@ using System.Linq;
 
 public class WorldScreen : Node
 {
-    TextureButton world1Btn, world2Btn, world3Btn;
+    TextureButton world1Btn, world2Btn, world3Btn; 
     WorldBL worldBl;
 
     public override void _Ready()
     {
         //Testing
-        //Global.StudentId = 27;
+        //Global.StudentId = 29;
         //Testing
 
         world1Btn = GetNode<TextureButton>("Bg/World1");

@@ -1,4 +1,4 @@
-[gd_scene load_steps=167 format=2]
+[gd_scene load_steps=168 format=2]
 
 [ext_resource path="res://Presentation/Login/Login.gd" type="Script" id=1]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=2]
@@ -158,6 +158,7 @@
 [ext_resource path="res://CharSprites/BullWarrior/Idle/Idle_16.png" type="Texture" id=156]
 [ext_resource path="res://CharSprites/BullWarrior/Idle/Idle_19.png" type="Texture" id=157]
 [ext_resource path="res://CharSprites/BullWarrior/Idle/Idle_15.png" type="Texture" id=158]
+[ext_resource path="res://Assets/logo.png" type="Texture" id=159]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -237,16 +238,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-margin_left = 412.551
-margin_top = 42.0037
-margin_right = 797.552
-margin_bottom = 173.004
-text = "AdventureLearn"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="FbLogin" type="TextureButton" parent="."]
 margin_left = 392.914
 margin_top = 457.654
@@ -270,21 +261,20 @@ __meta__ = {
 [node name="Athena" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 382.778, 321.12 )
 frames = SubResource( 1 )
-frame = 3
+frame = 2
 playing = true
 flip_h = true
 
 [node name="Escanor" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 123.919, 257.317 )
 frames = SubResource( 2 )
-frame = 5
+frame = 14
 playing = true
 flip_h = true
 
 [node name="Zeus" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 95.5976, 97.7057 )
 frames = SubResource( 3 )
-frame = 11
 playing = true
 flip_h = true
 
@@ -292,31 +282,37 @@ flip_h = true
 position = Vector2( 255.107, 276.986 )
 scale = Vector2( 1, 0.879158 )
 frames = SubResource( 4 )
-frame = 2
+frame = 11
 playing = true
 flip_h = true
 
 [node name="Mage" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 893.065, 33.9787 )
 frames = SubResource( 5 )
-frame = 15
+frame = 4
 playing = true
 
 [node name="Mage2" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 958.258, 248.182 )
 frames = SubResource( 6 )
-frame = 7
+frame = 16
 playing = true
 
 [node name="Ogre" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 613.67, 257.064 )
 frames = SubResource( 7 )
-frame = 18
+frame = 7
 playing = true
 
 [node name="BullWarrior" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 826.873, 282.483 )
 frames = SubResource( 8 )
+frame = 9
 playing = true
+
+[node name="Logo" type="Sprite" parent="."]
+position = Vector2( 512, 100 )
+scale = Vector2( 0.292, 0.256 )
+texture = ExtResource( 159 )
 [connection signal="pressed" from="GoogleLogin" to="." method="_on_LoginBtn_pressed"]
 [connection signal="pressed" from="FbLogin" to="." method="_on_FbLogin_pressed"]

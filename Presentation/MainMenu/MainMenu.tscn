@@ -1,150 +1,118 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/customLevel1.png" type="Texture" id=1]
 [ext_resource path="res://Presentation/MainMenu/MainMenu.cs" type="Script" id=2]
-[ext_resource path="res://Assets/GUI/ButtonsWithText/setting2.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/leaderboard1.png" type="Texture" id=3]
 [ext_resource path="res://Assets/Background/bg2.png" type="Texture" id=4]
-[ext_resource path="res://Assets/GUI/ButtonsWithText/setting1.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/leaderboard2.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/campaign2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Background/title.png" type="Texture" id=7]
-
-[sub_resource type="DynamicFont" id=1]
-size = 64
-font_data = ExtResource( 1 )
+[ext_resource path="res://Assets/GUI/ButtonsWithText/campaign1.png" type="Texture" id=8]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/profile1.png" type="Texture" id=9]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/assignment1.png" type="Texture" id=10]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/profile2.png" type="Texture" id=11]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/assignment2.png" type="Texture" id=12]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/customLevel2.png" type="Texture" id=13]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/logoutIcon1.png" type="Texture" id=14]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/logoutIcon2.png" type="Texture" id=15]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=16]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Title" type="Label" parent="."]
-margin_left = 398.846
-margin_top = -93.5534
-margin_right = 690.846
-margin_bottom = 7.44731
-custom_fonts/font = SubResource( 1 )
-text = "Main Menu"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Background" type="Sprite" parent="."]
+visible = false
 position = Vector2( 324.191, 376.816 )
 scale = Vector2( 1.10275, 0.952365 )
 texture = ExtResource( 4 )
 
 [node name="AdventureLearn" type="Sprite" parent="."]
-position = Vector2( 520, 118.892 )
+position = Vector2( 512, 100 )
 scale = Vector2( 0.29212, 0.255959 )
 texture = ExtResource( 7 )
 
-[node name="Btns" type="Control" parent="."]
-margin_left = -81.6108
-margin_top = -715.005
-margin_right = -41.6108
-margin_bottom = -675.005
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
-
-[node name="WorldBtn" type="Button" parent="Btns"]
-anchor_left = 0.0969253
-anchor_top = -0.032309
-anchor_right = 0.0969253
-anchor_bottom = -0.032309
-margin_left = 107.67
-margin_top = 961.396
-margin_right = 373.67
-margin_bottom = 1081.4
-text = "World"
+[node name="CampaignBtn" type="TextureButton" parent="."]
+margin_left = 420.0
+margin_top = 205.0
+margin_right = 2088.0
+margin_bottom = 901.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 8 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LvlBtn" type="Button" parent="Btns"]
-margin_left = 448.361
-margin_top = 970.963
-margin_right = 714.361
-margin_bottom = 1090.96
-text = "Create Level"
+[node name="CustomLevelBtn" type="TextureButton" parent="."]
+margin_left = 420.0
+margin_top = 280.0
+margin_right = 2088.0
+margin_bottom = 976.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 1 )
+texture_pressed = ExtResource( 13 )
+texture_hover = ExtResource( 13 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ChallengeBtn" type="Button" parent="Btns"]
-margin_left = 786.902
-margin_top = 970.604
-margin_right = 1052.9
-margin_bottom = 1090.6
-text = "Custom Level"
+[node name="AssignmentBtn" type="TextureButton" parent="."]
+margin_left = 420.0
+margin_top = 355.0
+margin_right = 2088.0
+margin_bottom = 1051.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 10 )
+texture_pressed = ExtResource( 12 )
+texture_hover = ExtResource( 12 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AssignmentBtn" type="Button" parent="Btns"]
-margin_left = 113.904
-margin_top = 1139.54
-margin_right = 379.904
-margin_bottom = 1259.54
-text = "Assignment"
+[node name="LeaderboardBtn" type="TextureButton" parent="."]
+margin_left = 420.0
+margin_top = 430.0
+margin_right = 460.0
+margin_bottom = 470.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 3 )
+texture_pressed = ExtResource( 5 )
+texture_hover = ExtResource( 5 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="LeaderboardBtn" type="Button" parent="Btns"]
-margin_left = 448.28
-margin_top = 1139.23
-margin_right = 714.28
-margin_bottom = 1259.23
-text = "Leaderboard"
+[node name="UserProfileBtn" type="TextureButton" parent="."]
+margin_left = 420.0
+margin_top = 505.0
+margin_right = 2088.0
+margin_bottom = 1201.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 9 )
+texture_pressed = ExtResource( 11 )
+texture_hover = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="UserProfileBtn" type="Button" parent="Btns"]
-margin_left = 810.281
-margin_top = 1134.44
-margin_right = 1076.28
-margin_bottom = 1254.44
-text = "User Profile"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Logout" type="Button" parent="Btns"]
-margin_left = 450.95
-margin_top = 1293.87
-margin_right = 716.95
-margin_bottom = 1413.87
-text = "Log Out"
-
-[node name="MainMenuBtns" type="Control" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SettingsBtn" type="TextureButton" parent="MainMenuBtns"]
+[node name="LogoutBtn" type="TextureButton" parent="."]
 margin_left = 950.0
 margin_top = 30.0
 margin_right = 1462.0
 margin_bottom = 542.0
 rect_scale = Vector2( 0.1, 0.1 )
-texture_normal = ExtResource( 5 )
-texture_pressed = ExtResource( 3 )
-texture_hover = ExtResource( 3 )
+texture_normal = ExtResource( 14 )
+texture_pressed = ExtResource( 15 )
+texture_hover = ExtResource( 15 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureButton" type="TextureButton" parent="MainMenuBtns"]
-margin_left = 491.167
-margin_top = 230.548
-margin_right = 531.167
-margin_bottom = 270.548
-[connection signal="pressed" from="Btns/WorldBtn" to="." method="_on_WorldBtn_pressed"]
-[connection signal="pressed" from="Btns/LvlBtn" to="." method="_on_LvlBtn_pressed"]
-[connection signal="pressed" from="Btns/ChallengeBtn" to="." method="_on_ChallengeBtn_pressed"]
-[connection signal="pressed" from="Btns/AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]
-[connection signal="pressed" from="Btns/LeaderboardBtn" to="." method="_on_LeaderboardBtn_pressed"]
-[connection signal="pressed" from="Btns/UserProfileBtn" to="." method="_on_UserProfileBtn_pressed"]
-[connection signal="pressed" from="Btns/Logout" to="." method="_on_Logout_pressed"]
+[node name="Bg" parent="." instance=ExtResource( 16 )]
+[connection signal="pressed" from="CampaignBtn" to="." method="_on_CampaignBtn_pressed"]
+[connection signal="pressed" from="CustomLevelBtn" to="." method="_on_CustomLevelBtn_pressed"]
+[connection signal="pressed" from="AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]
+[connection signal="pressed" from="LeaderboardBtn" to="." method="_on_LeaderboardBtn_pressed"]
+[connection signal="pressed" from="UserProfileBtn" to="." method="_on_UserProfileBtn_pressed"]
+[connection signal="pressed" from="LogoutBtn" to="." method="_on_LogoutBtn_pressed"]

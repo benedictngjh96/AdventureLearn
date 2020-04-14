@@ -6,20 +6,46 @@ public class ViewCreatedLevels : Node2D
     VBoxContainer vbox;
     GridContainer gridContainer;
     DynamicFont dFont;
+    DynamicFont dFont2;
     List<CustomLevel> customLevelList;
     CustomLevelBL customLevelBL;
     public override void _Ready()
     {
         vbox = GetNode<VBoxContainer>("VBoxContainer");
         gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
-
+        gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
         dFont = new DynamicFont();
         dFont.FontData = ResourceLoader.Load("res://Fonts/Candy Beans.otf") as DynamicFontData;
-        dFont.Size = 15;
+        dFont.Size = 26;
+        dFont2 = new DynamicFont();
+        dFont2.FontData = ResourceLoader.Load("res://Fonts/Candy Beans.otf") as DynamicFontData;
+        dFont2.Size = 18;
         customLevelBL = new CustomLevelBL();
-
+        DisplayHeader();
         DisplayLevels();
 
+    }
+    private void DisplayHeader()
+    {
+        //Student Name
+        Label lbl = new Label();
+        lbl.AddFontOverride("font", dFont);
+        lbl.Text = "Game Name" + "       ";
+        lbl.AddColorOverride("font_color", new Color(0, 0, 0));
+      
+        gridContainer.AddChild(lbl);
+
+        Label lbl3 = new Label();
+        lbl3.AddFontOverride("font", dFont);
+        lbl3.Text = "           ";
+        lbl3.AddColorOverride("font_color", new Color(0, 0, 0));
+        gridContainer.AddChild(lbl3);
+
+        Label lbl4 = new Label();
+        lbl4.AddFontOverride("font", dFont);
+        lbl4.Text = "   ";
+        lbl4.AddColorOverride("font_color", new Color(0, 0, 0));
+        gridContainer.AddChild(lbl4);
     }
     private void DisplayLevels()
     {
@@ -27,8 +53,9 @@ public class ViewCreatedLevels : Node2D
         foreach (CustomLevel customLevel in customLevelList)
         {
             Label name = new Label();
-            name.AddFontOverride("font", dFont);
+            name.AddFontOverride("font", dFont2);
             name.Text = customLevel.CustomLevelName + "      ";
+            name.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(name);
 
             Button btn = new Button();
@@ -55,17 +82,12 @@ public class ViewCreatedLevels : Node2D
     }
     private void EditLevel(Button btn)
     {
-        GD.Print(btn.Name);
         CustomLevel cl = customLevelList.Find(item => item.CustomLevelName == btn.Name.Trim());
         Global.CustomLevelId = cl.CustomLevelId;
         GetTree().ChangeScene("res://Presentation/EditLevel/EditLevelInit.tscn");
-        //Redirect to edit page
     }
     private void DeleteLevel(Button btn)
     {
-        //AssignmentBL assignmentBL = new AssignmentBL();
-        //Assignment a = assignmentList.Find(item => item.AssignmentName == btn.Name.Trim());
-        //assignmentBL.DeleteAssignment(a.AssignmentId);
         CustomLevel cl = customLevelList.Find(item => item.CustomLevelName == btn.Name.Trim());
         customLevelBL.DeleteCustomLevel(cl.CustomLevelId);
         ClearGrid();

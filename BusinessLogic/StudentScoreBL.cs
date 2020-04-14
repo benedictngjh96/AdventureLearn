@@ -47,5 +47,15 @@ public class StudentScoreBL
         StudentScoreDao studentScoreDao = new StudentScoreDao();
         return studentScoreDao.GetAvgWorldScores(studentId);
     }
+    public int GetCampaignRanking(int studentId)
+    {
+        StudentScoreDao studentScoreDao = new StudentScoreDao();
+        return studentScoreDao.GetCampaignRanking(studentId);
+    }
+    public int GetAssignmentRanking(int studentId)
+    {
+        StudentScoreDao studentScoreDao = new StudentScoreDao();
+        return studentScoreDao.GetAssignmentRanking(studentId);
+    }
 
 }
