@@ -1,4 +1,0 @@
-#Tue Apr 14 14:51:27 SGT 2020
-base.0=D\:\\SSAD\\AdventureLearn\\android\\build\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out
-path.0=classes.dex
-renamed.0=classes.dex
