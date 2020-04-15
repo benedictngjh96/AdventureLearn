@@ -15,11 +15,11 @@ scale = Vector2( 0.521103, 0.606469 )
 texture = ExtResource( 4 )
 
 [node name="window" type="Sprite" parent="table"]
-position = Vector2( 10.1219, 11.5956 )
-scale = Vector2( 1.00461, 1.04843 )
+position = Vector2( 12.7326, -23.1086 )
+scale = Vector2( 1.00461, 1.17151 )
 texture = ExtResource( 1 )
 
-[node name="banner" type="Sprite" parent="table/window"]
-position = Vector2( 11.5913, -77.2461 )
-scale = Vector2( 0.327313, 0.234686 )
+[node name="banner" type="Sprite" parent="table"]
+position = Vector2( 21.7666, -69.3915 )
+scale = Vector2( 0.328822, 0.246052 )
 texture = ExtResource( 5 )

@@ -11,9 +11,8 @@ public class ViewCreatedLevels : Node2D
     CustomLevelBL customLevelBL;
     public override void _Ready()
     {
-        vbox = GetNode<VBoxContainer>("VBoxContainer");
-        gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
-        gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
+        vbox = GetNode<VBoxContainer>("ScrollContainer/VBoxContainer");
+        gridContainer = GetNode<GridContainer>("ScrollContainer/VBoxContainer/GridContainer");
         dFont = new DynamicFont();
         dFont.FontData = ResourceLoader.Load("res://Fonts/Candy Beans.otf") as DynamicFontData;
         dFont.Size = 26;

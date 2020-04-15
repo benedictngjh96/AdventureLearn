@@ -7,7 +7,8 @@ var global = preload("res://Global/Global.cs");
 var email
 var googleId
 var fbId
-
+onready var fbBtn = get_node("FbLogin")
+onready var googleBtn = get_node("GoogleLogin")
 func _ready():
     facebook.facebook_connect()
     facebook.connect("info", self, "insert_fb")
@@ -18,6 +19,7 @@ func _ready():
         facebook.logout()
 
 func _on_LoginBtn_pressed():
+    googleBtn.disabled = true
     google.google_connect()
     google.gconnect()
 func insert_google():
@@ -51,4 +53,5 @@ func insert_fb():
         get_tree().change_scene("res://Presentation/CharSelect/CharSelect.tscn")
         
 func _on_FbLogin_pressed():
+    fbBtn.disabled = true
     facebook.login()

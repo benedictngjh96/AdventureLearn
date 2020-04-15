@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Assets/GUI/button_empty_4.png" type="Texture" id=1]
 
-[sub_resource type="StyleBoxTexture" id=2]
+[sub_resource type="StyleBoxTexture" id=1]
 texture = ExtResource( 1 )
 region_rect = Rect2( 0, 0, 279, 133 )
 
@@ -16,5 +16,5 @@ Button/fonts/font = null
 Button/styles/disabled = null
 Button/styles/focus = null
 Button/styles/hover = null
-Button/styles/normal = SubResource( 2 )
+Button/styles/normal = SubResource( 1 )
 Button/styles/pressed = null

@@ -16,7 +16,7 @@ public class CreateLevelInit : Node2D
 
     string spritePath = "res://CharSprites/";
     CharacterBL characterBL;
-    List<Character> characterList;
+    List<Monster> monsterList;
     string charPath;
     int numberOfChar;
     int count = 0;
@@ -33,8 +33,8 @@ public class CreateLevelInit : Node2D
         timeLimitOptions = new int[] { 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 };
         //monsterIdOptions = new int[] { 1, 2, 3, 4, 5 };
 
-        timeLimitBtn = GetNode<OptionButton>("TimeLimit");
-        levelNameLine = GetNode<LineEdit>("LevelName");
+        timeLimitBtn = GetNode<OptionButton>("TimeLimitSelect/TimeLimit");
+        levelNameLine = GetNode<LineEdit>("LevelNameSet/LevelName");
         //monsterIdBtn = GetNode<OptionButton>("MonsterId");
         errorMessageLabel = GetNode<Label>("ErrorMessageLabel");
 
@@ -76,11 +76,10 @@ public class CreateLevelInit : Node2D
     /// <returns></returns>
     private void displayCharacter()
     {
-        string name = characterList[count].CharName;
+        string name = monsterList[count].MonsterName;
         charPath = String.Format(spritePath + "{0}/", name);
         GD.Print(charPath);
         Global.LoadSprite(charPath, charSprite, animationList);
-        charName.Text = name;
     }
 
     /// <summary>
@@ -91,13 +90,13 @@ public class CreateLevelInit : Node2D
     {
         //monster
         characterBL = new CharacterBL();
-        characterList = characterBL.GetAllCharacters();
+        monsterList = characterBL.GetAllMonsters();
         displayCharacter();
 
-        numberOfChar = characterList.Count;
-        GD.Print("Number of characters: " + numberOfChar);
+        numberOfChar = monsterList.Count;
+        GD.Print("Number of monsters: " + numberOfChar);
 
-        GD.Print("CharName: " + characterList[count].CharName);
+        GD.Print("CharName: " + monsterList[count].MonsterName);
 
         changeArrowButtonStatues();
 
@@ -133,11 +132,11 @@ public class CreateLevelInit : Node2D
     /// Go to next step of level creation
     /// </summary>
     /// <returns></returns>
-    private void _on_NextStepBtn_pressed()
+    private void _on_NextBtn_pressed()
     {
         string levelName = levelNameLine.Text;
         //int monsterId = Int32.Parse(monsterIdBtn.Text);
-        int monsterId = characterList[count].CharId;
+        int monsterId = monsterList[count].MonsterId;
         int timeLimit = Int32.Parse(timeLimitBtn.Text);
 
         //GD.Print("Level Name: " + levelName + "\nMonsterId: " + monsterId + "\nTimeLimit: " + timeLimit);
@@ -162,4 +161,6 @@ public class CreateLevelInit : Node2D
         }
     }
 }
+
+
 

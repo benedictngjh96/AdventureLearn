@@ -17,14 +17,13 @@ public class ViewAssignment : Node2D
     Sprite title;
     public override void _Ready()
     {
-        vbox = GetNode<VBoxContainer>("VBoxContainer");
-        gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
+        vbox = GetNode<VBoxContainer>("ScrollContainer/VBoxContainer");
+        gridContainer = GetNode<GridContainer>("ScrollContainer/VBoxContainer/GridContainer");
         assignmentBL = new AssignmentBL();
         assignmentScoreBL = new AssignmentScoreBL();
         nextBtn = GetNode<TextureButton>("NextBtn");
         prevBtn = GetNode<TextureButton>("PrevBtn");
         title = GetNode<Sprite>("Title");
-        gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
         dFont = new DynamicFont();
         dFont.FontData = ResourceLoader.Load("res://Fonts/Candy Beans.otf") as DynamicFontData;
         dFont.Size = 26;

@@ -1,12 +1,31 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Presentation/CreateLevel/CreateLevelInit.cs" type="Script" id=1]
 [ext_resource path="res://Assets/LockedLevels/BackwardLocked.png" type="Texture" id=2]
 [ext_resource path="res://Assets/UnlockedLevels/ForwardUnlocked.png" type="Texture" id=3]
 [ext_resource path="res://Assets/LockedLevels/ForwardLocked.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Background/Middle2.png" type="Texture" id=6]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/GUI/Buttons/back.png" type="Texture" id=9]
+[ext_resource path="res://Assets/GUI/button_empty_4.png" type="Texture" id=10]
+[ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/GUI/createleveltitle.png" type="Texture" id=13]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
@@ -14,92 +33,86 @@ animations = [ {
 "speed": 30.0
 } ]
 
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = ExtResource( 8 )
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="LevelName" type="LineEdit" parent="."]
-margin_left = 187.663
-margin_top = 48.3366
-margin_right = 368.663
-margin_bottom = 107.337
-max_length = 30
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Background" type="Sprite" parent="."]
+visible = false
+show_behind_parent = true
+position = Vector2( 534.736, 387.818 )
+scale = Vector2( 0.639, 0.715 )
+texture = ExtResource( 6 )
 
-[node name="NextStepBtn" type="Button" parent="."]
-margin_left = 190.337
-margin_top = 276.21
-margin_right = 362.337
-margin_bottom = 296.21
-text = "Next Step"
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
+[node name="LevelNameSet" type="Node" parent="."]
 
-[node name="TimeLimit" type="OptionButton" parent="."]
-margin_left = 190.888
-margin_top = 203.448
-margin_right = 303.888
-margin_bottom = 223.448
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
-
-[node name="LevelNameLabel" type="Label" parent="."]
-margin_left = 100.356
-margin_top = 66.3366
-margin_right = 180.356
-margin_bottom = 107.337
+[node name="LevelNameLabel" type="Label" parent="LevelNameSet"]
+margin_left = 189.474
+margin_top = 204.684
+margin_right = 361.474
+margin_bottom = 247.684
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Level Name:"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ErrorMessageLabel" type="Label" parent="."]
-margin_left = 191.0
-margin_top = 242.0
-margin_right = 400.0
-margin_bottom = 270.0
+[node name="LevelName" type="LineEdit" parent="LevelNameSet"]
+margin_left = 380.0
+margin_top = 207.948
+margin_right = 780.0
+margin_bottom = 267.948
+custom_fonts/font = SubResource( 2 )
+max_length = 24
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MonsterIdLabel" type="Label" parent="."]
-margin_left = 102.346
-margin_top = 143.957
-margin_right = 182.346
-margin_bottom = 184.957
-text = "MonsterId:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="TimeLimitLabel" type="Label" parent="."]
-margin_left = 103.01
-margin_top = 208.308
-margin_right = 183.01
-margin_bottom = 249.308
-text = "Time limit:"
-__meta__ = {
-"_edit_use_anchors_": false,
-"_editor_description_": ""
-}
+[node name="Title" type="Sprite" parent="LevelNameSet"]
+position = Vector2( 524.697, 108.951 )
+scale = Vector2( 0.532306, 0.390071 )
+texture = ExtResource( 13 )
 
 [node name="MonsterSelect" type="Node" parent="."]
 
-[node name="MonsterSprite" type="AnimatedSprite" parent="MonsterSelect"]
-position = Vector2( 305.27, 150.893 )
-scale = Vector2( 0.0578066, 0.056661 )
-frames = SubResource( 1 )
+[node name="MonsterIdLabel" type="Label" parent="MonsterSelect"]
+margin_left = 192.948
+margin_top = 293.263
+margin_right = 319.948
+margin_bottom = 336.263
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Monster:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ArrowLeft" type="TextureButton" parent="MonsterSelect"]
-margin_left = 187.478
-margin_top = 129.392
-margin_right = 264.478
-margin_bottom = 229.392
+margin_left = 355.79
+margin_top = 296.316
+margin_right = 432.79
+margin_bottom = 396.316
 rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 5 )
 texture_disabled = ExtResource( 2 )
@@ -108,10 +121,10 @@ __meta__ = {
 }
 
 [node name="ArrowRight" type="TextureButton" parent="MonsterSelect"]
-margin_left = 372.928
-margin_top = 129.642
-margin_right = 449.928
-margin_bottom = 229.642
+margin_left = 618.342
+margin_top = 292.105
+margin_right = 695.342
+margin_bottom = 392.105
 rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 3 )
 texture_disabled = ExtResource( 4 )
@@ -119,14 +132,100 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="MonsterSprite" type="AnimatedSprite" parent="MonsterSelect"]
+position = Vector2( 502.888, 286.631 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 4 )
+
 [node name="MonsterName" type="Label" parent="MonsterSelect"]
-margin_left = 269.899
-margin_top = 174.979
-margin_right = 355.899
-margin_bottom = 188.979
+anchor_left = -0.000717878
+anchor_right = -0.000717878
+margin_left = 468.947
+margin_top = 346.107
+margin_right = 568.947
+margin_bottom = 371.107
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="NextStepBtn" to="." method="_on_NextStepBtn_pressed"]
+
+[node name="TimeLimitSelect" type="Node" parent="."]
+
+[node name="TimeLimitLabel" type="Label" parent="TimeLimitSelect"]
+margin_left = 195.44
+margin_top = 368.299
+margin_right = 344.44
+margin_bottom = 411.299
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Time limit:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="TimeLimit" type="OptionButton" parent="TimeLimitSelect"]
+margin_left = 384.201
+margin_top = 375.001
+margin_right = 484.201
+margin_bottom = 424.001
+custom_fonts/font = SubResource( 7 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="BackBtn" type="TextureButton" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 517.0
+margin_bottom = 517.0
+rect_scale = Vector2( 0.125, 0.125 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorMessageLabel" type="Label" parent="."]
+margin_left = 436.117
+margin_top = 415.139
+margin_right = 645.117
+margin_bottom = 443.139
+custom_fonts/font = SubResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Menu" parent="." instance=ExtResource( 12 )]
+
+[node name="NextBtn" type="TextureButton" parent="."]
+margin_left = 453.415
+margin_top = 449.828
+margin_right = 732.415
+margin_bottom = 582.828
+rect_rotation = 0.409069
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 491.375
+margin_top = 458.609
+margin_right = 559.375
+margin_bottom = 501.609
+custom_fonts/font = SubResource( 9 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bg" parent="." instance=ExtResource( 7 )]
 [connection signal="pressed" from="MonsterSelect/ArrowLeft" to="." method="_on_ArrowLeft_pressed"]
 [connection signal="pressed" from="MonsterSelect/ArrowRight" to="." method="_on_ArrowRight_pressed"]
+[connection signal="pressed" from="NextBtn" to="." method="_on_NextBtn_pressed"]

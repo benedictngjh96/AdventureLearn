@@ -20,19 +20,6 @@ position = Vector2( 525.431, 112.769 )
 scale = Vector2( 0.552879, 0.502039 )
 texture = ExtResource( 6 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 232.801
-margin_top = 216.687
-margin_right = 942.801
-margin_bottom = 443.687
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
-margin_right = 710.0
-columns = 4
-
 [node name="BackBtn" parent="." instance=ExtResource( 2 )]
 
 [node name="NextBtn" type="TextureButton" parent="."]
@@ -60,5 +47,22 @@ __meta__ = {
 }
 
 [node name="Bg" parent="." instance=ExtResource( 7 )]
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 189.0
+margin_top = 197.0
+margin_right = 852.0
+margin_bottom = 424.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
+columns = 4
 [connection signal="pressed" from="NextBtn" to="." method="_on_NextBtn_pressed"]
 [connection signal="pressed" from="PrevBtn" to="." method="_on_PrevBtn_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Presentation/CustomLevel/ViewCreatedLevels.cs" type="Script" id=1]
 [ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/GUI/createdleveltitle.png" type="Texture" id=3]
 [ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=5]
 
 [node name="ViewCreated" type="Node2D"]
 script = ExtResource( 1 )
@@ -12,20 +13,27 @@ script = ExtResource( 1 )
 
 [node name="BackBtn" parent="." instance=ExtResource( 2 )]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 341.725
-margin_top = 224.0
-margin_right = 1007.73
-margin_bottom = 399.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer"]
-margin_right = 666.0
-columns = 3
-
 [node name="createdleveltitle" type="Sprite" parent="."]
 position = Vector2( 520.801, 111.784 )
 scale = Vector2( 0.445206, 0.477679 )
 texture = ExtResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 179.0
+margin_top = 194.0
+margin_right = 859.0
+margin_bottom = 428.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
+columns = 3
+
+[node name="Bg" parent="." instance=ExtResource( 5 )]
+position = Vector2( 1.50732, 0 )

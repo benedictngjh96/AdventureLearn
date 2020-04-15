@@ -15,8 +15,8 @@ public class LeaderboardScreen : Node
     public override void _Ready()
     {
 
-        vbox = GetNode<VBoxContainer>("VBoxContainer");
-        gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
+        vbox = GetNode<VBoxContainer>("ScrollContainer/VBoxContainer");
+        gridContainer = GetNode<GridContainer>("ScrollContainer/VBoxContainer/GridContainer");
 
         leaderboardBL = new LeaderboardBL();
         optionBtn = GetNode<OptionButton>("OptionButton");
@@ -37,16 +37,19 @@ public class LeaderboardScreen : Node
         Label rank = new Label();
         rank.AddFontOverride("font", dFont);
         rank.Text = "Rank                               ";
+        rank.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(rank);
 
         Label lbl = new Label();
         lbl.AddFontOverride("font", dFont);
         lbl.Text = "Name                                    ";
+        lbl.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl);
 
         Label lbl2 = new Label();
         lbl2.AddFontOverride("font", dFont);
         lbl2.Text = "Score";
+        lbl2.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl2);
 
 
@@ -76,11 +79,13 @@ public class LeaderboardScreen : Node
             Label rank = new Label();
             rank.AddFontOverride("font", dFont2);
             rank.Text = i.ToString();
+            rank.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(rank);
             //Student Name
             Label lbl = new Label();
             lbl.AddFontOverride("font", dFont2);
             lbl.Text = lb.StudentName;
+            lbl.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(lbl);
             /*
             //Sprite
@@ -94,7 +99,7 @@ public class LeaderboardScreen : Node
             Label lbl2 = new Label();
             lbl2.AddFontOverride("font", dFont2);
             lbl2.Text = lb.TotalScore.ToString();
-
+            lbl2.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(lbl2);
             //vbox.AddChild(lbl);
             i++;

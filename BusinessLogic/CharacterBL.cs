@@ -22,4 +22,14 @@ public class CharacterBL
         CharacterDao characterDao = new CharacterDao();
         return characterDao.GetAllCharacters();
     }
+
+    /// <summary>
+    /// Return list of Monster object
+    /// </summary>
+    /// <returns></returns>
+    public List<Monster> GetAllMonsters()
+    {
+        CharacterDao characterDao = new CharacterDao();
+        return characterDao.GetAllMonsters();
+    }
 }

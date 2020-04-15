@@ -17,12 +17,12 @@ public class ViewCustomLevel : Node2D
     {
         customLevelBL = new CustomLevelBL();
         customLevelList = customLevelBL.GetCustomLevels();
-        vbox = GetNode<VBoxContainer>("VBoxContainer");
+        vbox = GetNode<VBoxContainer>("ScrollContainer/VBoxContainer");
         nextBtn = GetNode<TextureButton>("NextBtn");
         prevBtn = GetNode<TextureButton>("PrevBtn");
         title = GetNode<Sprite>("Title");
 
-        gridContainer = GetNode<GridContainer>("VBoxContainer/GridContainer");
+        gridContainer = GetNode<GridContainer>("ScrollContainer/VBoxContainer/GridContainer");
         dFont = new DynamicFont();
         dFont.FontData = ResourceLoader.Load("res://Fonts/Candy Beans.otf") as DynamicFontData;
         dFont.Size = 26;
@@ -196,7 +196,14 @@ public class ViewCustomLevel : Node2D
     {
         GetTree().ChangeScene("res://Presentation/CustomLevel/ViewCreatedLevels.tscn");
     }
+    private void _on_CreateLevel_pressed()
+    {
+        GetTree().ChangeScene("res://Presentation/CreateLevel/CreateLevelInit.tscn");
+    }
 }
+
+
+
 
 
 
