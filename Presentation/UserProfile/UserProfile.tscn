@@ -63,9 +63,9 @@ __meta__ = {
 
 [node name="CharacterName" type="Label" parent="."]
 margin_left = 640.876
-margin_top = 364.205
+margin_top = 390.205
 margin_right = 760.876
-margin_bottom = 411.205
+margin_bottom = 437.205
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {

@@ -14,11 +14,11 @@ public class CreateLevel : Node2D
     CheckBox checkbox3;
     CheckBox checkbox4;
 
-    Button question1Btn;
-    Button question2Btn;
-    Button question3Btn;
-    Button question4Btn;
-    Button question5Btn;
+    TextureButton question1Btn;
+    TextureButton question2Btn;
+    TextureButton question3Btn;
+    TextureButton question4Btn;
+    TextureButton question5Btn;
 
     ButtonGroup questionGroup;
     ButtonGroup checkboxGroup;
@@ -50,11 +50,11 @@ public class CreateLevel : Node2D
         checkbox3 = GetNode<CheckBox>("Options/Option3/CheckBox3");
         checkbox4 = GetNode<CheckBox>("Options/Option4/CheckBox4");
 
-        question1Btn = GetNode<Button>("QuestionSelect/Question1");
-        question2Btn = GetNode<Button>("QuestionSelect/Question2");
-        question3Btn = GetNode<Button>("QuestionSelect/Question3");
-        question4Btn = GetNode<Button>("QuestionSelect/Question4");
-        question5Btn = GetNode<Button>("QuestionSelect/Question5");
+        question1Btn = GetNode<TextureButton>("QuestionSelect/Question1");
+        question2Btn = GetNode<TextureButton>("QuestionSelect/Question2");
+        question3Btn = GetNode<TextureButton>("QuestionSelect/Question3");
+        question4Btn = GetNode<TextureButton>("QuestionSelect/Question4");
+        question5Btn = GetNode<TextureButton>("QuestionSelect/Question5");
 
         questionGroup = new ButtonGroup();
         checkboxGroup = new ButtonGroup();

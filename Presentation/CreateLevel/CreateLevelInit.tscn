@@ -8,7 +8,7 @@
 [ext_resource path="res://Assets/Background/Middle2.png" type="Texture" id=6]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=8]
-[ext_resource path="res://Assets/GUI/Buttons/back.png" type="Texture" id=9]
+[ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/GUI/button_empty_4.png" type="Texture" id=10]
 [ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/GUI/createleveltitle.png" type="Texture" id=13]
@@ -179,17 +179,6 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="BackBtn" type="TextureButton" parent="."]
-margin_left = 5.0
-margin_top = 5.0
-margin_right = 517.0
-margin_bottom = 517.0
-rect_scale = Vector2( 0.125, 0.125 )
-texture_normal = ExtResource( 9 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="ErrorMessageLabel" type="Label" parent="."]
 margin_left = 436.117
 margin_top = 415.139
@@ -226,6 +215,8 @@ __meta__ = {
 }
 
 [node name="Bg" parent="." instance=ExtResource( 7 )]
+
+[node name="BackBtn" parent="." instance=ExtResource( 9 )]
 [connection signal="pressed" from="MonsterSelect/ArrowLeft" to="." method="_on_ArrowLeft_pressed"]
 [connection signal="pressed" from="MonsterSelect/ArrowRight" to="." method="_on_ArrowRight_pressed"]
 [connection signal="pressed" from="NextBtn" to="." method="_on_NextBtn_pressed"]

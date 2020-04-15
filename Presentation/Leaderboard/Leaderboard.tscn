@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Presentation/Leaderboard/LeaderboardScreen.cs" type="Script" id=1]
 [ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/GUI/leaderboardtitle.png" type="Texture" id=3]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=4]
 [ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 4 )
@@ -95,4 +96,6 @@ __meta__ = {
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
 columns = 3
+
+[node name="Bg" parent="." instance=ExtResource( 6 )]
 [connection signal="item_selected" from="OptionButton" to="." method="_on_OptionButton_item_selected"]

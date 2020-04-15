@@ -300,7 +300,7 @@ frame = 18
 playing = true
 
 [node name="Ogre" type="AnimatedSprite" parent="Characters"]
-position = Vector2( 613.67, 257.064 )
+position = Vector2( 613.67, 254.906 )
 frames = SubResource( 7 )
 frame = 9
 playing = true
