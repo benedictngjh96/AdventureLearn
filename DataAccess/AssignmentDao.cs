@@ -55,7 +55,7 @@ public class AssignmentDao
         string query = String.Format("SELECT DueDate, AssignmentId , AssignmentName , ClassId, TeacherId ,TeacherName " +
         "FROM Assignment NATURAL JOIN Teacher NATURAL JOIN PublishedAssignment NATURAL JOIN BelongClass " +
         "WHERE StudentId  = {0} ORDER BY DueDate DESC", studentId);
-        int count =0;
+        int count = 0;
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
         {
             var lookup = new Dictionary<int, PublishedAssignment>();
@@ -90,4 +90,13 @@ public class AssignmentDao
     {
         return 1;
     }
+    public Monster GetAssignmentMonster(int assignmentId)
+    {
+        BaseDao<Monster> baseDao = new BaseDao<Monster>();
+        string query = String.Format("SELECT m.MonsterId, m.MonsterName FROM Assignment a NATURAL JOIN Monster m " +
+        "WHERE a.AssignmentId = {0}", assignmentId);
+        Monster monster = baseDao.RetrieveQuery(query);
+        return monster;
+    }
+    
 }

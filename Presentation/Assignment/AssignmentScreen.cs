@@ -10,10 +10,12 @@ public class AssignmentScreen : Node2D
     CharacterBL characterBL;
     Character character;
 
+    Monster monster;
     public override void _Ready()
     {
         assignmentBL = new AssignmentBL();
         characterBL = new CharacterBL();
+        monster = assignmentBL.GetAssignmentMonster(Global.AssignmentId);
         //Child node instance
         var gamePlayScene = ResourceLoader.Load("res://Presentation/GamePlay/GamePlay.tscn") as PackedScene;
         gamePlay = gamePlayScene?.Instance() as GamePlay;
@@ -29,6 +31,8 @@ public class AssignmentScreen : Node2D
         gamePlay.SetLevelTitle(assignment.AssignmentName);
         gamePlay.DisplayQuestion();
         gamePlay.SetQuestionNum();
+        gamePlay.SetGameType("Assignment");
+        gamePlay.LoadStart(character, monster);
     }
     private void SetSpritesPath()
     {

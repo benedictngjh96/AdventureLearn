@@ -33,4 +33,10 @@ public class CustomLevelBL
         CustomLevelDao customLevelDao = new CustomLevelDao();
         return customLevelDao.DeleteCustomLevel(customLevelId);
     }
+    public Monster GetCustomLevelMonster(int customLevelId)
+    {
+        CustomLevelDao customLevelDao = new CustomLevelDao();
+        return customLevelDao.GetCustomLevelMonster(customLevelId);
+    }
+
 }

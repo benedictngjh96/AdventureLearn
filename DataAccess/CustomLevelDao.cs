@@ -142,4 +142,12 @@ public class CustomLevelDao
         int result = baseDao.ExecuteQuery(query, new { CustomLevelId = customLevelId });
         return result;
     }
+    public Monster GetCustomLevelMonster(int customLevelId)
+    {
+        BaseDao<Monster> baseDao = new BaseDao<Monster>();
+        string query = String.Format("SELECT m.MonsterId, m.MonsterName FROM CustomLevel cl NATURAL JOIN Monster m " +
+        "WHERE cl.CustomLevelId = {0}", customLevelId);
+        Monster monster = baseDao.RetrieveQuery(query);
+        return monster;
+    }
 }

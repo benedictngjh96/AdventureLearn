@@ -1,61 +1,11 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Presentation/Leaderboard/LeaderboardScreen.cs" type="Script" id=1]
 [ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/GUI/leaderboardtitle.png" type="Texture" id=3]
-[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/GUI/OptionButton.tres" type="Theme" id=4]
 [ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=6]
-
-[sub_resource type="DynamicFont" id=1]
-font_data = ExtResource( 4 )
-
-[sub_resource type="StyleBoxFlat" id=2]
-bg_color = Color( 0.47451, 0.341176, 0.247059, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0.47451, 0.341176, 0.247059, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 2
-border_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=4]
-bg_color = Color( 0.47451, 0.341176, 0.247059, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0, 0, 0, 1 )
-
-[sub_resource type="StyleBoxFlat" id=5]
-bg_color = Color( 0.47451, 0.341176, 0.247059, 1 )
-border_width_left = 3
-border_width_top = 3
-border_width_right = 3
-border_width_bottom = 3
-border_color = Color( 0.027451, 0.027451, 0.027451, 1 )
-
-[sub_resource type="Theme" id=6]
-OptionButton/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
-OptionButton/colors/font_color_disabled = Color( 0.9, 0.9, 0.9, 0.2 )
-OptionButton/colors/font_color_hover = Color( 0.94, 0.94, 0.94, 1 )
-OptionButton/colors/font_color_pressed = Color( 1, 1, 1, 1 )
-OptionButton/constants/arrow_margin = 2
-OptionButton/constants/hseparation = 2
-OptionButton/fonts/font = SubResource( 1 )
-OptionButton/icons/arrow = null
-OptionButton/styles/disabled = null
-OptionButton/styles/focus = SubResource( 2 )
-OptionButton/styles/hover = SubResource( 3 )
-OptionButton/styles/normal = SubResource( 4 )
-OptionButton/styles/pressed = SubResource( 5 )
 
 [node name="Leaderboard" type="Node2D"]
 script = ExtResource( 1 )
@@ -67,7 +17,7 @@ margin_left = 414.368
 margin_top = 454.158
 margin_right = 598.368
 margin_bottom = 506.158
-theme = SubResource( 6 )
+theme = ExtResource( 4 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false

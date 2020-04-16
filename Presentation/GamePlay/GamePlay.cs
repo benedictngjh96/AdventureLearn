@@ -39,7 +39,7 @@ public class GamePlay : Node2D
 
     Timer timer;
     Timer timer2;
-    
+
     PopupMenu popupMenu;
     PopupMenu losePopup;
 
@@ -49,7 +49,7 @@ public class GamePlay : Node2D
     int timeLimit = 0;
     int s = 0;
     int ms = 0;
-
+    string gameType = "";
     bool shieldOn = false;
 
     public override void _Ready()
@@ -190,7 +190,7 @@ public class GamePlay : Node2D
     public void DisplayNextQuestion()
     {
         Control ctr = GetNode<Control>("Buttons");
- 
+
         if (questionIndex < questionList.Count - 1)
         {
             questionIndex++;
@@ -208,7 +208,7 @@ public class GamePlay : Node2D
     }
     private void HideBtns()
     {
-        op1.Visible= false;
+        op1.Visible = false;
         op2.Visible = false;
         op3.Visible = false;
         op4.Visible = false;
@@ -243,12 +243,27 @@ public class GamePlay : Node2D
         EmitSignal("NoMoreQuestions");
         s = 1000;
         popupMenu.Show();
+        HideNextButton();
     }
     private void _on_Lose_animation_finished()
     {
         s = 1000;
         lose.Stop();
         losePopup.Show();
+        HideNextButton();
+    }
+    private void HideNextButton()
+    {
+        TextureButton btn = GetNode<TextureButton>("PopupMenu/Next");
+        switch (gameType)
+        {
+            case "Assignment":
+                btn.Visible = false;
+                break;
+            case "CustomLevel":
+                btn.Visible = false;
+                break;
+        }
     }
     public bool CheckCorrectAnswer(string option)
     {
@@ -262,7 +277,7 @@ public class GamePlay : Node2D
             op2.Disabled = false;
             op3.Disabled = false;
             op4.Disabled = false;
-            
+
             charSprite.Play("Attack");
             monsterSprite.Play("Hurt");
             monsterSkillSprite.Play(String.Format("Explosion{0}", random));
@@ -283,6 +298,10 @@ public class GamePlay : Node2D
                 shieldOn = false;
         }
         return result;
+    }
+    public void SetGameType(string gameType)
+    {
+        this.gameType = gameType;
     }
     public int GetTimeLeft()
     {
@@ -543,7 +562,18 @@ public class GamePlay : Node2D
     }
     private void _on_Replay_pressed()
     {
-        GetTree().ChangeScene("res://Presentation/GamePlay/Campaign.tscn");
+        switch (gameType)
+        {
+            case "Assignment":
+                GetTree().ChangeScene("res://Presentation/Assignment/Assignment.tscn");
+                break;
+            case "Campaign":
+                GetTree().ChangeScene("res://Presentation/GamePlay/Campaign.tscn");
+                break;
+            case "CustomLevel":
+                GetTree().ChangeScene("res://Presentation/CustomLevel/CustomLevel.tscn");
+                break;
+        }
     }
 }
 

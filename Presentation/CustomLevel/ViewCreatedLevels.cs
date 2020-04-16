@@ -9,8 +9,12 @@ public class ViewCreatedLevels : Node2D
     DynamicFont dFont2;
     List<CustomLevel> customLevelList;
     CustomLevelBL customLevelBL;
+    PopupMenu popupMenu;
+    string levelName = "";
+
     public override void _Ready()
     {
+        popupMenu = GetNode<PopupMenu>("PopupMenu");
         vbox = GetNode<VBoxContainer>("ScrollContainer/VBoxContainer");
         gridContainer = GetNode<GridContainer>("ScrollContainer/VBoxContainer/GridContainer");
         dFont = new DynamicFont();
@@ -31,7 +35,7 @@ public class ViewCreatedLevels : Node2D
         lbl.AddFontOverride("font", dFont);
         lbl.Text = "Game Name" + "       ";
         lbl.AddColorOverride("font_color", new Color(0, 0, 0));
-      
+
         gridContainer.AddChild(lbl);
 
         Label lbl3 = new Label();
@@ -48,6 +52,7 @@ public class ViewCreatedLevels : Node2D
     }
     private void DisplayLevels()
     {
+        Theme theme = ResourceLoader.Load("res://Assets/GUI/BtnUI4.tres") as Theme;
         customLevelList = customLevelBL.GetStudentCustomLevel(Global.StudentId);
         foreach (CustomLevel customLevel in customLevelList)
         {
@@ -65,6 +70,7 @@ public class ViewCreatedLevels : Node2D
             ar.Add(btn);
             btn.Name = customLevel.CustomLevelName.ToString();
             btn.Connect("pressed", this, "EditLevel", ar);
+            btn.Theme = theme;
             gridContainer.AddChild(btn);
 
             Button btn2 = new Button();
@@ -75,6 +81,7 @@ public class ViewCreatedLevels : Node2D
             ar2.Add(btn2);
             btn2.Name = customLevel.CustomLevelName.ToString() + " ";
             btn2.Connect("pressed", this, "DeleteLevel", ar2);
+            btn2.Theme = theme;
             gridContainer.AddChild(btn2);
         }
 
@@ -87,14 +94,30 @@ public class ViewCreatedLevels : Node2D
     }
     private void DeleteLevel(Button btn)
     {
-        CustomLevel cl = customLevelList.Find(item => item.CustomLevelName == btn.Name.Trim());
-        customLevelBL.DeleteCustomLevel(cl.CustomLevelId);
-        ClearGrid();
-        DisplayLevels();
+        popupMenu.Visible = true;
+        levelName = btn.Name.Trim();
     }
     private void ClearGrid()
     {
         foreach (Node child in gridContainer.GetChildren())
             gridContainer.RemoveChild(child);
     }
+    private void _on_No_pressed()
+    {
+        popupMenu.Visible = false;
+    }
+
+
+    private void _on_Yes_pressed()
+    {
+        CustomLevel cl = customLevelList.Find(item => item.CustomLevelName == levelName);
+        customLevelBL.DeleteCustomLevel(cl.CustomLevelId);
+        ClearGrid();
+        DisplayHeader();
+        DisplayLevels();
+        popupMenu.Visible = false;
+    }
+
 }
+
+
