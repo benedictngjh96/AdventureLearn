@@ -23,6 +23,10 @@ config/name="AdventureLearn"
 run/main_scene="res://Presentation/Login/Login.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+DefaultSound="*res://Presentation/SoundEffect/DefaultSound.tscn"
+
 [display]
 
 window/size/test_width=1024
