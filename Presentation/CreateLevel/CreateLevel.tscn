@@ -128,10 +128,10 @@ __meta__ = {
 }
 
 [node name="CheckBox2" type="CheckBox" parent="Options/Option2"]
-margin_left = -48.0429
-margin_top = 6.18785
-margin_right = -24.0428
-margin_bottom = 30.1879
+margin_left = -49.3
+margin_top = 5.924
+margin_right = -25.2999
+margin_bottom = 29.924
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -150,10 +150,10 @@ __meta__ = {
 }
 
 [node name="CheckBox3" type="CheckBox" parent="Options/Option3"]
-margin_left = -46.6436
-margin_top = 6.93878
-margin_right = -22.6436
-margin_bottom = 30.9388
+margin_left = -49.3
+margin_top = 5.924
+margin_right = -25.3
+margin_bottom = 29.924
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -172,10 +172,10 @@ __meta__ = {
 }
 
 [node name="CheckBox4" type="CheckBox" parent="Options/Option4"]
-margin_left = -48.8804
-margin_top = 7.47308
-margin_right = -24.8804
-margin_bottom = 31.4731
+margin_left = -49.3
+margin_top = 5.924
+margin_right = -25.3
+margin_bottom = 29.924
 rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -328,7 +328,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
+[node name="CreateBtnLabel" type="Label" parent="."]
 margin_left = 813.054
 margin_top = 486.539
 margin_right = 915.054
@@ -353,7 +353,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="TitleBorder" type="Sprite" parent="."]
 position = Vector2( 512, 237.912 )
 scale = Vector2( 0.13, 0.13 )
 texture = ExtResource( 6 )
