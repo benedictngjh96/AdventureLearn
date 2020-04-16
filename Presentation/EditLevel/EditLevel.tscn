@@ -1,26 +1,106 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Presentation/EditLevel/EditLevel.cs" type="Script" id=1]
+[ext_resource path="res://Assets/GUI/table.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GUI/banner.png" type="Texture" id=3]
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=4]
+[ext_resource path="res://Assets/GUI/editleveltitle.png" type="Texture" id=5]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/GUI/button_empty_4.png" type="Texture" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 24
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+font_data = ExtResource( 4 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
-[node name="UpdateBtn" type="Button" parent="."]
-margin_left = 282.977
-margin_top = 499.68
-margin_right = 380.977
-margin_bottom = 519.68
-text = "Update"
+[node name="Bg" parent="." instance=ExtResource( 6 )]
+position = Vector2( -0.814514, 0 )
+
+[node name="Border" type="Sprite" parent="."]
+position = Vector2( 502.903, 332.891 )
+scale = Vector2( 0.606, 0.701 )
+texture = ExtResource( 2 )
+
+[node name="TitleBorder" type="Sprite" parent="."]
+position = Vector2( 512, 237.912 )
+scale = Vector2( 0.13, 0.13 )
+texture = ExtResource( 3 )
+
+[node name="EditLevelTitle" type="Sprite" parent="."]
+position = Vector2( 521.268, 92.5974 )
+scale = Vector2( 0.8, 0.8 )
+texture = ExtResource( 5 )
+
+[node name="QuestionNumberLabel" type="Label" parent="."]
+margin_left = 54.551
+margin_top = 136.089
+margin_right = 314.551
+margin_bottom = 179.089
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Update Question 1:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionLevel" type="Label" parent="."]
+margin_left = 57.722
+margin_top = 255.365
+margin_right = 913.721
+margin_bottom = 302.365
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Update Options & Correct Answer"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="QuestionTitle" type="LineEdit" parent="."]
-margin_left = 129.545
-margin_top = 78.0542
-margin_right = 541.545
-margin_bottom = 202.054
-max_length = 50
+margin_left = 58.3975
+margin_top = 179.643
+margin_right = 955.398
+margin_bottom = 259.643
+custom_fonts/font = SubResource( 3 )
+max_length = 20
+placeholder_text = "(Empty)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -35,77 +115,91 @@ __meta__ = {
 }
 
 [node name="Option1" type="LineEdit" parent="Options"]
-margin_left = 80.1465
-margin_top = 245.368
-margin_right = 264.146
-margin_bottom = 295.368
-max_length = 50
+anchor_top = -0.0291595
+anchor_bottom = -0.0291595
+margin_left = 50.673
+margin_top = 276.891
+margin_right = 425.673
+margin_bottom = 336.891
+custom_fonts/font = SubResource( 4 )
+max_length = 20
+placeholder_text = "(Empty)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CheckBox1" type="CheckBox" parent="Options/Option1"]
-margin_left = -23.2886
-margin_top = 13.1656
-margin_right = 0.711395
-margin_bottom = 37.1656
+margin_left = -49.3
+margin_top = 5.924
+margin_right = -25.3
+margin_bottom = 29.924
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Option2" type="LineEdit" parent="Options"]
-margin_left = 300.736
-margin_top = 243.893
-margin_right = 484.736
-margin_bottom = 293.893
-max_length = 50
+margin_left = 500.723
+margin_top = 275.992
+margin_right = 875.723
+margin_bottom = 335.992
+custom_fonts/font = SubResource( 5 )
+max_length = 20
+placeholder_text = "(Empty)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CheckBox2" type="CheckBox" parent="Options/Option2"]
-margin_left = -23.9219
-margin_top = 15.2708
-margin_right = 0.078125
-margin_bottom = 39.2708
+margin_left = -49.3
+margin_top = 5.924
+margin_right = -25.3
+margin_bottom = 29.924
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Option3" type="LineEdit" parent="Options"]
-margin_left = 76.9886
-margin_top = 325.368
-margin_right = 260.989
-margin_bottom = 375.368
-max_length = 50
+margin_left = 49.458
+margin_top = 367.517
+margin_right = 424.458
+margin_bottom = 427.517
+custom_fonts/font = SubResource( 6 )
+max_length = 20
+placeholder_text = "(Empty)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CheckBox3" type="CheckBox" parent="Options/Option3"]
-margin_left = -22.6517
-margin_top = 13.2072
-margin_right = 1.34828
-margin_bottom = 37.2072
+margin_left = -49.3
+margin_top = 5.924
+margin_right = -25.3
+margin_bottom = 29.924
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Option4" type="LineEdit" parent="Options"]
-margin_left = 300.099
-margin_top = 322.808
-margin_right = 484.099
-margin_bottom = 372.808
-max_length = 50
+margin_left = 500.723
+margin_top = 368.907
+margin_right = 875.723
+margin_bottom = 428.907
+custom_fonts/font = SubResource( 7 )
+max_length = 20
+placeholder_text = "(Empty)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CheckBox4" type="CheckBox" parent="Options/Option4"]
-margin_left = -25.806
-margin_top = 14.2599
-margin_right = -1.80597
-margin_bottom = 38.2599
+margin_left = -49.3
+margin_top = 5.924
+margin_right = -25.3
+margin_bottom = 29.924
+rect_scale = Vector2( 2, 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -119,87 +213,153 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Question1" type="Button" parent="QuestionSelect"]
-margin_left = 210.236
-margin_top = 433.561
-margin_right = 230.236
-margin_bottom = 453.561
+[node name="Question1" type="TextureButton" parent="QuestionSelect"]
+margin_left = 378.19
+margin_top = 484.763
+margin_right = 657.19
+margin_bottom = 617.763
+rect_scale = Vector2( 0.108, 0.226 )
+texture_normal = ExtResource( 7 )
+
+[node name="Q1" type="Label" parent="QuestionSelect"]
+margin_left = 388.944
+margin_top = 481.982
+margin_right = 402.944
+margin_bottom = 514.982
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "1"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Question2" type="Button" parent="QuestionSelect"]
-margin_left = 242.92
-margin_top = 432.591
-margin_right = 262.92
-margin_bottom = 452.591
+[node name="Question2" type="TextureButton" parent="QuestionSelect"]
+margin_left = 418.19
+margin_top = 484.548
+margin_right = 697.19
+margin_bottom = 617.548
+rect_scale = Vector2( 0.108, 0.226 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q2" type="Label" parent="QuestionSelect"]
+margin_left = 426.911
+margin_top = 481.982
+margin_right = 440.911
+margin_bottom = 514.982
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "2"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Question3" type="Button" parent="QuestionSelect"]
-margin_left = 275.972
-margin_top = 432.59
-margin_right = 295.972
-margin_bottom = 452.59
+[node name="Question3" type="TextureButton" parent="QuestionSelect"]
+margin_left = 458.19
+margin_top = 484.548
+margin_right = 737.19
+margin_bottom = 617.548
+rect_scale = Vector2( 0.108, 0.226 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q3" type="Label" parent="QuestionSelect"]
+margin_left = 467.186
+margin_top = 481.982
+margin_right = 481.186
+margin_bottom = 514.982
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "3"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Question4" type="Button" parent="QuestionSelect"]
-margin_left = 309.891
-margin_top = 432.59
-margin_right = 329.891
-margin_bottom = 452.59
+[node name="Question4" type="TextureButton" parent="QuestionSelect"]
+margin_left = 498.19
+margin_top = 484.762
+margin_right = 518.19
+margin_bottom = 504.762
+rect_scale = Vector2( 0.108, 0.226 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q4" type="Label" parent="QuestionSelect"]
+margin_left = 507.4
+margin_top = 481.982
+margin_right = 521.4
+margin_bottom = 514.982
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "4"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Question5" type="Button" parent="QuestionSelect"]
-margin_left = 344.561
-margin_top = 433.238
-margin_right = 364.561
-margin_bottom = 453.238
+[node name="Question5" type="TextureButton" parent="QuestionSelect"]
+margin_left = 538.19
+margin_top = 484.762
+margin_right = 817.19
+margin_bottom = 617.762
+rect_scale = Vector2( 0.108, 0.226 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q5" type="Label" parent="QuestionSelect"]
+margin_left = 547.281
+margin_top = 481.982
+margin_right = 1094.56
+margin_bottom = 514.982
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "5"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuestionNumberLabel" type="Label" parent="."]
-margin_left = 130.947
-margin_top = 57.0
-margin_right = 246.947
-margin_bottom = 78.0
-text = "Update Question 1:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="UpdateBtn" type="TextureButton" parent="."]
+margin_left = 793.658
+margin_top = 477.106
+margin_right = 1072.66
+margin_bottom = 610.106
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 7 )
 
-[node name="InstructionLevel" type="Label" parent="."]
-margin_left = 136.287
-margin_top = 232.047
-margin_right = 276.287
-margin_bottom = 263.047
-text = "Update Options & Correct Answer"
+[node name="UpdateBtnLabel" type="Label" parent="."]
+margin_left = 813.054
+margin_top = 486.539
+margin_right = 915.054
+margin_bottom = 529.539
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Update"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ErrorMessageLabel" type="Label" parent="."]
-margin_left = 250.351
-margin_top = 420.384
-margin_right = 420.351
-margin_bottom = 444.384
+margin_left = 212.0
+margin_top = 465.0
+margin_right = 792.0
+margin_bottom = 508.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.835294, 0.0705882, 0.0705882, 1 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="UpdateBtn" to="." method="_on_UpdateBtn_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question1" to="." method="_on_Question1_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question2" to="." method="_on_Question2_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question3" to="." method="_on_Question3_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question4" to="." method="_on_Question4_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question5" to="." method="_on_Question5_pressed"]
+[connection signal="pressed" from="UpdateBtn" to="." method="_on_UpdateBtn_pressed"]
