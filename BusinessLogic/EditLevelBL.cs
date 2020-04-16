@@ -144,4 +144,16 @@ public class EditLevelBL : Node
 
 		return -1;
 	}
+
+	/// <summary>
+	/// Updates the level name, monster, and time limit
+	/// </summary>
+	///  <param name="string levelName"></param>
+	///  <param name="int monsterId"></param>
+	///  <param name="int timeLimit"></param>
+	/// <returns></returns>
+	public void updateLevelInitInfo(string levelName, int monsterId, int timeLimit)
+	{
+		editLevelDao.updateLevelInitInfo(levelName, monsterId, timeLimit);
+	}
 }

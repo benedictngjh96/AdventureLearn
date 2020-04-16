@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Presentation/EditLevel/EditLevelInit.cs" type="Script" id=1]
 [ext_resource path="res://Assets/GUI/lockedleftbtn.png" type="Texture" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Assets/GUI/button_empty_4.png" type="Texture" id=11]
+[ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=12]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -168,6 +169,8 @@ text = "Next"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BackBtn" parent="." instance=ExtResource( 12 )]
 [connection signal="pressed" from="MonsterSelect/ArrowLeft" to="." method="_on_ArrowLeft_pressed"]
 [connection signal="pressed" from="MonsterSelect/ArrowRight" to="." method="_on_ArrowRight_pressed"]
 [connection signal="pressed" from="NextStepBtn" to="." method="_on_NextStepBtn_pressed"]

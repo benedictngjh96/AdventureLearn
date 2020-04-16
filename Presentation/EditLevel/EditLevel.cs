@@ -94,6 +94,7 @@ public class EditLevel : Node2D
 		if (findEmptyFields() == 0 && findDuplicateOptions() == 0)
 		{
 			GD.Print("Start updating into database.");
+			editLevelBL.updateLevelInitInfo(levelName, monsterId, timeLimit);
 			editLevelBL.updateLevel();
 			GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
 		}

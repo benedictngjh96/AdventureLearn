@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Presentation/EditLevel/EditLevel.cs" type="Script" id=1]
 [ext_resource path="res://Assets/GUI/table.png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://Assets/GUI/editleveltitle.png" type="Texture" id=5]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Assets/GUI/button_empty_4.png" type="Texture" id=7]
+[ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 32
@@ -357,6 +358,8 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="BackBtn" parent="." instance=ExtResource( 8 )]
 [connection signal="pressed" from="QuestionSelect/Question1" to="." method="_on_Question1_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question2" to="." method="_on_Question2_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question3" to="." method="_on_Question3_pressed"]

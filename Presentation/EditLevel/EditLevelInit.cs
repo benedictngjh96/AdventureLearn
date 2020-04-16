@@ -31,7 +31,7 @@ public class EditLevelInit : Node2D
 	/// Initialization
 	/// </summary>
 	/// <returns></returns>
-	public override void _Ready()	
+	public override void _Ready()
 	{
 		editLevelBL = new EditLevelBL();
 
@@ -50,6 +50,11 @@ public class EditLevelInit : Node2D
 		animationList.Add("Idle");
 
 		addOptions();
+
+		//testing
+		//Global.StudentId = 23;
+		//Global.CustomLevelId = 10;
+		//testing
 
 		displayOriginalLevelInit();
 	}
@@ -74,9 +79,9 @@ public class EditLevelInit : Node2D
 			i++;
 		}
 		timeLimitBtn.Select(i);
-		
+
 		GD.Print("\nCustom Level Id: " + levelInfo.CustomLevelId + "\nCustom Level Name: " + levelInfo.CustomLevelName + "\nMonster Id: " + levelInfo.Monster.MonsterId +
-			"\nTimeLimit: " + levelInfo.TimeLimit); 
+			"\nTimeLimit: " + levelInfo.TimeLimit);
 
 		count = levelInfo.Monster.MonsterId - 1;
 		changeArrowButtonStatues();
