@@ -51,9 +51,13 @@ public class GamePlay : Node2D
     int ms = 0;
     string gameType = "";
     bool shieldOn = false;
+    AudioStreamPlayer audioStreamPlayer;
 
     public override void _Ready()
     {
+        audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer2");
+        AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/battleThemeA.ogg") as AudioStream;
+        DefaultSound.playSound(sfx);
         AddUserSignal("NoMoreQuestions");
 
         charSprite = GetNode<AnimatedSprite>("CharSprite");
@@ -105,6 +109,7 @@ public class GamePlay : Node2D
             HideBtns();
             lose.Play("Lose");
             timerLabel.Visible = false;
+
         }
         if (ms <= 0)
         {
@@ -204,6 +209,10 @@ public class GamePlay : Node2D
             HideBtns();
             monsterSprite.Play("Die");
             win.Play("Win");
+            DefaultSound.disableSound();
+            AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/Jingle_Win_00.wav") as AudioStream;
+            audioStreamPlayer.Stream = sfx;
+            audioStreamPlayer.Playing = true;
         }
     }
     private void HideBtns()
@@ -251,6 +260,10 @@ public class GamePlay : Node2D
         lose.Stop();
         losePopup.Show();
         HideNextButton();
+        DefaultSound.disableSound();
+        AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/Jingle_Lose_00.wav") as AudioStream;
+        audioStreamPlayer.Stream = sfx;
+        audioStreamPlayer.Playing = true;
     }
     private void HideNextButton()
     {
@@ -270,6 +283,9 @@ public class GamePlay : Node2D
         Random r = new Random();
         int random = r.Next(1, 4);
         bool result = false;
+
+
+
         if (option == question.CorrectOption)
         {
             //UNDISABLE
@@ -282,6 +298,8 @@ public class GamePlay : Node2D
             monsterSprite.Play("Hurt");
             monsterSkillSprite.Play(String.Format("Explosion{0}", random));
             DisplayNextQuestion();
+            AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/Spell_02.wav") as AudioStream;
+            audioStreamPlayer.Stream = sfx;
             result = true;
         }
         else
@@ -296,7 +314,10 @@ public class GamePlay : Node2D
             }
             else
                 shieldOn = false;
+            AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/Spell_04.wav") as AudioStream;
+            audioStreamPlayer.Stream = sfx;
         }
+        audioStreamPlayer.Playing = true;
         return result;
     }
     public void SetGameType(string gameType)
@@ -547,7 +568,10 @@ public class GamePlay : Node2D
     }
     private void _on_Menu_pressed()
     {
+        AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/little town - orchestral.ogg") as AudioStream;
+        DefaultSound.playSound(sfx);
         GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
+
     }
     private void _on_Next_pressed()
     {
@@ -558,6 +582,8 @@ public class GamePlay : Node2D
             Global.SectionId++;
             Global.LevelId = 1;
         }
+        AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/little town - orchestral.ogg") as AudioStream;
+        DefaultSound.playSound(sfx);
         GetTree().ChangeScene("res://Presentation/GamePlay/Campaign.tscn");
     }
     private void _on_Replay_pressed()
@@ -574,6 +600,7 @@ public class GamePlay : Node2D
                 GetTree().ChangeScene("res://Presentation/CustomLevel/CustomLevel.tscn");
                 break;
         }
+
     }
 }
 
