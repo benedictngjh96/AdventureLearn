@@ -9,13 +9,14 @@ public class CustomLevelScreen : Node2D
     CustomLevel customLevel;
     CharacterBL characterBL;
     Character character;
+    Monster monster;
     public override void _Ready()
     {
         customLevelBL = new CustomLevelBL();
         characterBL = new CharacterBL();
         customLevel = customLevelBL.GetCustomLevel(Global.CustomLevelId);
         character = characterBL.GetCharacter(Global.StudentId);
-
+        monster = customLevelBL.GetCustomLevelMonster(Global.CustomLevelId);
         //Child node instance
         var gamePlayScene = ResourceLoader.Load("res://Presentation/GamePlay/GamePlay.tscn") as PackedScene;
         gamePlay = gamePlayScene?.Instance() as GamePlay;
@@ -29,6 +30,8 @@ public class CustomLevelScreen : Node2D
         gamePlay.SetLevelTitle(customLevel.CustomLevelName);
         gamePlay.DisplayQuestion();
         gamePlay.SetQuestionNum();
+        gamePlay.SetGameType("CustomLevel");
+        gamePlay.LoadStart(character, monster);
        
     }
     private void SetSpritesPath()

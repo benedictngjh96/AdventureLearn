@@ -97,7 +97,7 @@ scale = Vector2( 0.454165, 0.491577 )
 texture = ExtResource( 10 )
 
 [node name="Bg" parent="." instance=ExtResource( 9 )]
-position = Vector2( 0, -9 )
+position = Vector2( 0, -10.3604 )
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 margin_left = 165.0

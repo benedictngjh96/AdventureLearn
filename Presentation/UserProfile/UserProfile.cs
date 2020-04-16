@@ -6,7 +6,6 @@ public class UserProfile : Node2D
     StudentBL studentBL;
     public override void _Ready()
     {
-        Global.StudentId = 18;
         studentBL = new StudentBL();
         Student student = studentBL.GetStudentCharacter(Global.StudentId);
         Label lbl = GetNode<Label>("NameLbl");

@@ -30,6 +30,7 @@ public class Campaign : Node2D
         gamePlay.SetQuestionNum();
         gamePlay.SetBg();
         gamePlay.LoadStart(character, level.Monster);
+        gamePlay.SetGameType("Campaign");
 
     }
     private void SetSpritesPath()
