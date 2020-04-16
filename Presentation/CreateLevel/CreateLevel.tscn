@@ -342,9 +342,9 @@ __meta__ = {
 
 [node name="ErrorMessageLabel" type="Label" parent="."]
 margin_left = 212.0
-margin_top = 434.52
+margin_top = 465.0
 margin_right = 792.0
-margin_bottom = 477.52
+margin_bottom = 508.0
 custom_fonts/font = SubResource( 10 )
 custom_colors/font_color = Color( 0.835294, 0.0705882, 0.0705882, 1 )
 align = 1

@@ -1,15 +1,16 @@
 [gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Presentation/CreateLevel/CreateLevelInit.cs" type="Script" id=1]
-[ext_resource path="res://Assets/LockedLevels/BackwardLocked.png" type="Texture" id=2]
-[ext_resource path="res://Assets/UnlockedLevels/ForwardUnlocked.png" type="Texture" id=3]
-[ext_resource path="res://Assets/LockedLevels/ForwardLocked.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GUI/lockedleftbtn.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GUI/button_l.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GUI/button_r.png" type="Texture" id=4]
 [ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Background/Middle2.png" type="Texture" id=6]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=8]
 [ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Assets/GUI/button_empty_4.png" type="Texture" id=10]
+[ext_resource path="res://Assets/GUI/lockedrightbtn.png" type="Texture" id=11]
 [ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Assets/GUI/createleveltitle.png" type="Texture" id=13]
 
@@ -34,6 +35,7 @@ animations = [ {
 } ]
 
 [sub_resource type="DynamicFont" id=5]
+size = 32
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=6]
@@ -48,12 +50,10 @@ font_data = ExtResource( 8 )
 size = 32
 font_data = ExtResource( 8 )
 
-[sub_resource type="DynamicFont" id=9]
-size = 32
-font_data = ExtResource( 8 )
-
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Bg" parent="." instance=ExtResource( 7 )]
 
 [node name="Background" type="Sprite" parent="."]
 visible = false
@@ -79,9 +79,9 @@ __meta__ = {
 
 [node name="LevelName" type="LineEdit" parent="LevelNameSet"]
 margin_left = 380.0
-margin_top = 207.948
+margin_top = 196.948
 margin_right = 780.0
-margin_bottom = 267.948
+margin_bottom = 256.948
 custom_fonts/font = SubResource( 2 )
 max_length = 24
 __meta__ = {
@@ -109,47 +109,33 @@ __meta__ = {
 }
 
 [node name="ArrowLeft" type="TextureButton" parent="MonsterSelect"]
-margin_left = 355.79
-margin_top = 296.316
-margin_right = 432.79
-margin_bottom = 396.316
+margin_left = 378.79
+margin_top = 281.316
+margin_right = 501.79
+margin_bottom = 414.316
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 5 )
+texture_normal = ExtResource( 3 )
 texture_disabled = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="ArrowRight" type="TextureButton" parent="MonsterSelect"]
-margin_left = 618.342
-margin_top = 292.105
-margin_right = 695.342
-margin_bottom = 392.105
+margin_left = 641.342
+margin_top = 277.105
+margin_right = 764.342
+margin_bottom = 410.105
 rect_scale = Vector2( 0.5, 0.5 )
-texture_normal = ExtResource( 3 )
-texture_disabled = ExtResource( 4 )
+texture_normal = ExtResource( 4 )
+texture_disabled = ExtResource( 11 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="MonsterSprite" type="AnimatedSprite" parent="MonsterSelect"]
-position = Vector2( 502.888, 286.631 )
+position = Vector2( 526.996, 279.631 )
 scale = Vector2( 0.4, 0.4 )
 frames = SubResource( 4 )
-
-[node name="MonsterName" type="Label" parent="MonsterSelect"]
-anchor_left = -0.000717878
-anchor_right = -0.000717878
-margin_left = 468.947
-margin_top = 346.107
-margin_right = 568.947
-margin_bottom = 371.107
-custom_fonts/font = SubResource( 5 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="TimeLimitSelect" type="Node" parent="."]
 
@@ -158,7 +144,7 @@ margin_left = 195.44
 margin_top = 368.299
 margin_right = 344.44
 margin_bottom = 411.299
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Time limit:"
 align = 1
@@ -168,28 +154,31 @@ __meta__ = {
 }
 
 [node name="TimeLimit" type="OptionButton" parent="TimeLimitSelect"]
-margin_left = 384.201
-margin_top = 375.001
-margin_right = 484.201
-margin_bottom = 424.001
-custom_fonts/font = SubResource( 7 )
+margin_left = 381.201
+margin_top = 363.001
+margin_right = 481.201
+margin_bottom = 412.001
+custom_fonts/font = SubResource( 6 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
+[node name="Menu" parent="." instance=ExtResource( 12 )]
+
 [node name="ErrorMessageLabel" type="Label" parent="."]
-margin_left = 436.117
-margin_top = 415.139
-margin_right = 645.117
-margin_bottom = 443.139
-custom_fonts/font = SubResource( 8 )
+margin_left = 277.0
+margin_top = 406.0
+margin_right = 747.0
+margin_bottom = 449.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.835294, 0.0705882, 0.0705882, 1 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Menu" parent="." instance=ExtResource( 12 )]
 
 [node name="NextBtn" type="TextureButton" parent="."]
 margin_left = 453.415
@@ -208,13 +197,11 @@ margin_left = 491.375
 margin_top = 458.609
 margin_right = 559.375
 margin_bottom = 501.609
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 text = "Next"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Bg" parent="." instance=ExtResource( 7 )]
 
 [node name="BackBtn" parent="." instance=ExtResource( 9 )]
 [connection signal="pressed" from="MonsterSelect/ArrowLeft" to="." method="_on_ArrowLeft_pressed"]
