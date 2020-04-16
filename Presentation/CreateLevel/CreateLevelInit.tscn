@@ -34,6 +34,10 @@ animations = [ {
 "speed": 30.0
 } ]
 
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 8 )
+
 [sub_resource type="DynamicFont" id=6]
 size = 32
 font_data = ExtResource( 8 )
@@ -43,10 +47,6 @@ size = 32
 font_data = ExtResource( 8 )
 
 [sub_resource type="DynamicFont" id=8]
-size = 32
-font_data = ExtResource( 8 )
-
-[sub_resource type="DynamicFont" id=9]
 size = 32
 font_data = ExtResource( 8 )
 
@@ -144,7 +144,7 @@ margin_left = 195.44
 margin_top = 368.299
 margin_right = 344.44
 margin_bottom = 411.299
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Time limit:"
 align = 1
@@ -158,7 +158,7 @@ margin_left = 381.201
 margin_top = 363.001
 margin_right = 481.201
 margin_bottom = 412.001
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 6 )
 align = 1
 __meta__ = {
 "_edit_use_anchors_": false,
@@ -172,7 +172,7 @@ margin_left = 277.0
 margin_top = 406.0
 margin_right = 747.0
 margin_bottom = 449.0
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 7 )
 custom_colors/font_color = Color( 0.835294, 0.0705882, 0.0705882, 1 )
 align = 1
 valign = 1
@@ -197,7 +197,7 @@ margin_left = 491.375
 margin_top = 458.609
 margin_right = 559.375
 margin_bottom = 501.609
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 8 )
 text = "Next"
 __meta__ = {
 "_edit_use_anchors_": false
