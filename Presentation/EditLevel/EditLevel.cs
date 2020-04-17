@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
 public class EditLevel : Node2D
@@ -41,7 +42,6 @@ public class EditLevel : Node2D
 	/// <returns></returns>
 	public override void _Ready()
 	{
-
 		editLevelBL = new EditLevelBL();
 
 		questionNumberLabel = GetNode<Label>("QuestionNumberLabel");
@@ -96,6 +96,7 @@ public class EditLevel : Node2D
 			GD.Print("Start updating into database.");
 			editLevelBL.updateLevelInitInfo(levelName, monsterId, timeLimit);
 			editLevelBL.updateLevel();
+			EditLevelInit.updated = 0;
 			GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
 		}
 	}
@@ -163,7 +164,12 @@ public class EditLevel : Node2D
 	/// <returns></returns>
 	private void displayQuestion()
 	{
-		UserCreatedQuestion q = editLevelBL.GetQuestion(getQuestionNumber());
+		
+		UserCreatedQuestion q;
+		//q = editLevelBL.GetQuestion(getQuestionNumber());
+		if (EditLevelInit.updated == 1)
+			editLevelBL.updateTempQuestionList();
+		q = editLevelBL.GetQuestion(getQuestionNumber());
 
 		questionTitleLine.SetText(q.QuestionTitle);
 		option1Line.SetText(q.Option1);
@@ -185,7 +191,7 @@ public class EditLevel : Node2D
 			case 4:
 				checkbox4.SetPressed(true);
 				break;
-		}
+		}	
 	}
 
 	/// <summary>
@@ -343,7 +349,53 @@ public class EditLevel : Node2D
 		questionNumberLabel.SetText("Enter Question 5:");
 		displayQuestion();
 	}
+
+	/// <summary>
+	/// Save all changes made before returning to EditLevelInit
+	/// </summary>
+	/// <returns></returns>
+	private void _on_BackBtn_pressed()
+	{
+		saveQuestion();
+		Global.QuestionList = editLevelBL.getTempQuestionList();
+		Global.CustomLevelName = levelName;
+		Global.MonsterId = monsterId;
+		Global.TimeLimit = timeLimit;
+		EditLevelInit.updated = 1;
+
+		GetTree().ChangeScene("res://Presentation/EditLevel/EditLevelInit.tscn");
+	}
+
+	/// <summary>
+	/// Restore orignal question
+	/// </summary>
+	/// <returns></returns>
+	private void _on_RestoreOriginal_pressed()
+	{
+		List<UserCreatedQuestion> OriginalQuestionList = editLevelBL.getOrignalQuestionList();
+		UserCreatedQuestion q = OriginalQuestionList[getQuestionNumber() - 1];
+
+		questionTitleLine.SetText(q.QuestionTitle);
+		option1Line.SetText(q.Option1);
+		option2Line.SetText(q.Option2);
+		option3Line.SetText(q.Option3);
+		option4Line.SetText(q.Option4);
+
+		switch (q.CorrectOption)
+		{
+			case 1:
+				checkbox1.SetPressed(true);
+				break;
+			case 2:
+				checkbox2.SetPressed(true);
+				break;
+			case 3:
+				checkbox3.SetPressed(true);
+				break;
+			case 4:
+				checkbox4.SetPressed(true);
+				break;
+		}
+	}
 }
-
-
 

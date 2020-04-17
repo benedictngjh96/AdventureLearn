@@ -6,7 +6,7 @@
 [ext_resource path="res://Assets/GUI/table.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GUI/button_empty_4.png" type="Texture" id=5]
 [ext_resource path="res://Assets/GUI/banner.png" type="Texture" id=6]
-[ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assets/GUI/backbtn.png" type="Texture" id=7]
 [ext_resource path="res://Assets/GUI/createleveltitle.png" type="Texture" id=8]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=9]
 
@@ -361,17 +361,27 @@ texture = ExtResource( 6 )
 [node name="Menu" parent="." instance=ExtResource( 2 )]
 visible = false
 
-[node name="BackBtn" parent="." instance=ExtResource( 7 )]
-
 [node name="createleveltitle" type="Sprite" parent="."]
 position = Vector2( 519.282, 91.8035 )
 scale = Vector2( 0.415427, 0.358245 )
 texture = ExtResource( 8 )
 
 [node name="Bg" parent="." instance=ExtResource( 9 )]
+
+[node name="BackBtn" type="TextureButton" parent="."]
+margin_left = 10.612
+margin_top = 12.674
+margin_right = 50.612
+margin_bottom = 52.674
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="QuestionSelect/Question1" to="." method="_on_Question1_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question2" to="." method="_on_Question2_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question3" to="." method="_on_Question3_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question4" to="." method="_on_Question4_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question5" to="." method="_on_Question5_pressed"]
 [connection signal="pressed" from="CreateBtn" to="." method="_on_CreateBtn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]

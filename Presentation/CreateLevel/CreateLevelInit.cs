@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class CreateLevelInit : Node2D
 {
+	static public int updated = 0;
+
 	OptionButton timeLimitBtn;
 	LineEdit levelNameLine;
 	//OptionButton monsterIdBtn;
@@ -44,6 +46,36 @@ public class CreateLevelInit : Node2D
 		animationList.Add("Idle");
 
 		addOptions();
+
+		if(updated == 1)
+		{
+			displayLevelInit();
+		}
+	}
+
+	/// <summary>
+	/// Display the previously typed LevelInit Info
+	/// </summary>
+	/// <returns></returns>
+	private void displayLevelInit()
+	{
+		levelNameLine.Text = Global.CustomLevelName;
+
+		int i = 0;
+		foreach (int a in timeLimitOptions)
+		{
+			if (a == Global.TimeLimit)
+			{
+				GD.Print("Found time: " + a);
+				break;
+			}
+			i++;
+		}
+		timeLimitBtn.Select(i);
+
+		count = Global.MonsterId - 1;
+		changeArrowButtonStatues();
+		displayCharacter();
 	}
 
 	/// <summary>

@@ -22,6 +22,9 @@ public class Global : Node
 	public static int TimeLimit { get; set; }
 	public static bool GoogleLoggedIn { get; set; }
 	public static bool FbLoggedIn { get; set; }
+	public static List<UserCreatedQuestion> QuestionList { get; set; }
+
+
 	/// <summary>
 	/// Global connection string
 	/// </summary>

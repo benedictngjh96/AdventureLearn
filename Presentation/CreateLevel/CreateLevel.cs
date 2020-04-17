@@ -79,7 +79,18 @@ public class CreateLevel : Node2D
 		option3Line = GetNode<LineEdit>("Options/Option3");
 		option4Line = GetNode<LineEdit>("Options/Option4");
 
-		createLevelBL.initializeQuestions();
+		if(CreateLevelInit.updated == 0)
+		{
+			createLevelBL.initializeQuestions();
+			GD.Print("Initializaed Questions");
+		}
+		else
+		{
+			createLevelBL.updateTempQuestionList();
+			displayQuestion();
+			//createLevelBL.listQuestions();
+		}
+			
 
 		/*if (questionTitleLine.Text == null)
 			GD.Print("v1) question title is null");
@@ -111,6 +122,7 @@ public class CreateLevel : Node2D
 		{
 			GD.Print("Start inserting into database.");
 			createLevelBL.createLevel(levelName, monsterId, timeLimit);
+			CreateLevelInit.updated = 0;
 			GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
 		}
 	}
@@ -345,8 +357,22 @@ public class CreateLevel : Node2D
 			return 0;
 		}
 	}
+
+	/// <summary>
+	/// Return to CreateLevelInit Scene
+	/// </summary>
+	/// <returns></returns>
+	private void _on_BackBtn_pressed()
+	{
+		saveQuestion();
+		Global.QuestionList = createLevelBL.getTempQuestionList();
+		Global.CustomLevelName = levelName;
+		Global.MonsterId = monsterId;
+		Global.TimeLimit = timeLimit;
+		CreateLevelInit.updated = 1;
+
+		GetTree().ChangeScene("res://Presentation/CreateLevel/CreateLevelInit.tscn");
+	}
 }
-
-
 
 

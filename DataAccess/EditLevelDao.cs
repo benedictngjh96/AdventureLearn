@@ -53,7 +53,6 @@ public class EditLevelDao : Node
 			GD.Print("Question updated into database successfully.");
 	}
 
-
 	/// <summary>
 	/// Format for database insertion
 	/// </summary>

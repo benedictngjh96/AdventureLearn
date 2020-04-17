@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class EditLevelInit : Node2D
 {
+	static public int updated = 0;
+
 	EditLevelBL editLevelBL;
 
 	OptionButton timeLimitBtn;
@@ -11,7 +13,7 @@ public class EditLevelInit : Node2D
 	//OptionButton monsterIdBtn;
 	Label errorMessageLabel;
 
-	TextureButton arrowLeft, arrowRight;
+	TextureButton arrowLeft, arrowRight, restoreOriginal;
 	AnimatedSprite charSprite;
 	List<string> animationList;
 
@@ -22,7 +24,9 @@ public class EditLevelInit : Node2D
 	int numberOfChar;
 	int count = 0;
 
-	string oldName;
+	static string oldName;
+	static int oldMonsterId;
+	static int oldTimeLimit;
 
 	int[] timeLimitOptions;
 	//int[] monsterIdOptions;
@@ -49,45 +53,75 @@ public class EditLevelInit : Node2D
 		animationList = new List<string>();
 		animationList.Add("Idle");
 
+		restoreOriginal = GetNode<TextureButton>("RestoreOriginal");
+
 		addOptions();
 
 		//testing
-		//Global.StudentId = 23;
-		//Global.CustomLevelId = 10;
+		Global.StudentId = 23;
+		Global.CustomLevelId = 10;
 		//testing
 
-		displayOriginalLevelInit();
+		displayLevelInit();
 	}
 
 	/// <summary>
-	/// Display original level name, selected monster, selected time limit
+	/// Display original or updated level name, selected monster, selected time limit
 	/// </summary>
 	/// <returns></returns>
-	private void displayOriginalLevelInit()
+	private void displayLevelInit()
 	{
-		CustomLevel levelInfo = editLevelBL.loadCustomLevelInfo();
-		levelNameLine.Text = levelInfo.CustomLevelName;
-
-		int i = 0;
-		foreach (int a in timeLimitOptions)
+		if(updated == 0)
 		{
-			if (a == levelInfo.TimeLimit)
+			CustomLevel levelInfo = editLevelBL.loadCustomLevelInfo();
+			levelNameLine.Text = levelInfo.CustomLevelName;
+
+			int i = 0;
+			foreach (int a in timeLimitOptions)
 			{
-				GD.Print("Found time: " + a);
-				break;
+				if (a == levelInfo.TimeLimit)
+				{
+					GD.Print("Found time: " + a);
+					break;
+				}
+				i++;
 			}
-			i++;
+			timeLimitBtn.Select(i);
+
+			GD.Print("\nCustom Level Id: " + levelInfo.CustomLevelId + "\nCustom Level Name: " + levelInfo.CustomLevelName + "\nMonster Id: " + levelInfo.Monster.MonsterId +
+				"\nTimeLimit: " + levelInfo.TimeLimit);
+
+			count = levelInfo.Monster.MonsterId - 1;
+			changeArrowButtonStatues();
+			displayCharacter();
+
+			oldName = levelInfo.CustomLevelName;
+			oldMonsterId = levelInfo.Monster.MonsterId;
+			oldTimeLimit = levelInfo.TimeLimit;
 		}
-		timeLimitBtn.Select(i);
+		else
+		{
+			levelNameLine.Text = Global.CustomLevelName;
 
-		GD.Print("\nCustom Level Id: " + levelInfo.CustomLevelId + "\nCustom Level Name: " + levelInfo.CustomLevelName + "\nMonster Id: " + levelInfo.Monster.MonsterId +
-			"\nTimeLimit: " + levelInfo.TimeLimit);
+			int i = 0;
+			foreach (int a in timeLimitOptions)
+			{
+				if (a == Global.TimeLimit)
+				{
+					GD.Print("Found time: " + a);
+					break;
+				}
+				i++;
+			}
+			timeLimitBtn.Select(i);
 
-		count = levelInfo.Monster.MonsterId - 1;
-		changeArrowButtonStatues();
-		displayCharacter();
+			GD.Print("\nCustom Level Id: " + Global.CustomLevelId + "\nCustom Level Name: " + Global.CustomLevelName + "\nMonster Id: " + Global.MonsterId +
+				"\nTimeLimit: " + Global.TimeLimit);
 
-		oldName = levelInfo.CustomLevelName;
+			count = Global.MonsterId - 1;
+			changeArrowButtonStatues();
+			displayCharacter();
+		}
 	}
 
 	/// <summary>
@@ -198,4 +232,35 @@ public class EditLevelInit : Node2D
 			GetTree().ChangeScene("res://Presentation/EditLevel/EditLevel.tscn");
 		}
 	}
+	
+	/// <summary>
+	/// Restore Original LevelInit Info
+	/// </summary>
+	/// <returns></returns>
+	private void _on_RestoreOriginal_pressed()
+	{
+		levelNameLine.Text = oldName;
+
+		int i = 0;
+		foreach (int a in timeLimitOptions)
+		{
+			if (a == oldTimeLimit)
+			{
+				GD.Print("Found time: " + a);
+				break;
+			}
+			i++;
+		}
+		timeLimitBtn.Select(i);
+
+		count = oldMonsterId - 1;
+		changeArrowButtonStatues();
+		displayCharacter();
+	}
 }
+
+
+
+
+
+

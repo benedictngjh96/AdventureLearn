@@ -4,7 +4,7 @@
 [ext_resource path="res://Assets/GUI/lockedleftbtn.png" type="Texture" id=2]
 [ext_resource path="res://Assets/GUI/button_l.png" type="Texture" id=3]
 [ext_resource path="res://Assets/GUI/button_r.png" type="Texture" id=4]
-[ext_resource path="res://Assets/UnlockedLevels/BackwardUnlocked.png" type="Texture" id=5]
+[ext_resource path="res://CharSprites/BullWarrior/Idle/Idle_00.png" type="Texture" id=5]
 [ext_resource path="res://Assets/Background/Middle2.png" type="Texture" id=6]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=8]
@@ -84,6 +84,7 @@ margin_right = 780.0
 margin_bottom = 256.948
 custom_fonts/font = SubResource( 2 )
 max_length = 24
+placeholder_text = "(Empty)"
 __meta__ = {
 "_edit_use_anchors_": false
 }
