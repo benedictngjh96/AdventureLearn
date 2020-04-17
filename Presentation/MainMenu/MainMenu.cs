@@ -64,8 +64,14 @@ public class MainMenu : Node2D
         GetTree().ChangeScene("res://Presentation/Login/Login.tscn");
     }
 
-
+    private void _on_CreditsBtn_pressed()
+    {
+        GetTree().ChangeScene("res://Presentation/Credits/Credits.tscn");
+    }
 }
+
+
+
 
 
 

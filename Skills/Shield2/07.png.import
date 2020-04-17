@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RollDice.png-cbc39cae693d40a22c924598bc82761f.stex"
+path="res://.import/07.png-7a5d30c4876e5930c8ab4592086b5d45.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Skills/Icons/RollDice.png"
-dest_files=[ "res://.import/RollDice.png-cbc39cae693d40a22c924598bc82761f.stex" ]
+source_file="res://Skills/Shield2/07.png"
+dest_files=[ "res://.import/07.png-7a5d30c4876e5930c8ab4592086b5d45.stex" ]
 
 [params]
 

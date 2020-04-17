@@ -135,7 +135,7 @@ public class StudentDao
     {
         Student student = new Student();
         List<Student> studentList = new List<Student>();
-        string query = String.Format("SELECT s.StudentId , s.StudentName , s.StudentEmail , c.CharId , c.CharName , c.CharSkill FROM Student s " +
+        string query = String.Format("SELECT s.StudentId , s.StudentName , s.StudentEmail , c.CharId , c.CharName , c.CharSkill, c.SkillDescription FROM Student s " +
         "INNER JOIN `Characters` c ON s.CharId  = c.CharId WHERE s.StudentId  = {0}", studentId);
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
         {

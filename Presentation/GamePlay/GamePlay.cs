@@ -13,6 +13,8 @@ public class GamePlay : Node2D
     AnimatedSprite monsterSkillSprite;
     AnimatedSprite win;
     AnimatedSprite lose;
+    AnimatedSprite activeSkill;
+
     Button op1;
     Button op2;
     Button op3;
@@ -55,20 +57,20 @@ public class GamePlay : Node2D
 
     public override void _Ready()
     {
+        
         audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer2");
         AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/battleThemeA.ogg") as AudioStream;
         DefaultSound.playSound(sfx);
         AddUserSignal("NoMoreQuestions");
-
         charSprite = GetNode<AnimatedSprite>("CharSprite");
         monsterSprite = GetNode<AnimatedSprite>("MonsterSprite");
         charSkillSprite = GetNode<AnimatedSprite>("CharSprite/CharSkillSprite");
         monsterSkillSprite = GetNode<AnimatedSprite>("MonsterSprite/MonsterSkillSprite");
+        activeSkill = GetNode<AnimatedSprite>("CharSprite/ActiveSkill");
         countDown = GetNode<AnimatedSprite>("Countdown");
         timerLabel = GetNode<Label>("TimerLabel");
         questionLabel = GetNode<Label>("QuestionLabel");
         levelTitle = GetNode<Label>("LevelTitle");
-
         timerLbl2 = GetNode<Label>("TimerLabel2");
         popupMenu = GetNode<PopupMenu>("PopupMenu");
         losePopup = GetNode<PopupMenu>("LosePopup");
@@ -88,16 +90,19 @@ public class GamePlay : Node2D
         animationList.Add("Hurt");
         animationList.Add("Die");
         animationList.Add("Attack");
+
         op1 = GetNode<Button>("Buttons/Option1");
         op2 = GetNode<Button>("Buttons/Option2");
         op3 = GetNode<Button>("Buttons/Option3");
         op4 = GetNode<Button>("Buttons/Option4");
+
         theme1 = ResourceLoader.Load("res://Assets/GUI/BtnUI.tres") as Theme;
         theme2 = ResourceLoader.Load("res://Assets/GUI/BtnUI2.tres") as Theme;
         theme3 = ResourceLoader.Load("res://Assets/GUI/BtnUI3.tres") as Theme;
         DisplayBtnDesign();
         countDown.Play("Countdown");
         timer = GetNode<Timer>("TimeLimit");
+
     }
 
     public override void _Process(float delta)
@@ -139,6 +144,7 @@ public class GamePlay : Node2D
     }
     public void SetTimeLimit(int timeLimit)
     {
+    
         s = timeLimit;
         this.timeLimit = timeLimit;
     }
@@ -169,7 +175,7 @@ public class GamePlay : Node2D
                 btn.Text = optionList[rng];
                 //optionButton.Text = optionList[rng];
                 if (optionList[rng] == question.CorrectOption)
-                    correctAnsIndex = rng;
+                    correctAnsIndex = rng + 1;
 
                 optionList.RemoveAt(rng);
             }
@@ -313,7 +319,10 @@ public class GamePlay : Node2D
                 s -= 10;
             }
             else
+            {
                 shieldOn = false;
+                activeSkill.Play("default");
+            }
             AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/Spell_04.wav") as AudioStream;
             audioStreamPlayer.Stream = sfx;
         }
@@ -456,30 +465,59 @@ public class GamePlay : Node2D
     {
         monsterSkillSprite.Play("Default");
     }
-
+    private void loadSkillIcon()
+    {
+        TextureButton skillIcon = GetNode<TextureButton>("SkillBtn");
+        string skillIconPath = "res://Skills/Icons/";
+        Godot.GD.Print(skillIconPath + character.CharSkill + ".png");
+        var texture = ResourceLoader.Load(skillIconPath + character.CharSkill + ".png") as Texture;
+        var disabledTexture = ResourceLoader.Load(skillIconPath + character.CharSkill + "locked.png") as Texture;
+        skillIcon.TextureNormal = texture;
+        skillIcon.TexturePressed = texture;
+        skillIcon.TextureHover = texture;
+        skillIcon.TextureDisabled = disabledTexture;
+    }
     private void _on_SkillBtn_pressed()
     {
         switch (character.CharSkill)
         {
             case "Shield":
-                charSkillSprite.Play("Shield");
+                activeSkill.Play("Shield");
                 shieldOn = true;
                 break;
-            case "Remove Option":
+            case "Zap":
                 Random r = new Random();
-                int random = 0;
+                Button btn;
+                int random;
                 do
                 {
-                    random = r.Next(1, 5);
-                } while (random == correctAnsIndex);
+                    random = r.Next(1, 4);
+                    btn = GetNode<Button>("Buttons/Option" + random.ToString());
+                }
+                while(btn.Text == question.CorrectOption);
+
                 AnimatedSprite effect = GetNode<AnimatedSprite>(String.Format("Buttons/Option{0}/Effect{0}", random));
                 effect.Play("Explosion");
-                string option = String.Format("Buttons/Option{0}", random);
-                Button btn = GetNode<Button>(option);
                 btn.Disabled = true;
                 break;
+            case "Gamble":
+                Random r2 = new Random();
+                int rng2 = r2.Next(3);
+                if (rng2 == 1)
+                {
+                    CheckCorrectAnswer(question.CorrectOption);
+                }
+                else
+                {
+                    CheckCorrectAnswer("WrongAnswer");
+                }
+
+                break;
+            case "Heal":
+                s += 10;
+                break;
         }
-        Button skillBtn = GetNode<Button>("SkillBtn");
+        TextureButton skillBtn = GetNode<TextureButton>("SkillBtn");
         skillBtn.Disabled = true;
     }
     private void _on_Effect1_animation_finished()
@@ -554,15 +592,14 @@ public class GamePlay : Node2D
         ctr2.Visible = true;
         timerLabel.Visible = true;
         questionLabel.Visible = true;
-        Button skillBtn = GetNode<Button>("SkillBtn");
+        TextureButton skillBtn = GetNode<TextureButton>("SkillBtn");
         skillBtn.Visible = true;
-
+        loadSkillIcon();
         //Hide
         Control versus = GetNode<Control>("Versus");
         versus.Visible = false;
 
         countDown.Visible = false;
-
         timer.Start();
 
     }

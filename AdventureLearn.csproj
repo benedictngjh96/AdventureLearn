@@ -142,6 +142,7 @@
     <Compile Include="Presentation\CharSelect\CharSelect.cs" />
     <Compile Include="Presentation\CreateLevel\CreateLevel.cs" />
     <Compile Include="Presentation\CreateLevel\CreateLevelInit.cs" />
+    <Compile Include="Presentation\Credits\Credits.cs" />
     <Compile Include="Presentation\CustomLevel\CustomLevelScreen.cs" />
     <Compile Include="Presentation\CustomLevel\ViewCreatedLevels.cs" />
     <Compile Include="Presentation\CustomLevel\ViewCustomLevel.cs" />

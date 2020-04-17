@@ -1,9 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Assets/GUI/ButtonsWithText/customLevel1.png" type="Texture" id=1]
 [ext_resource path="res://Presentation/MainMenu/MainMenu.cs" type="Script" id=2]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/leaderboard1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/Background/bg2.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/credits.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/leaderboard2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/campaign2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Background/title.png" type="Texture" id=7]
@@ -16,15 +16,17 @@
 [ext_resource path="res://Assets/GUI/ButtonsWithText/logoutIcon1.png" type="Texture" id=14]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/logoutIcon2.png" type="Texture" id=15]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/credits2.png" type="Texture" id=17]
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=18]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 18 )
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 2 )
 
-[node name="Background" type="Sprite" parent="."]
-visible = false
-position = Vector2( 324.191, 376.816 )
-scale = Vector2( 1.10275, 0.952365 )
-texture = ExtResource( 4 )
+[node name="Bg" parent="." instance=ExtResource( 16 )]
+position = Vector2( 147.328, 124.065 )
 
 [node name="AdventureLearn" type="Sprite" parent="."]
 position = Vector2( 512, 100 )
@@ -32,10 +34,10 @@ scale = Vector2( 0.29212, 0.255959 )
 texture = ExtResource( 7 )
 
 [node name="CampaignBtn" type="TextureButton" parent="."]
-margin_left = 420.0
-margin_top = 205.0
-margin_right = 2088.0
-margin_bottom = 901.0
+margin_left = 333.151
+margin_top = 215.446
+margin_right = 2001.15
+margin_bottom = 911.446
 rect_scale = Vector2( 0.1, 0.1 )
 texture_normal = ExtResource( 8 )
 texture_pressed = ExtResource( 6 )
@@ -45,10 +47,10 @@ __meta__ = {
 }
 
 [node name="CustomLevelBtn" type="TextureButton" parent="."]
-margin_left = 420.0
-margin_top = 280.0
-margin_right = 2088.0
-margin_bottom = 976.0
+margin_left = 511.859
+margin_top = 214.618
+margin_right = 2179.86
+margin_bottom = 910.618
 rect_scale = Vector2( 0.1, 0.1 )
 texture_normal = ExtResource( 1 )
 texture_pressed = ExtResource( 13 )
@@ -58,10 +60,10 @@ __meta__ = {
 }
 
 [node name="AssignmentBtn" type="TextureButton" parent="."]
-margin_left = 420.0
-margin_top = 355.0
-margin_right = 2088.0
-margin_bottom = 1051.0
+margin_left = 333.151
+margin_top = 315.0
+margin_right = 2001.15
+margin_bottom = 1011.0
 rect_scale = Vector2( 0.1, 0.1 )
 texture_normal = ExtResource( 10 )
 texture_pressed = ExtResource( 12 )
@@ -71,10 +73,10 @@ __meta__ = {
 }
 
 [node name="LeaderboardBtn" type="TextureButton" parent="."]
-margin_left = 420.0
-margin_top = 430.0
-margin_right = 460.0
-margin_bottom = 470.0
+margin_left = 511.859
+margin_top = 315.0
+margin_right = 2179.86
+margin_bottom = 1011.0
 rect_scale = Vector2( 0.1, 0.1 )
 texture_normal = ExtResource( 3 )
 texture_pressed = ExtResource( 5 )
@@ -84,10 +86,10 @@ __meta__ = {
 }
 
 [node name="UserProfileBtn" type="TextureButton" parent="."]
-margin_left = 420.0
-margin_top = 505.0
-margin_right = 2088.0
-margin_bottom = 1201.0
+margin_left = 333.151
+margin_top = 415.0
+margin_right = 2001.15
+margin_bottom = 1111.0
 rect_scale = Vector2( 0.1, 0.1 )
 texture_normal = ExtResource( 9 )
 texture_pressed = ExtResource( 11 )
@@ -109,10 +111,34 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Bg" parent="." instance=ExtResource( 16 )]
+[node name="CreditsBtn" type="TextureButton" parent="."]
+margin_left = 511.859
+margin_top = 413.892
+margin_right = 2179.86
+margin_bottom = 1109.89
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 4 )
+texture_pressed = ExtResource( 17 )
+texture_hover = ExtResource( 17 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LogoutLbl" type="Label" parent="."]
+margin_left = 942.649
+margin_top = 82.4056
+margin_right = 999.649
+margin_bottom = 104.406
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Logout"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="CampaignBtn" to="." method="_on_CampaignBtn_pressed"]
 [connection signal="pressed" from="CustomLevelBtn" to="." method="_on_CustomLevelBtn_pressed"]
 [connection signal="pressed" from="AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]
 [connection signal="pressed" from="LeaderboardBtn" to="." method="_on_LeaderboardBtn_pressed"]
 [connection signal="pressed" from="UserProfileBtn" to="." method="_on_UserProfileBtn_pressed"]
 [connection signal="pressed" from="LogoutBtn" to="." method="_on_LogoutBtn_pressed"]
+[connection signal="pressed" from="CreditsBtn" to="." method="_on_CreditsBtn_pressed"]

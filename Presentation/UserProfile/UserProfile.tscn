@@ -32,16 +32,16 @@ script = ExtResource( 1 )
 [node name="Menu" parent="." instance=ExtResource( 4 )]
 
 [node name="Character" type="AnimatedSprite" parent="."]
-position = Vector2( 681.119, 256.641 )
+position = Vector2( 751.286, 233.729 )
 scale = Vector2( 0.7, 0.7 )
 frames = SubResource( 1 )
 animation = "New Anim"
 flip_h = true
 
 [node name="ChangeCharacter" type="TextureButton" parent="."]
-margin_left = 382.708
+margin_left = 403.708
 margin_top = 444.556
-margin_right = 661.708
+margin_right = 682.708
 margin_bottom = 577.556
 rect_scale = Vector2( 0.8, 0.5 )
 theme = ExtResource( 5 )
@@ -51,9 +51,9 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = 395.88
+margin_left = 413.88
 margin_top = 456.0
-margin_right = 601.88
+margin_right = 619.88
 margin_bottom = 500.0
 custom_fonts/font = SubResource( 2 )
 text = "Change Character"
@@ -62,10 +62,10 @@ __meta__ = {
 }
 
 [node name="CharacterName" type="Label" parent="."]
-margin_left = 640.876
-margin_top = 390.205
-margin_right = 760.876
-margin_bottom = 437.205
+margin_left = 695.165
+margin_top = 361.566
+margin_right = 815.165
+margin_bottom = 408.566
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -73,11 +73,13 @@ __meta__ = {
 }
 
 [node name="CharacterSkill" type="Label" parent="."]
-margin_left = 345.311
-margin_top = 782.578
-margin_right = 513.312
-margin_bottom = 885.578
+margin_left = 590.0
+margin_top = 397.0
+margin_right = 875.0
+margin_bottom = 439.0
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

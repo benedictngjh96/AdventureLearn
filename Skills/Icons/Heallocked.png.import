@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/RemoveOption.png-81f28bea9e8349291af0342e4169dcae.stex"
+path="res://.import/Heallocked.png-ab73995264974fba89e64113f08e4214.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Skills/Icons/RemoveOption.png"
-dest_files=[ "res://.import/RemoveOption.png-81f28bea9e8349291af0342e4169dcae.stex" ]
+source_file="res://Skills/Icons/Heallocked.png"
+dest_files=[ "res://.import/Heallocked.png-ab73995264974fba89e64113f08e4214.stex" ]
 
 [params]
 
