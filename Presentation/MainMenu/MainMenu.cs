@@ -3,21 +3,34 @@ using System;
 
 public class MainMenu : Node2D
 {
+	Node2D parentNode;
+	Control loadingScreenNode;
+
+	public static int welcomeOnce = 0;
+	Control welcomeMsgNode;
+	AnimationPlayer animations;
+	Label welcomeMsgText;
 
 	public override void _Ready()
 	{
-		//SetBg();
+		//Testing
+		Global.StudentName = "Yuen Kim Hwee";
+		//Testing
+
+		if (welcomeOnce == 0)
+		{
+			welcomeMsgNode = GetNode<Control>("WelcomeMsg");
+			animations = GetNode<AnimationPlayer>("WelcomeMsg/Animations");
+			welcomeMsgText = GetNode<Label>("WelcomeMsg/Msg");
+
+			
+			welcomeMsgText.Text = "Welcome back, " + Global.StudentName;
+			animations.Play("Hide");
+
+			welcomeOnce = 1;
+		}
 	}
 
-	public void SetBg()
-	{
-		Node2D n = GetNode<Node2D>("Bg");
-		Sprite s = GetNode<Sprite>("Bg/ParallaxBackground/ParallaxLayer/Sprite");
-
-		var texture2 = ResourceLoader.Load("res://Assets/Background/Middle2.png") as Texture;
-		s.Texture = texture2;
-
-	}
 	private void _on_CampaignBtn_pressed()
 	{
 		GetTree().ChangeScene("res://Presentation/World/World.tscn");
@@ -45,6 +58,8 @@ public class MainMenu : Node2D
 
 	private void _on_LogoutBtn_pressed()
 	{
+		welcomeOnce = 0;
+
 		GDScript fb = (GDScript)GD.Load("res://API/Facebook.gd");
 		GDScript google = (GDScript)GD.Load("res://API/Google.gd");
 
@@ -64,8 +79,26 @@ public class MainMenu : Node2D
 		GetTree().ChangeScene("res://Presentation/Login/Login.tscn");
 	}
 
+	private void _on_SettingsBtn_pressed()
+	{
+		GetTree().ChangeScene("res://Presentation/Settings/Settings.tscn");
+	}
 
+	private void _on_ShowLoad_pressed()
+	{
+		LoadingScreen.show();
+	}
+
+
+	private void _on_HideLoad_pressed()
+	{
+		LoadingScreen.hide();
+	}
+ 
 }
+
+
+
 
 
 

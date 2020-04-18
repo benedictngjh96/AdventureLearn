@@ -79,6 +79,7 @@
       <HintPath>packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
@@ -151,7 +152,10 @@
     <Compile Include="Presentation\GamePlay\GamePlay.cs" />
     <Compile Include="Presentation\Leaderboard\LeaderboardScreen.cs" />
     <Compile Include="Presentation\LevelSelection\LevelSelection.cs" />
+    <Compile Include="Presentation\LoadingScreen.cs" />
     <Compile Include="Presentation\MainMenu\MainMenu.cs" />
+    <Compile Include="Presentation\Settings\Settings.cs" />
+    <Compile Include="Presentation\SoundEffect\DefaultSound.cs" />
     <Compile Include="Presentation\SummaryReport\Chart.cs" />
     <Compile Include="Presentation\UserProfile\UserProfile.cs" />
     <Compile Include="Presentation\World\WorldScreen.cs" />

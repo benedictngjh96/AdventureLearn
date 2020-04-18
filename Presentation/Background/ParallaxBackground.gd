@@ -1,4 +1,4 @@
-extends ParallaxBackground
+ extends ParallaxBackground
 
 # Declare member variables here. Examples:
 # var a = 2

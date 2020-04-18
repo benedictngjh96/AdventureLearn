@@ -61,6 +61,8 @@ public class Global : Node
 	}
 	public static void LoadSprite(string spritePath, AnimatedSprite animatedSprite, List<string> animationList)
 	{
+		string temp = animationList[0];
+
 		SpriteFrames spriteFrames = new SpriteFrames();
 		foreach (string animation in animationList)
 		{
@@ -84,7 +86,10 @@ public class Global : Node
 			animatedSprite.Frames = spriteFrames;
 			animatedSprite.SpeedScale = 7;
 		}
-		animatedSprite.Play("Idle");
+		if (temp == "loadingCircle")
+			animatedSprite.Play("loadingCircle");
+		else
+			animatedSprite.Play("Idle");
 	}
 
 

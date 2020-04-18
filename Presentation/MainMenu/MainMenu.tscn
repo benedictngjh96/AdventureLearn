@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://Assets/GUI/ButtonsWithText/customLevel1.png" type="Texture" id=1]
 [ext_resource path="res://Presentation/MainMenu/MainMenu.cs" type="Script" id=2]
@@ -17,9 +17,56 @@
 [ext_resource path="res://Assets/GUI/ButtonsWithText/logoutIcon2.png" type="Texture" id=15]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=17]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/setting2.png" type="Texture" id=18]
+[ext_resource path="res://Assets/GUI/ButtonsWithText/setting1.png" type="Texture" id=19]
+[ext_resource path="res://Presentation/LoadingScreen.tscn" type="PackedScene" id=20]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 17 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 17 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0, 0, 0, 0.552941 )
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 17 )
+
+[sub_resource type="Animation" id=5]
+resource_name = "Hide"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Show"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 2 )
@@ -114,11 +161,12 @@ __meta__ = {
 }
 
 [node name="Bg" parent="." instance=ExtResource( 16 )]
+position = Vector2( 0.37735, -0.377365 )
 
 [node name="LogoutBtnLabel" type="Label" parent="."]
-margin_left = 940.0
+margin_left = 942.5
 margin_top = 80.0
-margin_right = 994.0
+margin_right = 996.5
 margin_bottom = 102.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
@@ -128,9 +176,86 @@ valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SettingsBtn" type="TextureButton" parent="."]
+margin_left = 875.0
+margin_top = 30.0
+margin_right = 915.0
+margin_bottom = 70.0
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 19 )
+texture_pressed = ExtResource( 18 )
+texture_hover = ExtResource( 18 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingsBtnLabel" type="Label" parent="."]
+margin_left = 870.0
+margin_top = 80.0
+margin_right = 933.0
+margin_bottom = 102.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Settings"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LoadingScreen" parent="." instance=ExtResource( 20 )]
+
+[node name="ShowLoad" type="Button" parent="."]
+margin_left = 10.0
+margin_top = 50.0
+margin_right = 55.0
+margin_bottom = 70.0
+text = "Show"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HideLoad" type="Button" parent="."]
+margin_left = 80.0
+margin_top = 50.0
+margin_right = 122.0
+margin_bottom = 70.0
+text = "Hide"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WelcomeMsg" type="Control" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Msg" type="Label" parent="WelcomeMsg"]
+margin_left = 192.0
+margin_top = 10.0
+margin_right = 832.0
+margin_bottom = 53.0
+custom_styles/normal = SubResource( 3 )
+custom_fonts/font = SubResource( 4 )
+text = "Welcome back, Player Beta"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Animations" type="AnimationPlayer" parent="WelcomeMsg"]
+playback_speed = 0.4
+anims/Hide = SubResource( 5 )
+anims/Show = SubResource( 6 )
 [connection signal="pressed" from="CampaignBtn" to="." method="_on_CampaignBtn_pressed"]
 [connection signal="pressed" from="CustomLevelBtn" to="." method="_on_CustomLevelBtn_pressed"]
 [connection signal="pressed" from="AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]
 [connection signal="pressed" from="LeaderboardBtn" to="." method="_on_LeaderboardBtn_pressed"]
 [connection signal="pressed" from="UserProfileBtn" to="." method="_on_UserProfileBtn_pressed"]
 [connection signal="pressed" from="LogoutBtn" to="." method="_on_LogoutBtn_pressed"]
+[connection signal="pressed" from="SettingsBtn" to="." method="_on_SettingsBtn_pressed"]
+[connection signal="pressed" from="ShowLoad" to="." method="_on_ShowLoad_pressed"]
+[connection signal="pressed" from="HideLoad" to="." method="_on_HideLoad_pressed"]
