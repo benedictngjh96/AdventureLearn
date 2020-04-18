@@ -3,24 +3,35 @@ using System;
 
 public class Settings : Node2D
 {
-	HSlider musicVol;
+	HSlider bgmVol;
+	HSlider battleBgmVol;
+	HSlider sfxVol;
 
-	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		musicVol = GetNode<HSlider>("Menu/MusicVol");
+		bgmVol = GetNode<HSlider>("Menu/Bgm/BgmVolSlider");
+		battleBgmVol = GetNode<HSlider>("Menu/BattleBgm/BattleBgmVolSlider");
+		sfxVol = GetNode<HSlider>("Menu/Sfx/SfxVolSlider");
 	}
 
-	public float getMusicVol()
+	private void _on_BGMVolSlider_value_changed(float value)
 	{
-		return (float)musicVol.Value;
+		GD.Print("BGM DB value: " + value);
+		DefaultSound.audioPlayer.VolumeDb = value;
+		Global.bgmVol = value;
 	}
 
-	private void _on_MusicVol_value_changed(float value)
+	private void _on_BattleBgmVolSlider_value_changed(float value)
 	{
-		//DefaultSound.audio.VolumeDb = value;
-		GD.Print("Music Db: " + value);
+		Global.battleBgmVol = value;
 	}
+
+	private void _on_SfxVolSlider_value_changed(float value)
+	{
+		Global.sfxVol = value;
+	}
+
 }
+
 
 

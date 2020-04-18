@@ -169,8 +169,10 @@ public class CreateLevelInit : Node2D
 
 		//GD.Print("Level Name: " + levelName + "\nMonsterId: " + monsterId + "\nTimeLimit: " + timeLimit);
 
-		//Global.StudentId = 1; //testing purposes, remember to remove
-		GD.Print("\nStudent Id: " + Global.StudentId);
+		//testing
+		//Global.StudentId = 1; 
+		//GD.Print("\nStudent Id: " + Global.StudentId);
+		//testing
 
 		if (levelName == "")
 		{

@@ -3,23 +3,22 @@ using System;
 
 public class MainMenu : Node2D
 {
+	static public int welcomeOnce = 0;
 
 	public override void _Ready()
 	{
+		//Testing
+		//Global.StudentName = "Yuen";
+		//Testing
+
+		//welcomeMsg();
+
+		
 		GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
 		Godot.Object myGDScriptNode = (Godot.Object)MyGDScript.New(); // This is a Godot.Object
 		myGDScriptNode.Call("displayToast");
 	}
 
-	public void SetBg()
-	{
-		Node2D n = GetNode<Node2D>("Bg");
-		Sprite s = GetNode<Sprite>("Bg/ParallaxBackground/ParallaxLayer/Sprite");
-
-		var texture2 = ResourceLoader.Load("res://Assets/Background/Middle2.png") as Texture;
-		s.Texture = texture2;
-
-	}
 	private void _on_CampaignBtn_pressed()
 	{
 		GetTree().ChangeScene("res://Presentation/World/World.tscn");
@@ -47,6 +46,8 @@ public class MainMenu : Node2D
 
 	private void _on_LogoutBtn_pressed()
 	{
+		welcomeOnce = 0;
+
 		GDScript fb = (GDScript)GD.Load("res://API/Facebook.gd");
 		GDScript google = (GDScript)GD.Load("res://API/Google.gd");
 
@@ -74,6 +75,25 @@ public class MainMenu : Node2D
 	private void _on_SettingsBtn_pressed()
 	{
 		GetTree().ChangeScene("res://Presentation/Settings/Settings.tscn");
+	}
+	
+	private void welcomeMsg()
+	{
+		Control welcomeMsgNode = GetNode<Control>("WelcomeMsg");
+
+		if (welcomeOnce == 1)
+		{
+			welcomeMsgNode.Visible = false;
+			return;
+		}
+
+		Label msg = GetNode<Label>("WelcomeMsg/Msg");
+		AnimationPlayer animation = GetNode<AnimationPlayer>("WelcomeMsg/AnimationPlayer");
+
+		msg.Text = "Welcome back, " + Global.StudentName;
+		animation.Play("Hide");
+		
+		welcomeOnce = 1;
 	}
 }
 

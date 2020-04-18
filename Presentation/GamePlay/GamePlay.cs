@@ -57,10 +57,13 @@ public class GamePlay : Node2D
 
 	public override void _Ready()
 	{
-		
 		audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer2");
+		audioStreamPlayer.VolumeDb = Global.sfxVol;
+
 		AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/battleThemeA.ogg") as AudioStream;
 		DefaultSound.playSound(sfx);
+
+
 		AddUserSignal("NoMoreQuestions");
 		charSprite = GetNode<AnimatedSprite>("CharSprite");
 		monsterSprite = GetNode<AnimatedSprite>("MonsterSprite");

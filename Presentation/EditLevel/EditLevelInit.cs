@@ -58,8 +58,8 @@ public class EditLevelInit : Node2D
 		addOptions();
 
 		//testing
-		Global.StudentId = 23;
-		Global.CustomLevelId = 10;
+		//Global.StudentId = 23;
+		//Global.CustomLevelId = 10;
 		//testing
 
 		displayLevelInit();

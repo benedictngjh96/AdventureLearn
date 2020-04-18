@@ -1,4 +1,4 @@
-[gd_scene load_steps=199 format=2]
+[gd_scene load_steps=198 format=2]
 
 [ext_resource path="res://Presentation/GamePlay/GamePlay.cs" type="Script" id=1]
 [ext_resource path="res://CharSprites/Athena/Idle/Idle_00.png" type="Texture" id=2]
@@ -48,7 +48,6 @@
 [ext_resource path="res://Skills/Explosion3/h_0011.png" type="Texture" id=66]
 [ext_resource path="res://Skills/Explosion3/h_0006.png" type="Texture" id=67]
 [ext_resource path="res://Skills/Explosion3/h_0007.png" type="Texture" id=68]
-[ext_resource path="res://Assets/SoundEffects/battleThemeA.ogg" type="AudioStream" id=69]
 [ext_resource path="res://Assets/GameplayUI/Popup/window_1.png" type="Texture" id=70]
 [ext_resource path="res://Assets/GameplayUI/Versus/Vs.png" type="Texture" id=71]
 [ext_resource path="res://Assets/GameplayUI/Popup/star_1.png" type="Texture" id=72]
@@ -198,9 +197,9 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
 "loop": true,
-"name": "Explosion1",
+"name": "Explosion3",
 "speed": 12.0
 }, {
 "frames": [  ],
@@ -213,9 +212,9 @@ animations = [ {
 "name": "Explosion2",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "Explosion3",
+"name": "Explosion1",
 "speed": 12.0
 } ]
 
@@ -242,9 +241,9 @@ animations = [ {
 
 [sub_resource type="SpriteFrames" id=5]
 animations = [ {
-"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
 "loop": true,
-"name": "Explosion1",
+"name": "Explosion3",
 "speed": 12.0
 }, {
 "frames": [  ],
@@ -257,9 +256,9 @@ animations = [ {
 "name": "Explosion2",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "Explosion3",
+"name": "Explosion1",
 "speed": 12.0
 } ]
 
@@ -273,15 +272,15 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "Default",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
 "loop": true,
 "name": "Explosion",
 "speed": 12.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Default",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=9]
@@ -710,10 +709,6 @@ visible = false
 position = Vector2( 906.803, 516.322 )
 scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 84 )
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 69 )
-autoplay = true
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
 

@@ -24,6 +24,9 @@ public class Global : Node
 	public static bool FbLoggedIn { get; set; }
 	public static List<UserCreatedQuestion> QuestionList { get; set; }
 
+	public static float bgmVol { get; set; }
+	public static float battleBgmVol { get; set; }
+	public static float sfxVol { get; set; }
 
 	/// <summary>
 	/// Global connection string
@@ -71,13 +74,13 @@ public class Global : Node
 
 			dir.ListDirBegin();
 			var fileName = dir.GetNext();
-			//string strFileExtention = System.IO.Path.GetExtension(fileName);
+			string strFileExtention = System.IO.Path.GetExtension(fileName);
 			spriteFrames.AddAnimation(animation);
 			int count = 0;
 
 			while (!String.IsNullOrEmpty(fileName))
 			{
-				//fileName = fileName.Replace(strFileExtention, "");
+				fileName = fileName.Replace(strFileExtention, "");
 				var sprite = ResourceLoader.Load(spritePath + animation + "/" + fileName) as Texture;
 				spriteFrames.AddFrame(animation, sprite);
 				fileName = dir.GetNext();
