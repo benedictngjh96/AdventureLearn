@@ -18,7 +18,7 @@ public class Settings : Node2D
 
 	private void _on_MusicVol_value_changed(float value)
 	{
-		DefaultSound.audio.VolumeDb = value;
+		//DefaultSound.audio.VolumeDb = value;
 		GD.Print("Music Db: " + value);
 	}
 }
