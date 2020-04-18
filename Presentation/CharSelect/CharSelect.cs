@@ -12,10 +12,12 @@ public class CharSelect : Node2D
     int charId;
     string charSelected = "";
     AnimatedSprite charSprite;
+    Sprite skillIcon;
     Label charName;
     Label nameLbl;
-    Label skillLbl;
+    Label skillNameLbl;
     Label enterLbl;
+    Label skillDescriptionLbl;
     public override void _Ready()
     {
         //Hide animated sprite and button when user has not selected a character
@@ -27,7 +29,9 @@ public class CharSelect : Node2D
         characterBL = new CharacterBL();
         charName = GetNode<Label>("Char/CharName");
         nameLbl = GetNode<Label>("Char/Name");
-        skillLbl = GetNode<Label>("Char/SkillLbl");
+        skillNameLbl = GetNode<Label>("Char/SkillName");
+        skillDescriptionLbl = GetNode<Label>("Char/SkillDescription");
+        skillIcon = GetNode<Sprite>("Char/SkillIcon");
         enterLbl = GetNode<Label>("EnterBtnLbl");
         characterList = characterBL.GetAllCharacters();
 
@@ -54,21 +58,24 @@ public class CharSelect : Node2D
     }
     private void DisplayCharacter(String characterName)
     {
-        Label skillDescription = GetNode<Label>("Char/SkillDescription");
         charSprite.Play(characterName + "Walk", false);
         charSprite.Visible = true;
         enterBtn.Visible = true;
         nameLbl.Visible = true;
-        skillLbl.Visible = true;
+        skillNameLbl.Visible = true;
         enterLbl.Visible = true;
         charName.Text = characterName;
         if (characterName == "Athena")
-            charSprite.Position = new Vector2(478.243f, 323.009f);
+            charSprite.Position = new Vector2(510.527f, 323.009f);
         else
-            charSprite.Position = new Vector2(478.243f, 256.387f);
+            charSprite.Position = new Vector2(510.527f, 256.387f);
         //Find character obj in characterlist using charactername
         Character result = characterList.Find(item => item.CharName == characterName);
-        skillDescription.Text = result.CharSkill;
+        skillNameLbl.Text = result.CharSkill;
+        skillDescriptionLbl.Text = result.SkillDescription;
+
+        Texture texture = ResourceLoader.Load(String.Format("res://Skills/Icons/{0}.png", result.CharSkill)) as Texture;
+        skillIcon.Texture = texture;
         charId = result.CharId;
     }
 

@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Assets/SoundEffects/little town - orchestral.ogg" type="AudioStream" id=1]
 [ext_resource path="res://Presentation/SoundEffect/DefaultSound.cs" type="Script" id=2]
-[ext_resource path="res://Assets/SoundEffects/battleThemeA.ogg" type="AudioStream" id=3]
 
 [node name="DefaultSound" type="Node2D"]
 script = ExtResource( 2 )

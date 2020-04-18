@@ -1,7 +1,7 @@
-[gd_scene load_steps=206 format=2]
+[gd_scene load_steps=199 format=2]
 
 [ext_resource path="res://Presentation/GamePlay/GamePlay.cs" type="Script" id=1]
-[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=2]
+[ext_resource path="res://CharSprites/Athena/Idle/Idle_00.png" type="Texture" id=2]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=3]
 [ext_resource path="res://Skills/Explosion1/k2_0008.png" type="Texture" id=4]
 [ext_resource path="res://Skills/Explosion1/k2_0011.png" type="Texture" id=5]
@@ -33,26 +33,6 @@
 [ext_resource path="res://Skills/Explosion2/e_0004.png" type="Texture" id=31]
 [ext_resource path="res://Skills/Explosion2/e_0007.png" type="Texture" id=32]
 [ext_resource path="res://Skills/Explosion2/e_0014.png" type="Texture" id=33]
-[ext_resource path="res://Skills/Shield/07.png" type="Texture" id=34]
-[ext_resource path="res://Skills/Shield/06.png" type="Texture" id=35]
-[ext_resource path="res://Skills/Shield/08.png" type="Texture" id=36]
-[ext_resource path="res://Skills/Shield/10.png" type="Texture" id=37]
-[ext_resource path="res://Skills/Shield/11.png" type="Texture" id=38]
-[ext_resource path="res://Skills/Shield/12.png" type="Texture" id=39]
-[ext_resource path="res://Skills/Shield/09.png" type="Texture" id=40]
-[ext_resource path="res://Skills/Shield/13.png" type="Texture" id=41]
-[ext_resource path="res://Skills/Shield/14.png" type="Texture" id=42]
-[ext_resource path="res://Skills/Shield/15.png" type="Texture" id=43]
-[ext_resource path="res://Skills/Shield/01.png" type="Texture" id=44]
-[ext_resource path="res://Skills/Shield/03.png" type="Texture" id=45]
-[ext_resource path="res://Skills/Shield/04.png" type="Texture" id=46]
-[ext_resource path="res://Skills/Shield/05.png" type="Texture" id=47]
-[ext_resource path="res://Skills/Shield/00.png" type="Texture" id=48]
-[ext_resource path="res://Skills/Shield/02.png" type="Texture" id=49]
-[ext_resource path="res://Skills/Shield/17.png" type="Texture" id=50]
-[ext_resource path="res://Skills/Shield/19.png" type="Texture" id=51]
-[ext_resource path="res://Skills/Shield/16.png" type="Texture" id=52]
-[ext_resource path="res://Skills/Shield/18.png" type="Texture" id=53]
 [ext_resource path="res://Skills/Explosion3/h_0012.png" type="Texture" id=54]
 [ext_resource path="res://Skills/Explosion3/h_0013.png" type="Texture" id=55]
 [ext_resource path="res://Skills/Explosion3/h_0014.png" type="Texture" id=56]
@@ -98,8 +78,10 @@
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_36.png" type="Texture" id=96]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_38.png" type="Texture" id=97]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_22.png" type="Texture" id=98]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=99]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_17.png" type="Texture" id=100]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_14.png" type="Texture" id=101]
+[ext_resource path="res://Skills/Shield2/06.png" type="Texture" id=102]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_15.png" type="Texture" id=103]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_18.png" type="Texture" id=104]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_30.png" type="Texture" id=105]
@@ -116,6 +98,16 @@
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_42.png" type="Texture" id=116]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_45.png" type="Texture" id=117]
 [ext_resource path="res://Assets/GameplayUI/Countdown/Countdown_44.png" type="Texture" id=118]
+[ext_resource path="res://Skills/Shield2/07.png" type="Texture" id=119]
+[ext_resource path="res://Skills/Shield2/00.png" type="Texture" id=120]
+[ext_resource path="res://Skills/Shield2/05.png" type="Texture" id=121]
+[ext_resource path="res://Skills/Shield2/10.png" type="Texture" id=122]
+[ext_resource path="res://Skills/Shield2/08.png" type="Texture" id=123]
+[ext_resource path="res://Skills/Shield2/09.png" type="Texture" id=124]
+[ext_resource path="res://Skills/Shield2/02.png" type="Texture" id=125]
+[ext_resource path="res://Skills/Shield2/03.png" type="Texture" id=126]
+[ext_resource path="res://Skills/Shield2/04.png" type="Texture" id=127]
+[ext_resource path="res://Skills/Shield2/01.png" type="Texture" id=128]
 [ext_resource path="res://Assets/GameplayUI/StageCleared/StageCleared_07.png" type="Texture" id=208]
 [ext_resource path="res://Assets/GameplayUI/StageCleared/StageCleared_03.png" type="Texture" id=209]
 [ext_resource path="res://Assets/GameplayUI/StageCleared/StageCleared_04.png" type="Texture" id=210]
@@ -198,7 +190,7 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [  ],
+"frames": [ ExtResource( 2 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -216,20 +208,15 @@ animations = [ {
 "name": "Default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
-"loop": true,
-"name": "Explosion3",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "Explosion2",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 48 ), ExtResource( 48 ), ExtResource( 44 ), ExtResource( 49 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 35 ), ExtResource( 34 ), ExtResource( 36 ), ExtResource( 40 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 52 ), ExtResource( 50 ), ExtResource( 53 ), ExtResource( 51 ) ],
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
 "loop": true,
-"name": "Shield",
-"speed": 10.0
+"name": "Explosion3",
+"speed": 12.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -238,9 +225,22 @@ animations = [ {
 "loop": true,
 "name": "default",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 120 ), ExtResource( 128 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 127 ), ExtResource( 121 ), ExtResource( 102 ), ExtResource( 119 ), ExtResource( 123 ), ExtResource( 124 ), ExtResource( 122 ) ],
+"loop": true,
+"name": "Shield",
+"speed": 11.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
 animations = [ {
 "frames": [ ExtResource( 17 ), ExtResource( 7 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 18 ), ExtResource( 15 ), ExtResource( 14 ) ],
 "loop": true,
@@ -252,22 +252,26 @@ animations = [ {
 "name": "Default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
-"loop": true,
-"name": "Explosion3",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 21 ), ExtResource( 27 ), ExtResource( 22 ), ExtResource( 31 ), ExtResource( 20 ), ExtResource( 19 ), ExtResource( 32 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 33 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "Explosion2",
 "speed": 12.0
+}, {
+"frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
+"loop": true,
+"name": "Explosion3",
+"speed": 12.0
 } ]
 
-[sub_resource type="DynamicFont" id=5]
-size = 30
+[sub_resource type="DynamicFont" id=6]
+size = 55
 font_data = ExtResource( 3 )
 
-[sub_resource type="SpriteFrames" id=6]
+[sub_resource type="DynamicFont" id=7]
+size = 40
+font_data = ExtResource( 3 )
+
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -280,11 +284,7 @@ animations = [ {
 "speed": 12.0
 } ]
 
-[sub_resource type="DynamicFont" id=7]
-size = 60
-font_data = ExtResource( 3 )
-
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -297,7 +297,7 @@ animations = [ {
 "speed": 17.0
 } ]
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=10]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -310,7 +310,7 @@ animations = [ {
 "speed": 20.0
 } ]
 
-[sub_resource type="SpriteFrames" id=10]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
 "frames": [  ],
 "loop": true,
@@ -339,31 +339,28 @@ position = Vector2( -29.6777, 27.0241 )
 scale = Vector2( 0.6, 0.6 )
 frames = SubResource( 2 )
 animation = "Default"
+playing = true
+
+[node name="ActiveSkill" type="AnimatedSprite" parent="CharSprite"]
+position = Vector2( -27.6028, 45.0641 )
+rotation = 1.56233
+scale = Vector2( 0.603158, 0.662823 )
+frames = SubResource( 3 )
+flip_h = true
 
 [node name="MonsterSprite" type="AnimatedSprite" parent="."]
 visible = false
 position = Vector2( 701.359, 272.776 )
 scale = Vector2( 1.03812, 0.94601 )
-frames = SubResource( 3 )
+frames = SubResource( 4 )
 playing = true
 
 [node name="MonsterSkillSprite" type="AnimatedSprite" parent="MonsterSprite"]
 position = Vector2( 0.0668335, 74.2639 )
 scale = Vector2( 0.577661, 0.5508 )
-frames = SubResource( 4 )
+frames = SubResource( 5 )
 animation = "Default"
 playing = true
-
-[node name="QuestionTitle" type="Label" parent="."]
-visible = false
-margin_left = 254.071
-margin_top = 182.04
-margin_right = 858.071
-margin_bottom = 266.04
-custom_fonts/font = SubResource( 5 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="LevelTitle" type="Label" parent="."]
 visible = false
@@ -371,10 +368,69 @@ margin_left = 33.8154
 margin_top = 12.9424
 margin_right = 637.815
 margin_bottom = 96.9424
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="QuestionLabel" type="Label" parent="."]
+visible = false
+margin_left = 483.0
+margin_top = 12.0
+margin_right = 530.0
+margin_bottom = 65.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1/5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionTitle" type="Label" parent="."]
+visible = false
+margin_left = 449.0
+margin_top = 123.0
+margin_right = 615.0
+margin_bottom = 196.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "41+5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimerLabel" type="Label" parent="."]
+visible = false
+margin_left = 477.0
+margin_top = 70.0
+margin_right = 541.0
+margin_bottom = 125.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "18:0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="TimerLabel"]
+autostart = true
+
+[node name="TimerLabel2" type="Label" parent="."]
+visible = false
+margin_left = 570.0
+margin_top = 69.0
+margin_right = 627.0
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "-10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="TimerLabel2"]
+autostart = true
 
 [node name="Buttons" type="Control" parent="."]
 visible = false
@@ -397,11 +453,10 @@ __meta__ = {
 }
 
 [node name="Effect1" type="AnimatedSprite" parent="Buttons/Option1"]
-position = Vector2( 26.6919, 270.9 )
+position = Vector2( 148.666, 136.967 )
 scale = Vector2( 0.697635, 0.5939 )
-frames = SubResource( 6 )
+frames = SubResource( 8 )
 animation = "Default"
-playing = true
 
 [node name="Option2" type="Button" parent="Buttons"]
 margin_left = 255.407
@@ -416,11 +471,10 @@ __meta__ = {
 }
 
 [node name="Effect2" type="AnimatedSprite" parent="Buttons/Option2"]
-position = Vector2( 226.778, 191.569 )
+position = Vector2( 144.627, 143.868 )
 scale = Vector2( 0.697635, 0.5939 )
-frames = SubResource( 6 )
+frames = SubResource( 8 )
 animation = "Default"
-playing = true
 
 [node name="Option3" type="Button" parent="Buttons"]
 margin_left = 521.76
@@ -435,11 +489,10 @@ __meta__ = {
 }
 
 [node name="Effect3" type="AnimatedSprite" parent="Buttons/Option3"]
-position = Vector2( 456.428, 266.223 )
+position = Vector2( 154.324, 136.371 )
 scale = Vector2( 0.697635, 0.5939 )
-frames = SubResource( 6 )
+frames = SubResource( 8 )
 animation = "Default"
-playing = true
 
 [node name="Option4" type="Button" parent="Buttons"]
 margin_left = 775.18
@@ -454,70 +507,26 @@ __meta__ = {
 }
 
 [node name="Effect4" type="AnimatedSprite" parent="Buttons/Option4"]
-position = Vector2( 688.377, 68.082 )
+position = Vector2( 147.77, 136.983 )
 scale = Vector2( 0.697635, 0.5939 )
-frames = SubResource( 6 )
+frames = SubResource( 8 )
 animation = "Default"
-playing = true
 
-[node name="TimerLabel" type="Label" parent="."]
+[node name="SkillBtn" type="TextureButton" parent="."]
 visible = false
-margin_left = 473.964
-margin_top = 106.734
-margin_right = 632.964
-margin_bottom = 274.734
-custom_fonts/font = SubResource( 7 )
+margin_left = 12.9884
+margin_top = 243.37
+margin_right = 140.988
+margin_bottom = 371.37
+rect_scale = Vector2( 0.7, 0.7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Timer" type="Timer" parent="TimerLabel"]
-autostart = true
-
-[node name="TimerLabel2" type="Label" parent="."]
-visible = false
-margin_left = 601.608
-margin_top = 109.367
-margin_right = 761.608
-margin_bottom = 188.367
-custom_fonts/font = SubResource( 7 )
-text = "-10"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Timer" type="Timer" parent="TimerLabel2"]
-autostart = true
-
-[node name="QuestionLabel" type="Label" parent="."]
-visible = false
-margin_left = 475.896
-margin_top = 12.3681
-margin_right = 694.896
-margin_bottom = 144.368
-custom_fonts/font = SubResource( 7 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SkillBtn" type="Button" parent="."]
-visible = false
-margin_left = 1187.9
-margin_top = 574.943
-margin_right = 1350.9
-margin_bottom = 687.942
-text = "USE SKILL"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Bg" parent="." instance=ExtResource( 2 )]
-position = Vector2( -232.514, 72.908 )
 
 [node name="Countdown" type="AnimatedSprite" parent="."]
 position = Vector2( 502.671, 138.947 )
 scale = Vector2( 0.78578, 0.701813 )
-frames = SubResource( 8 )
+frames = SubResource( 9 )
 playing = true
 
 [node name="Versus" type="Control" parent="."]
@@ -542,12 +551,12 @@ flip_h = true
 [node name="Win" type="AnimatedSprite" parent="."]
 position = Vector2( 522.39, 295.811 )
 scale = Vector2( 0.789153, 0.883564 )
-frames = SubResource( 9 )
+frames = SubResource( 10 )
 
 [node name="Lose" type="AnimatedSprite" parent="."]
 position = Vector2( 553.143, 295.272 )
 scale = Vector2( 0.845575, 0.803659 )
-frames = SubResource( 10 )
+frames = SubResource( 11 )
 
 [node name="TimeLimit" type="Timer" parent="."]
 wait_time = 0.1
@@ -705,10 +714,16 @@ texture = ExtResource( 84 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 69 )
 autoplay = true
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+
+[node name="Bg" parent="." instance=ExtResource( 99 )]
 [connection signal="animation_finished" from="CharSprite" to="." method="_on_CharSprite_animation_finished"]
 [connection signal="animation_finished" from="CharSprite/CharSkillSprite" to="." method="_on_CharSkillSprite_animation_finished"]
 [connection signal="animation_finished" from="MonsterSprite" to="." method="_on_MonsterSprite_animation_finished"]
 [connection signal="animation_finished" from="MonsterSprite/MonsterSkillSprite" to="." method="_on_MonsterSkillSprite_animation_finished"]
+[connection signal="timeout" from="TimerLabel/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="TimerLabel2/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="Buttons/Option1" to="." method="_on_Option1_pressed"]
 [connection signal="animation_finished" from="Buttons/Option1/Effect1" to="." method="_on_Effect1_animation_finished"]
 [connection signal="pressed" from="Buttons/Option2" to="." method="_on_Option2_pressed"]
@@ -717,8 +732,6 @@ autoplay = true
 [connection signal="animation_finished" from="Buttons/Option3/Effect3" to="." method="_on_Effect3_animation_finished"]
 [connection signal="pressed" from="Buttons/Option4" to="." method="_on_Option4_pressed"]
 [connection signal="animation_finished" from="Buttons/Option4/Effect4" to="." method="_on_Effect4_animation_finished"]
-[connection signal="timeout" from="TimerLabel/Timer" to="." method="_on_Timer_timeout"]
-[connection signal="timeout" from="TimerLabel2/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="SkillBtn" to="." method="_on_SkillBtn_pressed"]
 [connection signal="animation_finished" from="Countdown" to="." method="_on_Countdown_animation_finished"]
 [connection signal="animation_finished" from="Win" to="." method="_on_Win_animation_finished"]

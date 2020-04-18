@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [android]
 
-modules="org/godotengine/godot/PlayGames,org/godotengine/godot/GodotFacebook"
+modules="org/godotengine/godot/PlayGames,org/godotengine/godot/GodotFacebook,org/godotengine/godot/GodotToast"
 
 [application]
 

@@ -69,11 +69,11 @@ public class Global : Node
 			var dir = new Directory();
 			dir.Open(spritePath + animation);
 
-			dir.ListDirBegin();
-			var fileName = dir.GetNext();
-			//string strFileExtention = System.IO.Path.GetExtension(fileName);
-			spriteFrames.AddAnimation(animation);
-			int count = 0;
+            dir.ListDirBegin();
+            var fileName = dir.GetNext();
+            string strFileExtention = System.IO.Path.GetExtension(fileName);
+            spriteFrames.AddAnimation(animation);
+            int count = 0;
 
 			while (!String.IsNullOrEmpty(fileName))
 			{

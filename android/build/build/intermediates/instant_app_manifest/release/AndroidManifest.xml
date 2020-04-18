@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.ssadtest"
+    package="com.AdventureLearn"
     android:installLocation="auto"
     android:targetSandboxVersion="2"
     android:versionCode="1"
@@ -95,7 +95,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="cct.com.ssadtest"
+                    android:host="cct.com.AdventureLearn"
                     android:scheme="fbconnect" />
             </intent-filter>
         </activity>
@@ -150,7 +150,7 @@
         -->
         <provider
             android:name="com.facebook.internal.FacebookInitProvider"
-            android:authorities="com.ssadtest.FacebookInitProvider"
+            android:authorities="com.AdventureLearn.FacebookInitProvider"
             android:exported="false" />
 
         <receiver
