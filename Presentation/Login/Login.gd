@@ -26,6 +26,7 @@ func insert_google():
     var exist = studentBL.CheckGoogleExist(google.get_id())
     if exist:
         global.SetStudentId(studentBL.GetGoogleStudentId(google.get_id()))
+        global.SetStudentName(google.get_name())
         global.SetGoogleLoggedIn()
         if studentBL.CheckGoogleCharExist(google.get_id()):
             get_tree().change_scene("res://Presentation/MainMenu/MainMenu.tscn")
@@ -35,12 +36,14 @@ func insert_google():
         studentBL.InsertGoogleStudent(google.get_name(), google.get_email(), google.get_id())
         global.SetStudentId(studentBL.GetGoogleStudentId(google.get_id()))
         global.SetGoogleLoggedIn()
+        global.SetStudentName(google.get_name())
         get_tree().change_scene("res://Presentation/CharSelect/CharSelect.tscn")
 func insert_fb():
     email = facebook.getEmail()
     var exist = studentBL.CheckFacebookExist(facebook.getId())
     if exist:
         global.SetStudentId(studentBL.GetFacebookStudentId(facebook.getId()))
+        global.SetStudentName(facebook.getName())
         global.SetFbLoggedIn()
         if studentBL.CheckFacebookCharExist(facebook.getId()):
             get_tree().change_scene("res://Presentation/MainMenu/MainMenu.tscn")
@@ -50,6 +53,7 @@ func insert_fb():
         studentBL.InsertFacebookStudent(facebook.getName(), email, facebook.getId())
         global.SetStudentId(studentBL.GetFacebookStudentId(facebook.getId()))
         global.SetFbLoggedIn()
+        global.SetStudentName(facebook.getName())
         get_tree().change_scene("res://Presentation/CharSelect/CharSelect.tscn")
         
 func _on_FbLogin_pressed():

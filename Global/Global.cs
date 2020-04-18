@@ -38,6 +38,10 @@ public class Global : Node
         double levelScore = (Convert.ToDouble(timeRemaining) / Convert.ToDouble(timeLimit)) * 100;
         return Convert.ToInt32(levelScore);
     }
+    public static string GetStudentName()
+    {
+        return StudentName;
+    }
     public static void SetStudentId(int id)
     {
         StudentId = id;

@@ -89,6 +89,7 @@ android {
 //DIR_SRC_BEGIN
 ,'D:/AdventureLearn/android/Facebook/src'
 ,'D:/AdventureLearn/android/GodotGPGSPlugin-master/src'
+,'D:/AdventureLearn/android/GodotToast/src'
 //DIR_SRC_END
             ]
             res.srcDirs = [
@@ -130,6 +131,10 @@ android {
 
 //CHUNK_GLOBAL_BEGIN
 //CHUNK_GLOBAL_END
+
+
+
+
 
 
 

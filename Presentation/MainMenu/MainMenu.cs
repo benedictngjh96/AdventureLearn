@@ -6,7 +6,9 @@ public class MainMenu : Node2D
 
     public override void _Ready()
     {
-        //SetBg();
+        GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
+        Godot.Object myGDScriptNode = (Godot.Object)MyGDScript.New(); // This is a Godot.Object
+        myGDScriptNode.Call("displayToast");
     }
 
     public void SetBg()
