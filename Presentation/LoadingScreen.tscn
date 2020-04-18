@@ -12,11 +12,10 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 3 )
 
-[sub_resource type="Animation" id=2]
-resource_name = "Hide"
+[sub_resource type="Animation" id=3]
 tracks/0/type = "value"
 tracks/0/path = NodePath("..:modulate")
 tracks/0/interp = 1
@@ -30,8 +29,7 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "Show"
+[sub_resource type="Animation" id=4]
 tracks/0/type = "value"
 tracks/0/path = NodePath("..:modulate")
 tracks/0/interp = 1
@@ -75,7 +73,7 @@ margin_left = 482.0
 margin_top = 335.0
 margin_right = 548.0
 margin_bottom = 357.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Loading..."
 align = 1
@@ -85,7 +83,5 @@ __meta__ = {
 }
 
 [node name="Animations" type="AnimationPlayer" parent="Visual"]
-anims/Hide = SubResource( 2 )
-anims/Show = SubResource( 3 )
-
-[node name="Timer" type="Timer" parent="Visual"]
+anims/Hide = SubResource( 3 )
+anims/Show = SubResource( 4 )

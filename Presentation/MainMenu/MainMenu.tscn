@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Assets/GUI/ButtonsWithText/customLevel1.png" type="Texture" id=1]
 [ext_resource path="res://Presentation/MainMenu/MainMenu.cs" type="Script" id=2]
@@ -20,6 +20,8 @@
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=18]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/setting2.png" type="Texture" id=19]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/setting1.png" type="Texture" id=20]
+[ext_resource path="res://Presentation/LoadingScreen.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Presentation/LoadTest.tscn" type="PackedScene" id=22]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 18 )
@@ -218,6 +220,10 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="WelcomeMsg"]
 playback_speed = 0.5
 anims/Hide = SubResource( 5 )
+
+[node name="LoadingScreen" parent="." instance=ExtResource( 21 )]
+
+[node name="Node2D" parent="." instance=ExtResource( 22 )]
 [connection signal="pressed" from="CampaignBtn" to="." method="_on_CampaignBtn_pressed"]
 [connection signal="pressed" from="CustomLevelBtn" to="." method="_on_CustomLevelBtn_pressed"]
 [connection signal="pressed" from="AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]

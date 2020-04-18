@@ -11,12 +11,12 @@ public class MainMenu : Node2D
 		//Global.StudentName = "Yuen";
 		//Testing
 
-		//welcomeMsg();
-
+		welcomeMsg();
 		
-		GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
+		
+		/*GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
 		Godot.Object myGDScriptNode = (Godot.Object)MyGDScript.New(); // This is a Godot.Object
-		myGDScriptNode.Call("displayToast");
+		myGDScriptNode.Call("displayToast");*/
 	}
 
 	private void _on_CampaignBtn_pressed()
