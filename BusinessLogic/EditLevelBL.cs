@@ -6,7 +6,35 @@ public class EditLevelBL : Node
 {
 	EditLevelDao editLevelDao = new EditLevelDao();
 	List<UserCreatedQuestion> TempQuestionList = new List<UserCreatedQuestion>();
-		
+	List<UserCreatedQuestion> OriginalQuestionList = new List<UserCreatedQuestion>();
+
+	/// <summary>
+	/// Get the current changes to the Questions
+	/// </summary>
+	/// <returns></returns>
+	public List<UserCreatedQuestion> getTempQuestionList()
+	{
+		return TempQuestionList;
+	}
+
+	/// <summary>
+	/// Get the orignal Questions
+	/// </summary>
+	/// <returns></returns>
+	public List<UserCreatedQuestion> getOrignalQuestionList()
+	{
+		return OriginalQuestionList;
+	}
+
+	/// <summary>
+	/// Updates the TempQuestionList
+	/// </summary>
+	/// <returns></returns>
+	public void updateTempQuestionList()
+	{
+		TempQuestionList = Global.QuestionList;
+	}
+
 	/// <summary>
 	/// Save current question to List
 	/// </summary>
@@ -111,6 +139,7 @@ public class EditLevelBL : Node
 		foreach (Question q in levelQuestions)
 		{
 			TempQuestionList.Add(new UserCreatedQuestion(i, q.Option1, q.Option2, q.Option3, q.CorrectOption, 4, q.QuestionTitle));
+			OriginalQuestionList.Add(new UserCreatedQuestion(i, q.Option1, q.Option2, q.Option3, q.CorrectOption, 4, q.QuestionTitle));
 			i++;
 		}
 
@@ -143,5 +172,17 @@ public class EditLevelBL : Node
 		}
 
 		return -1;
+	}
+
+	/// <summary>
+	/// Updates the level name, monster, and time limit
+	/// </summary>
+	///  <param name="string levelName"></param>
+	///  <param name="int monsterId"></param>
+	///  <param name="int timeLimit"></param>
+	/// <returns></returns>
+	public void updateLevelInitInfo(string levelName, int monsterId, int timeLimit)
+	{
+		editLevelDao.updateLevelInitInfo(levelName, monsterId, timeLimit);
 	}
 }

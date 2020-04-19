@@ -4,159 +4,206 @@ using System.Collections.Generic;
 
 public class CreateLevelInit : Node2D
 {
-    OptionButton timeLimitBtn;
-    LineEdit levelNameLine;
-    //OptionButton monsterIdBtn;
-    Label errorMessageLabel;
+	static public int updated = 0;
 
-    TextureButton arrowLeft, arrowRight;
-    AnimatedSprite charSprite;
-    List<string> animationList;
+	OptionButton timeLimitBtn;
+	LineEdit levelNameLine;
+	//OptionButton monsterIdBtn;
+	Label errorMessageLabel;
 
-    string spritePath = "res://CharSprites/";
-    CharacterBL characterBL;
-    List<Monster> monsterList;
-    string charPath;
-    int numberOfChar;
-    int count = 0;
+	TextureButton arrowLeft, arrowRight;
+	AnimatedSprite charSprite;
+	List<string> animationList;
 
-    int[] timeLimitOptions;
-    //int[] monsterIdOptions;
+	string spritePath = "res://CharSprites/";
+	CharacterBL characterBL;
+	List<Monster> monsterList;
+	string charPath;
+	int numberOfChar;
+	int count = 0;
 
-    /// <summary>
-    /// Initialization
-    /// </summary>
-    /// <returns></returns>
-    public override void _Ready()
-    {
-        timeLimitOptions = new int[] { 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 };
-        //monsterIdOptions = new int[] { 1, 2, 3, 4, 5 };
+	int[] timeLimitOptions;
+	//int[] monsterIdOptions;
 
-        timeLimitBtn = GetNode<OptionButton>("TimeLimitSelect/TimeLimit");
-        levelNameLine = GetNode<LineEdit>("LevelNameSet/LevelName");
-        //monsterIdBtn = GetNode<OptionButton>("MonsterId");
-        errorMessageLabel = GetNode<Label>("ErrorMessageLabel");
+	/// <summary>
+	/// Initialization
+	/// </summary>
+	/// <returns></returns>
+	public override void _Ready()
+	{
+		timeLimitOptions = new int[] { 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 };
+		//monsterIdOptions = new int[] { 1, 2, 3, 4, 5 };
 
-        arrowLeft = GetNode<TextureButton>("MonsterSelect/ArrowLeft");
-        arrowRight = GetNode<TextureButton>("MonsterSelect/ArrowRight");
-        charSprite = GetNode<AnimatedSprite>("MonsterSelect/MonsterSprite");
-        animationList = new List<string>();
-        animationList.Add("Idle");
+		timeLimitBtn = GetNode<OptionButton>("TimeLimitSelect/TimeLimit");
+		levelNameLine = GetNode<LineEdit>("LevelNameSet/LevelName");
+		//monsterIdBtn = GetNode<OptionButton>("MonsterId");
+		errorMessageLabel = GetNode<Label>("ErrorMessageLabel");
 
-        addOptions();
-    }
+		arrowLeft = GetNode<TextureButton>("MonsterSelect/ArrowLeft");
+		arrowRight = GetNode<TextureButton>("MonsterSelect/ArrowRight");
+		charSprite = GetNode<AnimatedSprite>("MonsterSelect/MonsterSprite");
+		animationList = new List<string>();
+		animationList.Add("Idle");
 
-    /// <summary>
-    /// What happens whenever the left arrow in Select Monster is clicked
-    /// </summary>
-    /// <returns></returns>
-    private void _on_ArrowLeft_pressed()
-    {
-        count--;
-        changeArrowButtonStatues();
-        displayCharacter();
-    }
+		addOptions();
 
-    /// <summary>
-    /// What happens whenever the right arrow in Select Monster is clicked
-    /// </summary>
-    /// <returns></returns>
-    private void _on_ArrowRight_pressed()
-    {
-        count++;
-        changeArrowButtonStatues();
-        displayCharacter();
-    }
+		if(updated == 1)
+		{
+			displayLevelInit();
+		}
+	}
 
-    /// <summary>
-    /// Display the corresponding monster whenever the left or right arrows are clicked
-    /// </summary>
-    /// <returns></returns>
-    private void displayCharacter()
-    {
-        string name = monsterList[count].MonsterName;
-        charPath = String.Format(spritePath + "{0}/", name);
-        GD.Print(charPath);
-        Global.LoadSprite(charPath, charSprite, animationList);
-    }
+	/// <summary>
+	/// Display the previously typed LevelInit Info
+	/// </summary>
+	/// <returns></returns>
+	private void displayLevelInit()
+	{
+		levelNameLine.Text = Global.CustomLevelName;
 
-    /// <summary>
-    /// Insert available timelimit and monster options
-    /// </summary>
-    /// <returns></returns>
-    private void addOptions()
-    {
-        //monster
-        characterBL = new CharacterBL();
-        monsterList = characterBL.GetAllMonsters();
-        displayCharacter();
+		int i = 0;
+		foreach (int a in timeLimitOptions)
+		{
+			if (a == Global.TimeLimit)
+			{
+				GD.Print("Found time: " + a);
+				break;
+			}
+			i++;
+		}
+		timeLimitBtn.Select(i);
 
-        numberOfChar = monsterList.Count;
-        GD.Print("Number of monsters: " + numberOfChar);
+		count = Global.MonsterId - 1;
+		changeArrowButtonStatues();
+		displayCharacter();
+	}
 
-        changeArrowButtonStatues();
+	/// <summary>
+	/// What happens whenever the left arrow in Select Monster is clicked
+	/// </summary>
+	/// <returns></returns>
+	private void _on_ArrowLeft_pressed()
+	{
+		count--;
+		changeArrowButtonStatues();
+		displayCharacter();
+	}
 
-        //timeLimit
-        foreach (int i in timeLimitOptions)
-            timeLimitBtn.AddItem(i.ToString());
-    }
+	/// <summary>
+	/// What happens whenever the right arrow in Select Monster is clicked
+	/// </summary>
+	/// <returns></returns>
+	private void _on_ArrowRight_pressed()
+	{
+		count++;
+		changeArrowButtonStatues();
+		displayCharacter();
+	}
 
-    /// <summary>
-    /// Change the status of the arrow buttons 
-    /// </summary>
-    /// <returns></returns>
-    private void changeArrowButtonStatues()
-    {
-        if (count == 0)
-        {
-            arrowLeft.Disabled = true;
-            arrowRight.Disabled = false;
-        }
-        else if (count == numberOfChar - 1)
-        {
-            arrowLeft.Disabled = false;
-            arrowRight.Disabled = true;
-        }
-        else
-        {
-            arrowLeft.Disabled = false;
-            arrowRight.Disabled = false;
-        }
-    }
+	/// <summary>
+	/// Display the corresponding monster whenever the left or right arrows are clicked
+	/// </summary>
+	/// <returns></returns>
+	private void displayCharacter()
+	{
+		string name = monsterList[count].MonsterName;
+		charPath = String.Format(spritePath + "{0}/", name);
+		GD.Print(charPath);
+		Global.LoadSprite(charPath, charSprite, animationList);
+	}
 
-    /// <summary>
-    /// Go to next step of level creation
-    /// </summary>
-    /// <returns></returns>
-    private void _on_NextBtn_pressed()
-    {
-        string levelName = levelNameLine.Text;
-        //int monsterId = Int32.Parse(monsterIdBtn.Text);
-        int monsterId = monsterList[count].MonsterId;
-        int timeLimit = Int32.Parse(timeLimitBtn.Text);
+	/// <summary>
+	/// Insert available timelimit and monster options
+	/// </summary>
+	/// <returns></returns>
+	private void addOptions()
+	{
+		//monster
+		characterBL = new CharacterBL();
+		monsterList = characterBL.GetAllMonsters();
+		displayCharacter();
 
-        //GD.Print("Level Name: " + levelName + "\nMonsterId: " + monsterId + "\nTimeLimit: " + timeLimit);
+		numberOfChar = monsterList.Count;
+		GD.Print("Number of monsters: " + numberOfChar);
 
-        //Global.StudentId = 1; //testing purposes, remember to remove
-        GD.Print("\nStudent Id: " + Global.StudentId);
+		changeArrowButtonStatues();
 
-        if (levelName == "")
-        {
-            GD.Print("Level name field is empty!");
-            errorMessageLabel.SetText("Level name field is empty!");
-        }
-        else if (CreateLevelBL.checkValidLevelName(levelName) != 1)
-        {
-            GD.Print("Level name already exist!");
-            errorMessageLabel.SetText("Level name already exist!");
-        }
-        else
-        {
-            GetTree().ChangeScene("res://Presentation/CreateLevel/CreateLevel.tscn");
-            CreateLevel.setLevelInitInfo(levelName, monsterId, timeLimit);
-        }
-    }
+		//timeLimit
+		foreach (int i in timeLimitOptions)
+			timeLimitBtn.AddItem(i.ToString());
+	}
+
+	/// <summary>
+	/// Change the status of the arrow buttons 
+	/// </summary>
+	/// <returns></returns>
+	private void changeArrowButtonStatues()
+	{
+		if (count == 0)
+		{
+			arrowLeft.Disabled = true;
+			arrowRight.Disabled = false;
+		}
+		else if (count == numberOfChar - 1)
+		{
+			arrowLeft.Disabled = false;
+			arrowRight.Disabled = true;
+		}
+		else
+		{
+			arrowLeft.Disabled = false;
+			arrowRight.Disabled = false;
+		}
+	}
+
+	/// <summary>
+	/// Go to next step of level creation
+	/// </summary>
+	/// <returns></returns>
+	private void _on_NextBtn_pressed()
+	{
+		string levelName = levelNameLine.Text;
+		//int monsterId = Int32.Parse(monsterIdBtn.Text);
+		int monsterId = monsterList[count].MonsterId;
+		int timeLimit = Int32.Parse(timeLimitBtn.Text);
+
+		//GD.Print("Level Name: " + levelName + "\nMonsterId: " + monsterId + "\nTimeLimit: " + timeLimit);
+
+		//testing
+		//Global.StudentId = 1; 
+		//GD.Print("\nStudent Id: " + Global.StudentId);
+		//testing
+
+		if (levelName == "")
+		{
+			GD.Print("Level name field is empty!");
+			errorMessageLabel.SetText("Level name field is empty!");
+		}
+		else if (CreateLevelBL.checkValidLevelName(levelName) != 1)
+		{
+			GD.Print("Level name already exist!");
+			errorMessageLabel.SetText("Level name already exist!");
+		}
+		else
+		{
+			GetTree().ChangeScene("res://Presentation/CreateLevel/CreateLevel.tscn");
+			CreateLevel.setLevelInitInfo(levelName, monsterId, timeLimit);
+		}
+	}
+
+	/// <summary>
+	/// Return to MainMenu Scene
+	/// </summary>
+	/// <returns></returns>
+	private void _on_BackBtn_pressed()
+	{
+		updated = 0;
+		GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
+	}
 }
+
+
+
 
 
 

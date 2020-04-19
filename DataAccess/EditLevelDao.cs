@@ -130,6 +130,27 @@ public class EditLevelDao : Node
 		levelInfo = clDict[Global.CustomLevelId];
 		return levelInfo;
 	}
+
+	/// <summary>
+	/// Updates the level name, monster, and time limit
+	/// </summary>
+	///  <param name="string levelName"></param>
+	///  <param name="int monsterId"></param>
+	///  <param name="int timeLimit"></param>
+	/// <returns></returns>
+	public void updateLevelInitInfo(string levelName, int monsterId, int timeLimit)
+	{
+		string query = String.Format("UPDATE CustomLevel SET CustomLevelName = '{0}', MonsterId = {1}, TimeLimit = {2} WHERE CustomLevelId = {3}; "
+			, levelName, monsterId, timeLimit, Global.CustomLevelId);
+
+		BaseDao<int> baseDao = new BaseDao<int>();
+		int result = baseDao.ExecuteQuery(query);
+
+		if (result <= 0)
+			GD.Print("Error updating into database.");
+		else
+			GD.Print("Updated into database successfully.");
+	}
 }
 
 

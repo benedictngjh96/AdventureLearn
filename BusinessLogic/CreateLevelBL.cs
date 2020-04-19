@@ -8,6 +8,24 @@ public class CreateLevelBL : Node
 	List<UserCreatedQuestion> TempQuestionList = new List<UserCreatedQuestion>();
 
 	/// <summary>
+	/// Get the current changes to the Questions
+	/// </summary>
+	/// <returns></returns>
+	public List<UserCreatedQuestion> getTempQuestionList()
+	{
+		return TempQuestionList;
+	}
+
+	/// <summary>
+	/// Updates the TempQuestionList
+	/// </summary>
+	/// <returns></returns>
+	public void updateTempQuestionList()
+	{
+		TempQuestionList = Global.QuestionList;
+	}
+
+	/// <summary>
 	/// Intialize 5 questions
 	/// </summary>
 	/// <returns></returns>
@@ -115,7 +133,7 @@ public class CreateLevelBL : Node
 	/// List all questions in List
 	/// </summary>
 	/// <returns></returns>
-	private void listQuestions()
+	public void listQuestions()
 	{
 		foreach (UserCreatedQuestion q in TempQuestionList)
 			GD.Print("\nQuestion Id: " + q.QuestionId
