@@ -168,6 +168,9 @@ margin_right = 732.415
 margin_bottom = 582.828
 rect_scale = Vector2( 0.5, 0.5 )
 texture_normal = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="NextLabel" type="Label" parent="."]
 margin_left = 491.375

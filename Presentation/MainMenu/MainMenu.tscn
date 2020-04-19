@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Assets/GUI/ButtonsWithText/customLevel1.png" type="Texture" id=1]
 [ext_resource path="res://Presentation/MainMenu/MainMenu.cs" type="Script" id=2]
@@ -22,6 +22,7 @@
 [ext_resource path="res://Assets/GUI/ButtonsWithText/setting1.png" type="Texture" id=20]
 [ext_resource path="res://Presentation/LoadingScreen.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Presentation/LoadTest.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Assets/credits.png" type="Texture" id=23]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 18 )
@@ -170,6 +171,20 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
+[node name="CreditLbl" type="Label" parent="."]
+margin_left = 942.0
+margin_top = 170.0
+margin_right = 999.0
+margin_bottom = 192.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Credits"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="SettingsBtn" type="TextureButton" parent="."]
 margin_left = 875.0
 margin_top = 30.0
@@ -220,6 +235,10 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="WelcomeMsg"]
 playback_speed = 0.5
 anims/Hide = SubResource( 5 )
+
+[node name="credits" type="Sprite" parent="."]
+position = Vector2( 968.512, 147.375 )
+texture = ExtResource( 23 )
 
 [node name="LoadingScreen" parent="." instance=ExtResource( 21 )]
 

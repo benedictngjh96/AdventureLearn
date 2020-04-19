@@ -101,6 +101,9 @@ public class CreateLevel : Node2D
 	/// <summary>
 	/// Get levelName, monsterId, and timeLimit from CreateLevelInit
 	/// </summary>
+	/// <param name="string name"></param>
+	/// <param name="int id"></param>
+	/// <param name="int time"></param>
 	/// <returns></returns>
 	public static void setLevelInitInfo(string name, int id, int time)
 	{

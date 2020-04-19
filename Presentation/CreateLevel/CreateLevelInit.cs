@@ -190,7 +190,20 @@ public class CreateLevelInit : Node2D
 			CreateLevel.setLevelInitInfo(levelName, monsterId, timeLimit);
 		}
 	}
+
+	/// <summary>
+	/// Return to MainMenu Scene
+	/// </summary>
+	/// <returns></returns>
+	private void _on_BackBtn_pressed()
+	{
+		updated = 0;
+		GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
+	}
 }
+
+
+
 
 
 

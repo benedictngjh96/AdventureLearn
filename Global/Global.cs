@@ -39,29 +39,60 @@ public class Global : Node
 		Database = "AdventureLearn",
 		SslMode = MySqlSslMode.None,
 	};
+
+	/// <summary>
+	/// Calculate Gameplay Score
+	/// <param name="int timeRemaining"></param>
+	/// <param name="int timeLimit"></param>
+	/// </summary>
 	public static int CalculateScore(int timeRemaining, int timeLimit)
 	{
 		double levelScore = (Convert.ToDouble(timeRemaining) / Convert.ToDouble(timeLimit)) * 100;
 		return Convert.ToInt32(levelScore);
 	}
+
+	/// <summary>
+	/// Store StudentId
+	/// <param name="int id"></param>
+	/// </summary>
 	public static void SetStudentId(int id)
 	{
 		StudentId = id;
 	}
+
+	/// <summary>
+	/// Store Student Name
+	/// <param name="string name"></param>
+	/// </summary>
 	public static void SetStudentName(string name)
 	{
 		StudentName = name;
 	}
+
+	/// <summary>
+	/// Indicate that the user has logged in using Google Account
+	/// </summary>
 	public static void SetGoogleLoggedIn()
 	{
 		GoogleLoggedIn = true;
 		FbLoggedIn = false;
 	}
+
+	/// <summary>
+	/// Indicate that the user has logged in using Facebook Account
+	/// </summary>
 	public static void SetFbLoggedIn()
 	{
 		FbLoggedIn = true;
 		GoogleLoggedIn = false;
 	}
+
+	/// <summary>
+	/// Load the set of PNGs into SpriteFrames needed for the AnimatedSprite
+	/// <param name="string spritePath"></param>
+	/// <param name="AnimatedSprite animatedSprite"></param>
+	/// <param name="List<string> animationList"></param>
+	/// </summary>
 	public static void LoadSprite(string spritePath, AnimatedSprite animatedSprite, List<string> animationList)
 	{
 		string temp = animationList[0];
@@ -94,9 +125,4 @@ public class Global : Node
 		else
 			animatedSprite.Play("Idle");
 	}
-
-
-
-
-
 }
