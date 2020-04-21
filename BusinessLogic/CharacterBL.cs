@@ -4,19 +4,19 @@ using System.Collections.Generic;
 public class CharacterBL
 {
     /// <summary>
-    /// Return Character object according to studentId
+    /// Get Student's Character
     /// </summary>
     /// <param name="studentId"></param>
-    /// <returns></returns>
+    /// <returns>Return Character object</returns>
     public Character GetCharacter(int studentId)
     {
         CharacterDao characterDao = new CharacterDao();
         return characterDao.GetCharacter(studentId);
     }
     /// <summary>
-    /// Return list of Character object
+    /// Get all of the Characters
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return list of Character object</returns>
     public List<Character> GetAllCharacters()
     {
         CharacterDao characterDao = new CharacterDao();
@@ -24,9 +24,9 @@ public class CharacterBL
     }
 
     /// <summary>
-    /// Return list of Monster object
+    /// Get all of the Monsters
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return list of Monster object</returns>
     public List<Monster> GetAllMonsters()
     {
         CharacterDao characterDao = new CharacterDao();

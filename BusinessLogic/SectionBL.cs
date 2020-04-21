@@ -4,10 +4,10 @@ using System.Collections.Generic;
 public class SectionBL 
 {
     /// <summary>
-    /// Return list of Section according to worldId
+    /// Get all Section that belongs to selected World
     /// </summary>
     /// <param name="worldId"></param>
-    /// <returns></returns>
+    /// <returns>Return list of Section object</returns>
     public List<Section> GetWorldSections(int worldId)
     {
         SectionDao sectionDao = new SectionDao();
@@ -15,13 +15,13 @@ public class SectionBL
         sectionList = sectionDao.GetWorldSections(worldId);
         return sectionList;
     }
-    
+
     /// <summary>
-    /// Return Section object according to worldId and sectionId
+    /// Get all Levels that belong to selected Section
     /// </summary>
     /// <param name="worldId"></param>
     /// <param name="sectionId"></param>
-    /// <returns></returns>
+    /// <returns>Return Section object containing list of Level object</returns>
     public Section GetSectionLevels(int worldId, int sectionId)
     {
         SectionDao sectionDao = new SectionDao();
@@ -29,12 +29,12 @@ public class SectionBL
         return findSection;
     }
     /// <summary>
-    /// Return int result 1 if Student has cleared all levels in the section
+    /// Check if Student has cleared the selected World's Section
     /// </summary>
     /// <param name="worldId"></param>
     /// <param name="sectionId"></param>
     /// <param name="studentId"></param>
-    /// <returns></returns>
+    /// <returns>Return int result 1 if Student has cleared the section</returns>
     public int CheckSectionCleared(int worldId, int sectionId, int studentId)
     {
         SectionDao sectionDao = new SectionDao();

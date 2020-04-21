@@ -33,12 +33,10 @@ public class EditLevelDao : Node
 			case 3:
 				formatForDatabaseInsertion(ref option4, ref option3);
 				break;
-			case 4:
-				//formatForDatabaseInsertion(ref option4, ref option4);
+			default:
 				break;
 		}
 
-		//GD.Print("Question id: " + questionList[questionId].QuestionId);
 
 		string query = String.Format("UPDATE Question SET Option1 = '{0}', Option2 = '{1}', " +
 			"Option3 = '{2}', CorrectOption = '{3}', QuestionTitle = '{4}' " +
@@ -88,10 +86,8 @@ public class EditLevelDao : Node
 
 		if (name == null)
 		{
-			GD.Print("Did not find any");
 			return 1;
 		}
-		GD.Print("Found matching");
 		return -1;
 	}
 
@@ -145,11 +141,6 @@ public class EditLevelDao : Node
 
 		BaseDao<int> baseDao = new BaseDao<int>();
 		int result = baseDao.ExecuteQuery(query);
-
-		if (result <= 0)
-			GD.Print("Error updating into database.");
-		else
-			GD.Print("Updated into database successfully.");
 	}
 }
 

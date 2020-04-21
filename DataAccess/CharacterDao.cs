@@ -7,10 +7,10 @@ using System.Linq;
 public class CharacterDao 
 {
 	/// <summary>
-	/// Return Character object according to studentId
+	/// Get Student's character
 	/// </summary>
 	/// <param name="studentId"></param>
-	/// <returns></returns>
+	/// <returns>Return Character object</returns>
 	public Character GetCharacter(int studentId)
 	{
 		BaseDao<Character> baseDao = new BaseDao<Character>();
@@ -20,9 +20,9 @@ public class CharacterDao
 		return character;
 	}
 	/// <summary>
-	/// Return list of Character
+	/// Get all Characters
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Return list of Character object</returns>
 	public List<Character> GetAllCharacters()
 	{
 		List<Character> characterList;
@@ -36,9 +36,9 @@ public class CharacterDao
 	}
 
 	/// <summary>
-	/// Return list of Monster
+	/// Get all Monsters
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Return list of Monster object</returns>
 	public List<Monster> GetAllMonsters()
 	{
 		List<Monster> monsterList;

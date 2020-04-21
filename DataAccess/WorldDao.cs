@@ -7,9 +7,9 @@ using System.Linq;
 public class WorldDao
 {
     /// <summary>
-    /// Get all worlds object and store inside List of world object
+    /// Get all Worlds
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return list of World object</returns>
     public List<World> GetWorlds()
     {
         List<World> worldList = new List<World>();
@@ -21,10 +21,10 @@ public class WorldDao
         return worldList;
     }
     /// <summary>
-    /// Return the number of Completed Worlds
+    /// Get the total number of CompletedWorld for the Student
     /// </summary>
-    /// <returns></returns>
-    public int getCompletedWorldCount()
+    /// <returns>Return the total count of Completed Worlds</returns>
+    public int GetCompletedWorldCount()
     {
         string query = String.Format("SELECT COUNT(1) FROM World_LastSection_LastLevel w, StudentScore s " +
             "WHERE s.StudentId = {0} AND w.WorldId = s.WorldId AND w.LastSectionId = s.SectionId AND w.LastLevelId = s.LevelId;"

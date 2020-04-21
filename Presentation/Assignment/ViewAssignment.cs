@@ -83,6 +83,11 @@ public class ViewAssignment : Node2D
 
         }
     }
+    private void PlayAssignment(Button btn)
+    {
+        Global.AssignmentId = Convert.ToInt32(btn.Name);
+        GetTree().ChangeScene("res://Presentation/Assignment/Assignment.tscn");
+    }
     private void DisplayCompletedAssignments()
     {
         List<AssignmentScore> completedAssignments = assignmentScoreBL.GetStudentCompletedAssignment(Global.StudentId);
@@ -102,7 +107,7 @@ public class ViewAssignment : Node2D
 
             Label date = new Label();
             date.AddFontOverride("font", dFont2);
-            date.Text = as2.PublishedAssignment.DueDate.ToString()+"     ";
+            date.Text = as2.PublishedAssignment.DueDate.ToString() + "     ";
             date.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(date);
 

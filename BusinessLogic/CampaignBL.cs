@@ -4,12 +4,12 @@ using System.Collections.Generic;
 public class CampaignBL
 {
     /// <summary>
-    /// Return Level object according to worldId, sectionId and levelId
+    /// Get Level of selected World and Section
     /// </summary>
     /// <param name="worldId"></param>
     /// <param name="sectionId"></param>
     /// <param name="levelId"></param>
-    /// <returns></returns>
+    /// <returns>Return Level object</returns>
     public Level GetLevel(int worldId, int sectionId, int levelId)
     {
         CampaignDao campaignDao = new CampaignDao();

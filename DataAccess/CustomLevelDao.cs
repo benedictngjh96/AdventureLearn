@@ -7,10 +7,10 @@ using System.Linq;
 public class CustomLevelDao
 {
     /// <summary>
-    /// Return CustomLevel object containing monster and question object
+    /// Get selected CustomLevel
     /// </summary>
     /// <param name="customLevelId"></param>
-    /// <returns></returns>
+    /// <returns>Return CustomLevel object containing monster and question object</returns>
     public CustomLevel GetCustomLevel(int customLevelId)
     {
         string query = String.Format("SELECT cl.CustomLevelId, cl.CustomLevelName , cl.TimeLimit , m.MonsterId ,m.MonsterName , q.QuestionId ,q.QuestionTitle ," +
@@ -41,7 +41,10 @@ public class CustomLevelDao
         }
         return customLevelDict[customLevelId];
     }
-
+    /// <summary>
+    /// Get all custom levels
+    /// </summary>
+    /// <returns>Return list of CustomLevel object</returns>
     public List<CustomLevel> GetCustomLevels()
     {
         string query = String.Format("SELECT cl.CustomLevelId, cl.CustomLevelName , cl.TimeLimit , s.StudentId , s.StudentName " +
@@ -71,13 +74,17 @@ public class CustomLevelDao
 
         return customLevels;
     }
+    /// <summary>
+    /// Get all custom levels which had been cleared by the Student
+    /// </summary>
+    /// <param name="studentId"></param>
+    /// <returns>Return list of CustomLevelScore object</returns>
     public List<CustomLevelScore> GetClearedCustomLevels(int studentId)
     {
         string query = String.Format("SELECT cls.CustomLevelId ,cls.LevelScore, cl.CustomLevelId ,cl.CustomLevelName ,cl.StudentId ,s.StudentName " +
          "FROM CustomLevelScore cls INNER JOIN CustomLevel cl ON cls.CustomLevelId  = cl.CustomLevelId  " +
         "INNER JOIN Student s ON cl.StudentId  = s.StudentId WHERE cls.StudentId  = {0}", studentId);
         Dictionary<int, CustomLevelScore> customLevelDict = null;
-        Godot.GD.Print(query);
         int count = 0;
         try
         {
@@ -110,10 +117,14 @@ public class CustomLevelDao
         customLevels.AddRange(customLevelDict.Values);
         return customLevels;
     }
+    /// <summary>
+    /// Get CustomLevels that the Student has created
+    /// </summary>
+    /// <param name="studentId"></param>
+    /// <returns>Return CustomLevel object </returns>
     public List<CustomLevel> GetStudentCustomLevel(int studentId)
     {
         string query = String.Format("SELECT * FROM CustomLevel cl WHERE cl.StudentId = {0}", studentId);
-        Godot.GD.Print(query);
         List<CustomLevel> customLevel;
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
         {
@@ -121,6 +132,11 @@ public class CustomLevelDao
         }
         return customLevel;
     }
+    /// <summary>
+    /// Delete selected CustomLevel
+    /// </summary>
+    /// <param name="customLevelId"></param>
+    /// <returns>Return 1 if delete query has executed succesfully</returns>
     public int DeleteCustomLevel(int customLevelId)
     {
         BaseDao<Object> baseDao = new BaseDao<Object>();
@@ -129,6 +145,11 @@ public class CustomLevelDao
         int result = baseDao.ExecuteQuery(query, new { CustomLevelId = customLevelId });
         return result;
     }
+    /// <summary>
+    /// Get Monster that belongs to selected CustomLevel
+    /// </summary>
+    /// <param name="customLevelId"></param>
+    /// <returns>Return Monster object</returns>
     public Monster GetCustomLevelMonster(int customLevelId)
     {
         BaseDao<Monster> baseDao = new BaseDao<Monster>();

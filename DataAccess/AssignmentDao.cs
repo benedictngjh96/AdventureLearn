@@ -7,10 +7,10 @@ using System.Linq;
 public class AssignmentDao
 {
     /// <summary>
-    /// Query to return Assignment object containing Monster object and Question object
+    /// Get selected Assignment
     /// </summary>
     /// <param name="assignmentId"></param>
-    /// <returns></returns>
+    /// <returns>Return Assignment object containing Monster object and Question object</returns>
     public Assignment GetAssignment(int assignmentId)
     {
         string query = String.Format("SELECT a.AssignmentId ,a.AssignmentName, a.TimeLimit, m.MonsterId ,m.MonsterName , q.QuestionId ,q.QuestionTitle " +
@@ -40,7 +40,11 @@ public class AssignmentDao
         }
         return assignmentDict[assignmentId];
     }
-
+    /// <summary>
+    /// Get all published assignments
+    /// </summary>
+    /// <param name="studentId"></param>
+    /// <returns>Return list of published assignment object based on studentId</returns>
     public List<PublishedAssignment> GetStudentAssignment(int studentId)
     {
         string query = String.Format("SELECT DueDate, AssignmentId , AssignmentName , ClassId, TeacherId ,TeacherName " +
@@ -67,7 +71,11 @@ public class AssignmentDao
             return assignmentList;
         }
     }
-   
+    /// <summary>
+    /// Get Monster which belongs to the assignment
+    /// </summary>
+    /// <param name="assignmentId"></param>
+    /// <returns>Return Monster object based on assignmentId</returns>
     public Monster GetAssignmentMonster(int assignmentId)
     {
         BaseDao<Monster> baseDao = new BaseDao<Monster>();

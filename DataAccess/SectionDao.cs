@@ -7,10 +7,10 @@ using System.Linq;
 public class SectionDao 
 {
     /// <summary>
-    /// Return list of section filtered by worldId
+    /// Get all Sections of selected World
     /// </summary>
     /// <param name="worldId"></param>
-    /// <returns></returns>
+    /// <returns>Return list of Section objects</returns>
     public List<Section> GetWorldSections(int worldId)
     {
         string query = String.Format("SELECT s.WorldId, s.SectionId, s.SectionName , l.LevelId FROM Section s INNER JOIN Level l ON s.SectionId = l.SectionId WHERE s.WorldId = {0}", worldId);
@@ -35,11 +35,11 @@ public class SectionDao
         }
     }
     /// <summary>
-    /// Return section object filtered by worldId and sectionId
+    /// Get all levels that belongs to selected Section
     /// </summary>
     /// <param name="worldId"></param>
     /// <param name="sectionId"></param>
-    /// <returns></returns>
+    /// <returns>Return Section object containing list of Level object</returns>
     public Section GetSectionLevels(int worldId, int sectionId)
     {
         string query = String.Format("SELECT WorldId, SectionId, SectionName , LevelId FROM World NATURAL JOIN Section NATURAL JOIN Level WHERE World.WorldId  = {0} AND Section.SectionId  = {1}", worldId, sectionId);
@@ -53,7 +53,7 @@ public class SectionDao
                     lookup.Add(s.SectionId, section = s);
                 if (section.Level == null)
                     section.Level = new List<Level>();
-                section.Level.Add(l); /* Add locations to course */
+                section.Level.Add(l);
                 return section;
             }, splitOn: "SectionId, LevelId").AsQueryable();
             Section sect = new Section();
@@ -65,12 +65,12 @@ public class SectionDao
         }
     }
     /// <summary>
-    /// Return int result 0 if student cleared the section
+    /// Check if Student has cleared the selected World's Section
     /// </summary>
     /// <param name="worldId"></param>
     /// <param name="sectionId"></param>
     /// <param name="studentId"></param>
-    /// <returns></returns>
+    /// <returns>Return int result 1 if Student has cleared the section</returns>
     public int CheckSectionCleared(int worldId, int sectionId, int studentId)
     {
         string query = String.Format("SELECT LevelId FROM ( SELECT l.LevelId FROM Level l WHERE l.WorldId = {0} AND l.SectionId = {1} UNION ALL " +

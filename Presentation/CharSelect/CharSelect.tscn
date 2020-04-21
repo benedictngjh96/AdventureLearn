@@ -265,9 +265,29 @@ animations = [ {
 "name": "default 1",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 159 ), ExtResource( 173 ), ExtResource( 178 ), ExtResource( 157 ), ExtResource( 168 ), ExtResource( 160 ), ExtResource( 161 ), ExtResource( 179 ), ExtResource( 184 ), ExtResource( 162 ), ExtResource( 164 ), ExtResource( 169 ), ExtResource( 166 ), ExtResource( 170 ) ],
+"loop": true,
+"name": "AthenaWalk",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 120 ), ExtResource( 113 ), ExtResource( 108 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 117 ), ExtResource( 98 ), ExtResource( 118 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 150 ), ExtResource( 148 ), ExtResource( 140 ), ExtResource( 146 ), ExtResource( 132 ), ExtResource( 144 ), ExtResource( 124 ), ExtResource( 149 ), ExtResource( 151 ), ExtResource( 130 ), ExtResource( 143 ), ExtResource( 127 ), ExtResource( 139 ), ExtResource( 152 ), ExtResource( 142 ), ExtResource( 153 ), ExtResource( 131 ), ExtResource( 133 ), ExtResource( 137 ), ExtResource( 154 ), ExtResource( 136 ), ExtResource( 147 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 123 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 138 ), ExtResource( 141 ), ExtResource( 145 ), ExtResource( 174 ), ExtResource( 180 ), ExtResource( 176 ), ExtResource( 175 ), ExtResource( 163 ), ExtResource( 177 ), ExtResource( 155 ), ExtResource( 186 ), ExtResource( 156 ), ExtResource( 158 ), ExtResource( 165 ), ExtResource( 183 ), ExtResource( 167 ) ],
+"loop": true,
+"name": "EscanorAttack",
+"speed": 25.0
+}, {
 "frames": [ ExtResource( 50 ), ExtResource( 40 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 26 ), ExtResource( 36 ), ExtResource( 51 ), ExtResource( 29 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 53 ), ExtResource( 49 ), ExtResource( 46 ), ExtResource( 30 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 56 ), ExtResource( 32 ), ExtResource( 41 ), ExtResource( 57 ), ExtResource( 59 ), ExtResource( 64 ), ExtResource( 62 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 61 ), ExtResource( 60 ) ],
 "loop": true,
 "name": "MjolnirAttack",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 203 ), ExtResource( 209 ), ExtResource( 204 ), ExtResource( 187 ), ExtResource( 211 ), ExtResource( 192 ), ExtResource( 198 ), ExtResource( 199 ), ExtResource( 208 ), ExtResource( 191 ), ExtResource( 190 ), ExtResource( 205 ), ExtResource( 197 ), ExtResource( 212 ), ExtResource( 188 ), ExtResource( 194 ), ExtResource( 206 ), ExtResource( 193 ), ExtResource( 196 ), ExtResource( 200 ), ExtResource( 225 ), ExtResource( 228 ), ExtResource( 244 ), ExtResource( 242 ), ExtResource( 235 ), ExtResource( 241 ), ExtResource( 243 ), ExtResource( 247 ), ExtResource( 237 ), ExtResource( 227 ), ExtResource( 231 ), ExtResource( 229 ), ExtResource( 230 ), ExtResource( 233 ), ExtResource( 226 ), ExtResource( 240 ), ExtResource( 222 ), ExtResource( 248 ), ExtResource( 232 ), ExtResource( 219 ) ],
+"loop": true,
+"name": "ZeusAttack",
+"speed": 20.0
+}, {
+"frames": [ ExtResource( 245 ), ExtResource( 246 ), ExtResource( 224 ), ExtResource( 220 ), ExtResource( 238 ), ExtResource( 221 ), ExtResource( 234 ), ExtResource( 223 ), ExtResource( 239 ), ExtResource( 236 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "ZeusWalk",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 171 ), ExtResource( 172 ), ExtResource( 181 ), ExtResource( 182 ), ExtResource( 185 ), ExtResource( 201 ), ExtResource( 189 ), ExtResource( 210 ), ExtResource( 202 ), ExtResource( 213 ), ExtResource( 195 ), ExtResource( 214 ), ExtResource( 216 ), ExtResource( 217 ), ExtResource( 218 ), ExtResource( 215 ), ExtResource( 207 ) ],
@@ -280,30 +300,10 @@ animations = [ {
 "name": "MjolnirWalk",
 "speed": 25.0
 }, {
-"frames": [ ExtResource( 245 ), ExtResource( 246 ), ExtResource( 224 ), ExtResource( 220 ), ExtResource( 238 ), ExtResource( 221 ), ExtResource( 234 ), ExtResource( 223 ), ExtResource( 239 ), ExtResource( 236 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "ZeusWalk",
-"speed": 25.0
-}, {
-"frames": [ ExtResource( 203 ), ExtResource( 209 ), ExtResource( 204 ), ExtResource( 187 ), ExtResource( 211 ), ExtResource( 192 ), ExtResource( 198 ), ExtResource( 199 ), ExtResource( 208 ), ExtResource( 191 ), ExtResource( 190 ), ExtResource( 205 ), ExtResource( 197 ), ExtResource( 212 ), ExtResource( 188 ), ExtResource( 194 ), ExtResource( 206 ), ExtResource( 193 ), ExtResource( 196 ), ExtResource( 200 ), ExtResource( 225 ), ExtResource( 228 ), ExtResource( 244 ), ExtResource( 242 ), ExtResource( 235 ), ExtResource( 241 ), ExtResource( 243 ), ExtResource( 247 ), ExtResource( 237 ), ExtResource( 227 ), ExtResource( 231 ), ExtResource( 229 ), ExtResource( 230 ), ExtResource( 233 ), ExtResource( 226 ), ExtResource( 240 ), ExtResource( 222 ), ExtResource( 248 ), ExtResource( 232 ), ExtResource( 219 ) ],
-"loop": true,
-"name": "ZeusAttack",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 120 ), ExtResource( 113 ), ExtResource( 108 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 117 ), ExtResource( 98 ), ExtResource( 118 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 128 ), ExtResource( 129 ), ExtResource( 150 ), ExtResource( 148 ), ExtResource( 140 ), ExtResource( 146 ), ExtResource( 132 ), ExtResource( 144 ), ExtResource( 124 ), ExtResource( 149 ), ExtResource( 151 ), ExtResource( 130 ), ExtResource( 143 ), ExtResource( 127 ), ExtResource( 139 ), ExtResource( 152 ), ExtResource( 142 ), ExtResource( 153 ), ExtResource( 131 ), ExtResource( 133 ), ExtResource( 137 ), ExtResource( 154 ), ExtResource( 136 ), ExtResource( 147 ), ExtResource( 134 ), ExtResource( 135 ), ExtResource( 123 ), ExtResource( 125 ), ExtResource( 126 ), ExtResource( 138 ), ExtResource( 141 ), ExtResource( 145 ), ExtResource( 174 ), ExtResource( 180 ), ExtResource( 176 ), ExtResource( 175 ), ExtResource( 163 ), ExtResource( 177 ), ExtResource( 155 ), ExtResource( 186 ), ExtResource( 156 ), ExtResource( 158 ), ExtResource( 165 ), ExtResource( 183 ), ExtResource( 167 ) ],
-"loop": true,
-"name": "EscanorAttack",
-"speed": 25.0
-}, {
 "frames": [ ExtResource( 66 ), ExtResource( 65 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 87 ), ExtResource( 71 ), ExtResource( 75 ), ExtResource( 74 ), ExtResource( 79 ), ExtResource( 84 ), ExtResource( 72 ), ExtResource( 81 ), ExtResource( 73 ), ExtResource( 92 ), ExtResource( 80 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 83 ), ExtResource( 86 ), ExtResource( 85 ), ExtResource( 82 ), ExtResource( 88 ), ExtResource( 78 ), ExtResource( 89 ), ExtResource( 93 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 70 ), ExtResource( 122 ), ExtResource( 114 ), ExtResource( 99 ), ExtResource( 119 ), ExtResource( 103 ), ExtResource( 105 ), ExtResource( 115 ), ExtResource( 121 ), ExtResource( 94 ), ExtResource( 107 ), ExtResource( 104 ) ],
 "loop": true,
 "name": "EscanorWalk",
 "speed": 25.0
-}, {
-"frames": [ ExtResource( 159 ), ExtResource( 173 ), ExtResource( 178 ), ExtResource( 157 ), ExtResource( 168 ), ExtResource( 160 ), ExtResource( 161 ), ExtResource( 179 ), ExtResource( 184 ), ExtResource( 162 ), ExtResource( 164 ), ExtResource( 169 ), ExtResource( 166 ), ExtResource( 170 ) ],
-"loop": true,
-"name": "AthenaWalk",
-"speed": 15.0
 } ]
 
 [sub_resource type="DynamicFont" id=2]
@@ -320,6 +320,9 @@ font_data = ExtResource( 3 )
 
 [node name="CharSelect" type="Node2D"]
 script = ExtResource( 2 )
+
+[node name="Bg" parent="." instance=ExtResource( 251 )]
+position = Vector2( -11.4558, 0 )
 
 [node name="Menu" parent="." instance=ExtResource( 1 )]
 
@@ -391,23 +394,27 @@ __meta__ = {
 }
 
 [node name="SkillName" type="Label" parent="Char"]
-margin_left = 722.0
+margin_left = 679.0
 margin_top = 327.0
-margin_right = 764.0
+margin_right = 725.0
 margin_bottom = 358.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SkillDescription" type="Label" parent="Char"]
-margin_left = 613.495
+margin_left = 582.47
 margin_top = 362.0
-margin_right = 868.495
+margin_right = 837.47
 margin_bottom = 427.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -420,26 +427,30 @@ margin_right = 757.758
 margin_bottom = 284.823
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="SkillNameLbl" type="Label" parent="Char"]
-margin_left = 613.495
-margin_top = 326.297
-margin_right = 754.495
-margin_bottom = 392.297
+margin_left = 592.015
+margin_top = 327.729
+margin_right = 733.015
+margin_bottom = 393.729
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CharName" type="Label" parent="Char"]
-margin_left = 684.0
-margin_top = 219.823
-margin_right = 765.0
-margin_bottom = 250.823
+margin_left = 672.544
+margin_top = 226.983
+margin_right = 753.544
+margin_bottom = 257.983
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -474,8 +485,6 @@ text = "Enter"
 position = Vector2( 520.832, 108.011 )
 scale = Vector2( 0.304531, 0.34605 )
 texture = ExtResource( 250 )
-
-[node name="Bg" parent="." instance=ExtResource( 251 )]
 
 [node name="BackBtn" type="TextureButton" parent="."]
 margin_left = 10.612

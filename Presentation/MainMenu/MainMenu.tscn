@@ -1,9 +1,8 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Assets/GUI/ButtonsWithText/customLevel1.png" type="Texture" id=1]
 [ext_resource path="res://Presentation/MainMenu/MainMenu.cs" type="Script" id=2]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/leaderboard1.png" type="Texture" id=3]
-[ext_resource path="res://Assets/GUI/ButtonsWithText/credits.png" type="Texture" id=4]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/leaderboard2.png" type="Texture" id=5]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/campaign2.png" type="Texture" id=6]
 [ext_resource path="res://Assets/Background/title.png" type="Texture" id=7]
@@ -16,11 +15,11 @@
 [ext_resource path="res://Assets/GUI/ButtonsWithText/logoutIcon1.png" type="Texture" id=14]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/logoutIcon2.png" type="Texture" id=15]
 [ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Assets/GUI/ButtonsWithText/credits2.png" type="Texture" id=17]
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=18]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/setting2.png" type="Texture" id=19]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/setting1.png" type="Texture" id=20]
-[ext_resource path="res://Assets/credits.png" type="Texture" id=23]
+[ext_resource path="res://Assets/GUI/credits2.png" type="Texture" id=21]
+[ext_resource path="res://Assets/GUI/credits.png" type="Texture" id=23]
 
 [sub_resource type="DynamicFont" id=1]
 font_data = ExtResource( 18 )
@@ -116,19 +115,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CreditsBtn" type="TextureButton" parent="."]
-margin_left = 620.089
-margin_top = 329.501
-margin_right = 2288.09
-margin_bottom = 1025.5
-rect_scale = Vector2( 0.1, 0.1 )
-texture_normal = ExtResource( 4 )
-texture_pressed = ExtResource( 17 )
-texture_hover = ExtResource( 17 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="LogoutLbl" type="Label" parent="."]
 margin_left = 942.0
 margin_top = 82.0
@@ -184,14 +170,22 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="credits" type="Sprite" parent="."]
-position = Vector2( 968.512, 147.375 )
-texture = ExtResource( 23 )
+[node name="CreditsBtn2" type="TextureButton" parent="."]
+margin_left = 935.975
+margin_top = 102.572
+margin_right = 1007.98
+margin_bottom = 174.572
+texture_normal = ExtResource( 23 )
+texture_pressed = ExtResource( 21 )
+texture_hover = ExtResource( 21 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="CampaignBtn" to="." method="_on_CampaignBtn_pressed"]
 [connection signal="pressed" from="CustomLevelBtn" to="." method="_on_CustomLevelBtn_pressed"]
 [connection signal="pressed" from="AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]
 [connection signal="pressed" from="LeaderboardBtn" to="." method="_on_LeaderboardBtn_pressed"]
 [connection signal="pressed" from="UserProfileBtn" to="." method="_on_UserProfileBtn_pressed"]
 [connection signal="pressed" from="LogoutBtn" to="." method="_on_LogoutBtn_pressed"]
-[connection signal="pressed" from="CreditsBtn" to="." method="_on_CreditsBtn_pressed"]
 [connection signal="pressed" from="SettingsBtn" to="." method="_on_SettingsBtn_pressed"]
+[connection signal="pressed" from="CreditsBtn2" to="." method="_on_CreditsBtn2_pressed"]

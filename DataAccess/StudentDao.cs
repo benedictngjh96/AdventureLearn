@@ -7,14 +7,14 @@ using System.Linq;
 public class StudentDao
 {
     /// <summary>
-    /// Return int result 1 if InsertStudent has executed successfully
+    /// Insert Student record who logged in through Google
     /// </summary>
     /// <param name="studentName"></param>
     /// <param name="charId"></param>
     /// <param name="studentEmail"></param>
     /// <param name="studentUsername"></param>
     /// <param name="studentPassword"></param>
-    /// <returns></returns>
+    /// <returns>Return int result 1 if insertion query has executed successfully</returns>
     public int InsertGoogleStudent(string studentName, string studentEmail, string googleId)
     {
         BaseDao<Student> baseDao = new BaseDao<Student>();
@@ -24,6 +24,13 @@ public class StudentDao
         return result;
 
     }
+    /// <summary>
+    /// Insert Student record who logged in through Facebook
+    /// </summary>
+    /// <param name="studentName"></param>
+    /// <param name="studentEmail"></param>
+    /// <param name="fbId"></param>
+    /// <returns>Return int result 1 if insertion query has executed successfully</returns>
     public int InsertFacebookStudent(string studentName, string studentEmail, string fbId)
     {
         BaseDao<Student> baseDao = new BaseDao<Student>();
@@ -35,10 +42,10 @@ public class StudentDao
     }
 
     /// <summary>
-    /// Return true if student exist
+    /// Check if Student has an existing account
     /// </summary>
     /// <param name="studentId"></param>
-    /// <returns></returns>
+    /// <returns>Return true if Student's record exist</returns>
     public bool CheckStudentExist(int studentId)
     {
         string query = "SELECT COUNT(1) FROM Student WHERE StudentId = @StudentId";
@@ -47,6 +54,11 @@ public class StudentDao
         bool exist = baseDao.ExecuteScalar(query, studentObj);
         return exist;
     }
+    /// <summary>
+    /// Check if Student who has logged in with Google account has an existing Character
+    /// </summary>
+    /// <param name="googleId"></param>
+    /// <returns>Return true if Student has existing Character</returns>
     public bool CheckGoogleCharExist(string googleId)
     {
         string query = "SELECT COUNT(1) FROM Student WHERE GoogleAccountId = @GoogleAccountId AND CharId != ''";
@@ -55,6 +67,11 @@ public class StudentDao
         bool exist = baseDao.ExecuteScalar(query, studentObj);
         return exist;
     }
+    /// <summary>
+    /// Check if Student who has logged in with Facebook account has an existing Chrracter
+    /// </summary>
+    /// <param name="fbId"></param>
+    /// <returns>Return true if Student has existing Character</returns>
     public bool CheckFacebookCharExist(string fbId)
     {
         string query = "SELECT COUNT(1) FROM Student WHERE FacebookAccountId = @FacebookAccountId AND CharId != ''";
@@ -63,6 +80,11 @@ public class StudentDao
         bool exist = baseDao.ExecuteScalar(query, studentObj);
         return exist;
     }
+    /// <summary>
+    /// Check if there is an existing Student's Google account
+    /// </summary>
+    /// <param name="googleId"></param>
+    /// <returns>Return true if Student's Google account exists</returns>
     public bool CheckGoogleExist(string googleId)
     {
         string query = "SELECT COUNT(1) FROM Student WHERE GoogleAccountId = @GoogleAccountId";
@@ -71,6 +93,11 @@ public class StudentDao
         bool exist = baseDao.ExecuteScalar(query, studentObj);
         return exist;
     }
+    /// <summary>
+    /// Check if there is an existing Student's Facebook account
+    /// </summary>
+    /// <param name="fbId"></param>
+    /// <returns>Return true if Student's Facebook account exists</returns>
     public bool CheckFacebookExist(string fbId)
     {
         string query = "SELECT COUNT(1) FROM Student WHERE FacebookAccountId = @FacebookAccountId";
@@ -79,6 +106,11 @@ public class StudentDao
         bool exist = baseDao.ExecuteScalar(query, studentObj);
         return exist;
     }
+    /// <summary>
+    /// Get existing Student's Facebook account
+    /// </summary>
+    /// <param name="fbId"></param>
+    /// <returns>Retrun Student Object</returns>
     public Student GetFacebookStudent(string fbId)
     {
         BaseDao<Student> baseDao = new BaseDao<Student>();
@@ -86,6 +118,11 @@ public class StudentDao
         Student student = baseDao.RetrieveQuery(query);
         return student;
     }
+    /// <summary>
+    /// Get existing Student's Google account
+    /// </summary>
+    /// <param name="googleId"></param>
+    /// <returns>Return Student Object</returns>
     public Student GetGoogleStudent(string googleId)
     {
         BaseDao<Student> baseDao = new BaseDao<Student>();
@@ -93,6 +130,12 @@ public class StudentDao
         Student student = baseDao.RetrieveQuery(query);
         return student;
     }
+    /// <summary>
+    /// Updates Student's Character
+    /// </summary>
+    /// <param name="charId"></param>
+    /// <param name="studentId"></param>
+    /// <returns>Return 1 if update query has executed successfully</returns>
     public int UpdateStudentCharacter(int charId, int studentId)
     {
         BaseDao<Object> baseDao = new BaseDao<Object>();
@@ -100,6 +143,11 @@ public class StudentDao
         int result = baseDao.ExecuteQuery(query, new { CharId = charId, StudentId = studentId });
         return result;
     }
+    /// <summary>
+    /// Get Character that belongs to selected Student
+    /// </summary>
+    /// <param name="studentId"></param>
+    /// <returns>Return Student object containing Character object</returns>
     public Student GetStudentCharacter(int studentId)
     {
         Student student = new Student();

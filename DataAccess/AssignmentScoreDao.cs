@@ -6,12 +6,12 @@ using System.Collections.Generic;
 public class AssignmentScoreDao
 {
     /// <summary>
-    /// Return int 1 if InsertAssignmentScore is successful
+    /// Insert Student's score of completed Assignment
     /// </summary>
     /// <param name="studentId"></param>
     /// <param name="assignmentId"></param>
     /// <param name="assignmentScore"></param>
-    /// <returns></returns>
+    /// <returns>Return int 1 if insertion query executed successfully</returns>
     public int InsertAssignmentScore(int studentId, int assignmentId, int assignmentScore)
     {
         BaseDao<Object> baseDao = new BaseDao<Object>();
@@ -20,8 +20,12 @@ public class AssignmentScoreDao
             "ON DUPLICATE KEY UPDATE Score = @Score";
         int result = baseDao.ExecuteQuery(query, new { StudentId = studentId, AssignmentId = assignmentId, Score = assignmentScore });
         return result;
-    } 
-
+    }
+    /// <summary>
+    /// Get all Student's completed Assignment scores
+    /// </summary>
+    /// <param name="studentId"></param>
+    /// <returns>Return list of AssignmentScore object</returns>
     public List<AssignmentScore> GetStudentCompletedAssignment(int studentId)
     {
         string query = String.Format("SELECT Score,AssignmentId ,DueDate,  TeacherId ,TeacherName , AssignmentId , AssignmentName " +
@@ -30,8 +34,6 @@ public class AssignmentScoreDao
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
         {
             var lookup = new Dictionary<int, AssignmentScore>();
-
-
             conn.Query<AssignmentScore, PublishedAssignment, Teacher, Assignment, AssignmentScore>(query, (as2, pa, t, a) =>
             {
                 AssignmentScore assignmentScore;

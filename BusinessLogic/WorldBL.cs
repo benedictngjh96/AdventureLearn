@@ -6,13 +6,19 @@ using System.Linq;
 public class WorldBL : Node
 {
 	WorldDao worldDao = new WorldDao();
-
-	public int getCompletedWorldCount()
+	/// <summary>
+	/// Get the total number of CompletedWorld for the Student
+	/// </summary>
+	/// <returns>Return the total count of Completed Worlds</returns>
+	public int GetCompletedWorldCount()
 	{
-		return worldDao.getCompletedWorldCount();
+		return worldDao.GetCompletedWorldCount();
 	}
-
-	public int getTotalWorldCount()
+	/// <summary>
+	/// Get the number of Worlds
+	/// </summary>
+	/// <returns>Return integer value of number of Worlds</returns>
+	public int GetTotalWorldCount()
 	{
 		return worldDao.GetWorlds().Count;
 	}
