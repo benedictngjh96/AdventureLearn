@@ -213,6 +213,7 @@ __meta__ = {
 }
 
 [node name="WelcomeMsg" type="Control" parent="."]
+visible = false
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -241,6 +242,7 @@ position = Vector2( 968.512, 147.375 )
 texture = ExtResource( 23 )
 
 [node name="LoadingScreen" parent="." instance=ExtResource( 21 )]
+visible = false
 
 [node name="Node2D" parent="." instance=ExtResource( 22 )]
 [connection signal="pressed" from="CampaignBtn" to="." method="_on_CampaignBtn_pressed"]
