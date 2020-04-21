@@ -10,8 +10,6 @@ public class MainMenu : Node2D
         //Global.StudentName = "Yuen";
         //Testing
 
-        //welcomeMsg();
-
         NotificationPopup.displayPopup("Edited Successfully");
 
         /*GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
@@ -76,19 +74,7 @@ public class MainMenu : Node2D
     {
         GetTree().ChangeScene("res://Presentation/Settings/Settings.tscn");
     }
-    
-    private void welcomeMsg()
-    {
-        Control welcomeMsgNode = GetNode<Control>("WelcomeMsg");
-        AnimationPlayer animation = GetNode<AnimationPlayer>("WelcomeMsg/AnimationPlayer");
-
-        Label msg = GetNode<Label>("WelcomeMsg/Msg");
-        msg.Text = "Welcome back, " + Global.StudentName;
-        animation.Play("Hide");
-
-        //welcomeMsgNode.Visible = false;
-
-    }
+   
 }
 
 
