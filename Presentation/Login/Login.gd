@@ -7,6 +7,8 @@ var global = preload("res://Global/Global.cs");
 var email
 var googleId
 var fbId
+var loading = load("res://Presentation/LoadingScreen.cs")
+var loadingNode = loading.new()
 onready var fbBtn = get_node("FbLogin")
 onready var googleBtn = get_node("GoogleLogin")
 func _ready():
@@ -17,11 +19,6 @@ func _ready():
     var exist = facebook.isLoggedIn()
     if exist:
         facebook.logout()
-
-func _on_LoginBtn_pressed():
-    googleBtn.disabled = true
-    google.google_connect()
-    google.gconnect()
 func insert_google():
     var exist = studentBL.CheckGoogleExist(google.get_id())
     if exist:
@@ -59,3 +56,14 @@ func insert_fb():
 func _on_FbLogin_pressed():
     fbBtn.disabled = true
     facebook.login()
+    loadingNode.ShowLoading()
+    global.SetFirstLoggedIn(true)
+
+
+func _on_GoogleLogin_pressed():
+    googleBtn.disabled = true
+    google.google_connect()
+    google.gconnect()
+    loadingNode.ShowLoading()
+    var status = false
+    global.SetFirstLoggedIn(1)

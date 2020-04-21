@@ -40,16 +40,7 @@ public class AssignmentDao
         }
         return assignmentDict[assignmentId];
     }
-    public List<Assignment> GetAssignments()
-    {
-        string query = "SELECT * FROM Assignment";
-        List<Assignment> assignments;
-        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
-        {
-            assignments = conn.Query<Assignment>(query).ToList();
-        }
-        return assignments;
-    }
+
     public List<PublishedAssignment> GetStudentAssignment(int studentId)
     {
         string query = String.Format("SELECT DueDate, AssignmentId , AssignmentName , ClassId, TeacherId ,TeacherName " +
@@ -76,20 +67,7 @@ public class AssignmentDao
             return assignmentList;
         }
     }
-    /// <summary>
-    /// Return int value 1 if InsertAssignment has executed successfully
-    /// </summary>
-    /// <param name="teacherId"></param>
-    /// <param name="assignmentName"></param>
-    /// <param name="dueDate"></param>
-    /// <param name="monsterId"></param>
-    /// <param name="timeLimit"></param>
-    /// <param name="question"></param>
-    /// <returns></returns>
-    public int InsertAssignment(int teacherId, string assignmentName, DateTime dueDate, int monsterId, int timeLimit, List<Question> question)
-    {
-        return 1;
-    }
+   
     public Monster GetAssignmentMonster(int assignmentId)
     {
         BaseDao<Monster> baseDao = new BaseDao<Monster>();

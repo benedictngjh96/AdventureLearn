@@ -105,7 +105,6 @@ public class GamePlay : Node2D
         DisplayBtnDesign();
         countDown.Play("Countdown");
         timer = GetNode<Timer>("TimeLimit");
-
     }
 
     public override void _Process(float delta)

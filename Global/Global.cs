@@ -28,6 +28,8 @@ public class Global : Node
     public static float battleBgmVol { get; set; }
     public static float sfxVol { get; set; }
 
+    public static int FirstLoggedIn{get;set;}
+
     /// <summary>
     /// Global connection string
     /// </summary>
@@ -50,7 +52,14 @@ public class Global : Node
         double levelScore = (Convert.ToDouble(timeRemaining) / Convert.ToDouble(timeLimit)) * 100;
         return Convert.ToInt32(levelScore);
     }
-
+    public static int GetFirstLoggedIn()
+    {
+        return FirstLoggedIn;
+    }
+    public static void SetFirstLoggedIn(int status)
+    {
+        FirstLoggedIn = status;
+    }
     /// <summary>
     /// Store StudentId
     /// <param name="int id"></param>
@@ -68,7 +77,10 @@ public class Global : Node
     {
         StudentName = name;
     }
-
+    public static string GetStudentName()
+    {
+        return StudentName;
+    }
     /// <summary>
     /// Indicate that the user has logged in using Google Account
     /// </summary>
@@ -95,8 +107,6 @@ public class Global : Node
     /// </summary>
     public static void LoadSprite(string spritePath, AnimatedSprite animatedSprite, List<string> animationList)
     {
-        string temp = animationList[0];
-
         SpriteFrames spriteFrames = new SpriteFrames();
         foreach (string animation in animationList)
         {
@@ -105,13 +115,13 @@ public class Global : Node
 
             dir.ListDirBegin();
             var fileName = dir.GetNext();
-            //string strFileExtention = System.IO.Path.GetExtension(fileName);
+            string strFileExtention = System.IO.Path.GetExtension(fileName);
             spriteFrames.AddAnimation(animation);
             int count = 0;
 
             while (!String.IsNullOrEmpty(fileName))
             {
-                //fileName = fileName.Replace(strFileExtention, "");
+                fileName = fileName.Replace(strFileExtention, "");
                 var sprite = ResourceLoader.Load(spritePath + animation + "/" + fileName) as Texture;
                 spriteFrames.AddFrame(animation, sprite);
                 fileName = dir.GetNext();
@@ -120,9 +130,6 @@ public class Global : Node
             animatedSprite.Frames = spriteFrames;
             animatedSprite.SpeedScale = 7;
         }
-        if (temp == "loadingCircle")
-            animatedSprite.Play("loadingCircle");
-        else
-            animatedSprite.Play("Idle");
+       
     }
 }

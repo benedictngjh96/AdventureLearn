@@ -9,6 +9,9 @@ func _ready():
 func displayToast():
     if(Engine.has_singleton("GodotToast")):
         toast= Engine.get_singleton("GodotToast")
-    var name = global.GetStudentName
-    var msg = "Welcome " + name
-    toast.sendToast("msg")
+    if(global.GetFirstLoggedIn() == 1):
+        global.SetFirstLoggedIn(0)
+        var name = global.GetStudentName()
+        var msg = "Welcome " + name
+        toast.sendToast(msg)
+        

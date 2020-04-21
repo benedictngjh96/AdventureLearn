@@ -6,15 +6,9 @@ public class MainMenu : Node2D
 
     public override void _Ready()
     {
-        //Testing
-        //Global.StudentName = "Yuen";
-        //Testing
-
-        NotificationPopup.displayPopup("Edited Successfully");
-
-        /*GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
+        GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
         Godot.Object myGDScriptNode = (Godot.Object)MyGDScript.New(); // This is a Godot.Object
-        myGDScriptNode.Call("displayToast");*/
+        myGDScriptNode.Call("displayToast");
     }
 
     private void _on_CampaignBtn_pressed()
@@ -44,7 +38,6 @@ public class MainMenu : Node2D
 
     private void _on_LogoutBtn_pressed()
     {
-        
         GDScript fb = (GDScript)GD.Load("res://API/Facebook.gd");
         GDScript google = (GDScript)GD.Load("res://API/Google.gd");
 
@@ -74,7 +67,19 @@ public class MainMenu : Node2D
     {
         GetTree().ChangeScene("res://Presentation/Settings/Settings.tscn");
     }
-   
+    
+    private void welcomeMsg()
+    {
+        Control welcomeMsgNode = GetNode<Control>("WelcomeMsg");
+        AnimationPlayer animation = GetNode<AnimationPlayer>("WelcomeMsg/AnimationPlayer");
+
+        Label msg = GetNode<Label>("WelcomeMsg/Msg");
+        msg.Text = "Welcome back, " + Global.StudentName;
+        animation.Play("Hide");
+
+        //welcomeMsgNode.Visible = false;
+
+    }
 }
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Assets/GUI/ButtonsWithText/customLevel1.png" type="Texture" id=1]
 [ext_resource path="res://Presentation/MainMenu/MainMenu.cs" type="Script" id=2]
@@ -20,8 +20,6 @@
 [ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=18]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/setting2.png" type="Texture" id=19]
 [ext_resource path="res://Assets/GUI/ButtonsWithText/setting1.png" type="Texture" id=20]
-[ext_resource path="res://Presentation/LoadingScreen.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Presentation/LoadTest.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Assets/credits.png" type="Texture" id=23]
 
 [sub_resource type="DynamicFont" id=1]
@@ -29,32 +27,6 @@ font_data = ExtResource( 18 )
 
 [sub_resource type="DynamicFont" id=2]
 font_data = ExtResource( 18 )
-
-[sub_resource type="StyleBoxFlat" id=3]
-bg_color = Color( 0, 0, 0, 0.643137 )
-corner_radius_top_left = 20
-corner_radius_top_right = 20
-corner_radius_bottom_right = 20
-corner_radius_bottom_left = 20
-
-[sub_resource type="DynamicFont" id=4]
-size = 32
-font_data = ExtResource( 18 )
-
-[sub_resource type="Animation" id=5]
-resource_name = "Hide"
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
-}
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 2 )
@@ -212,39 +184,9 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="WelcomeMsg" type="Control" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Msg" type="Label" parent="WelcomeMsg"]
-margin_left = 212.0
-margin_top = 495.0
-margin_right = 812.0
-margin_bottom = 538.0
-custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 4 )
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="WelcomeMsg"]
-playback_speed = 0.5
-anims/Hide = SubResource( 5 )
-
 [node name="credits" type="Sprite" parent="."]
 position = Vector2( 968.512, 147.375 )
 texture = ExtResource( 23 )
-
-[node name="LoadingScreen" parent="." instance=ExtResource( 21 )]
-visible = false
-
-[node name="Node2D" parent="." instance=ExtResource( 22 )]
 [connection signal="pressed" from="CampaignBtn" to="." method="_on_CampaignBtn_pressed"]
 [connection signal="pressed" from="CustomLevelBtn" to="." method="_on_CustomLevelBtn_pressed"]
 [connection signal="pressed" from="AssignmentBtn" to="." method="_on_AssignmentBtn_pressed"]

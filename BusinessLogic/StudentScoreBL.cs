@@ -16,17 +16,7 @@ public class StudentScoreBL
         Student student = studentScoreDao.GetStudentScores(worldId, sectionId, studentId);
         return student;
     }
-    /// <summary>
-    /// Return list of Student according to sectionId
-    /// </summary>
-    /// <param name="sectionId"></param>
-    /// <returns></returns>
-    public List<Student> GetAllStudentScores(int sectionId)
-    {
-        List<Student> studentList = studentScoreDao.GetAllStudentScores(sectionId);
-        return studentList;
-
-    }
+ 
     /// <summary>
     /// Return int result 1 if InsertStudentScore has executed successful
     /// </summary>
@@ -52,10 +42,6 @@ public class StudentScoreBL
         StudentScoreDao studentScoreDao = new StudentScoreDao();
         return studentScoreDao.GetCampaignRanking(studentId);
     }
-    public int GetAssignmentRanking(int studentId)
-    {
-        StudentScoreDao studentScoreDao = new StudentScoreDao();
-        return studentScoreDao.GetAssignmentRanking(studentId);
-    }
+    
 
 }

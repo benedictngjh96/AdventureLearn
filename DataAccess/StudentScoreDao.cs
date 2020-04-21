@@ -38,59 +38,7 @@ public class StudentScoreDao
             return stud;
         }
     }
-    /// <summary>
-    /// Return list of student containing StudentScore object filtered by sectionId
-    /// </summary>
-    /// <param name="sectionId"></param>
-    /// <returns></returns>
-    public List<Student> GetAllStudentScores(int sectionId)
-    {
-        string query = String.Format("SELECT s.StudentId, ss.WorldId , ss.SectionId , ss.LevelId , ss.LevelScore FROM Student s INNER JOIN StudentScore  ss ON s.StudentId  = ss.StudentId WHERE ss.SectionId = {0}", sectionId);
-        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
-        {
-            var lookup = new Dictionary<int, Student>();
-            conn.Query<Student, StudentScore, Student>(query, (s, ss) =>
-            {
-                Student student;
-                if (!lookup.TryGetValue(s.StudentId, out student))
-                    lookup.Add(s.StudentId, student = s);
-                if (student.StudentScore == null)
-                    student.StudentScore = new List<StudentScore>();
-                student.StudentScore.Add(ss); /* Add locations to course */
-                return student;
-            }, splitOn: "StudentId").AsQueryable();
-            List<Student> studentList = new List<Student>();
-            studentList.AddRange(lookup.Values);
 
-            return studentList;
-        }
-    }
-    /// <summary>
-    /// Return list of average section scores according to worldId
-    /// </summary>
-    /// <param name="worldId"></param>
-    /// <returns></returns>
-    public List<StudentScore> GetAvgSectionScores(int worldId)
-    {
-        string query = String.Format("SELECT ss.SectionId,AVG(LevelScore) AS LevelScore  FROM StudentScore ss WHERE ss.WorldId ={0} GROUP BY ss.SectionId", worldId);
-        List<StudentScore> studentScores;
-        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
-        {
-            studentScores = conn.Query<StudentScore>(query).ToList();
-        }
-        return studentScores;
-    }
-
-    public List<StudentScore> GetAvgWorldScores()
-    {
-        string query = String.Format("SELECT AVG(LevelScore) AS LevelScore , WorldId FROM StudentScore ss GROUP BY ss.WorldId");
-        List<StudentScore> studentScores;
-        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
-        {
-            studentScores = conn.Query<StudentScore>(query).ToList();
-        }
-        return studentScores;
-    }
     public StudentScore GetAvgWorldScores(int studentId)
     {
         string query = String.Format("SELECT AVG(LevelScore) AS LevelScore , WorldId FROM StudentScore ss WHERE ss.StudentId = {0} GROUP BY ss.WorldId", studentId);
@@ -122,19 +70,7 @@ public class StudentScoreDao
         int result = baseDao.ExecuteQuery(query, new { StudentId = studentId, WorldId = worldId, SectionId = sectionId, LevelId = levelId, LevelScore = levelScore });
         return result;
     }
-    /// <summary>
-    /// Return int result 1 if student has existing level score
-    /// </summary>
-    /// <param name="studentId"></param>
-    /// <param name="levelId"></param>
-    /// <returns></returns>
-    public int CheckScoreExist(int studentId, int levelId)
-    {
-        BaseDao<int> baseDao = new BaseDao<int>();
-        string query = "SELECT COUNT(*) FROM StudentScore ss WHERE ss.StudentId = @StudentId AND LevelId = @LevelId";
-        int result = baseDao.ExecuteScalar(query, new { StudentId = studentId, LevelId = levelId });
-        return result;
-    }
+
     public int GetCampaignRanking(int studentId)
     {
         BaseDao<int> baseDao = new BaseDao<int>();
@@ -143,12 +79,5 @@ public class StudentScoreDao
         int result = baseDao.ExecuteScalar(query, new { StudentId = studentId });
         return result;
     }
-    public int GetAssignmentRanking(int studentId)
-    {
-        BaseDao<int> baseDao = new BaseDao<int>();
-        string query = "SELECT (COUNT(0)+1) AS StudentRank FROM StudentAssignmentTotalScore s1, StudentAssignmentTotalScore s2 " +
-        "WHERE s1.StudentId = @StudentId AND s2.totalAssignmentScore > s1.totalAssignmentScore";
-        int result = baseDao.ExecuteScalar(query, new { StudentId = studentId });
-        return result;
-    }
+  
 }

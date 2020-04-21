@@ -8,9 +8,7 @@ public class CreateLevelInit : Node2D
 
     OptionButton timeLimitBtn;
     LineEdit levelNameLine;
-    //OptionButton monsterIdBtn;
     Label errorMessageLabel;
-
     TextureButton arrowLeft, arrowRight;
     AnimatedSprite charSprite;
     List<string> animationList;
@@ -23,7 +21,6 @@ public class CreateLevelInit : Node2D
     int count = 0;
 
     int[] timeLimitOptions;
-    //int[] monsterIdOptions;
 
     /// <summary>
     /// Initialization

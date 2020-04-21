@@ -14,7 +14,6 @@ public class LeaderboardScreen : Node
     List<Leaderboard> leaderboardList;
     public override void _Ready()
     {
-
         vbox = GetNode<VBoxContainer>("ScrollContainer/VBoxContainer");
         gridContainer = GetNode<GridContainer>("ScrollContainer/VBoxContainer/GridContainer");
 

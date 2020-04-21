@@ -82,20 +82,12 @@ public class CreateLevel : Node2D
         if(CreateLevelInit.updated == 0)
         {
             createLevelBL.initializeQuestions();
-            GD.Print("Initializaed Questions");
         }
         else
         {
             createLevelBL.updateTempQuestionList();
             displayQuestion();
-            //createLevelBL.listQuestions();
         }
-            
-
-        /*if (questionTitleLine.Text == null)
-            GD.Print("v1) question title is null");
-        else if (questionTitleLine.Text == "")
-            GD.Print("v1) question title is empty");*/
     }
 
     /// <summary>
@@ -304,12 +296,10 @@ public class CreateLevel : Node2D
                     break;
 
             }
-
             return 1;
         }
         else
         {
-            GD.Print("No empty fields found.");
             return 0;
         }
     }
@@ -356,7 +346,6 @@ public class CreateLevel : Node2D
         }
         else
         {
-            GD.Print("No duplicate options found.");
             return 0;
         }
     }
