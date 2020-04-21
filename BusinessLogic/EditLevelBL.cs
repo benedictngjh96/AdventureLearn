@@ -142,18 +142,6 @@ public class EditLevelBL : Node
 			OriginalQuestionList.Add(new UserCreatedQuestion(i, q.Option1, q.Option2, q.Option3, q.CorrectOption, 4, q.QuestionTitle));
 			i++;
 		}
-
-		/*GD.Print("\nCustom Level Id: " + levelInfo.CustomLevelId + "\nMonster Id: " + levelInfo.Monster.MonsterId + 
-			"\nTimeLimit: " + levelInfo.TimeLimit);*/
-
-		/*foreach (Question q in levelQuestions)
-		{
-			GD.Print("Question id: " + q.QuestionId + "\nQuestionTitle: " + q.QuestionTitle
-				+ "\nOption1: " + q.Option1 + "\nOption2: " + q.Option2 + "\nOption3:" + q.Option3 + "\nCorrectOption: " + q.CorrectOption + "\n");
-		}*/
-
-		//listQuestions();
-
 		return levelInfo;
 	}
 

@@ -41,20 +41,7 @@ public class CustomLevelDao
         }
         return customLevelDict[customLevelId];
     }
-    /// <summary>
-    /// Return int value 1 if InsertCustomLevel has executed successfully
-    /// </summary>
-    /// <param name="studentId"></param>
-    /// <param name="customLevelName"></param>
-    /// <param name="monsterId"></param>
-    /// <param name="timeLimit"></param>
-    /// <param name="publicLevel"></param>
-    /// <param name=""></param>
-    /// <returns></returns>
-    public int InsertCustomLevel(int studentId, string customLevelName, int monsterId, int timeLimit, int publicLevel, List<Question> questionList)
-    {
-        return 1;
-    }
+
     public List<CustomLevel> GetCustomLevels()
     {
         string query = String.Format("SELECT cl.CustomLevelId, cl.CustomLevelName , cl.TimeLimit , s.StudentId , s.StudentName " +

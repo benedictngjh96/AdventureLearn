@@ -268,14 +268,13 @@ flip_h = true
 [node name="Escanor" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 123.919, 257.317 )
 frames = SubResource( 2 )
-frame = 2
 playing = true
 flip_h = true
 
 [node name="Zeus" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 95.5976, 97.7057 )
 frames = SubResource( 3 )
-frame = 8
+frame = 6
 playing = true
 flip_h = true
 
@@ -283,37 +282,37 @@ flip_h = true
 position = Vector2( 255.107, 276.986 )
 scale = Vector2( 1, 0.879158 )
 frames = SubResource( 4 )
-frame = 19
+frame = 17
 playing = true
 flip_h = true
 
 [node name="Mage" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 893.065, 33.9787 )
 frames = SubResource( 5 )
-frame = 12
+frame = 10
 playing = true
 
 [node name="Mage2" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 958.258, 248.182 )
 frames = SubResource( 6 )
-frame = 4
+frame = 2
 playing = true
 
 [node name="Ogre" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 613.67, 254.906 )
 frames = SubResource( 7 )
-frame = 15
+frame = 13
 playing = true
 
 [node name="BullWarrior" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 826.873, 282.483 )
 frames = SubResource( 8 )
-frame = 17
+frame = 15
 playing = true
 
 [node name="Logo" type="Sprite" parent="."]
 position = Vector2( 512, 100 )
 scale = Vector2( 0.292, 0.256 )
 texture = ExtResource( 159 )
-[connection signal="pressed" from="GoogleLogin" to="." method="_on_LoginBtn_pressed"]
+[connection signal="pressed" from="GoogleLogin" to="." method="_on_GoogleLogin_pressed"]
 [connection signal="pressed" from="FbLogin" to="." method="_on_FbLogin_pressed"]

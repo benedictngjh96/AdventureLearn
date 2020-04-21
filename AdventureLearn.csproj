@@ -91,13 +91,10 @@
     <Compile Include="BusinessLogic\CustomLevelBL.cs" />
     <Compile Include="BusinessLogic\CustomLevelScoreBL.cs" />
     <Compile Include="BusinessLogic\EditLevelBL.cs" />
-    <Compile Include="BusinessLogic\GoogleBL.cs" />
     <Compile Include="BusinessLogic\LeaderboardBL.cs" />
     <Compile Include="BusinessLogic\SectionBL.cs" />
-    <Compile Include="BusinessLogic\StatisticsBL.cs" />
     <Compile Include="BusinessLogic\StudentBL.cs" />
     <Compile Include="BusinessLogic\StudentScoreBL.cs" />
-    <Compile Include="BusinessLogic\TeacherBL.cs" />
     <Compile Include="BusinessLogic\WorldBL.cs" />
     <Compile Include="DataAccess\AssignmentDao.cs" />
     <Compile Include="DataAccess\AssignmentScoreDao.cs" />
@@ -112,7 +109,6 @@
     <Compile Include="DataAccess\SectionDao.cs" />
     <Compile Include="DataAccess\StudentDao.cs" />
     <Compile Include="DataAccess\StudentScoreDao.cs" />
-    <Compile Include="DataAccess\TeacherDao.cs" />
     <Compile Include="DataAccess\WorldDao.cs" />
     <Compile Include="Entities\Assignment.cs" />
     <Compile Include="Entities\AssignmentScore.cs" />
@@ -153,12 +149,10 @@
     <Compile Include="Presentation\GamePlay\GamePlay.cs" />
     <Compile Include="Presentation\Leaderboard\LeaderboardScreen.cs" />
     <Compile Include="Presentation\LevelSelection\LevelSelection.cs" />
-    <Compile Include="Presentation\LoadingScreen.cs" />
-    <Compile Include="Presentation\LoadTest.cs" />
+    <Compile Include="Presentation\Login\Login.cs" />
     <Compile Include="Presentation\MainMenu\MainMenu.cs" />
     <Compile Include="Presentation\Settings\Settings.cs" />
     <Compile Include="Presentation\SoundEffect\DefaultSound.cs" />
-    <Compile Include="Presentation\SummaryReport\Chart.cs" />
     <Compile Include="Presentation\UserProfile\UserProfile.cs" />
     <Compile Include="Presentation\World\WorldScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -171,10 +165,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".vscode\launch.json" />
-    <Content Include="BusinessLogic\StatsBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Presentation\Section\" />
+    <Folder Include="Presentation\SummaryReport\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

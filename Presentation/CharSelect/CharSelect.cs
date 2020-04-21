@@ -90,4 +90,10 @@ public class CharSelect : Node2D
         charSprite.Play(charSelected + "Attack");
     }
 
+    private void _on_BackBtn_pressed()
+    {
+        GetTree().ChangeScene("res://Presentation/UserProfile/UserProfile.tscn");
+    }
 }
+
+

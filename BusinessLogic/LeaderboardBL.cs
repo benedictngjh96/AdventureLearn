@@ -33,13 +33,5 @@ public class LeaderboardBL
         WorldDao worldDao = new WorldDao();
         return worldDao.GetWorlds();
     }
-    /// <summary>
-    /// Return leaderboard object of Student
-    /// </summary>
-    /// <param name="studentId"></param>
-    /// <returns></returns>
-    public Leaderboard GetStudentLeaderboard(int studentId)
-    {
-        return null;
-    }
+    
 }

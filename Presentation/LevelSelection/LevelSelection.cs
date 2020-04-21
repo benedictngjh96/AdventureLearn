@@ -27,8 +27,6 @@ public class LevelSelection : Node2D
 
     public override void _Ready()
     {
-       
-
         //Intializing nodes
         sectionBL = new SectionBL();
         studentScoreBL = new StudentScoreBL();
@@ -65,7 +63,6 @@ public class LevelSelection : Node2D
         HideLevels();
 
         DisplayLevelScore();
-
     }
     private void HideLevels()
     {

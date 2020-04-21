@@ -63,9 +63,9 @@ __meta__ = {
 
 [node name="CharacterName" type="Label" parent="."]
 margin_left = 695.165
-margin_top = 361.566
-margin_right = 815.165
-margin_bottom = 408.566
+margin_top = 366.566
+margin_right = 1285.17
+margin_bottom = 413.566
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -73,10 +73,10 @@ __meta__ = {
 }
 
 [node name="CharacterSkill" type="Label" parent="."]
-margin_left = 590.0
+margin_left = 695.165
 margin_top = 397.0
-margin_right = 875.0
-margin_bottom = 439.0
+margin_right = 811.165
+margin_bottom = 431.0
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 autowrap = true
@@ -87,10 +87,10 @@ __meta__ = {
 [node name="BackBtn" parent="." instance=ExtResource( 3 )]
 
 [node name="Name" type="Label" parent="."]
-margin_left = 275.996
-margin_top = 184.651
-margin_right = 476.996
-margin_bottom = 250.651
+margin_left = 273.663
+margin_top = 214.976
+margin_right = 474.663
+margin_bottom = 280.976
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Name:"
@@ -99,10 +99,10 @@ __meta__ = {
 }
 
 [node name="NameLbl" type="Label" parent="."]
-margin_left = 434.564
-margin_top = 179.588
-margin_right = 434.564
-margin_bottom = 245.588
+margin_left = 432.231
+margin_top = 209.913
+margin_right = 432.231
+margin_bottom = 275.913
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -110,10 +110,10 @@ __meta__ = {
 }
 
 [node name="AvgScore" type="Label" parent="."]
-margin_left = 274.122
-margin_top = 216.38
-margin_right = 475.122
-margin_bottom = 351.38
+margin_left = 271.789
+margin_top = 246.705
+margin_right = 472.789
+margin_bottom = 381.705
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Average 
@@ -123,10 +123,10 @@ __meta__ = {
 }
 
 [node name="AvgScoreLbl" type="Label" parent="."]
-margin_left = 432.482
-margin_top = 250.955
-margin_right = 432.482
-margin_bottom = 316.955
+margin_left = 430.149
+margin_top = 262.28
+margin_right = 430.149
+margin_bottom = 328.28
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -134,10 +134,10 @@ __meta__ = {
 }
 
 [node name="CampaignLbl" type="Label" parent="."]
-margin_left = 274.482
-margin_top = 282.493
-margin_right = 475.482
-margin_bottom = 417.493
+margin_left = 272.149
+margin_top = 312.818
+margin_right = 473.149
+margin_bottom = 447.818
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Campaign 
@@ -147,34 +147,10 @@ __meta__ = {
 }
 
 [node name="RankLbl" type="Label" parent="."]
-margin_left = 432.482
-margin_top = 290.0
-margin_right = 432.482
-margin_bottom = 356.0
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="AssignmentLbl" type="Label" parent="."]
-margin_left = 275.122
-margin_top = 345.061
-margin_right = 476.122
-margin_bottom = 480.061
-custom_fonts/font = SubResource( 3 )
-custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Assignment
-Rank:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="RankLbl2" type="Label" parent="."]
-margin_left = 432.482
-margin_top = 358.0
-margin_right = 432.482
-margin_bottom = 424.0
+margin_left = 430.149
+margin_top = 331.325
+margin_right = 430.149
+margin_bottom = 397.325
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {

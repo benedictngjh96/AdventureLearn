@@ -61,29 +61,7 @@ public class CreateLevelDAO : Node
         InsertTeacherCustomQuestion(questionId, assignmentId);*/
     }
 
-    /// <summary>
-    /// Insert new assignment into database
-    /// </summary>
-    /// <param name="string levelName"></param>
-    /// <param name="int monsterId"></param>
-    /// <param name="int timeLimit"></param>
-    /// <returns></returns>
-    public void InsertAssignment(string levelName, int monsterId, int timeLimit)
-    {
-        this.levelName = levelName;
-        this.monsterId = monsterId;
-        this.timeLimit = timeLimit;
-
-        GD.Print("problem in insertAssignment if crash here");
-
-        string query = String.Format("INSERT INTO `Assignment`(TeacherId, AssignmentName, MonsterId, TimeLimit) " +
-            "VALUES({0}, '{1}', {2}, {3});", Global.TeacherId, levelName, monsterId, timeLimit);
-
-        BaseDao<int> baseDao = new BaseDao<int>();
-        int result = baseDao.ExecuteQuery(query);
-
-    }
-
+   
     /// <summary>
     /// Insert new custom level into database
     /// </summary>
@@ -117,18 +95,7 @@ public class CreateLevelDAO : Node
         int result = baseDao.ExecuteQuery(query);
     }
 
-    /// <summary>
-    /// Link questionId and assignmentId in database
-    /// </summary>
-    /// <returns></returns>
-    private void InsertTeacherCustomQuestion(int questionId, int assignmentId)
-    {
-        string query = String.Format("INSERT INTO TeacherCustomQuestion(QuestionId, AssignmentId) " +
-            "VALUES({0}, {1});", questionId, assignmentId);
-
-        BaseDao<int> baseDao = new BaseDao<int>();
-        int result = baseDao.ExecuteQuery(query);
-    }
+ 
 
     /// <summary>
     /// Get the id of question created by student
@@ -150,42 +117,6 @@ public class CreateLevelDAO : Node
         return questionId;
     }
 
-    /// <summary>
-    /// Get the id of question created by teacher
-    /// </summary>
-    /// <returns></returns>
-    private int getTeacherQuestionId(string option1, string option2, string option3, string correctOption, string questionTitle)
-    {
-        //teacher
-        string query = String.Format(
-            "SELECT DISTINCT QuestionId FROM Question NATURAL JOIN `Assignment` " +
-            "WHERE TeacherId = {0} AND AssignmentName = '{1}' AND QuestionTitle = '{2}' AND Option1 = '{3}' " +
-            "AND Option2 = '{4}' AND Option3 = '{5}' AND CorrectOption = '{6}' AND MonsterId = {7} AND TimeLimit = {8};",
-            Global.TeacherId, levelName, questionTitle, option1, option2, option3,
-            correctOption, monsterId, timeLimit);
-
-        BaseDao<int> baseDao = new BaseDao<int>();
-        int questionId = baseDao.RetrieveQuery(query);
-        return questionId;
-    }
-
-    /// <summary>
-    /// Get the assignment id
-    /// </summary>
-    /// <returns></returns>
-    private int getAssignmentId(string option1, string option2, string option3, string correctOption, string questionTitle)
-    {
-        string query = String.Format(
-            "SELECT DISTINCT AssignmentId FROM Question NATURAL JOIN `Assignment` " +
-            "WHERE TeacherId = {0} AND AssignmentName = '{1}' AND QuestionTitle = '{2}' AND Option1 = '{3}' " +
-            "AND Option2 = '{4}' AND Option3 = '{5}' AND CorrectOption = '{6}' AND MonsterId = {7} AND TimeLimit = {8};",
-            Global.TeacherId, levelName, questionTitle, option1, option2, option3,
-            correctOption, monsterId, timeLimit);
-
-        BaseDao<int> baseDao = new BaseDao<int>();
-        int assignmentId = baseDao.RetrieveQuery(query);
-        return assignmentId;
-    }
 
     /// <summary>
     /// Get the custom level id

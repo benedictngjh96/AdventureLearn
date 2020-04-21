@@ -20,52 +20,8 @@ public class AssignmentScoreDao
             "ON DUPLICATE KEY UPDATE Score = @Score";
         int result = baseDao.ExecuteQuery(query, new { StudentId = studentId, AssignmentId = assignmentId, Score = assignmentScore });
         return result;
-    }
-    public List<AssignmentScore> GetAvgAssignmentScore()
-    {
-        string query = "SELECT AssignmentId ,AVG(Score) AS Score FROM AssignmentScore a GROUP BY AssignmentId";
-        List<AssignmentScore> assignmentScores;
-        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
-        {
-            assignmentScores = conn.Query<AssignmentScore>(query).ToList();
-        }
-        return assignmentScores;
-    }
-    public AssignmentScore GetAvgAssignmentScore(int assignmentId)
-    {
-        BaseDao<AssignmentScore> baseDao = new BaseDao<AssignmentScore>();
-        string query = String.Format("SELECT AssignmentId ,AVG(Score) AS Score FROM AssignmentScore a WHERE a.AssignmentId = {0} " +
-        "GROUP BY AssignmentId", assignmentId);
-        AssignmentScore assignmentScore = baseDao.RetrieveQuery(query);
-        return assignmentScore;
-    }
-    public AssignmentScore GetMaxAssignmentScore(int assignmentId)
-    {
-        BaseDao<AssignmentScore> baseDao = new BaseDao<AssignmentScore>();
-        string query = String.Format("SELECT AssignmentId ,MAX(Score) AS Score FROM AssignmentScore a WHERE a.AssignmentId = {0} " +
-        "GROUP BY AssignmentId", assignmentId);
-        AssignmentScore assignmentScore = baseDao.RetrieveQuery(query);
-        return assignmentScore;
-    }
+    } 
 
-    public AssignmentScore GetMinAssignmentScore(int assignmentId)
-    {
-        BaseDao<AssignmentScore> baseDao = new BaseDao<AssignmentScore>();
-        string query = String.Format("SELECT AssignmentId , MIN(Score) AS Score FROM AssignmentScore a WHERE a.AssignmentId = {0} " +
-        "GROUP BY AssignmentId", assignmentId);
-        AssignmentScore assignmentScore = baseDao.RetrieveQuery(query);
-        return assignmentScore;
-    }
-    public List<AssignmentScore> GetStudentAssignmentScores(int studentId)
-    {
-        string query = String.Format("SELECT * FROM AssignmentScore a WHERE StudentId  = {0}", studentId);
-        List<AssignmentScore> assignmentScores;
-        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
-        {
-            assignmentScores = conn.Query<AssignmentScore>(query).ToList();
-        }
-        return assignmentScores;
-    }
     public List<AssignmentScore> GetStudentCompletedAssignment(int studentId)
     {
         string query = String.Format("SELECT Score,AssignmentId ,DueDate,  TeacherId ,TeacherName , AssignmentId , AssignmentName " +

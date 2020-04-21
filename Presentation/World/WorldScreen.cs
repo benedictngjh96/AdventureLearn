@@ -10,25 +10,17 @@ public class WorldScreen : Node
 
     public override void _Ready()
     {
-        //Testing
-        //Global.StudentId = 29;
-        //Testing
-
         world1Btn = GetNode<TextureButton>("Bg/World1");
         world2Btn = GetNode<TextureButton>("Bg/World2");
         world3Btn = GetNode<TextureButton>("Bg/World3");
-
         worldBl = new WorldBL();
-
         disableInaccessibleWorlds();
     }
 
     private void disableInaccessibleWorlds()
     {
-
         int completedWorldCount = worldBl.getCompletedWorldCount();
         int totalWorldCount = worldBl.getTotalWorldCount();
-
 
         for (int i = totalWorldCount; i > completedWorldCount + 1 ; i--)
         {

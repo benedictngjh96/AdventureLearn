@@ -33,22 +33,7 @@ public class StudentDao
         return result;
 
     }
-    public Student GetLastStudent()
-    {
-        BaseDao<Student> baseDao = new BaseDao<Student>();
-        Student student = baseDao.RetrieveQuery("SELECT * FROM Student ORDER BY StudentId DESC LIMIT 1");
-        return student;
-    }
-    /// <summary>
-    /// Return int value 1 if userName and password is valid
-    /// </summary>
-    /// <param name="userName"></param>
-    /// <param name="password"></param>
-    /// <returns></returns>
-    public int CheckStudentLogin(string userName, string password)
-    {
-        return 1;
-    }
+
     /// <summary>
     /// Return true if student exist
     /// </summary>
@@ -93,22 +78,6 @@ public class StudentDao
         var studentObj = new { FacebookAccountId = fbId };
         bool exist = baseDao.ExecuteScalar(query, studentObj);
         return exist;
-    }
-    public Student GetStudent()
-    {
-        BaseDao<Student> baseDao = new BaseDao<Student>();
-        Student student = baseDao.RetrieveQuery("SELECT * FROM Student WHERE StudentId = 4");
-        return student;
-    }
-    public List<Student> GetStudents()
-    {
-        List<Student> studentList = new List<Student>();
-        string query = "SELECT * FROM Student";
-        using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
-        {
-            studentList = conn.Query<Student>(query).ToList();
-        }
-        return studentList;
     }
     public Student GetFacebookStudent(string fbId)
     {
