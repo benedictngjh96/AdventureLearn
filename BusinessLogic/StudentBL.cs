@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Business Logic for Student
+/// </summary>
 public class StudentBL : Node
 {
 

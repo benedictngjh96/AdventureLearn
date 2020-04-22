@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for Character Select
+/// </summary>
 public class CharSelect : Node2D
 {
 
@@ -18,6 +21,10 @@ public class CharSelect : Node2D
     Label skillNameLbl;
     Label enterLbl;
     Label skillDescriptionLbl;
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         //Hide animated sprite and button when user has not selected a character
@@ -36,26 +43,47 @@ public class CharSelect : Node2D
         characterList = characterBL.GetAllCharacters();
 
     }
+
+    /// <summary>
+    /// Handles the logic when this character is pressed
+    /// </summary>
     private void _on_Knight1_pressed()
     {
         DisplayCharacter("Escanor");
         charSelected = "Escanor";
     }
+
+    /// <summary>
+    /// Handles the logic when this character is pressed
+    /// </summary>
     private void _on_Warrior1_pressed()
     {
         DisplayCharacter("Athena");
         charSelected = "Athena";
     }
+
+    /// <summary>
+    /// Handles the logic when this character is pressed
+    /// </summary>
     private void _on_Warrior2_pressed()
     {
         DisplayCharacter("Mjolnir");
         charSelected = "Mjolnir";
     }
+
+    /// <summary>
+    /// Handles the logic when this character is pressed
+    /// </summary>
     private void _on_Zeus_pressed()
     {
         DisplayCharacter("Zeus");
         charSelected = "Zeus";
     }
+
+    /// <summary>
+    /// Display the Character stated in the parameter
+    /// </summary>
+    /// <param name="characterName"></param>
     private void DisplayCharacter(String characterName)
     {
         charSprite.Play(characterName + "Walk", false);
@@ -79,17 +107,19 @@ public class CharSelect : Node2D
         charId = result.CharId;
     }
 
+    /// <summary>
+    /// Handles the logic when the Enter button is pressed
+    /// </summary>
     private void _on_EnterBtn_pressed()
     {
         StudentBL studentBL = new StudentBL();
         studentBL.UpdateStudentCharacter(charId, Global.StudentId);
         GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
     }
-    private void _on_AnimatedSprite_animation_finished()
-    {
-        charSprite.Play(charSelected + "Attack");
-    }
 
+    /// <summary>
+    /// Handles the logic when the Back button is pressed
+    /// </summary>
     private void _on_BackBtn_pressed()
     {
         GetTree().ChangeScene("res://Presentation/UserProfile/UserProfile.tscn");

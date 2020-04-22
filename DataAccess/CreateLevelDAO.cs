@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+/// <summary>
+/// Class to handle DAO operations for CreateLevel
+/// </summary>
 public class CreateLevelDAO : Node
 {
     string levelName;
@@ -8,15 +11,14 @@ public class CreateLevelDAO : Node
     int timeLimit;
 
     /// <summary>
-	/// Insert Question into database
-	/// </summary>
-    /// <param name="string option1"></param>
-    /// <param name="string option2"></param>
-    /// <param name="string option3"></param>
-    /// <param name="string option4"></param>
-    /// <param name="int correctOption"></param>
-    /// <param name="string questionTitle"></param>
-	/// <returns></returns>
+    /// Insert Question into database
+    /// </summary>
+    /// <param name="option1"></param>
+    /// <param name="option2"></param>
+    /// <param name="option3"></param>
+    /// <param name="option4"></param>
+    /// <param name="correctOptionInt"></param>
+    /// <param name="questionTitle"></param>
     public void InsertQuestion(string option1, string option2, string option3, string option4, int correctOptionInt, string questionTitle)
     {
         switch (correctOptionInt)
@@ -43,14 +45,12 @@ public class CreateLevelDAO : Node
         InsertStudentCustomQuestion(questionId, customLevelId);
     }
 
-   
     /// <summary>
     /// Insert new custom level into database
     /// </summary>
-    /// <param name="string levelName"></param>
-    /// <param name="int monsterId"></param>
-    /// <param name="int timeLimit"></param>
-    /// <returns></returns>
+    /// <param name="levelName"></param>
+    /// <param name="monsterId"></param>
+    /// <param name="timeLimit"></param>
     public void InsertCustomLevel(string levelName, int monsterId, int timeLimit)
     {
         this.levelName = levelName;
@@ -67,7 +67,8 @@ public class CreateLevelDAO : Node
     /// <summary>
     /// Link questionId and customLevelId in database
     /// </summary>
-    /// <returns></returns>
+    /// <param name="questionId"></param>
+    /// <param name="customLevelId"></param>
     private void InsertStudentCustomQuestion(int questionId, int customLevelId)
     {
         string query = String.Format("INSERT INTO StudentCustomQuestion(QuestionId, CustomLevelId) " +
@@ -77,12 +78,15 @@ public class CreateLevelDAO : Node
         int result = baseDao.ExecuteQuery(query);
     }
 
- 
-
     /// <summary>
-    /// Get the id of question created by student
+    /// Get the QuestionId of the question created by student
     /// </summary>
-    /// <returns></returns>
+    /// <param name="option1"></param>
+    /// <param name="option2"></param>
+    /// <param name="option3"></param>
+    /// <param name="correctOption"></param>
+    /// <param name="questionTitle"></param>
+    /// <returns>Return the acquired QuestionId </returns>
     private int getStudentQuestionId(string option1, string option2, string option3, string correctOption, string questionTitle)
     {
         //student
@@ -99,11 +103,15 @@ public class CreateLevelDAO : Node
         return questionId;
     }
 
-
     /// <summary>
-    /// Get the custom level id
+    /// Get the CustomLevelId
     /// </summary>
-    /// <returns></returns>
+    /// <param name="option1"></param>
+    /// <param name="option2"></param>
+    /// <param name="option3"></param>
+    /// <param name="correctOption"></param>
+    /// <param name="questionTitle"></param>
+    /// <returns> Return the acquired CustomLevelId</returns>
     private int getCustomLevelId(string option1, string option2, string option3, string correctOption, string questionTitle)
     {
         string query = String.Format(
@@ -120,11 +128,10 @@ public class CreateLevelDAO : Node
     }
 
     /// <summary>
-    /// Format for database insertion
+    /// Format the Question for database insertion
     /// </summary>
-    /// <param name="ref string option4"></param>
-    /// <param name="ref string correctOption"></param>
-    /// <returns></returns>
+    /// <param name="option4"></param>
+    /// <param name="correctOption"></param>
     private void formatForDatabaseInsertion(ref string option4, ref string correctOption)
     {
         option4 = option4 + correctOption;
@@ -133,11 +140,10 @@ public class CreateLevelDAO : Node
     }
 
     /// <summary>
-    /// Check database for existing level name
-    /// Return -1 if there is existing level name, else return 1
+    /// Check database for existing Level Name
     /// </summary>
-    /// <param name="string name"></param>
-    /// <returns></returns>
+    /// <param name="name"></param>
+    /// <returns>Return -1 if there is existing level name, else return 1</returns>
     public static int checkValidLevelName(string name)
     {
         string query = String.Format("SELECT CustomLevelName FROM CustomLevel cl WHERE StudentId = '{0}' AND CustomLevelName = '{1}'; ", Global.StudentId, name);

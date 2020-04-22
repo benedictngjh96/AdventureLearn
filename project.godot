@@ -25,6 +25,7 @@ run/main_scene="res://Presentation/Login/Login.tscn"
 [autoload]
 
 DefaultSound="*res://Presentation/SoundEffect/DefaultSound.tscn"
+NotificationPopup="*res://Presentation/NotificationPopup.tscn"
 
 [display]
 

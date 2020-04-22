@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for EditLevelInit
+/// </summary>
 public class EditLevelInit : Node2D
 {
     static public int updated = 0;
@@ -34,7 +37,6 @@ public class EditLevelInit : Node2D
     /// <summary>
     /// Initialization
     /// </summary>
-    /// <returns></returns>
     public override void _Ready()
     {
         editLevelBL = new EditLevelBL();
@@ -68,7 +70,6 @@ public class EditLevelInit : Node2D
     /// <summary>
     /// Display original or updated level name, selected monster, selected time limit
     /// </summary>
-    /// <returns></returns>
     private void displayLevelInit()
     {
         if(updated == 0)
@@ -125,9 +126,8 @@ public class EditLevelInit : Node2D
     }
 
     /// <summary>
-    /// What happens whenever the left arrow in Select Monster is clicked
+    /// Change Monster to the one on the left
     /// </summary>
-    /// <returns></returns>
     private void _on_ArrowLeft_pressed()
     {
         count--;
@@ -137,9 +137,8 @@ public class EditLevelInit : Node2D
     }
 
     /// <summary>
-    /// What happens whenever the right arrow in Select Monster is clicked
+    ///  Change Monster to the one on the right
     /// </summary>
-    /// <returns></returns>
     private void _on_ArrowRight_pressed()
     {
         count++;
@@ -149,9 +148,8 @@ public class EditLevelInit : Node2D
     }
 
     /// <summary>
-    /// Display the corresponding monster whenever the left or right arrows are clicked
+    /// Display the corresponding Monster whenever the left or right arrows are pressed
     /// </summary>
-    /// <returns></returns>
     private void displayCharacter()
     {
         string name = monsterList[count].MonsterName;
@@ -161,9 +159,8 @@ public class EditLevelInit : Node2D
     }
 
     /// <summary>
-    /// Insert available timelimit and monster options
+    /// Insert available timelimit and Monster options
     /// </summary>
-    /// <returns></returns>
     private void addOptions()
     {
         //monster
@@ -182,9 +179,8 @@ public class EditLevelInit : Node2D
     }
 
     /// <summary>
-    /// Change the status of the arrow buttons 
+    /// Change the status of the arrow buttons when one of them is pressed
     /// </summary>
-    /// <returns></returns>
     private void changeArrowButtonStatues()
     {
         if (count == 0)
@@ -205,9 +201,8 @@ public class EditLevelInit : Node2D
     }
 
     /// <summary>
-    /// Go to next step of level creation
+    /// Checks if LevelName is valid before going to next step of edit level when the Next button is pressed
     /// </summary>
-    /// <returns></returns>
     private void _on_NextStepBtn_pressed()
     {
 
@@ -233,11 +228,10 @@ public class EditLevelInit : Node2D
             GetTree().ChangeScene("res://Presentation/EditLevel/EditLevel.tscn");
         }
     }
-    
+
     /// <summary>
     /// Restore Original LevelInit Info
     /// </summary>
-    /// <returns></returns>
     private void _on_RestoreOriginal_pressed()
     {
         levelNameLine.Text = oldName;

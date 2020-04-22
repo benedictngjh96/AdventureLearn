@@ -1,9 +1,17 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+
+/// <summary>
+/// Class to handle Presentation for UserProfile
+/// </summary>
 public class UserProfile : Node2D
 {
     StudentBL studentBL;
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         studentBL = new StudentBL();
@@ -33,6 +41,10 @@ public class UserProfile : Node2D
             avgScoreLbl.Text = studentScoreBL.GetAvgWorldScores(Global.StudentId).LevelScore.ToString();
 
     }
+
+    /// <summary>
+    /// Change scene to CharSelect.tscn whenever the ChangeCharacter button is pressed
+    /// </summary>
     private void _on_ChangeCharacter_pressed()
     {
         GetTree().ChangeScene("res://Presentation/CharSelect/CharSelect.tscn");

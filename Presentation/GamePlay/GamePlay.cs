@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for GamePlay
+/// </summary>
 public class GamePlay : Node2D
 {
     List<string> animationList;
@@ -55,10 +58,13 @@ public class GamePlay : Node2D
     bool shieldOn = false;
     AudioStreamPlayer audioStreamPlayer;
 
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer2");
-        audioStreamPlayer.VolumeDb = Global.sfxVol;
+        audioStreamPlayer.VolumeDb = Global.SfxVol;
 
         AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/battleThemeA.ogg") as AudioStream;
         DefaultSound.playSound(sfx);
@@ -107,6 +113,10 @@ public class GamePlay : Node2D
         timer = GetNode<Timer>("TimeLimit");
     }
 
+    /// <summary>
+    /// Handles the countdown logic
+    /// </summary>
+    /// <param name="delta"></param>
     public override void _Process(float delta)
     {
         if (s <= 0)
@@ -136,24 +146,47 @@ public class GamePlay : Node2D
 
 
     }
+
+    /// <summary>
+    /// Set Level Title
+    /// </summary>
+    /// <param name="title"></param>
     public void SetLevelTitle(string title)
     {
         levelTitle.Text = title;
     }
+
+    /// <summary>
+    /// Set Question Number
+    /// </summary>
     public void SetQuestionNum()
     {
         questionLabel.Text = String.Format("{0}/{1}", questionIndex + 1, questionList.Count);
     }
+
+    /// <summary>
+    /// Set time limit
+    /// </summary>
+    /// <param name="timeLimit"></param>
     public void SetTimeLimit(int timeLimit)
     {
     
         s = timeLimit;
         this.timeLimit = timeLimit;
     }
+
+    /// <summary>
+    /// Set Question list
+    /// </summary>
+    /// <param name="questionList"></param>
     public void SetQuestionList(List<Question> questionList)
     {
         this.questionList = questionList;
     }
+
+    /// <summary>
+    /// Display the Question
+    /// </summary>
     public void DisplayQuestion()
     {
         Control controlParentNode = GetNode<Control>("Buttons");
@@ -184,6 +217,10 @@ public class GamePlay : Node2D
         }
     }
 
+    /// <summary>
+    /// Display the Student's character sprite
+    /// </summary>
+    /// <param name="character"></param>
     public void DisplayCharSprite(Character character)
     {
         string charPath = String.Format(spritePath + "{0}/", character.CharName);
@@ -195,11 +232,20 @@ public class GamePlay : Node2D
         else if (character.CharName == "Escanor")
             charSprite.Position = new Vector2(370, 280);
     }
+
+    /// <summary>
+    /// Display the Monster sprite
+    /// </summary>
+    /// <param name="monster"></param>
     public void DisplayMonsterSprite(Monster monster)
     {
         string monsterPath = String.Format(spritePath + "{0}/", monster.MonsterName);
         Global.LoadSprite(monsterPath, monsterSprite, animationList);
     }
+
+    /// <summary>
+    /// Display next Question
+    /// </summary>
     public void DisplayNextQuestion()
     {
         Control ctr = GetNode<Control>("Buttons");
@@ -223,6 +269,10 @@ public class GamePlay : Node2D
             audioStreamPlayer.Playing = true;
         }
     }
+
+    /// <summary>
+    /// Hide the buttons
+    /// </summary>
     private void HideBtns()
     {
         op1.Visible = false;
@@ -230,6 +280,10 @@ public class GamePlay : Node2D
         op3.Visible = false;
         op4.Visible = false;
     }
+
+    /// <summary>
+    /// Display the themed buttons
+    /// </summary>
     private void DisplayBtnDesign()
     {
         if (Global.SectionId == 1)
@@ -254,6 +308,10 @@ public class GamePlay : Node2D
             op4.Theme = theme3;
         }
     }
+
+    /// <summary>
+    /// Handles the logic when the win animation finishes
+    /// </summary>
     private void _on_Win_animation_finished()
     {
         win.Stop();
@@ -262,6 +320,10 @@ public class GamePlay : Node2D
         popupMenu.Show();
         HideNextButton();
     }
+
+    /// <summary>
+    /// Handles the logic when the lose animation finishes
+    /// </summary>
     private void _on_Lose_animation_finished()
     {
         s = 1000;
@@ -273,6 +335,10 @@ public class GamePlay : Node2D
         audioStreamPlayer.Stream = sfx;
         audioStreamPlayer.Playing = true;
     }
+
+    /// <summary>
+    /// Hide the Next button in popup menu
+    /// </summary>
     private void HideNextButton()
     {
         TextureButton btn = GetNode<TextureButton>("PopupMenu/Next");
@@ -286,6 +352,12 @@ public class GamePlay : Node2D
                 break;
         }
     }
+
+    /// <summary>
+    /// Check if the answer is correct and play attack animations for Character/Monster and sound effects
+    /// </summary>
+    /// <param name="option"></param>
+    /// <returns>Return true if the answer, else return false if the answer is wrong</returns>
     public bool CheckCorrectAnswer(string option)
     {
         Random r = new Random();
@@ -331,18 +403,37 @@ public class GamePlay : Node2D
         audioStreamPlayer.Playing = true;
         return result;
     }
+
+    /// <summary>
+    /// Set the game type
+    /// </summary>
+    /// <param name="gameType"></param>
     public void SetGameType(string gameType)
     {
         this.gameType = gameType;
     }
+
+    /// <summary>
+    /// Get remaining time left
+    /// </summary>
+    /// <returns></returns>
     public int GetTimeLeft()
     {
         return s;
     }
+
+    /// <summary>
+    /// Set Character
+    /// </summary>
+    /// <param name="character"></param>
     public void SetCharacter(Character character)
     {
         this.character = character;
     }
+
+    /// <summary>
+    /// Handles the logic when option1 is pressed
+    /// </summary>
     private void _on_Option1_pressed()
     {
         if (CheckCorrectAnswer(op1.Text))
@@ -358,6 +449,9 @@ public class GamePlay : Node2D
         }
     }
 
+    /// <summary>
+    /// Handles the logic when option2 is pressed
+    /// </summary>
     private void _on_Option2_pressed()
     {
         if (CheckCorrectAnswer(op2.Text))
@@ -372,6 +466,11 @@ public class GamePlay : Node2D
             timer2.Start();
         }
     }
+
+    /// <summary>
+    /// Display the stars
+    /// </summary>
+    /// <param name="star"></param>
     public void DisplayStars(int star)
     {
         Sprite starSprite = GetNode<Sprite>("PopupMenu/Star");
@@ -392,6 +491,10 @@ public class GamePlay : Node2D
 
         }
     }
+
+    /// <summary>
+    /// Handles the logic when option3 is pressed
+    /// </summary>
     private void _on_Option3_pressed()
     {
         if (CheckCorrectAnswer(op3.Text))
@@ -407,6 +510,9 @@ public class GamePlay : Node2D
         }
     }
 
+    /// <summary>
+    /// Handles the logic when option4 is pressed
+    /// </summary>
     private void _on_Option4_pressed()
     {
         if (CheckCorrectAnswer(op4.Text))
@@ -422,28 +528,46 @@ public class GamePlay : Node2D
         }
     }
 
+    /// <summary>
+    /// Reset the Student's Character Sprite to Idle animation when other animations has finish playing
+    /// </summary>
     private void _on_CharSprite_animation_finished()
     {
         if (charSprite.IsPlaying() && charSprite.Animation != "Idle" && charSprite.Animation != "Die")
             charSprite.Play("Idle");
     }
 
+    /// <summary>
+    /// Reset the Monster Sprite to Idle animation when other animations has finish playing
+    /// </summary>
     private void _on_MonsterSprite_animation_finished()
     {
         if (monsterSprite.IsPlaying() && monsterSprite.Animation != "Idle" && monsterSprite.Animation != "Die")
             monsterSprite.Play("Idle");
 
     }
+
+    /// <summary>
+    /// Decrement the time limit timer by 1ms
+    /// </summary>
     private void _on_TimeLimit_timeout()
     {
         //s -= 1;
         ms -= 1;
     }
+
+    /// <summary>
+    /// Decrement the timer by 1ms
+    /// </summary>
     private void _on_Timer_timeout()
     {
         //s -= 1;
         ms -= 1;
     }
+
+    /// <summary>
+    /// Hide the ticks upon timeout
+    /// </summary>
     private void _on_Timer2_timeout()
     {
         tick.Visible = false;
@@ -458,15 +582,26 @@ public class GamePlay : Node2D
         timer2.Stop();
     }
 
+    /// <summary>
+    /// Play default animation for Character when all the animations finish
+    /// </summary>
     private void _on_CharSkillSprite_animation_finished()
     {
         if (!(charSkillSprite.Animation == "Shield"))
             charSkillSprite.Play("Default");
     }
+
+    /// <summary>
+    /// Play default animation for Monster when all the animations finish
+    /// </summary>
     private void _on_MonsterSkillSprite_animation_finished()
     {
         monsterSkillSprite.Play("Default");
     }
+
+    /// <summary>
+    /// Load the skill icon
+    /// </summary>
     private void loadSkillIcon()
     {
         TextureButton skillIcon = GetNode<TextureButton>("SkillBtn");
@@ -479,6 +614,10 @@ public class GamePlay : Node2D
         skillIcon.TextureHover = texture;
         skillIcon.TextureDisabled = disabledTexture;
     }
+
+    /// <summary>
+    /// Handles the logic when the skill button is pressed
+    /// </summary>
     private void _on_SkillBtn_pressed()
     {
         switch (character.CharSkill)
@@ -522,32 +661,46 @@ public class GamePlay : Node2D
         TextureButton skillBtn = GetNode<TextureButton>("SkillBtn");
         skillBtn.Disabled = true;
     }
+
+    /// <summary>
+    /// Play default animation when the Effect1 animation finishes
+    /// </summary>
     private void _on_Effect1_animation_finished()
     {
         AnimatedSprite effect = GetNode<AnimatedSprite>("Buttons/Option1/Effect1");
         effect.Play("Default");
     }
 
-
+    /// <summary>
+    /// Play default animation when the Effect3 animation finishes
+    /// </summary>
     private void _on_Effect3_animation_finished()
     {
         AnimatedSprite effect = GetNode<AnimatedSprite>("Buttons/Option3/Effect3");
         effect.Play("Default");
     }
 
-
+    /// <summary>
+    /// Play default animation when the Effect2 animation finishes
+    /// </summary>
     private void _on_Effect2_animation_finished()
     {
         AnimatedSprite effect = GetNode<AnimatedSprite>("Buttons/Option2/Effect2");
         effect.Play("Default");
     }
 
-
+    /// <summary>
+    /// Play default animation when the Effect4 animation finishes
+    /// </summary>
     private void _on_Effect4_animation_finished()
     {
         AnimatedSprite effect = GetNode<AnimatedSprite>("Buttons/Option4/Effect4");
         effect.Play("Default");
     }
+
+    /// <summary>
+    /// Set the background
+    /// </summary>
     public void SetBg()
     {
         Node2D n = GetNode<Node2D>("Bg");
@@ -570,6 +723,12 @@ public class GamePlay : Node2D
         }
 
     }
+
+    /// <summary>
+    /// Load the required images for Character and Monster for the VS preview that plays before the level actually starts
+    /// </summary>
+    /// <param name="character"></param>
+    /// <param name="monster"></param>
     public void LoadStart(Character character, Monster monster)
     {
         string charHead = spritePath + character.CharName + "/Head/head.png";
@@ -582,6 +741,10 @@ public class GamePlay : Node2D
         mobSprite.Texture = texture2;
 
     }
+
+    /// <summary>
+    /// Handles the logic when the countdown animation finishes
+    /// </summary>
     private void _on_Countdown_animation_finished()
     {
         //Unhide
@@ -605,6 +768,10 @@ public class GamePlay : Node2D
         timer.Start();
 
     }
+
+    /// <summary>
+    /// Handles the logic when the Menu button is pressed
+    /// </summary>
     private void _on_Menu_pressed()
     {
         AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/little town - orchestral.ogg") as AudioStream;
@@ -612,6 +779,10 @@ public class GamePlay : Node2D
         GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
 
     }
+
+    /// <summary>
+    /// Handles the logic when the Next button is pressed
+    /// </summary>
     private void _on_Next_pressed()
     {
         if (Global.LevelId != 5)
@@ -625,6 +796,10 @@ public class GamePlay : Node2D
         DefaultSound.playSound(sfx);
         GetTree().ChangeScene("res://Presentation/GamePlay/Campaign.tscn");
     }
+
+    /// <summary>
+    /// Handles the logic when the Replay button is pressed
+    /// </summary>
     private void _on_Replay_pressed()
     {
         switch (gameType)

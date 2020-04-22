@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for LeaderboardScreen
+/// </summary>
 public class LeaderboardScreen : Node
 {
     OptionButton optionBtn;
@@ -12,6 +15,10 @@ public class LeaderboardScreen : Node
     DynamicFont dFont;
     GridContainer gridContainer;
     List<Leaderboard> leaderboardList;
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         vbox = GetNode<VBoxContainer>("ScrollContainer/VBoxContainer");
@@ -27,6 +34,10 @@ public class LeaderboardScreen : Node
         AddHeader();
         DisplayLeaderboard(leaderboardList);
     }
+
+    /// <summary>
+    /// Display the header for Leaderboard
+    /// </summary>
     private void AddHeader()
     {
         dFont = new DynamicFont();
@@ -53,18 +64,31 @@ public class LeaderboardScreen : Node
 
 
     }
+  
+    /// <summary>
+    /// Add all the available World options into the dropdownlist
+    /// </summary>
     private void DisplayWorldList()
     {
         worldList = leaderboardBL.GetWorlds();
         foreach (World w in worldList)
             optionBtn.AddItem(w.WorldName);
     }
+
+    /// <summary>
+    /// Clear the gridContainer
+    /// </summary>
     private void ClearGrid()
     {
         foreach (Node child in gridContainer.GetChildren())
             gridContainer.RemoveChild(child);
         AddHeader();
     }
+
+    /// <summary>
+    /// Display the Leaderboard
+    /// </summary>
+    /// <param name="leaderboardList"></param>
     private void DisplayLeaderboard(List<Leaderboard> leaderboardList)
     {
         ClearGrid();
@@ -106,6 +130,11 @@ public class LeaderboardScreen : Node
 
         // itemList.AddItem(lb.StudentName + "                 " + lb.TotalScore);
     }
+
+    /// <summary>
+    /// Updates the Leaderboard whenever an option in the dorpdown list is selected
+    /// </summary>
+    /// <param name="id"></param>
     private void _on_OptionButton_item_selected(int id)
     {
         World world = new World();

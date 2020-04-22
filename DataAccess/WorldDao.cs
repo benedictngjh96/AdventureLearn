@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Dapper;
 using System.Linq;
 
+/// <summary>
+/// Class to handle DAO operations for World
+/// </summary>
 public class WorldDao
 {
     /// <summary>
@@ -20,6 +23,7 @@ public class WorldDao
         }
         return worldList;
     }
+
     /// <summary>
     /// Get the total number of CompletedWorld for the Student
     /// </summary>

@@ -3,6 +3,10 @@ using Dapper;
 using System.Linq;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
+
+/// <summary>
+/// Class to handle DAO operations for AssignmentScore
+/// </summary>
 public class AssignmentScoreDao
 {
     /// <summary>

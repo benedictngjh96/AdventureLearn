@@ -4,6 +4,9 @@ using Dapper;
 using MySql.Data.MySqlClient;
 using System.Linq;
 
+/// <summary>
+/// Class to handle DAO operations for CustomLevel
+/// </summary>
 public class CustomLevelDao
 {
     /// <summary>

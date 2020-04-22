@@ -1,5 +1,8 @@
 using System;
 
+/// <summary>
+/// Class to handle DAO operations for CustomLevelScore
+/// </summary>
 public class CustomLevelScoreDao
 {
     /// <summary>

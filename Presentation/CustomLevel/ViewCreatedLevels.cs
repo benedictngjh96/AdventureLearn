@@ -1,6 +1,10 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+
+/// <summary>
+/// Class to handle Presentation for ViewCreatedLevels
+/// </summary>
 public class ViewCreatedLevels : Node2D
 {
     VBoxContainer vbox;
@@ -12,6 +16,9 @@ public class ViewCreatedLevels : Node2D
     PopupMenu popupMenu;
     string levelName = "";
 
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         popupMenu = GetNode<PopupMenu>("PopupMenu");
@@ -28,6 +35,10 @@ public class ViewCreatedLevels : Node2D
         DisplayLevels();
 
     }
+
+    /// <summary>
+    /// Display column titles for the Student's CreatedLevels
+    /// </summary>
     private void DisplayHeader()
     {
         //Student Name
@@ -50,6 +61,10 @@ public class ViewCreatedLevels : Node2D
         lbl4.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl4);
     }
+
+    /// <summary>
+    /// Display the Levels
+    /// </summary>
     private void DisplayLevels()
     {
         Theme theme = ResourceLoader.Load("res://Assets/GUI/BtnUI4.tres") as Theme;
@@ -86,28 +101,48 @@ public class ViewCreatedLevels : Node2D
         }
 
     }
+
+    /// <summary>
+    /// Change scene to EditLevelInit when Edit button is pressed
+    /// </summary>
+    /// <param name="btn"></param>
     private void EditLevel(Button btn)
     {
         CustomLevel cl = customLevelList.Find(item => item.CustomLevelName == btn.Name.Trim());
         Global.CustomLevelId = cl.CustomLevelId;
         GetTree().ChangeScene("res://Presentation/EditLevel/EditLevelInit.tscn");
     }
+
+    /// <summary>
+    /// Display a popup to prompt user for confirmation when Delete button is pressed
+    /// </summary>
+    /// <param name="btn"></param>
     private void DeleteLevel(Button btn)
     {
         popupMenu.Visible = true;
         levelName = btn.Name.Trim();
     }
+
+    /// <summary>
+    /// Clear gridContainer
+    /// </summary>
     private void ClearGrid()
     {
         foreach (Node child in gridContainer.GetChildren())
             gridContainer.RemoveChild(child);
     }
+
+    /// <summary>
+    /// Remove the popup prompt for deletion when the No button is pressed
+    /// </summary>
     private void _on_No_pressed()
     {
         popupMenu.Visible = false;
     }
 
-
+    /// <summary>
+    /// Remove the popup prompt for deletion and handle the deletion through businesss logic when the No button is pressed
+    /// </summary>
     private void _on_Yes_pressed()
     {
         CustomLevel cl = customLevelList.Find(item => item.CustomLevelName == levelName);

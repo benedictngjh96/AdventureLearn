@@ -151,6 +151,7 @@
     <Compile Include="Presentation\LevelSelection\LevelSelection.cs" />
     <Compile Include="Presentation\Login\Login.cs" />
     <Compile Include="Presentation\MainMenu\MainMenu.cs" />
+    <Compile Include="Presentation\NotificationPopup.cs" />
     <Compile Include="Presentation\Settings\Settings.cs" />
     <Compile Include="Presentation\SoundEffect\DefaultSound.cs" />
     <Compile Include="Presentation\UserProfile\UserProfile.cs" />

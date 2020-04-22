@@ -2,6 +2,9 @@ using Godot;
 using System.Collections.Generic;
 using System;
 
+/// <summary>
+/// Class to handle Business Logic for CreateLevel
+/// </summary>
 public class CreateLevelBL : Node
 {
 
@@ -9,27 +12,25 @@ public class CreateLevelBL : Node
 	List<UserCreatedQuestion> TempQuestionList = new List<UserCreatedQuestion>();
 
 	/// <summary>
-	/// Get the current changes to the Questions
+	/// Get the Questions that are saved temporarily
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Return the list of Questions that are saved temporarily</returns>
 	public List<UserCreatedQuestion> getTempQuestionList()
 	{
 		return TempQuestionList;
 	}
 
 	/// <summary>
-	/// Updates the TempQuestionList
+	/// Reload the Questions that are save temporarily previously
 	/// </summary>
-	/// <returns></returns>
-	public void updateTempQuestionList()
+	public void reloadTempQuestionList()
 	{
 		TempQuestionList = Global.QuestionList;
 	}
 
 	/// <summary>
-	/// Intialize 5 questions
+	/// Intialize 5 Question objects
 	/// </summary>
-	/// <returns></returns>
 	public void initializeQuestions()
 	{
 		for (int i = 0; i < 5; i++)
@@ -37,16 +38,15 @@ public class CreateLevelBL : Node
 	}
 
 	/// <summary>
-	/// Save current question to List
+	/// Save current question to a List as temporary storage
 	/// </summary>
-	/// <param name="int questionId"></param>
-	/// <param name="string option1"></param>
-	/// <param name="string option2"></param>
-	/// <param name="string option3"></param>
-	/// <param name="string option4"></param>
-	/// <param name="int correctOption"></param>
-	/// <param name="string questionTitle"></param>
-	/// <returns></returns>
+	/// <param name="questionId"></param>
+	/// <param name="option1"></param>
+	/// <param name="option2"></param>
+	/// <param name="option3"></param>
+	/// <param name="option4"></param>
+	/// <param name="correctOption"></param>
+	/// <param name="questionTitle"></param>
 	public void saveQuestion(int questionId, string option1, string option2, string option3, string option4, int correctOption, string questionTitle)
 	{
 		TempQuestionList[questionId].Option1 = option1;
@@ -61,10 +61,11 @@ public class CreateLevelBL : Node
 	}
 
 	/// <summary>
-	/// Insert new level and all questions associated with it into database
+	/// Insert new level and all questions associated with it into database through DAO
 	/// </summary>
-	/// <param name="int questionNumber"></param>
-	/// <returns></returns>
+	/// <param name="levelName"></param>
+	/// <param name="monsterId"></param>
+	/// <param name="timeLimit"></param>
 	public void createLevel(string levelName, int monsterId, int timeLimit)
 	{
 		//student
@@ -79,20 +80,18 @@ public class CreateLevelBL : Node
 
 	/// <summary>
 	/// Get Question object based on question number
-	/// Return null if Question object dont exist
 	/// </summary>
-	/// <param name="int questionNumber"></param>
-	/// <returns></returns>
+	/// <param name="questionNumber"></param>
+	/// <returns>Return the acquired Question if it exists, else return null if it does not exist</returns>
 	public UserCreatedQuestion GetQuestion(int questionNumber)
 	{
 		return TempQuestionList[questionNumber - 1];
 	}
 
 	/// <summary>
-	/// Find question with empty fields and return its question number
-	/// Return -1 if no empty fields are found
+	/// Find Question with empty fields
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Return the Question Number with empty fields, else return -1 if no empty fields are found</returns>
 	public int checkEmptyFieldsExist()
 	{
 		foreach (UserCreatedQuestion q in TempQuestionList)
@@ -104,10 +103,10 @@ public class CreateLevelBL : Node
 	}
 
 	/// <summary>
-	/// Check if levelName already exists
-	/// Return -1 if there is existing level name, else return 1
+	/// Check if LevelName already exists
 	/// </summary>
-	/// <returns></returns>
+	/// <param name="levelName"></param>
+	/// <returns>Return 1 if there are no existing LevelName, else return -1 if there is an existing LevelName</returns>
 	public static int checkValidLevelName(string levelName)
 	{
 		return CreateLevelDAO.checkValidLevelName(levelName);
@@ -115,9 +114,8 @@ public class CreateLevelBL : Node
 
 	/// <summary>
 	/// Find question with duplication options
-	/// Return -1 if no empty fields are found
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Return the Question Number with duplicate options, else return -1 if no duplicate fields are found</returns>
 	public int checkDuplicationOptions()
 	{
 		foreach (UserCreatedQuestion q in TempQuestionList)
@@ -133,7 +131,6 @@ public class CreateLevelBL : Node
 	/// <summary>
 	/// List all questions in List
 	/// </summary>
-	/// <returns></returns>
 	public void listQuestions()
 	{
 		foreach (UserCreatedQuestion q in TempQuestionList)

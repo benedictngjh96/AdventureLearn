@@ -5,6 +5,9 @@ using Dapper;
 using System.Collections.Generic;
 using System.Linq;
 
+/// <summary>
+/// Class to handle DAO operations for EditLevel
+/// </summary>
 public class EditLevelDao : Node
 {
 	CustomLevel levelInfo;
@@ -12,14 +15,13 @@ public class EditLevelDao : Node
 	/// <summary>
 	/// Update Question into database
 	/// </summary>
-	/// <param name="string option1"></param>
-	/// <param name="string option2"></param>
-	/// <param name="string option3"></param>
-	/// <param name="string option4"></param>
-	/// <param name="int correctOption"></param>
-	/// <param name="string questionTitle"></param>
-	/// <param name="int questionId"></param>
-	/// <returns></returns>
+	/// <param name="option1"></param>
+	/// <param name="option2"></param>
+	/// <param name="option3"></param>
+	/// <param name="option4"></param>
+	/// <param name="correctOptionInt"></param>
+	/// <param name="questionTitle"></param>
+	/// <param name="questionId"></param>
 	public void updateQuestion(string option1, string option2, string option3, string option4, int correctOptionInt, string questionTitle, int questionId)
 	{
 		switch (correctOptionInt)
@@ -54,9 +56,8 @@ public class EditLevelDao : Node
 	/// <summary>
 	/// Format for database insertion
 	/// </summary>
-	/// <param name="ref string option4"></param>
-	/// <param name="ref string correctOption"></param>
-	/// <returns></returns>
+	/// <param name="option4"></param>
+	/// <param name="correctOption"></param>
 	private void formatForDatabaseInsertion(ref string option4, ref string correctOption)
 	{
 		option4 = option4 + correctOption;
@@ -66,11 +67,10 @@ public class EditLevelDao : Node
 
 	/// <summary>
 	/// Check database for existing level name
-	/// Return -1 if there is existing level name, else return 1
 	/// </summary>
-	/// <param name="string oldName"></param>
-	/// <param name="string newName"></param>
-	/// <returns></returns>
+	/// <param name="oldName"></param>
+	/// <param name="newName"></param>
+	/// <returns>Return -1 if there is existing level name, else return 1 </returns>
 	public static int checkValidLevelName(string oldName,string newName)
 	{
 		//student
@@ -92,9 +92,9 @@ public class EditLevelDao : Node
 	}
 
 	/// <summary>
-	/// Load all information on CustomLevel
+	/// Load all information on the CustomLevel from database
 	/// </summary>
-	/// <returns></returns>
+	/// <returns>Return the acquired information in a CustomLevel object</returns>
 	public CustomLevel getLevelInfo() 
 	{
 		string query = String.Format("SELECT CustomLevelId, CustomLevelName, TimeLimit, StudentId, MonsterId, QuestionId, Option1, Option2, Option3, " +
@@ -130,10 +130,9 @@ public class EditLevelDao : Node
 	/// <summary>
 	/// Updates the level name, monster, and time limit
 	/// </summary>
-	///  <param name="string levelName"></param>
-	///  <param name="int monsterId"></param>
-	///  <param name="int timeLimit"></param>
-	/// <returns></returns>
+	/// <param name="levelName"></param>
+	/// <param name="monsterId"></param>
+	/// <param name="timeLimit"></param>
 	public void updateLevelInitInfo(string levelName, int monsterId, int timeLimit)
 	{
 		string query = String.Format("UPDATE CustomLevel SET CustomLevelName = '{0}', MonsterId = {1}, TimeLimit = {2} WHERE CustomLevelId = {3}; "

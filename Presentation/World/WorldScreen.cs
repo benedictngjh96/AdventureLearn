@@ -3,11 +3,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+/// <summary>
+/// Class to handle Presentation for WorldScreen
+/// </summary>
 public class WorldScreen : Node
 {
     TextureButton world1Btn, world2Btn, world3Btn; 
     WorldBL worldBl;
 
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         world1Btn = GetNode<TextureButton>("Bg/World1");
@@ -17,6 +23,9 @@ public class WorldScreen : Node
         disableInaccessibleWorlds();
     }
 
+    /// <summary>
+    /// Disable the Worlds that have not been unlocked
+    /// </summary>
     private void disableInaccessibleWorlds()
     {
         int completedWorldCount = worldBl.GetCompletedWorldCount();
@@ -29,18 +38,27 @@ public class WorldScreen : Node
         }
     }
 
+    /// <summary>
+    /// Handles the logic whenever the World1's button is pressed
+    /// </summary>
     private void _on_World1_pressed()
     {
         Global.WorldId = 1;
         GetTree().ChangeScene("res://Presentation/LevelSelection/LevelSelection.tscn");
     }
 
+    /// <summary>
+    /// Handles the logic whenever the World2's button is pressed
+    /// </summary>
     private void _on_World2_pressed()
     {
         Global.WorldId = 2;
         GetTree().ChangeScene("res://Presentation/LevelSelection/LevelSelection.tscn");
     }
 
+    /// <summary>
+    /// Handles the logic whenever the World3's button is pressed
+    /// </summary>
     private void _on_World3_pressed()
     {
         Global.WorldId = 3;

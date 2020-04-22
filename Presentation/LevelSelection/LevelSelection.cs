@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
+/// <summary>
+/// Class to handle Presentation for LevelSelection
+/// </summary>
 public class LevelSelection : Node2D
 {
     //Asset path
@@ -25,6 +28,9 @@ public class LevelSelection : Node2D
     Sprite bg;
     List<string> bgList;
 
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         //Intializing nodes
@@ -64,6 +70,10 @@ public class LevelSelection : Node2D
 
         DisplayLevelScore();
     }
+
+    /// <summary>
+    /// Hide Levels
+    /// </summary>
     private void HideLevels()
     {
         Node levelNode = GetNode<Node>("Levels");
@@ -85,6 +95,9 @@ public class LevelSelection : Node2D
         }
     }
 
+    /// <summary>
+    /// Display Level score
+    /// </summary>
     private void DisplayLevelScore()
     {
         Node levelNode = GetNode<Node>("Levels");
@@ -181,6 +194,10 @@ public class LevelSelection : Node2D
             nextLevel.Disabled = false;
         }
     }
+
+    /// <summary>
+    /// Check if the Section is cleared. If yes, unlock the first Level.
+    /// </summary>
     private void CheckSectionCleared()
     {
         int result = sectionBL.CheckSectionCleared(Global.WorldId, Global.SectionId, Global.StudentId);
@@ -192,6 +209,9 @@ public class LevelSelection : Node2D
         }
     }
 
+    /// <summary>
+    /// Unlock the first Level
+    /// </summary>
     private void UnlockFirstLevel()
     {
         Node levelNode = GetNode<Node>("Levels");
@@ -209,6 +229,10 @@ public class LevelSelection : Node2D
             starSprite.Visible = false;
         }
     }
+
+    /// <summary>
+    /// Load the background
+    /// </summary>
     private void LoadBg()
     {
         switch (Global.SectionId)
@@ -230,6 +254,10 @@ public class LevelSelection : Node2D
                 break;
         }
     }
+
+    /// <summary>
+    /// Load the first Section
+    /// </summary>
     private void LoadFirstSection()
     {
         level1.SetPosition(new Vector2(172.695f, 134.698f));
@@ -238,6 +266,10 @@ public class LevelSelection : Node2D
         level4.SetPosition(new Vector2(671.973f, 261.267f));
         level5.SetPosition(new Vector2(755, 465.191f));
     }
+
+    /// <summary>
+    /// Load the seconds Section
+    /// </summary>
     private void LoadSecondSection()
     {
         level1.SetPosition(new Vector2(156.37f, 266.654f));
@@ -246,6 +278,10 @@ public class LevelSelection : Node2D
         level4.SetPosition(new Vector2(714.145f, 440.836f));
         level5.SetPosition(new Vector2(740.036f, 301.946f));
     }
+
+    /// <summary>
+    /// Load the third Section
+    /// </summary>
     private void LoadThirdSection()
     {
         level1.SetPosition(new Vector2(184.938f, 307.466f));
@@ -254,6 +290,10 @@ public class LevelSelection : Node2D
         level4.SetPosition(new Vector2(590.351f, 419.07f));
         level5.SetPosition(new Vector2(882.875f, 371.325f));
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Forward button is pressed
+    /// </summary>
     private void _on_ForwardButton_pressed()
     {
         count++;
@@ -267,6 +307,10 @@ public class LevelSelection : Node2D
         HideLevels();
         DisplayLevelScore();
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Backward button is pressed
+    /// </summary>
     private void _on_BackwardButton_pressed()
     {
         count--;
@@ -281,11 +325,17 @@ public class LevelSelection : Node2D
         DisplayLevelScore();
     }
 
+    /// <summary>
+    /// Display the Section name
+    /// </summary>
     private void DisplaySectionName()
     {
         sectionLbl.Text = sectionList[count - 1].SectionName;
     }
 
+    /// <summary>
+    /// Disable both the Forward ad Backward buttons
+    /// </summary>
     private void DisableBothButtons()
     {
         if (sectionList.Count == 1)
@@ -294,67 +344,118 @@ public class LevelSelection : Node2D
             backWardBtn.Disabled = true;
         }
     }
+
+    /// <summary>
+    /// Change scene to Campaign (gameplay)
+    /// </summary>
     private void RedirectGamePlay()
     {
         GetTree().ChangeScene("res://Presentation/GamePlay/Campaign.tscn");
 
     }
-    //Buttons signal
+
+    /// <summary>
+    /// Handles the logic whenever the Level_1's button is pressed
+    /// </summary>
     private void _on_Level1Btn_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 1;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_2's button is pressed
+    /// </summary>
     private void _on_Level2Btn_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 2;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_3's button is pressed
+    /// </summary>
     private void _on_Level3Btn_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 3;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_4's button is pressed
+    /// </summary>
     private void _on_Level4Btn_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 4;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_5's button is pressed
+    /// </summary>
     private void _on_Level5Btn_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 5;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_6's button is pressed
+    /// </summary>
     private void _on_Level6Btn_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 6;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_1's button is pressed
+    /// </summary>
     private void _on_Level1_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 1;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_2's button is pressed
+    /// </summary>
     private void _on_Level2_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 2;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_3's button is pressed
+    /// </summary>
     private void _on_Level3_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 3;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_4's button is pressed
+    /// </summary>
     private void _on_Level4_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 4;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_5's button is pressed
+    /// </summary>
     private void _on_Level5_pressed()
     {
         RedirectGamePlay();
         Global.LevelId = 5;
     }
+
+    /// <summary>
+    /// Handles the logic whenever the Level_6's button is pressed
+    /// </summary>
     private void _on_Level6_pressed()
     {
         RedirectGamePlay();

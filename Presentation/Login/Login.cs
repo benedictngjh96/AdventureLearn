@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+/// <summary>
+/// Class to handle Presentation for Login
+/// </summary>
 public class Login : Node2D
 {
     Godot.Object googleScript;
@@ -12,6 +15,10 @@ public class Login : Node2D
     StudentBL studentBL;
     TextureButton fbBtn;
     TextureButton googleBtn;
+    
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         GDScript fb = (GDScript)GD.Load("res://API/Facebook.gd");
@@ -26,6 +33,10 @@ public class Login : Node2D
         googleScript.Connect("info2", this, nameof(InsertGoogle));
 
     }
+
+    /// <summary>
+    /// Store Facebook details into database through business logic if it is not in database
+    /// </summary>
     private void InsertFb()
     {
         string email = fbScript.Get("email").ToString();
@@ -53,6 +64,10 @@ public class Login : Node2D
             GetTree().ChangeScene("res://Presentation/CharSelect/CharSelect.tscn");
         }
     }
+
+    /// <summary>
+    /// Store Google details into database through business logic if it is not in database
+    /// </summary>
     private void InsertGoogle()
     {
         string email = googleScript.Get("email").ToString();
@@ -83,6 +98,9 @@ public class Login : Node2D
         }
     }
 
+    /// <summary>
+    /// Handles the logic whenever the GoogleLogin button is pressed
+    /// </summary>
     private void _on_GoogleLogin_pressed()
     {
         googleBtn.Disabled = true;
@@ -90,6 +108,9 @@ public class Login : Node2D
         googleScript.Call("gconnect");
     }
 
+    /// <summary>
+    /// Handles the logic whenever the FacebookLogin button is pressed
+    /// </summary>
     private void _on_FbLogin_pressed()
     {
         fbScript.Call("facebook_connect");

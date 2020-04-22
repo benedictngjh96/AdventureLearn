@@ -277,7 +277,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 50 ), ExtResource( 40 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 28 ), ExtResource( 45 ), ExtResource( 44 ), ExtResource( 26 ), ExtResource( 36 ), ExtResource( 51 ), ExtResource( 29 ), ExtResource( 35 ), ExtResource( 38 ), ExtResource( 53 ), ExtResource( 49 ), ExtResource( 46 ), ExtResource( 30 ), ExtResource( 37 ), ExtResource( 39 ), ExtResource( 56 ), ExtResource( 32 ), ExtResource( 41 ), ExtResource( 57 ), ExtResource( 59 ), ExtResource( 64 ), ExtResource( 62 ), ExtResource( 58 ), ExtResource( 63 ), ExtResource( 61 ), ExtResource( 60 ) ],
 "loop": true,
-"name": "MjolnirAttack",
+"name": "EscanorAttack",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 203 ), ExtResource( 209 ), ExtResource( 204 ), ExtResource( 187 ), ExtResource( 211 ), ExtResource( 192 ), ExtResource( 198 ), ExtResource( 199 ), ExtResource( 208 ), ExtResource( 191 ), ExtResource( 190 ), ExtResource( 205 ), ExtResource( 197 ), ExtResource( 212 ), ExtResource( 188 ), ExtResource( 194 ), ExtResource( 206 ), ExtResource( 193 ), ExtResource( 196 ), ExtResource( 200 ), ExtResource( 225 ), ExtResource( 228 ), ExtResource( 244 ), ExtResource( 242 ), ExtResource( 235 ), ExtResource( 241 ), ExtResource( 243 ), ExtResource( 247 ), ExtResource( 237 ), ExtResource( 227 ), ExtResource( 231 ), ExtResource( 229 ), ExtResource( 230 ), ExtResource( 233 ), ExtResource( 226 ), ExtResource( 240 ), ExtResource( 222 ), ExtResource( 248 ), ExtResource( 232 ), ExtResource( 219 ) ],
@@ -287,7 +287,7 @@ animations = [ {
 }, {
 "frames": [ ExtResource( 245 ), ExtResource( 246 ), ExtResource( 224 ), ExtResource( 220 ), ExtResource( 238 ), ExtResource( 221 ), ExtResource( 234 ), ExtResource( 223 ), ExtResource( 239 ), ExtResource( 236 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 23 ), ExtResource( 24 ), ExtResource( 17 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
-"name": "ZeusWalk",
+"name": "MjolnirAttack",
 "speed": 25.0
 }, {
 "frames": [ ExtResource( 171 ), ExtResource( 172 ), ExtResource( 181 ), ExtResource( 182 ), ExtResource( 185 ), ExtResource( 201 ), ExtResource( 189 ), ExtResource( 210 ), ExtResource( 202 ), ExtResource( 213 ), ExtResource( 195 ), ExtResource( 214 ), ExtResource( 216 ), ExtResource( 217 ), ExtResource( 218 ), ExtResource( 215 ), ExtResource( 207 ) ],
@@ -389,6 +389,8 @@ margin_right = 671.758
 margin_bottom = 349.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -453,6 +455,8 @@ margin_right = 753.544
 margin_bottom = 257.983
 custom_fonts/font = SubResource( 3 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }

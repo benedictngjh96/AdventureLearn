@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for Campaign
+/// </summary>
 public class Campaign : Node2D
 {
     GamePlay gamePlay;
@@ -11,6 +14,10 @@ public class Campaign : Node2D
     int timeLimit = 0;
     Level level;
     Character character;
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         campaignBL = new CampaignBL();
@@ -33,12 +40,20 @@ public class Campaign : Node2D
         gamePlay.SetGameType("Campaign");
 
     }
+
+    /// <summary>
+    /// Call the methods in Gameplay to setup sprites path for the Student Character the Assignment Monster and display them
+    /// </summary>
     private void SetSpritesPath()
     {
 
         gamePlay.DisplayCharSprite(character);
         gamePlay.DisplayMonsterSprite(level.Monster);
     }
+
+    /// <summary>
+    /// Insert CampaignLevel score through business logic
+    /// </summary>
     private void InsertStudentScore()
     {
         StudentScoreBL studentScoreBL = new StudentScoreBL();

@@ -1,6 +1,10 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+
+/// <summary>
+/// Class to handle Business Logic for AssignmentScore
+/// </summary>
 public class AssignmentScoreBL : Node
 {
     /// <summary>
