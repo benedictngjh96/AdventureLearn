@@ -37,7 +37,6 @@ public class CreateLevel : Node2D
     /// <summary>
     /// Initialization
     /// </summary>
-    /// <returns></returns>
     public override void _Ready()
     {
         createLevelBL = new CreateLevelBL();
@@ -85,7 +84,7 @@ public class CreateLevel : Node2D
         }
         else
         {
-            createLevelBL.updateTempQuestionList();
+            createLevelBL.reloadTempQuestionList();
             displayQuestion();
         }
     }
@@ -93,10 +92,9 @@ public class CreateLevel : Node2D
     /// <summary>
     /// Get levelName, monsterId, and timeLimit from CreateLevelInit
     /// </summary>
-    /// <param name="string name"></param>
-    /// <param name="int id"></param>
-    /// <param name="int time"></param>
-    /// <returns></returns>
+    /// <param name="name"></param>
+    /// <param name="id"></param>
+    /// <param name="time"></param>
     public static void setLevelInitInfo(string name, int id, int time)
     {
         levelName = name;
@@ -107,9 +105,8 @@ public class CreateLevel : Node2D
     }
 
     /// <summary>
-    /// Validates the user created questions and insert them into database
+    /// Validates the user created questions through business logic before inserting them into database when the Create button is pressed
     /// </summary>
-    /// <returns></returns>
     private void _on_CreateBtn_pressed()
     {
         saveQuestion();
@@ -125,8 +122,6 @@ public class CreateLevel : Node2D
     /// <summary>
     /// Saves a single user created question
     /// </summary>
-    /// <param name="int questionNumber"></param>
-    /// <returns></returns>
     private void saveQuestion()
     {
         string option1 = option1Line.Text;
@@ -143,9 +138,9 @@ public class CreateLevel : Node2D
     }
 
     /// <summary>
-    /// Get question number
+    /// Get Question number
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return acquired Question number</returns>
     private int getQuestionNumber()
     {
         int questionNumber = Int32.Parse(Regex.Match(questionNumberLabel.Text, @"\d+").Value);
@@ -169,7 +164,6 @@ public class CreateLevel : Node2D
     /// <summary>
     /// Load question 1 and saves previous question
     /// </summary>
-    /// <returns></returns>
     private void _on_Question1_pressed()
     {
         saveQuestion();
@@ -181,7 +175,6 @@ public class CreateLevel : Node2D
     /// <summary>
     /// Load question 2 and saves previous question
     /// </summary>
-    /// <returns></returns>
     private void _on_Question2_pressed()
     {
         saveQuestion();
@@ -193,7 +186,6 @@ public class CreateLevel : Node2D
     /// <summary>
     /// Load question 3 and saves previous question
     /// </summary>
-    /// <returns></returns>
     private void _on_Question3_pressed()
     {
         saveQuestion();
@@ -205,7 +197,6 @@ public class CreateLevel : Node2D
     /// <summary>
     /// Load question 4 and saves previous question
     /// </summary>
-    /// <returns></returns>
     private void _on_Question4_pressed()
     {
         saveQuestion();
@@ -217,7 +208,6 @@ public class CreateLevel : Node2D
     /// <summary>
     /// Load question 5 and saves previous question
     /// </summary>
-    /// <returns></returns>
     private void _on_Question5_pressed()
     {
         saveQuestion();
@@ -229,7 +219,6 @@ public class CreateLevel : Node2D
     /// <summary>
     /// Display corresponding question
     /// </summary>
-    /// <returns></returns>
     private void displayQuestion()
     {
         UserCreatedQuestion q = createLevelBL.GetQuestion(getQuestionNumber());
@@ -259,9 +248,8 @@ public class CreateLevel : Node2D
 
     /// <summary>
     /// Find empty fields, and direct users there
-    /// Return 1 if an empty field is found, else return 0
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return 1 if an empty field is found, else return 0</returns>
     private int findEmptyFields()
     {
         /*if (questionTitleLine.Text == "" || option1Line.Text == "" || option2Line.Text == "" || option3Line.Text == "" || option4Line.Text == "")
@@ -306,9 +294,8 @@ public class CreateLevel : Node2D
 
     /// <summary>
     /// Find a question with duplicated options, and direct users there
-    /// Return 1 if an empty field is found, else return 0
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return 1 if an empty field is found, else return 0</returns>
     private int findDuplicateOptions()
     {
         int questionWithDuplicateOptions = createLevelBL.checkDuplicationOptions();
@@ -353,7 +340,6 @@ public class CreateLevel : Node2D
     /// <summary>
     /// Return to CreateLevelInit Scene
     /// </summary>
-    /// <returns></returns>
     private void _on_BackBtn_pressed()
     {
         saveQuestion();

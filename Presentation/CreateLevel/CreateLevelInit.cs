@@ -25,7 +25,6 @@ public class CreateLevelInit : Node2D
     /// <summary>
     /// Initialization
     /// </summary>
-    /// <returns></returns>
     public override void _Ready()
     {
         timeLimitOptions = new int[] { 30, 40, 50, 60, 70, 80, 90, 100, 110, 120 };
@@ -53,7 +52,6 @@ public class CreateLevelInit : Node2D
     /// <summary>
     /// Display the previously typed LevelInit Info
     /// </summary>
-    /// <returns></returns>
     private void displayLevelInit()
     {
         levelNameLine.Text = Global.CustomLevelName;
@@ -76,9 +74,8 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// What happens whenever the left arrow in Select Monster is clicked
+    /// Change Monster to the one on the left
     /// </summary>
-    /// <returns></returns>
     private void _on_ArrowLeft_pressed()
     {
         count--;
@@ -87,9 +84,8 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// What happens whenever the right arrow in Select Monster is clicked
+    /// Change Monster to the one on the right
     /// </summary>
-    /// <returns></returns>
     private void _on_ArrowRight_pressed()
     {
         count++;
@@ -98,9 +94,8 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// Display the corresponding monster whenever the left or right arrows are clicked
+    /// Display the corresponding Monster whenever the left or right arrows are pressed
     /// </summary>
-    /// <returns></returns>
     private void displayCharacter()
     {
         string name = monsterList[count].MonsterName;
@@ -110,9 +105,8 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// Insert available timelimit and monster options
+    /// Insert available timelimit and Monster options
     /// </summary>
-    /// <returns></returns>
     private void addOptions()
     {
         //monster
@@ -131,9 +125,8 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// Change the status of the arrow buttons 
+    /// Change the status of the arrow buttons when one of them is pressed
     /// </summary>
-    /// <returns></returns>
     private void changeArrowButtonStatues()
     {
         if (count == 0)
@@ -154,9 +147,8 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// Go to next step of level creation
+    /// Checks if LevelName is valid before going to next step of level creation when the Next button is pressed
     /// </summary>
-    /// <returns></returns>
     private void _on_NextBtn_pressed()
     {
         string levelName = levelNameLine.Text;
@@ -189,9 +181,8 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// Return to MainMenu Scene
+    /// Return to MainMenu Scene when the Back button is pressed
     /// </summary>
-    /// <returns></returns>
     private void _on_BackBtn_pressed()
     {
         updated = 0;

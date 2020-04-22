@@ -6,9 +6,13 @@ public class MainMenu : Node2D
 
     public override void _Ready()
     {
-        GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
+        /*GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
         Godot.Object myGDScriptNode = (Godot.Object)MyGDScript.New(); // This is a Godot.Object
-        myGDScriptNode.Call("displayToast");
+        myGDScriptNode.Call("displayToast");*/
+        
+        Global.StudentId = 35;
+
+        NotificationPopup.displayPopup("Welcome " + Global.StudentName + " !");
     }
 
     private void _on_CampaignBtn_pressed()
@@ -57,7 +61,7 @@ public class MainMenu : Node2D
         GetTree().ChangeScene("res://Presentation/Login/Login.tscn");
         
     }
-
+    
     private void _on_CreditsBtn_pressed()
     {
         GetTree().ChangeScene("res://Presentation/Credits/Credits.tscn");
@@ -81,6 +85,7 @@ public class MainMenu : Node2D
 
     }
 }
+
 
 
 

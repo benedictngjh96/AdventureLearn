@@ -39,7 +39,6 @@ public class EditLevel : Node2D
     /// <summary>
     /// Initialization
     /// </summary>
-    /// <returns></returns>
     public override void _Ready()
     {
         editLevelBL = new EditLevelBL();
@@ -85,9 +84,8 @@ public class EditLevel : Node2D
     }
 
     /// <summary>
-    /// Validates the updated questions and insert them into database
+    /// Validates the updated questions before inserting them into database through business logic when update button is pressed
     /// </summary>
-    /// <returns></returns>
     private void _on_UpdateBtn_pressed()
     {
         saveQuestion();
@@ -104,7 +102,9 @@ public class EditLevel : Node2D
     /// <summary>
     /// Get levelName, monsterId, and timeLimit from EditLevelInit
     /// </summary>
-    /// <returns></returns>
+    /// <param name="name"></param>
+    /// <param name="id"></param>
+    /// <param name="time"></param>
     public static void setLevelInitInfo(string name, int id, int time)
     {
         levelName = name;
@@ -117,7 +117,7 @@ public class EditLevel : Node2D
     /// <summary>
     /// Get question number
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return the acquired Question number</returns>
     private int getQuestionNumber()
     {
         int questionNumber = Int32.Parse(Regex.Match(questionNumberLabel.Text, @"\d+").Value);
@@ -141,8 +141,6 @@ public class EditLevel : Node2D
     /// <summary>
     /// Saves a single user created question
     /// </summary>
-    /// <param name="int questionNumber"></param>
-    /// <returns></returns>
     private void saveQuestion()
     {
         string option1 = option1Line.Text;
@@ -161,14 +159,13 @@ public class EditLevel : Node2D
     /// <summary>
     /// Display corresponding question
     /// </summary>
-    /// <returns></returns>
     private void displayQuestion()
     {
         
         UserCreatedQuestion q;
         //q = editLevelBL.GetQuestion(getQuestionNumber());
         if (EditLevelInit.updated == 1)
-            editLevelBL.updateTempQuestionList();
+            editLevelBL.reloadTempQuestionList();
         q = editLevelBL.GetQuestion(getQuestionNumber());
 
         questionTitleLine.SetText(q.QuestionTitle);
@@ -196,9 +193,8 @@ public class EditLevel : Node2D
 
     /// <summary>
     /// Find empty fields, and direct users there
-    /// Return 1 if an empty field is found, else return 0
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return 1 if an empty field is found, else return 0</returns>
     private int findEmptyFields()
     {
         /*if (questionTitleLine.Text == "" || option1Line.Text == "" || option2Line.Text == "" || option3Line.Text == "" || option4Line.Text == "")
@@ -245,9 +241,8 @@ public class EditLevel : Node2D
 
     /// <summary>
     /// Find a question with duplicated options, and direct users there
-    /// Return 1 if an empty field is found, else return 0
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return 1 if an empty field is found, else return 0</returns>
     private int findDuplicateOptions()
     {
         int questionWithDuplicateOptions = editLevelBL.checkDuplicationOptions();
@@ -293,7 +288,6 @@ public class EditLevel : Node2D
     /// <summary>
     /// Load question 1 and saves previous question
     /// </summary>
-    /// <returns></returns>
     private void _on_Question1_pressed()
     {
         saveQuestion();
@@ -303,9 +297,8 @@ public class EditLevel : Node2D
     }
 
     /// <summary>
-    /// Load question 2 and saves previous question
+    ///  Load question 2 and saves previous question
     /// </summary>
-    /// <returns></returns>
     private void _on_Question2_pressed()
     {
         saveQuestion();
@@ -317,7 +310,6 @@ public class EditLevel : Node2D
     /// <summary>
     /// Load question 3 and saves previous question
     /// </summary>
-    /// <returns></returns>
     private void _on_Question3_pressed()
     {
         saveQuestion();
@@ -329,7 +321,6 @@ public class EditLevel : Node2D
     /// <summary>
     /// Load question 4 and saves previous question
     /// </summary>
-    /// <returns></returns>
     private void _on_Question4_pressed()
     {
         saveQuestion();
@@ -341,7 +332,6 @@ public class EditLevel : Node2D
     /// <summary>
     /// Load question 5 and saves previous question
     /// </summary>
-    /// <returns></returns>
     private void _on_Question5_pressed()
     {
         saveQuestion();
@@ -351,9 +341,8 @@ public class EditLevel : Node2D
     }
 
     /// <summary>
-    /// Save all changes made before returning to EditLevelInit
+    /// Save all changes made before returning to EditLevelInit when the Back button is pressed
     /// </summary>
-    /// <returns></returns>
     private void _on_BackBtn_pressed()
     {
         saveQuestion();
@@ -367,9 +356,8 @@ public class EditLevel : Node2D
     }
 
     /// <summary>
-    /// Restore orignal question
+    /// Restore orignal question 
     /// </summary>
-    /// <returns></returns>
     private void _on_RestoreOriginal_pressed()
     {
         List<UserCreatedQuestion> OriginalQuestionList = editLevelBL.getOrignalQuestionList();

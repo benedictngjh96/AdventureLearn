@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using Dapper;
 using System.Linq;
 
+/// <summary>
+/// Class to handle DAO operations for Leaderboard
+/// </summary>
 public class LeaderboardDao
 {
     /// <summary>

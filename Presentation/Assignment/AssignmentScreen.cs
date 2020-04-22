@@ -11,6 +11,10 @@ public class AssignmentScreen : Node2D
     Character character;
 
     Monster monster;
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         assignmentBL = new AssignmentBL();
@@ -34,11 +38,19 @@ public class AssignmentScreen : Node2D
         gamePlay.SetGameType("Assignment");
         gamePlay.LoadStart(character, monster);
     }
+
+    /// <summary>
+    /// Call the methods in Gameplay to setup sprites path for the Student Character the Assignment Monster and display them
+    /// </summary>
     private void SetSpritesPath()
     {
         gamePlay.DisplayCharSprite(character);
         gamePlay.DisplayMonsterSprite(assignment.Monster);
     }
+    
+    /// <summary>
+    /// Insert Assignment score through business logic
+    /// </summary>
     private void InsertAssignmentScore()
     {
         AssignmentScoreBL assignmentScoreBL = new AssignmentScoreBL();

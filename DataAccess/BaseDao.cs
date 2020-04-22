@@ -6,6 +6,10 @@ using System.Data.SqlClient;
 using System.Net;
 using Dapper;
 
+/// <summary>
+/// Class to handle DAO operations for Generic methods
+/// </summary>
+/// <typeparam name="T"></typeparam>
 public class BaseDao<T>
 {
     /// <summary>

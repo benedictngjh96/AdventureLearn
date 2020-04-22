@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using System.Data;
 using Dapper;
 using System.Linq;
+
+/// <summary>
+/// Class to handle DAO operations for Student
+/// </summary>
 public class StudentDao
 {
     /// <summary>

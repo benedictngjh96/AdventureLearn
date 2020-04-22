@@ -115,13 +115,13 @@ public class Global : Node
 
             dir.ListDirBegin();
             var fileName = dir.GetNext();
-            string strFileExtention = System.IO.Path.GetExtension(fileName);
+            //string strFileExtention = System.IO.Path.GetExtension(fileName);
             spriteFrames.AddAnimation(animation);
             int count = 0;
 
             while (!String.IsNullOrEmpty(fileName))
             {
-                fileName = fileName.Replace(strFileExtention, "");
+                //fileName = fileName.Replace(strFileExtention, "");
                 var sprite = ResourceLoader.Load(spritePath + animation + "/" + fileName) as Texture;
                 spriteFrames.AddFrame(animation, sprite);
                 fileName = dir.GetNext();
@@ -129,6 +129,8 @@ public class Global : Node
             }
             animatedSprite.Frames = spriteFrames;
             animatedSprite.SpeedScale = 7;
+
+            animatedSprite.Play("Idle");
         }
        
     }

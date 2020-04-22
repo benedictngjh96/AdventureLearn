@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using Dapper;
 using System.Linq;
 
+/// <summary>
+/// Class to handle DAO operations for World
+/// </summary>
 public class WorldDao
 {
     /// <summary>
-    /// Get all worlds object and store inside List of world object
+    /// Get all Worlds
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return list of World object</returns>
     public List<World> GetWorlds()
     {
         List<World> worldList = new List<World>();
@@ -20,10 +23,11 @@ public class WorldDao
         }
         return worldList;
     }
+
     /// <summary>
-    /// Return the number of Completed Worlds
+    /// Get the total number of CompletedWorld for the Student
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return the total count</returns>
     public int getCompletedWorldCount()
     {
         string query = String.Format("SELECT COUNT(1) FROM World_LastSection_LastLevel w, StudentScore s " +

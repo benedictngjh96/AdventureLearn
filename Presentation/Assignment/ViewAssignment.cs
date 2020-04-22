@@ -15,6 +15,10 @@ public class ViewAssignment : Node2D
     TextureButton nextBtn;
     TextureButton prevBtn;
     Sprite title;
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         vbox = GetNode<VBoxContainer>("ScrollContainer/VBoxContainer");
@@ -36,6 +40,10 @@ public class ViewAssignment : Node2D
         DisplayHeader();
         DisplayAssignment();
     }
+
+    /// <summary>
+    /// Dislpay Assignments that are published to the class that the Student belongs to
+    /// </summary>
     private void DisplayAssignment()
     {
         foreach (PublishedAssignment assignment in assignmentList)
@@ -83,6 +91,10 @@ public class ViewAssignment : Node2D
 
         }
     }
+
+    /// <summary>
+    /// Display Assignments completed by the Student
+    /// </summary>
     private void DisplayCompletedAssignments()
     {
         List<AssignmentScore> completedAssignments = assignmentScoreBL.GetStudentCompletedAssignment(Global.StudentId);
@@ -115,11 +127,20 @@ public class ViewAssignment : Node2D
 
         }
     }
+
+    /// <summary>
+    /// Change Scene to Assignment gameplay
+    /// </summary>
+    /// <param name="btn"></param>
     private void PlayAssignment(Button btn)
     {
         Global.AssignmentId = Convert.ToInt32(btn.Name);
         GetTree().ChangeScene("res://Presentation/Assignment/Assignment.tscn");
     }
+
+    /// <summary>
+    /// Display column titles for Assignment, Teacher that created the Assignment, and DueDate of Assignment 
+    /// </summary>
     private void DisplayHeader()
     {
         //Student Name
