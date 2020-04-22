@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for ViewCustomLevel
+/// </summary>
 public class ViewCustomLevel : Node2D
 {
     CustomLevelBL customLevelBL;
@@ -13,6 +16,10 @@ public class ViewCustomLevel : Node2D
     TextureButton prevBtn;
     List<CustomLevel> customLevelList;
     Sprite title;
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         customLevelBL = new CustomLevelBL();
@@ -36,6 +43,10 @@ public class ViewCustomLevel : Node2D
         DisplayHeader();
         DisplayGameList();
     }
+
+    /// <summary>
+    /// Display the column titles for CustomLevels
+    /// </summary>
     private void DisplayHeader()
     {
         //Student Name
@@ -58,6 +69,10 @@ public class ViewCustomLevel : Node2D
         lbl2.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl2);
     }
+
+    /// <summary>
+    /// Display the column titles for Completed CustomLevels
+    /// </summary>
     private void DisplayHistoryHeader()
     {
         //Student Name
@@ -86,11 +101,19 @@ public class ViewCustomLevel : Node2D
         lbl4.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl4);
     }
+
+    /// <summary>
+    /// Clear the gridContainer
+    /// </summary>
     private void ClearGrid()
     {
         foreach (Node child in gridContainer.GetChildren())
             gridContainer.RemoveChild(child);
     }
+
+    /// <summary>
+    /// Display the game list
+    /// </summary>
     private void DisplayGameList()
     {
         ClearGrid();
@@ -123,11 +146,20 @@ public class ViewCustomLevel : Node2D
             gridContainer.AddChild(btn);
         }
     }
+
+    /// <summary>
+    /// Change scene to CustomLevel gameplay
+    /// </summary>
+    /// <param name="btn"></param>
     private void PlayLevel(Button btn)
     {
         Global.CustomLevelId = Convert.ToInt32(btn.Name);
         GetTree().ChangeScene("res://Presentation/CustomLevel/CustomLevel.tscn");
     }
+
+    /// <summary>
+    /// Display Cleared CustomLevels
+    /// </summary>
     private void DisplayClearedCustomLevels()
     {
         ClearGrid();
@@ -170,6 +202,10 @@ public class ViewCustomLevel : Node2D
 
         }
     }
+
+    /// <summary>
+    /// Handles the logic when the Next button is pressed
+    /// </summary>
     private void _on_NextBtn_pressed()
     {
         Texture texture = ResourceLoader.Load("res://Assets/GUI/clearedtitle.png") as Texture;
@@ -181,7 +217,9 @@ public class ViewCustomLevel : Node2D
         prevBtn.Disabled = false;
     }
 
-
+    /// <summary>
+    /// Handles the logic when the Previous button is pressed
+    /// </summary>
     private void _on_PrevBtn_pressed()
     {
         Texture texture = ResourceLoader.Load("res://Assets/GUI/customlvltitle.png") as Texture;
@@ -192,10 +230,18 @@ public class ViewCustomLevel : Node2D
         prevBtn.Disabled = true;
         nextBtn.Disabled = false;
     }
+
+    /// <summary>
+    /// Change scene to ViewCreatedLevels when View Created Levels button is pressed
+    /// </summary>
     private void _on_ViewCreatedBtn_pressed()
     {
         GetTree().ChangeScene("res://Presentation/CustomLevel/ViewCreatedLevels.tscn");
     }
+
+    /// <summary>
+    /// Change scene to CreateLevel when CreateLevel is pressed
+    /// </summary>
     private void _on_CreateLevel_pressed()
     {
         GetTree().ChangeScene("res://Presentation/CreateLevel/CreateLevelInit.tscn");

@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Business Logic for StudentScore
+/// </summary>
 public class StudentScoreBL
 {
     StudentScoreDao studentScoreDao = new StudentScoreDao();

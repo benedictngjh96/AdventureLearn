@@ -2,11 +2,19 @@ using Godot;
 using System;
 using System.Collections.Generic;
 using System.IO;
+
+/// <summary>
+/// Class to handle Presentation for Credits
+/// </summary>
 public class Credits : Node2D
 {
     VBoxContainer vbox;
     DynamicFont dFont;
     GridContainer gridContainer;
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         vbox = GetNode<VBoxContainer>("ScrollContainer/VBoxContainer");
@@ -17,6 +25,10 @@ public class Credits : Node2D
 
         DisplayCredits();
     }
+
+    /// <summary>
+    /// Display the Credits
+    /// </summary>
     private void DisplayCredits()
     {
         using (StreamReader sr = new StreamReader("Credits/credits.txt"))

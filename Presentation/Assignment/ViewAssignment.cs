@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for ViewAssignment
+/// </summary>
 public class ViewAssignment : Node2D
 {
 
@@ -91,11 +94,20 @@ public class ViewAssignment : Node2D
 
         }
     }
+
+    /// <summary>
+    /// Change scene to Assignment gameplay
+    /// </summary>
+    /// <param name="btn"></param>
     private void PlayAssignment(Button btn)
     {
         Global.AssignmentId = Convert.ToInt32(btn.Name);
         GetTree().ChangeScene("res://Presentation/Assignment/Assignment.tscn");
     }
+
+    /// <summary>
+    /// Displayed Assignments completed by Student
+    /// </summary>
     private void DisplayCompletedAssignments()
     {
         List<AssignmentScore> completedAssignments = assignmentScoreBL.GetStudentCompletedAssignment(Global.StudentId);
@@ -130,17 +142,7 @@ public class ViewAssignment : Node2D
     }
 
     /// <summary>
-    /// Change Scene to Assignment gameplay
-    /// </summary>
-    /// <param name="btn"></param>
-    private void PlayAssignment(Button btn)
-    {
-        Global.AssignmentId = Convert.ToInt32(btn.Name);
-        GetTree().ChangeScene("res://Presentation/Assignment/Assignment.tscn");
-    }
-
-    /// <summary>
-    /// Display column titles for Assignment, Teacher that created the Assignment, and DueDate of Assignment 
+    /// Display the column titles for Assignments
     /// </summary>
     private void DisplayHeader()
     {
@@ -169,6 +171,10 @@ public class ViewAssignment : Node2D
         lbl2.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl2);
     }
+
+    /// <summary>
+    /// Display the column titles for completed Assignments 
+    /// </summary>
     private void DisplayCompletedHeader()
     {
         //Student Name
@@ -196,11 +202,19 @@ public class ViewAssignment : Node2D
         lbl2.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl2);
     }
+
+    /// <summary>
+    /// Clear gridContainer
+    /// </summary>
     private void ClearGrid()
     {
         foreach (Node child in gridContainer.GetChildren())
             gridContainer.RemoveChild(child);
     }
+
+    /// <summary>
+    /// Handles the logic when the Next button is pressed
+    /// </summary>
     private void _on_NextBtn_pressed()
     {
         Texture texture = ResourceLoader.Load("res://Assets/GUI/clearedtitle.png") as Texture;
@@ -213,6 +227,9 @@ public class ViewAssignment : Node2D
         prevBtn.Disabled = false;
     }
 
+    /// <summary>
+    /// Handles the logic when the Previous button is pressed
+    /// </summary>
     private void _on_PrevBtn_pressed()
     {
         Texture texture = ResourceLoader.Load("res://Assets/GUI/assignmenttitle.png") as Texture;
@@ -220,6 +237,7 @@ public class ViewAssignment : Node2D
 
         ClearGrid();
         DisplayHeader();
+        DisplayAssignment();
         DisplayAssignment();
         prevBtn.Disabled = true;
         nextBtn.Disabled = false;

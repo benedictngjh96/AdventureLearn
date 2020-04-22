@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Text.RegularExpressions;
 
+/// <summary>
+/// Class to handle Presentation for CreateLevel
+/// </summary>
 public class CreateLevel : Node2D
 {
     CreateLevelBL createLevelBL;
@@ -115,6 +118,7 @@ public class CreateLevel : Node2D
             GD.Print("Start inserting into database.");
             createLevelBL.createLevel(levelName, monsterId, timeLimit);
             CreateLevelInit.updated = 0;
+            NotificationPopup.displayPopup("Created Successfully!");
             GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
         }
     }

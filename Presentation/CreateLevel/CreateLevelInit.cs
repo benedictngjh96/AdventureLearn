@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for CreateLevelInit
+/// </summary>
 public class CreateLevelInit : Node2D
 {
     static public int updated = 0;
@@ -74,7 +77,7 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// Change Monster to the one on the left
+    /// Handles the logic when the Left button is pressed
     /// </summary>
     private void _on_ArrowLeft_pressed()
     {
@@ -84,7 +87,7 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// Change Monster to the one on the right
+    /// Handles the logic when the Right button is pressed
     /// </summary>
     private void _on_ArrowRight_pressed()
     {
@@ -125,7 +128,7 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// Change the status of the arrow buttons when one of them is pressed
+    /// Change the status of the Arrow buttons
     /// </summary>
     private void changeArrowButtonStatues()
     {
@@ -147,7 +150,7 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// Checks if LevelName is valid before going to next step of level creation when the Next button is pressed
+    /// Handles the logic when the Next button is pressed
     /// </summary>
     private void _on_NextBtn_pressed()
     {
@@ -181,7 +184,7 @@ public class CreateLevelInit : Node2D
     }
 
     /// <summary>
-    /// Return to MainMenu Scene when the Back button is pressed
+    /// Handles the logic when the Back button is pressed
     /// </summary>
     private void _on_BackBtn_pressed()
     {

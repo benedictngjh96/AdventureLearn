@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+/// <summary>
+/// Class to handle Business Logic for CustomLevelScore
+/// </summary>
 public class CustomLevelScoreBL : Node
 {
     /// <summary>

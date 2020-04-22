@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for CustomLevelScreen (gameplay)
+/// </summary>
 public class CustomLevelScreen : Node2D
 {
     GamePlay gamePlay;
@@ -10,6 +13,10 @@ public class CustomLevelScreen : Node2D
     CharacterBL characterBL;
     Character character;
     Monster monster;
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
         customLevelBL = new CustomLevelBL();
@@ -34,12 +41,20 @@ public class CustomLevelScreen : Node2D
         gamePlay.LoadStart(character, monster);
        
     }
+
+    /// <summary>
+    /// Call the methods in Gameplay to setup sprites path for the Student Character the Assignment Monster and display them
+    /// </summary>
     private void SetSpritesPath()
     {
         CharacterBL characterBL = new CharacterBL();
         gamePlay.DisplayCharSprite(characterBL.GetCharacter(Global.StudentId));
         gamePlay.DisplayMonsterSprite(customLevel.Monster);
     }
+
+    /// <summary>
+    /// Insert CustomLevel score through business logic
+    /// </summary>
     private void InsertCustomLevelScore()
     {
         CustomLevelScoreBL customLevelScoreBL = new CustomLevelScoreBL();

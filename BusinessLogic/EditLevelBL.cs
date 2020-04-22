@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 /// <summary>
-/// Class to handle Business Logic operations for EditLevelBL
+/// Class to handle Business Logic for EditLevel
 /// </summary>
 public class EditLevelBL : Node
 {

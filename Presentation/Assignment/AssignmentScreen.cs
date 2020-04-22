@@ -2,6 +2,9 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for AssignmentScreen (gameplay)
+/// </summary>
 public class AssignmentScreen : Node2D
 {
     GamePlay gamePlay;

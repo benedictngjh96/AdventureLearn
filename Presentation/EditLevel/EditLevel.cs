@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 
+/// <summary>
+/// Class to handle Presentation for EditLevel
+/// </summary>
 public class EditLevel : Node2D
 {
     EditLevelBL editLevelBL;
@@ -95,6 +98,7 @@ public class EditLevel : Node2D
             editLevelBL.updateLevelInitInfo(levelName, monsterId, timeLimit);
             editLevelBL.updateLevel();
             EditLevelInit.updated = 0;
+            NotificationPopup.displayPopup("Edited Successfully!");
             GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
         }
     }
