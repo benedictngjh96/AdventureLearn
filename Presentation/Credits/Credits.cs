@@ -22,7 +22,6 @@ public class Credits : Node2D
         dFont = new DynamicFont();
         dFont.FontData = ResourceLoader.Load("res://Fonts/Candy Beans.otf") as DynamicFontData;
         dFont.Size = 19;
-
         DisplayCredits();
     }
 
@@ -31,15 +30,15 @@ public class Credits : Node2D
     /// </summary>
     private void DisplayCredits()
     {
-        using (StreamReader sr = new StreamReader("Credits/credits.txt"))
-        {
-            // Read the stream to a string, and write the string to the console.
-            String line = sr.ReadToEnd();
-            Label name = new Label();
-            name.AddFontOverride("font", dFont);
-            name.Text = line;
-            name.AddColorOverride("font_color", new Color(0, 0, 0));
-            gridContainer.AddChild(name);
-        }
+        Godot.File file = new Godot.File();
+        file.Open("res://Credits/credits.txt", Godot.File.ModeFlags.Read);
+        string content = file.GetAsText();
+        file.Close();
+        Label name = new Label();
+        name.AddFontOverride("font", dFont);
+        name.Text = content;
+        name.AddColorOverride("font_color", new Color(0, 0, 0));
+        gridContainer.AddChild(name);
+
     }
 }
