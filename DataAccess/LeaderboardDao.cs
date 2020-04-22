@@ -10,9 +10,9 @@ using System.Linq;
 public class LeaderboardDao
 {
     /// <summary>
-    /// Return list of Leaderboard object
+    /// Get all Leaderboard scores
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return list of Leaderboard object</returns>
     public List<Leaderboard> GetLeaderboardScore()
     {
         List<Leaderboard> leaderboardList;
@@ -28,10 +28,10 @@ public class LeaderboardDao
         return leaderboardList;
     }
     /// <summary>
-    /// Return list of leaderboard object filtered according to worldId
+    /// Get all Leaderboard score on selected World
     /// </summary>
     /// <param name="worldId"></param>
-    /// <returns></returns>
+    /// <returns>Return list of leaderboard object </returns>
     public List<Leaderboard> GetLeaderboardScore(int worldId)
     {
         List<Leaderboard> leaderboardList;
@@ -45,8 +45,5 @@ public class LeaderboardDao
             leaderboardList = conn.Query<Leaderboard>(query).ToList();
         }
         return leaderboardList;
-
-
-
     }
 }

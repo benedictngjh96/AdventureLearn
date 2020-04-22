@@ -10,11 +10,11 @@ using System.Linq;
 public class StudentScoreDao
 {
     /// <summary>
-    /// Return student object containing StudentScore object filtered by sectionId and studentId
+    /// Get all Student scores in selected World and Section
     /// </summary>
     /// <param name="sectionId"></param>
     /// <param name="studentId"></param>
-    /// <returns></returns>
+    /// <returns>Return Student object containing StudentScore object</returns>
     public Student GetStudentScores(int worldId, int sectionId, int studentId)
     {
         string query = String.Format("SELECT s.StudentId, ss.WorldId , ss.SectionId , ss.LevelId , " +
@@ -41,7 +41,11 @@ public class StudentScoreDao
             return stud;
         }
     }
-
+    /// <summary>
+    /// Get Student's average score in all Worlds
+    /// </summary>
+    /// <param name="studentId"></param>
+    /// <returns>Return list of StudentScore object</returns>
     public StudentScore GetAvgWorldScores(int studentId)
     {
         string query = String.Format("SELECT AVG(LevelScore) AS LevelScore , WorldId FROM StudentScore ss WHERE ss.StudentId = {0} GROUP BY ss.WorldId", studentId);
@@ -56,14 +60,14 @@ public class StudentScoreDao
             return studentScores[0];
     }
     /// <summary>
-    /// Return int result 1 if InsertStudentScore has executed successfully
+    /// Insert StudentScore of cleared level
     /// </summary>
     /// <param name="studentId"></param>
     /// <param name="worldId"></param>
     /// <param name="sectionId"></param>
     /// <param name="levelId"></param>
     /// <param name="levelScore"></param>
-    /// <returns></returns>
+    /// <returns>Return int result 1 if insertion query has executed successfully</returns>
     public int InsertStudentScore(int studentId, int worldId, int sectionId, int levelId, int levelScore)
     {
         BaseDao<int> baseDao = new BaseDao<int>();
@@ -73,7 +77,11 @@ public class StudentScoreDao
         int result = baseDao.ExecuteQuery(query, new { StudentId = studentId, WorldId = worldId, SectionId = sectionId, LevelId = levelId, LevelScore = levelScore });
         return result;
     }
-
+    /// <summary>
+    /// Get Student's campaign rank
+    /// </summary>
+    /// <param name="studentId"></param>
+    /// <returns>Return integer result of Student's campaign rank</returns>
     public int GetCampaignRanking(int studentId)
     {
         BaseDao<int> baseDao = new BaseDao<int>();

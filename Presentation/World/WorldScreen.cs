@@ -19,8 +19,8 @@ public class WorldScreen : Node
 
     private void disableInaccessibleWorlds()
     {
-        int completedWorldCount = worldBl.getCompletedWorldCount();
-        int totalWorldCount = worldBl.getTotalWorldCount();
+        int completedWorldCount = worldBl.GetCompletedWorldCount();
+        int totalWorldCount = worldBl.GetTotalWorldCount();
 
         for (int i = totalWorldCount; i > completedWorldCount + 1 ; i--)
         {

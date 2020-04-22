@@ -24,9 +24,9 @@ public class Global : Node
     public static bool FbLoggedIn { get; set; }
     public static List<UserCreatedQuestion> QuestionList { get; set; }
 
-    public static float bgmVol { get; set; }
-    public static float battleBgmVol { get; set; }
-    public static float sfxVol { get; set; }
+    public static float BgmVol { get; set; }
+    public static float BattleBgmVol { get; set; }
+    public static float SfxVol { get; set; }
 
     public static int FirstLoggedIn{get;set;}
 
@@ -52,10 +52,18 @@ public class Global : Node
         double levelScore = (Convert.ToDouble(timeRemaining) / Convert.ToDouble(timeLimit)) * 100;
         return Convert.ToInt32(levelScore);
     }
+    /// <summary>
+    /// Get state of Student's first logged in 
+    /// </summary>
+    /// <returns>Return 1 if user has first logged in</returns>
     public static int GetFirstLoggedIn()
     {
         return FirstLoggedIn;
     }
+    /// <summary>
+    /// Store state of Student's first logged in 
+    /// </summary>
+    /// <param name="status"></param>
     public static void SetFirstLoggedIn(int status)
     {
         FirstLoggedIn = status;
@@ -77,6 +85,10 @@ public class Global : Node
     {
         StudentName = name;
     }
+    /// <summary>
+    /// Get Student Name
+    /// </summary>
+    /// <returns>Return StudentName</returns>
     public static string GetStudentName()
     {
         return StudentName;
@@ -129,7 +141,6 @@ public class Global : Node
             }
             animatedSprite.Frames = spriteFrames;
             animatedSprite.SpeedScale = 7;
-
             animatedSprite.Play("Idle");
         }
        

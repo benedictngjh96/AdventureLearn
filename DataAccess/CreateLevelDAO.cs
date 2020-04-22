@@ -32,35 +32,17 @@ public class CreateLevelDAO : Node
             case 3:
                 formatForDatabaseInsertion(ref option4, ref option3);
                 break;
-            case 4:
-                //formatForDatabaseInsertion(ref option4, ref option4);
+            default:
                 break;
         }
 
         string query = String.Format("INSERT INTO Question(Option1, Option2, Option3, CorrectOption, QuestionTitle) " +
                  "VALUES('{0}', '{1}', '{2}', '{3}', '{4}')", option1, option2, option3, option4, questionTitle); ;
-
         BaseDao<Question> baseDao = new BaseDao<Question>();
         int result = baseDao.ExecuteQuery(query);
-
-        if (result <= 0)
-            GD.Print("Error inserting question into database.");
-        else
-            GD.Print("Question inserted into database successfully.");
-
-        //Student
         int questionId = getStudentQuestionId(option1, option2, option3, option4, questionTitle);
-        GD.Print("QuestionId : " + questionId);
         int customLevelId = getCustomLevelId(option1, option2, option3, option4, questionTitle);
-        GD.Print("CustomLevelId : " + customLevelId);
         InsertStudentCustomQuestion(questionId, customLevelId);
-
-        //Teacher
-        /*int questionId = getTeacherQuestionId(option1, option2, option3, option4, questionTitle);
-        GD.Print("QuestionId : " + questionId);
-        int assignmentId = getAssignmentId(option1, option2, option3, option4, questionTitle);
-        GD.Print("AssignmentId : " + assignmentId);
-        InsertTeacherCustomQuestion(questionId, assignmentId);*/
     }
 
     /// <summary>
@@ -164,12 +146,7 @@ public class CreateLevelDAO : Node
     /// <returns>Return -1 if there is existing level name, else return 1</returns>
     public static int checkValidLevelName(string name)
     {
-        //student
         string query = String.Format("SELECT CustomLevelName FROM CustomLevel cl WHERE StudentId = '{0}' AND CustomLevelName = '{1}'; ", Global.StudentId, name);
-
-        //teacher
-        //string query = String.Format("SELECT AssignmentName FROM `Assignment` a WHERE TeacherId = {0} AND AssignmentName = '{1}'; ", Global.TeacherId, name);
-
         BaseDao<string> baseDao = new BaseDao<string>();
         name = baseDao.RetrieveQuery(query);
 

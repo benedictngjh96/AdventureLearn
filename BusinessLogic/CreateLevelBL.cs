@@ -7,6 +7,7 @@ using System;
 /// </summary>
 public class CreateLevelBL : Node
 {
+
 	CreateLevelDAO createLevelDAO = new CreateLevelDAO();
 	List<UserCreatedQuestion> TempQuestionList = new List<UserCreatedQuestion>();
 

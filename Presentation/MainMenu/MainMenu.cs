@@ -57,33 +57,20 @@ public class MainMenu : Node2D
             fbScript.Call("facebook_connect");
             fbScript.Call("logout");
         }
-        
+
         GetTree().ChangeScene("res://Presentation/Login/Login.tscn");
-        
     }
-    
-    private void _on_CreditsBtn_pressed()
-    {
-        GetTree().ChangeScene("res://Presentation/Credits/Credits.tscn");
-    }
-    
+
     private void _on_SettingsBtn_pressed()
     {
         GetTree().ChangeScene("res://Presentation/Settings/Settings.tscn");
     }
-    
-    private void welcomeMsg()
+
+    private void _on_CreditsBtn2_pressed()
     {
-        Control welcomeMsgNode = GetNode<Control>("WelcomeMsg");
-        AnimationPlayer animation = GetNode<AnimationPlayer>("WelcomeMsg/AnimationPlayer");
-
-        Label msg = GetNode<Label>("WelcomeMsg/Msg");
-        msg.Text = "Welcome back, " + Global.StudentName;
-        animation.Play("Hide");
-
-        //welcomeMsgNode.Visible = false;
-
+        GetTree().ChangeScene("res://Presentation/Credits/Credits.tscn");
     }
+
 }
 
 

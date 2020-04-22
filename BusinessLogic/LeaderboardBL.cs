@@ -4,10 +4,10 @@ using System.Collections.Generic;
 public class LeaderboardBL
 {
     /// <summary>
-    /// Return list of Leaderboard object according to worldId
+    /// Get all Leaderboard scores of selected World
     /// </summary>
     /// <param name="worldId"></param>
-    /// <returns></returns>
+    /// <returns>Return list of Leaderboard object</returns>
     public List<Leaderboard> GetWorldLeaderboard(int worldId)
     {
         LeaderboardDao leaderboardDao = new LeaderboardDao();
@@ -15,9 +15,9 @@ public class LeaderboardBL
         return leaderboardDao.GetLeaderboardScore(worldId);
     }
     /// <summary>
-    /// Return list of all Leaderboard objects
+    /// Get all Leaderboard score of all Worlds
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return list of Leaderboard object</returns>
     public List<Leaderboard> GetLeaderboards()
     {
         LeaderboardDao leaderboardDao = new LeaderboardDao();
@@ -25,9 +25,9 @@ public class LeaderboardBL
         return leaderboardDao.GetLeaderboardScore();
     }
     /// <summary>
-    /// Return list of  all World objects
+    /// Get all Worlds
     /// </summary>
-    /// <returns></returns>
+    /// <returns>Return list of World object</returns>
     public List<World> GetWorlds()
     {
         WorldDao worldDao = new WorldDao();

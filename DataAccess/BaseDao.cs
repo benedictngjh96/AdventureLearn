@@ -13,11 +13,11 @@ using Dapper;
 public class BaseDao<T>
 {
     /// <summary>
-    /// Generic method to return int result 1 if successful for execute sql query
+    /// Generic method to query execution using obj parameter
     /// </summary>
     /// <param name="query"></param>
     /// <param name="t"></param>
-    /// <returns></returns>
+    /// <returns>Return 1 if query has executed successfully</returns>
     public int ExecuteQuery(string query, Object obj)
     {
         int result = 0;
@@ -27,6 +27,11 @@ public class BaseDao<T>
         }
         return result;
     }
+    /// <summary>
+    /// Generic method for query execution
+    /// </summary>
+    /// <param name="query"></param>
+    /// <returns>Return 1 if query has executed successfully </returns>
     public int ExecuteQuery(string query)
     {
         int result = 0;
@@ -37,10 +42,10 @@ public class BaseDao<T>
         return result;
     }
     /// <summary>
-    /// Generic method for retrieve query to return generic object T 
+    /// Generic method for query sql command 
     /// </summary>
     /// <param name="query"></param>
-    /// <returns></returns>
+    /// <returns>Return generic object T if query has executed successfully</returns>
     public T RetrieveQuery(string query)
     {
         T result;
@@ -51,11 +56,11 @@ public class BaseDao<T>
         return result;
     }
     /// <summary>
-    /// Generic method to return int result 1 if successful for scalar query with object passed into query
+    /// Generic method to execute sql command
     /// </summary>
     /// <param name="query"></param>
     /// <param name="t"></param>
-    /// <returns></returns>
+    /// <returns>Return int result 1 if successful for scalar query with object passed into query</returns>
     public T ExecuteScalar(string query, Object obj)
     {
         T result;
@@ -67,10 +72,10 @@ public class BaseDao<T>
         return result;
     }
     /// <summary>
-    /// Generic method to return int result 1 if successful for scalar query
+    /// Generic method to execute scalar sql command
     /// </summary>
     /// <param name="query"></param>
-    /// <returns></returns>
+    /// <returns>Return generic object if query has executed successfully</returns>
     public T ExecuteScalar(string query)
     {
         T result;

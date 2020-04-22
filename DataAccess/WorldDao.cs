@@ -27,8 +27,8 @@ public class WorldDao
     /// <summary>
     /// Get the total number of CompletedWorld for the Student
     /// </summary>
-    /// <returns>Return the total count</returns>
-    public int getCompletedWorldCount()
+    /// <returns>Return the total count of Completed Worlds</returns>
+    public int GetCompletedWorldCount()
     {
         string query = String.Format("SELECT COUNT(1) FROM World_LastSection_LastLevel w, StudentScore s " +
             "WHERE s.StudentId = {0} AND w.WorldId = s.WorldId AND w.LastSectionId = s.SectionId AND w.LastLevelId = s.LevelId;"

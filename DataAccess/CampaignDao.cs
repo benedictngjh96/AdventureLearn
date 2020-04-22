@@ -10,18 +10,17 @@ using System.Linq;
 public class CampaignDao 
 {
     /// <summary>
-    /// Return level object containing monster and question object
+    /// Get level which belongs to selected World and Section
     /// </summary>
     /// <param name="worldId"></param>
     /// <param name="sectionId"></param>
     /// <param name="levelId"></param>
-    /// <returns></returns>
+    /// <returns>Return Level object containing monster and question object</returns>
     public Level GetLevel(int worldId, int sectionId, int levelId)
     {
         string query = String.Format("SELECT l.LevelId , l.TimeLimit, m.MonsterId , m.MonsterName , q.QuestionId, q.QuestionTitle, q.Option1, q.Option2, q.Option3, q.CorrectOption " +
             "FROM Level l NATURAL JOIN Monster m NATURAL JOIN CampaignQuestion cq NATURAL JOIN Question q " +
             "WHERE l.WorldId ={0} AND l.SectionId = {1} AND l.LevelId = {2}", worldId,sectionId,levelId);
-        Godot.GD.Print(query);
         Dictionary<int, Level> levelDict;
 
         using (MySqlConnection conn = new MySqlConnection(Global.csb.ConnectionString))
