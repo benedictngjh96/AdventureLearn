@@ -22,18 +22,18 @@ public class EditLevelDao : Node
 	/// <param name="correctOptionInt"></param>
 	/// <param name="questionTitle"></param>
 	/// <param name="questionId"></param>
-	public void updateQuestion(string option1, string option2, string option3, string option4, int correctOptionInt, string questionTitle, int questionId)
+	public void UpdateQuestion(string option1, string option2, string option3, string option4, int correctOptionInt, string questionTitle, int questionId)
 	{
 		switch (correctOptionInt)
 		{
 			case 1:
-				formatForDatabaseInsertion(ref option4, ref option1);
+				FormatForDatabaseInsertion(ref option4, ref option1);
 				break;
 			case 2:
-				formatForDatabaseInsertion(ref option4, ref option2);
+				FormatForDatabaseInsertion(ref option4, ref option2);
 				break;
 			case 3:
-				formatForDatabaseInsertion(ref option4, ref option3);
+				FormatForDatabaseInsertion(ref option4, ref option3);
 				break;
 			default:
 				break;
@@ -58,7 +58,7 @@ public class EditLevelDao : Node
 	/// </summary>
 	/// <param name="option4"></param>
 	/// <param name="correctOption"></param>
-	private void formatForDatabaseInsertion(ref string option4, ref string correctOption)
+	private void FormatForDatabaseInsertion(ref string option4, ref string correctOption)
 	{
 		option4 = option4 + correctOption;
 		correctOption = option4.Substring(0, (option4.Length - correctOption.Length));
@@ -71,7 +71,7 @@ public class EditLevelDao : Node
 	/// <param name="oldName"></param>
 	/// <param name="newName"></param>
 	/// <returns>Return -1 if there is existing level name, else return 1 </returns>
-	public static int checkValidLevelName(string oldName,string newName)
+	public static int CheckValidLevelName(string oldName,string newName)
 	{
 		//student
 		string query = String.Format("SELECT CustomLevelName FROM(SELECT * FROM CustomLevel c2 WHERE c2.CustomLevelName <> '{0}') AS c " +
@@ -95,7 +95,7 @@ public class EditLevelDao : Node
 	/// Load all information on the CustomLevel from database
 	/// </summary>
 	/// <returns>Return the acquired information in a CustomLevel object</returns>
-	public CustomLevel getLevelInfo() 
+	public CustomLevel GetLevelInfo() 
 	{
 		string query = String.Format("SELECT CustomLevelId, CustomLevelName, TimeLimit, StudentId, MonsterId, QuestionId, Option1, Option2, Option3, " +
 			"CorrectOption, QuestionTitle FROM CustomLevel NATURAL JOIN StudentCustomQuestion " +
@@ -133,7 +133,7 @@ public class EditLevelDao : Node
 	/// <param name="levelName"></param>
 	/// <param name="monsterId"></param>
 	/// <param name="timeLimit"></param>
-	public void updateLevelInitInfo(string levelName, int monsterId, int timeLimit)
+	public void UpdateLevelInitInfo(string levelName, int monsterId, int timeLimit)
 	{
 		string query = String.Format("UPDATE CustomLevel SET CustomLevelName = '{0}', MonsterId = {1}, TimeLimit = {2} WHERE CustomLevelId = {3}; "
 			, levelName, monsterId, timeLimit, Global.CustomLevelId);

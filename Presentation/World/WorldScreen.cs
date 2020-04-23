@@ -20,13 +20,13 @@ public class WorldScreen : Node
         world2Btn = GetNode<TextureButton>("Bg/World2");
         world3Btn = GetNode<TextureButton>("Bg/World3");
         worldBl = new WorldBL();
-        disableInaccessibleWorlds();
+        DisableInaccessibleWorlds();
     }
 
     /// <summary>
     /// Disable the Worlds that have not been unlocked
     /// </summary>
-    private void disableInaccessibleWorlds()
+    private void DisableInaccessibleWorlds()
     {
         int completedWorldCount = worldBl.GetCompletedWorldCount();
         int totalWorldCount = worldBl.GetTotalWorldCount();

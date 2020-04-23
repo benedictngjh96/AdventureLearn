@@ -57,24 +57,24 @@ public class EditLevelInit : Node2D
 
         restoreOriginal = GetNode<TextureButton>("RestoreOriginal");
 
-        addOptions();
+        AddOptions();
 
         //testing
         //Global.StudentId = 23;
         //Global.CustomLevelId = 10;
         //testing
 
-        displayLevelInit();
+        DisplayLevelInit();
     }
 
     /// <summary>
     /// Display original or updated level name, selected monster, selected time limit
     /// </summary>
-    private void displayLevelInit()
+    private void DisplayLevelInit()
     {
         if(updated == 0)
         {
-            CustomLevel levelInfo = editLevelBL.loadCustomLevelInfo();
+            CustomLevel levelInfo = editLevelBL.LoadCustomLevelInfo();
             levelNameLine.Text = levelInfo.CustomLevelName;
 
             int i = 0;
@@ -93,8 +93,8 @@ public class EditLevelInit : Node2D
                 "\nTimeLimit: " + levelInfo.TimeLimit);
 
             count = levelInfo.Monster.MonsterId - 1;
-            changeArrowButtonStatues();
-            displayCharacter();
+            UpdateArrowButtonStatuses();
+            DisplayCharacter();
 
             oldName = levelInfo.CustomLevelName;
             oldMonsterId = levelInfo.Monster.MonsterId;
@@ -120,8 +120,8 @@ public class EditLevelInit : Node2D
                 "\nTimeLimit: " + Global.TimeLimit);
 
             count = Global.MonsterId - 1;
-            changeArrowButtonStatues();
-            displayCharacter();
+            UpdateArrowButtonStatuses();
+            DisplayCharacter();
         }
     }
 
@@ -132,8 +132,8 @@ public class EditLevelInit : Node2D
     {
         count--;
         GD.Print("Count: " + count);
-        changeArrowButtonStatues();
-        displayCharacter();
+        UpdateArrowButtonStatuses();
+        DisplayCharacter();
     }
 
     /// <summary>
@@ -143,14 +143,14 @@ public class EditLevelInit : Node2D
     {
         count++;
         GD.Print("Count: " + count);
-        changeArrowButtonStatues();
-        displayCharacter();
+        UpdateArrowButtonStatuses();
+        DisplayCharacter();
     }
 
     /// <summary>
     /// Display the corresponding Monster whenever the left or right arrows are pressed
     /// </summary>
-    private void displayCharacter()
+    private void DisplayCharacter()
     {
         string name = monsterList[count].MonsterName;
         charPath = String.Format(spritePath + "{0}/", name);
@@ -161,17 +161,17 @@ public class EditLevelInit : Node2D
     /// <summary>
     /// Insert available timelimit and Monster options
     /// </summary>
-    private void addOptions()
+    private void AddOptions()
     {
         //monster
         characterBL = new CharacterBL();
         monsterList = characterBL.GetAllMonsters();
-        displayCharacter();
+        DisplayCharacter();
 
         numberOfChar = monsterList.Count;
         GD.Print("Number of monster: " + numberOfChar);
 
-        changeArrowButtonStatues();
+        UpdateArrowButtonStatuses();
 
         //timeLimit
         foreach (int i in timeLimitOptions)
@@ -181,7 +181,7 @@ public class EditLevelInit : Node2D
     /// <summary>
     /// Change the status of the arrow buttons when one of them is pressed
     /// </summary>
-    private void changeArrowButtonStatues()
+    private void UpdateArrowButtonStatuses()
     {
         if (count == 0)
         {
@@ -217,14 +217,14 @@ public class EditLevelInit : Node2D
             GD.Print("Level name field is empty!");
             errorMessageLabel.SetText("Level name field is empty!");
         }
-        else if (EditLevelBL.checkValidLevelName(oldName, levelName) != 1)
+        else if (EditLevelBL.CheckValidLevelName(oldName, levelName) != 1)
         {
             GD.Print("Level name already exist!");
             errorMessageLabel.SetText("Level name already exist!");
         }
         else
         {
-            EditLevel.setLevelInitInfo(levelName, monsterId, timeLimit);
+            EditLevel.SetLevelInitInfo(levelName, monsterId, timeLimit);
             GetTree().ChangeScene("res://Presentation/EditLevel/EditLevel.tscn");
         }
     }
@@ -249,8 +249,8 @@ public class EditLevelInit : Node2D
         timeLimitBtn.Select(i);
 
         count = oldMonsterId - 1;
-        changeArrowButtonStatues();
-        displayCharacter();
+        UpdateArrowButtonStatuses();
+        DisplayCharacter();
     }
 }
 
