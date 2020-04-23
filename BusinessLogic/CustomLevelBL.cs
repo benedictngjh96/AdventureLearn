@@ -13,7 +13,7 @@ public class CustomLevelBL
     /// <returns>Return CustomLevel object</returns>
     public CustomLevel GetCustomLevel(int customLevelId)
     {
-        CustomLevelDao customLevelDao = new CustomLevelDao();
+        CustomLevelDaoImpl customLevelDao = new CustomLevelDaoImpl();
         return customLevelDao.GetCustomLevel(customLevelId);
     }
     /// <summary>
@@ -22,7 +22,7 @@ public class CustomLevelBL
     /// <returns>Return list of CustomLevel object</returns>
     public List<CustomLevel> GetCustomLevels()
     {
-        CustomLevelDao customLevelDao = new CustomLevelDao();
+        CustomLevelDaoImpl customLevelDao = new CustomLevelDaoImpl();
         return customLevelDao.GetCustomLevels();
     }
     /// <summary>
@@ -32,7 +32,7 @@ public class CustomLevelBL
     /// <returns>Return list of CustomLevel object</returns>
     public List<CustomLevel> GetStudentCustomLevel(int studentId)
     {
-        CustomLevelDao customLevelDao = new CustomLevelDao();
+        CustomLevelDaoImpl customLevelDao = new CustomLevelDaoImpl();
         return customLevelDao.GetStudentCustomLevel(studentId);
     }
     /// <summary>
@@ -42,7 +42,7 @@ public class CustomLevelBL
     /// <returns>Return list of CustomLevelScore</returns>
     public List<CustomLevelScore> GetClearedCustomLevels(int studentId)
     {
-        CustomLevelDao customLevelDao = new CustomLevelDao();
+        CustomLevelDaoImpl customLevelDao = new CustomLevelDaoImpl();
         return customLevelDao.GetClearedCustomLevels(studentId);
     }
     /// <summary>
@@ -52,7 +52,7 @@ public class CustomLevelBL
     /// <returns>Return 1 if delete query has executed successfully</returns>
     public int DeleteCustomLevel(int customLevelId)
     {
-        CustomLevelDao customLevelDao = new CustomLevelDao();
+        CustomLevelDaoImpl customLevelDao = new CustomLevelDaoImpl();
         return customLevelDao.DeleteCustomLevel(customLevelId);
     }
     /// <summary>
@@ -62,7 +62,7 @@ public class CustomLevelBL
     /// <returns>Return Monster object</returns>
     public Monster GetCustomLevelMonster(int customLevelId)
     {
-        CustomLevelDao customLevelDao = new CustomLevelDao();
+        CustomLevelDaoImpl customLevelDao = new CustomLevelDaoImpl();
         return customLevelDao.GetCustomLevelMonster(customLevelId);
     }
 

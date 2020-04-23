@@ -16,7 +16,7 @@ public class CustomLevelScoreBL : Node
     /// <returns>Return 1 if insert query has executed succcessfully</returns>
     public int InsertCustomLevelScore(int studentId, int customLevelId, int timeRemaining, int timeLimit)
     {
-        CustomLevelScoreDao customlevelScoreDao = new CustomLevelScoreDao();
+        CustomLevelScoreDaoImpl customlevelScoreDao = new CustomLevelScoreDaoImpl();
         return customlevelScoreDao.InsertCustomLevelScore(studentId, customLevelId, Global.CalculateScore(timeRemaining, timeLimit));
     }
 }

@@ -24,7 +24,7 @@ public class NotificationPopup : Control
     /// Display the message in the parameter as popup message
     /// </summary>
     /// <param name="message"></param>
-    public static void displayPopup(string message)
+    public static void DisplayPopup(string message)
     {
         msg.Text = message;
         animations.Play("Hide");

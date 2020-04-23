@@ -361,7 +361,7 @@ public class CreateLevel : Node2D
     /// </summary>
     private void _on_AutoGen_pressed()
     {
-        createLevelBL.AutoGenerateQuestions();
+        createLevelBL.AutoGenerateQuestions(levelName);
         DisplayQuestion();
     }
 }

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 /// </summary>
 public class StudentScoreBL
 {
-    StudentScoreDao studentScoreDao = new StudentScoreDao();
+    StudentScoreDaoImpl studentScoreDao = new StudentScoreDaoImpl();
 
     /// <summary>
     /// Get all Student scores in selected World and Section
@@ -32,7 +32,7 @@ public class StudentScoreBL
     /// <returns>Return int result 1 if insertion query has executed successfully</returns>
     public int InsertStudentScore(int studentId, int worldId, int sectionId, int levelId, int timeRemaining, int timeLimit)
     {
-        StudentScoreDao studentScoreDao = new StudentScoreDao();
+        StudentScoreDaoImpl studentScoreDao = new StudentScoreDaoImpl();
         return studentScoreDao.InsertStudentScore(studentId, worldId, sectionId, levelId, Global.CalculateScore(timeRemaining, timeLimit));
     }
     /// <summary>
@@ -42,7 +42,7 @@ public class StudentScoreBL
     /// <returns>Return list of StudentScore object</returns>
     public StudentScore GetAvgWorldScores(int studentId)
     {
-        StudentScoreDao studentScoreDao = new StudentScoreDao();
+        StudentScoreDaoImpl studentScoreDao = new StudentScoreDaoImpl();
         return studentScoreDao.GetAvgWorldScores(studentId);
     }
     /// <summary>
@@ -52,7 +52,7 @@ public class StudentScoreBL
     /// <returns>Return integer result of Student's campaign rank</returns>
     public int GetCampaignRanking(int studentId)
     {
-        StudentScoreDao studentScoreDao = new StudentScoreDao();
+        StudentScoreDaoImpl studentScoreDao = new StudentScoreDaoImpl();
         return studentScoreDao.GetCampaignRanking(studentId);
     }
     

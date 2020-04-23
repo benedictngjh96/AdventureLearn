@@ -4,6 +4,23 @@
             "outputFile": "D:\\AdventureLearn\\android\\build\\build\\intermediates\\incremental\\mergeReleaseResources\\merged.dir\\values-uk\\values-uk.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\slay_\\.gradle\\caches\\transforms-2\\files-2.1\\cfb130377bd9653e3a175180f4c2a5d4\\res\\values-uk\\values-uk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    },
+                    "to": {
+                        "startLines": "47",
+                        "startColumns": "4",
+                        "startOffsets": "5534",
+                        "endColumns": "75",
+                        "endOffsets": "5605"
+                    }
+                },
+                {
                     "source": "C:\\Users\\slay_\\.gradle\\caches\\transforms-2\\files-2.1\\812b181687b824d3ac4f08ded4a5694d\\res\\values-uk\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
@@ -69,23 +86,6 @@
                         "startOffsets": "6299",
                         "endColumns": "100",
                         "endOffsets": "6395"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\slay_\\.gradle\\caches\\transforms-2\\files-2.1\\aa2e10e5d409c3956270772962adde37\\res\\values-uk\\values-uk.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "75",
-                        "endOffsets": "126"
-                    },
-                    "to": {
-                        "startLines": "47",
-                        "startColumns": "4",
-                        "startOffsets": "5534",
-                        "endColumns": "75",
-                        "endOffsets": "5605"
                     }
                 },
                 {

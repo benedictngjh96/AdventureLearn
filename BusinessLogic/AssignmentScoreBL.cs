@@ -17,7 +17,7 @@ public class AssignmentScoreBL : Node
     /// <returns>Return int result 1 if InsertAssignmentScore has executed successfully</returns>
     public int InsertAssignmentScore(int studentId, int assignmentId, int timeRemaining, int timeLimit)
     {
-        AssignmentScoreDao assignmentScoreDao = new AssignmentScoreDao();
+        AssignmentScoreDaoImpl assignmentScoreDao = new AssignmentScoreDaoImpl();
         return assignmentScoreDao.InsertAssignmentScore(studentId, assignmentId, Global.CalculateScore(timeRemaining,timeLimit));
     }
     /// <summary>
@@ -26,7 +26,7 @@ public class AssignmentScoreBL : Node
     /// <param name="studentId"></param>
     /// <returns>/Return list of AssignmentScore object</returns>
     public List<AssignmentScore> GetStudentCompletedAssignment(int studentId){
-        AssignmentScoreDao assignmentScoreDao = new AssignmentScoreDao();
+        AssignmentScoreDaoImpl assignmentScoreDao = new AssignmentScoreDaoImpl();
         List<AssignmentScore> assignmentList = assignmentScoreDao.GetStudentCompletedAssignment(studentId);
         return assignmentList;
     }

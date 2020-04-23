@@ -38,23 +38,6 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\slay_\\.gradle\\caches\\transforms-2\\files-2.1\\b750f82fb953137474b1df945d5fc967\\res\\values-tr\\values-tr.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endColumns": "75",
-                        "endOffsets": "126"
-                    },
-                    "to": {
-                        "startLines": "70",
-                        "startColumns": "4",
-                        "startOffsets": "8044",
-                        "endColumns": "75",
-                        "endOffsets": "8115"
-                    }
-                },
-                {
                     "source": "C:\\Users\\slay_\\.gradle\\caches\\transforms-2\\files-2.1\\812b181687b824d3ac4f08ded4a5694d\\res\\values-tr\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10",
@@ -103,6 +86,23 @@
                         "startOffsets": "8815",
                         "endColumns": "100",
                         "endOffsets": "8911"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\slay_\\.gradle\\caches\\transforms-2\\files-2.1\\d34f6e8ce1d44a9251e7a9ba1243b86d\\res\\values-tr\\values-tr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    },
+                    "to": {
+                        "startLines": "70",
+                        "startColumns": "4",
+                        "startOffsets": "8044",
+                        "endColumns": "75",
+                        "endOffsets": "8115"
                     }
                 },
                 {

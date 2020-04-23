@@ -13,7 +13,7 @@ public class SectionBL
     /// <returns>Return list of Section object</returns>
     public List<Section> GetWorldSections(int worldId)
     {
-        SectionDao sectionDao = new SectionDao();
+        SectionDaoImpl sectionDao = new SectionDaoImpl();
         List<Section> sectionList = new List<Section>();
         sectionList = sectionDao.GetWorldSections(worldId);
         return sectionList;
@@ -27,7 +27,7 @@ public class SectionBL
     /// <returns>Return Section object containing list of Level object</returns>
     public Section GetSectionLevels(int worldId, int sectionId)
     {
-        SectionDao sectionDao = new SectionDao();
+        SectionDaoImpl sectionDao = new SectionDaoImpl();
         Section findSection = sectionDao.GetSectionLevels(worldId, sectionId);
         return findSection;
     }
@@ -40,7 +40,7 @@ public class SectionBL
     /// <returns>Return int result 1 if Student has cleared the section</returns>
     public int CheckSectionCleared(int worldId, int sectionId, int studentId)
     {
-        SectionDao sectionDao = new SectionDao();
+        SectionDaoImpl sectionDao = new SectionDaoImpl();
         int result = sectionDao.CheckSectionCleared(worldId, sectionId-1, studentId);
         return result;
     }

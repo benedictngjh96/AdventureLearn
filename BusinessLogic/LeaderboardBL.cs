@@ -13,7 +13,7 @@ public class LeaderboardBL
     /// <returns>Return list of Leaderboard object</returns>
     public List<Leaderboard> GetWorldLeaderboard(int worldId)
     {
-        LeaderboardDao leaderboardDao = new LeaderboardDao();
+        LeaderboardDaoImpl leaderboardDao = new LeaderboardDaoImpl();
 
         return leaderboardDao.GetLeaderboardScore(worldId);
     }
@@ -23,7 +23,7 @@ public class LeaderboardBL
     /// <returns>Return list of Leaderboard object</returns>
     public List<Leaderboard> GetLeaderboards()
     {
-        LeaderboardDao leaderboardDao = new LeaderboardDao();
+        LeaderboardDaoImpl leaderboardDao = new LeaderboardDaoImpl();
 
         return leaderboardDao.GetLeaderboardScore();
     }
@@ -33,7 +33,7 @@ public class LeaderboardBL
     /// <returns>Return list of World object</returns>
     public List<World> GetWorlds()
     {
-        WorldDao worldDao = new WorldDao();
+        WorldDaoImpl worldDao = new WorldDaoImpl();
         return worldDao.GetWorlds();
     }
     

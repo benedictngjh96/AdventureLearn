@@ -4,7 +4,7 @@ ADDED from D:\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
 INJECTED from D:\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
 INJECTED from D:\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
 INJECTED from D:\AdventureLearn\android\build\AndroidManifest.xml:2:1-78:12
-MERGED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:2:1-21:12
+MERGED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:2:1-21:12
 MERGED from [com.google.android.gms:play-services-games:19.0.0] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\da271162ea7dcd1a5510b70085b64773\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\9e2432d648b239460ee262b7ba3d40c6\AndroidManifest.xml:17:1-39:12
 MERGED from [com.google.android.gms:play-services-drive:17.0.0] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\03cb9a88b4b6d24f73cf2c371ba00d4d\AndroidManifest.xml:17:1-24:12
@@ -102,8 +102,8 @@ MERGED from [com.google.android.gms:play-services-ads-lite:15.0.1] C:\Users\slay
 		ADDED from D:\AdventureLearn\android\build\AndroidManifest.xml:25:18-60
 application
 ADDED from D:\AdventureLearn\android\build\AndroidManifest.xml:31:5-76:19
-MERGED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:17:5-19:19
-MERGED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:17:5-19:19
+MERGED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:17:5-19:19
+MERGED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:17:5-19:19
 MERGED from [com.google.android.gms:play-services-games:19.0.0] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\da271162ea7dcd1a5510b70085b64773\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-games:19.0.0] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\da271162ea7dcd1a5510b70085b64773\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\9e2432d648b239460ee262b7ba3d40c6\AndroidManifest.xml:22:5-37:19
@@ -248,8 +248,8 @@ uses-sdk
 INJECTED from D:\AdventureLearn\android\build\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from D:\AdventureLearn\android\build\AndroidManifest.xml
 INJECTED from D:\AdventureLearn\android\build\AndroidManifest.xml
-MERGED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:7:5-9:41
-MERGED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:7:5-9:41
+MERGED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:7:5-9:41
+MERGED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services-games:19.0.0] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\da271162ea7dcd1a5510b70085b64773\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-games:19.0.0] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\da271162ea7dcd1a5510b70085b64773\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\9e2432d648b239460ee262b7ba3d40c6\AndroidManifest.xml:20:5-44
@@ -367,19 +367,19 @@ INJECTED from D:\AdventureLearn\android\build\AndroidManifest.xml
 		ADDED from D:\AdventureLearn\android\build\AndroidManifest.xml
 		INJECTED from D:\AdventureLearn\android\build\AndroidManifest.xml
 instrumentation
-ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:11:5-15:57
+ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:11:5-15:57
 	android:label
-		ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:14:9-58
+		ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:14:9-58
 	android:icon
-		ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:13:9-36
+		ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:13:9-36
 	android:targetPackage
-		ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:15:9-54
+		ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:15:9-54
 	android:name
-		ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:12:9-45
+		ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:12:9-45
 service#org.godotengine.godot.GodotDownloaderService
-ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:18:9-80
+ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:18:9-80
 	android:name
-		ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\b750f82fb953137474b1df945d5fc967\AndroidManifest.xml:18:18-77
+		ADDED from [godot-lib.debug.aar] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\d34f6e8ce1d44a9251e7a9ba1243b86d\AndroidManifest.xml:18:18-77
 activity#com.google.android.gms.auth.api.signin.internal.SignInHubActivity
 ADDED from [com.google.android.gms:play-services-auth:17.0.0] C:\Users\slay_\.gradle\caches\transforms-2\files-2.1\9e2432d648b239460ee262b7ba3d40c6\AndroidManifest.xml:23:9-27:75
 	android:excludeFromRecents

@@ -13,7 +13,7 @@ public class CharacterBL
     /// <returns>Return Character object</returns>
     public Character GetCharacter(int studentId)
     {
-        CharacterDao characterDao = new CharacterDao();
+        CharacterDaoImpl characterDao = new CharacterDaoImpl();
         return characterDao.GetCharacter(studentId);
     }
     /// <summary>
@@ -22,7 +22,7 @@ public class CharacterBL
     /// <returns>Return list of Character object</returns>
     public List<Character> GetAllCharacters()
     {
-        CharacterDao characterDao = new CharacterDao();
+        CharacterDaoImpl characterDao = new CharacterDaoImpl();
         return characterDao.GetAllCharacters();
     }
 
@@ -32,7 +32,7 @@ public class CharacterBL
     /// <returns>Return list of Monster object</returns>
     public List<Monster> GetAllMonsters()
     {
-        CharacterDao characterDao = new CharacterDao();
+        CharacterDaoImpl characterDao = new CharacterDaoImpl();
         return characterDao.GetAllMonsters();
     }
 }

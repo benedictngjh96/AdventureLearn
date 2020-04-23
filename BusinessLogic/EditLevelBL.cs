@@ -7,7 +7,7 @@ using System.Collections.Generic;
 /// </summary>
 public class EditLevelBL : Node
 {
-	EditLevelDao editLevelDao = new EditLevelDao();
+	EditLevelDaoImpl editLevelDao = new EditLevelDaoImpl();
 	List<UserCreatedQuestion> TempQuestionList = new List<UserCreatedQuestion>();
 	List<UserCreatedQuestion> OriginalQuestionList = new List<UserCreatedQuestion>();
 
@@ -92,7 +92,7 @@ public class EditLevelBL : Node
 	/// <returns>Return 1 if there are no existing LevelName, else return -1 if there is an existing LevelName</returns>
 	public static int CheckValidLevelName(string oldName, string newName)
 	{
-		return EditLevelDao.CheckValidLevelName(oldName, newName);
+		return EditLevelDaoImpl.CheckValidLevelName(oldName, newName);
 	}
 
 	/// <summary>

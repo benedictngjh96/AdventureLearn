@@ -15,7 +15,7 @@ public class CampaignBL
     /// <returns>Return Level object</returns>
     public Level GetLevel(int worldId, int sectionId, int levelId)
     {
-        CampaignDao campaignDao = new CampaignDao();
+        CampaignDaoImpl campaignDao = new CampaignDaoImpl();
         return campaignDao.GetLevel(worldId, sectionId, levelId);
     }
 

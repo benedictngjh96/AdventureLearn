@@ -13,7 +13,7 @@ public class AssignmentBL
     /// <returns>Return Assignment object</returns>
     public Assignment GetAssignment(int assignmentId)
     {
-        AssignmentDao assignmentDao = new AssignmentDao();
+        AssignmentDaoImpl assignmentDao = new AssignmentDaoImpl();
         return assignmentDao.GetAssignment(assignmentId);
     }
     /// <summary>
@@ -23,7 +23,7 @@ public class AssignmentBL
     /// <returns>Return list of PublishedAssignment object</returns>
     public List<PublishedAssignment> GetStudentAssignment(int studentId)
     {
-        AssignmentDao assignmentDao = new AssignmentDao();
+        AssignmentDaoImpl assignmentDao = new AssignmentDaoImpl();
         return assignmentDao.GetStudentAssignment(studentId);
     }
     /// <summary>
@@ -33,7 +33,7 @@ public class AssignmentBL
     /// <returns>Return Monster object</returns>
     public Monster GetAssignmentMonster(int assignmentId)
     {
-        AssignmentDao assignmentDao = new AssignmentDao();
+        AssignmentDaoImpl assignmentDao = new AssignmentDaoImpl();
         return assignmentDao.GetAssignmentMonster(assignmentId);
     }
 

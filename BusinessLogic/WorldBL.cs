@@ -8,7 +8,7 @@ using System.Linq;
 /// </summary>
 public class WorldBL : Node
 {
-    WorldDao worldDao = new WorldDao();
+    WorldDaoImpl worldDao = new WorldDaoImpl();
     /// <summary>
     /// Get the total number of CompletedWorld for the Student
     /// </summary>
