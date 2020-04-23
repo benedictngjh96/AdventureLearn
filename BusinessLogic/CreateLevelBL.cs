@@ -142,4 +142,22 @@ public class CreateLevelBL : Node
 				+ "\nOption 4: " + q.Option4
 				+ "\nCorrect Option: Option " + q.CorrectOption);
 	}
+
+	/// <summary>
+	/// Auto Generate the Questions (For testing purposes)
+	/// </summary>
+	public void autoGenerateQuestions()
+	{
+		int i = 1;
+		foreach (UserCreatedQuestion q in TempQuestionList)
+		{
+			q.Option1 = "WrongOption1";
+			q.Option2 = "WrongOption2";
+			q.Option3 = "WrongOption3";
+			q.Option4 = "CorrectOption";
+			q.CorrectOption = 4;
+			q.QuestionTitle = String.Format("TestQuestion{0}", i);
+			i++;
+		}
+	}
 }

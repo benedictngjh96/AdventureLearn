@@ -118,7 +118,7 @@ public class CreateLevel : Node2D
             GD.Print("Start inserting into database.");
             createLevelBL.createLevel(levelName, monsterId, timeLimit);
             CreateLevelInit.updated = 0;
-            NotificationPopup.displayPopup("Created Successfully!");
+            NotificationPopup.DisplayPopup("Created Successfully!");
             GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
         }
     }
@@ -355,6 +355,13 @@ public class CreateLevel : Node2D
 
         GetTree().ChangeScene("res://Presentation/CreateLevel/CreateLevelInit.tscn");
     }
+
+    /// <summary>
+    /// Auto Generate the Questions when AutoGen is pressed
+    /// </summary>
+    private void _on_AutoGen_pressed()
+    {
+        createLevelBL.autoGenerateQuestions();
+        displayQuestion();
+    }
 }
-
-

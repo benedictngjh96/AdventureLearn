@@ -98,7 +98,7 @@ public class EditLevel : Node2D
             editLevelBL.updateLevelInitInfo(levelName, monsterId, timeLimit);
             editLevelBL.updateLevel();
             EditLevelInit.updated = 0;
-            NotificationPopup.displayPopup("Edited Successfully!");
+            NotificationPopup.DisplayPopup("Edited Successfully!");
             GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
         }
     }
