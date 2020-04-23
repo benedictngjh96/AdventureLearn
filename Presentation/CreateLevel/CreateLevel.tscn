@@ -378,6 +378,16 @@ texture_normal = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AutoGen" type="Button" parent="."]
+margin_left = 840.0
+margin_top = 104.0
+margin_right = 909.0
+margin_bottom = 124.0
+text = "AutoGen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="QuestionSelect/Question1" to="." method="_on_Question1_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question2" to="." method="_on_Question2_pressed"]
 [connection signal="pressed" from="QuestionSelect/Question3" to="." method="_on_Question3_pressed"]
@@ -385,3 +395,4 @@ __meta__ = {
 [connection signal="pressed" from="QuestionSelect/Question5" to="." method="_on_Question5_pressed"]
 [connection signal="pressed" from="CreateBtn" to="." method="_on_CreateBtn_pressed"]
 [connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]
+[connection signal="pressed" from="AutoGen" to="." method="_on_AutoGen_pressed"]

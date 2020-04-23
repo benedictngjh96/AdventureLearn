@@ -44,18 +44,19 @@ public class CreateLevelInit : Node2D
         animationList = new List<string>();
         animationList.Add("Idle");
 
-        addOptions();
+
+        AddOptions();
 
         if(updated == 1)
         {
-            displayLevelInit();
+            DisplayLevelInit();
         }
     }
 
     /// <summary>
     /// Display the previously typed LevelInit Info
     /// </summary>
-    private void displayLevelInit()
+    private void DisplayLevelInit()
     {
         levelNameLine.Text = Global.CustomLevelName;
 
@@ -72,8 +73,8 @@ public class CreateLevelInit : Node2D
         timeLimitBtn.Select(i);
 
         count = Global.MonsterId - 1;
-        changeArrowButtonStatues();
-        displayCharacter();
+        UpdateArrowButtonStatuses();
+        DisplayCharacter();
     }
 
     /// <summary>
@@ -82,8 +83,8 @@ public class CreateLevelInit : Node2D
     private void _on_ArrowLeft_pressed()
     {
         count--;
-        changeArrowButtonStatues();
-        displayCharacter();
+        UpdateArrowButtonStatuses();
+        DisplayCharacter();
     }
 
     /// <summary>
@@ -92,14 +93,14 @@ public class CreateLevelInit : Node2D
     private void _on_ArrowRight_pressed()
     {
         count++;
-        changeArrowButtonStatues();
-        displayCharacter();
+        UpdateArrowButtonStatuses();
+        DisplayCharacter();
     }
 
     /// <summary>
     /// Display the corresponding Monster whenever the left or right arrows are pressed
     /// </summary>
-    private void displayCharacter()
+    private void DisplayCharacter()
     {
         string name = monsterList[count].MonsterName;
         charPath = String.Format(spritePath + "{0}/", name);
@@ -110,17 +111,17 @@ public class CreateLevelInit : Node2D
     /// <summary>
     /// Insert available timelimit and Monster options
     /// </summary>
-    private void addOptions()
+    private void AddOptions()
     {
         //monster
         characterBL = new CharacterBL();
         monsterList = characterBL.GetAllMonsters();
-        displayCharacter();
+        DisplayCharacter();
 
         numberOfChar = monsterList.Count;
         GD.Print("Number of monsters: " + numberOfChar);
 
-        changeArrowButtonStatues();
+        UpdateArrowButtonStatuses();
 
         //timeLimit
         foreach (int i in timeLimitOptions)
@@ -130,7 +131,7 @@ public class CreateLevelInit : Node2D
     /// <summary>
     /// Change the status of the Arrow buttons
     /// </summary>
-    private void changeArrowButtonStatues()
+    private void UpdateArrowButtonStatuses()
     {
         if (count == 0)
         {
@@ -159,19 +160,13 @@ public class CreateLevelInit : Node2D
         int monsterId = monsterList[count].MonsterId;
         int timeLimit = Int32.Parse(timeLimitBtn.Text);
 
-        //GD.Print("Level Name: " + levelName + "\nMonsterId: " + monsterId + "\nTimeLimit: " + timeLimit);
-
-        //testing
-        //Global.StudentId = 1; 
-        //GD.Print("\nStudent Id: " + Global.StudentId);
-        //testing
 
         if (levelName == "")
         {
             GD.Print("Level name field is empty!");
             errorMessageLabel.SetText("Level name field is empty!");
         }
-        else if (CreateLevelBL.checkValidLevelName(levelName) != 1)
+        else if (CreateLevelBL.CheckValidLevelName(levelName) != 1)
         {
             GD.Print("Level name already exist!");
             errorMessageLabel.SetText("Level name already exist!");
@@ -179,7 +174,7 @@ public class CreateLevelInit : Node2D
         else
         {
             GetTree().ChangeScene("res://Presentation/CreateLevel/CreateLevel.tscn");
-            CreateLevel.setLevelInitInfo(levelName, monsterId, timeLimit);
+            CreateLevel.SetLevelInitInfo(levelName, monsterId, timeLimit);
         }
     }
 

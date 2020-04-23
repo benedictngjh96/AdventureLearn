@@ -24,13 +24,13 @@ public class CreateLevelDAO : Node
         switch (correctOptionInt)
         {
             case 1:
-                formatForDatabaseInsertion(ref option4, ref option1);
+                FormatForDatabaseInsertion(ref option4, ref option1);
                 break;
             case 2:
-                formatForDatabaseInsertion(ref option4, ref option2);
+                FormatForDatabaseInsertion(ref option4, ref option2);
                 break;
             case 3:
-                formatForDatabaseInsertion(ref option4, ref option3);
+                FormatForDatabaseInsertion(ref option4, ref option3);
                 break;
             default:
                 break;
@@ -40,8 +40,8 @@ public class CreateLevelDAO : Node
                  "VALUES('{0}', '{1}', '{2}', '{3}', '{4}')", option1, option2, option3, option4, questionTitle); ;
         BaseDao<Question> baseDao = new BaseDao<Question>();
         int result = baseDao.ExecuteQuery(query);
-        int questionId = getStudentQuestionId(option1, option2, option3, option4, questionTitle);
-        int customLevelId = getCustomLevelId(option1, option2, option3, option4, questionTitle);
+        int questionId = GetStudentQuestionId(option1, option2, option3, option4, questionTitle);
+        int customLevelId = GetCustomLevelId(option1, option2, option3, option4, questionTitle);
         InsertStudentCustomQuestion(questionId, customLevelId);
     }
 
@@ -87,7 +87,7 @@ public class CreateLevelDAO : Node
     /// <param name="correctOption"></param>
     /// <param name="questionTitle"></param>
     /// <returns>Return the acquired QuestionId </returns>
-    private int getStudentQuestionId(string option1, string option2, string option3, string correctOption, string questionTitle)
+    private int GetStudentQuestionId(string option1, string option2, string option3, string correctOption, string questionTitle)
     {
         //student
         string query = String.Format(
@@ -112,7 +112,7 @@ public class CreateLevelDAO : Node
     /// <param name="correctOption"></param>
     /// <param name="questionTitle"></param>
     /// <returns> Return the acquired CustomLevelId</returns>
-    private int getCustomLevelId(string option1, string option2, string option3, string correctOption, string questionTitle)
+    private int GetCustomLevelId(string option1, string option2, string option3, string correctOption, string questionTitle)
     {
         string query = String.Format(
             "SELECT DISTINCT CustomLevelId FROM Question NATURAL JOIN CustomLevel " +
@@ -132,7 +132,7 @@ public class CreateLevelDAO : Node
     /// </summary>
     /// <param name="option4"></param>
     /// <param name="correctOption"></param>
-    private void formatForDatabaseInsertion(ref string option4, ref string correctOption)
+    private void FormatForDatabaseInsertion(ref string option4, ref string correctOption)
     {
         option4 = option4 + correctOption;
         correctOption = option4.Substring(0, (option4.Length - correctOption.Length));
@@ -144,7 +144,7 @@ public class CreateLevelDAO : Node
     /// </summary>
     /// <param name="name"></param>
     /// <returns>Return -1 if there is existing level name, else return 1</returns>
-    public static int checkValidLevelName(string name)
+    public static int CheckValidLevelName(string name)
     {
         string query = String.Format("SELECT CustomLevelName FROM CustomLevel cl WHERE StudentId = '{0}' AND CustomLevelName = '{1}'; ", Global.StudentId, name);
         BaseDao<string> baseDao = new BaseDao<string>();

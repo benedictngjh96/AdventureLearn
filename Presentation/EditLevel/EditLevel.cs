@@ -82,8 +82,8 @@ public class EditLevel : Node2D
         option3Line = GetNode<LineEdit>("Options/Option3");
         option4Line = GetNode<LineEdit>("Options/Option4");
 
-        CustomLevel customLevelInfo = editLevelBL.loadCustomLevelInfo();
-        displayQuestion();
+        CustomLevel customLevelInfo = editLevelBL.LoadCustomLevelInfo();
+        DisplayQuestion();
     }
 
     /// <summary>
@@ -91,14 +91,14 @@ public class EditLevel : Node2D
     /// </summary>
     private void _on_UpdateBtn_pressed()
     {
-        saveQuestion();
-        if (findEmptyFields() == 0 && findDuplicateOptions() == 0)
+        SaveQuestion();
+        if (FindEmptyFields() == 0 && FindDuplicateOptions() == 0)
         {
             GD.Print("Start updating into database.");
-            editLevelBL.updateLevelInitInfo(levelName, monsterId, timeLimit);
-            editLevelBL.updateLevel();
+            editLevelBL.UpdateLevelInitInfo(levelName, monsterId, timeLimit);
+            editLevelBL.UpdateLevel();
             EditLevelInit.updated = 0;
-            NotificationPopup.displayPopup("Edited Successfully!");
+            NotificationPopup.DisplayPopup("Edited Successfully!");
             GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
         }
     }
@@ -109,7 +109,7 @@ public class EditLevel : Node2D
     /// <param name="name"></param>
     /// <param name="id"></param>
     /// <param name="time"></param>
-    public static void setLevelInitInfo(string name, int id, int time)
+    public static void SetLevelInitInfo(string name, int id, int time)
     {
         levelName = name;
         monsterId = id;
@@ -122,7 +122,7 @@ public class EditLevel : Node2D
     /// Get question number
     /// </summary>
     /// <returns>Return the acquired Question number</returns>
-    private int getQuestionNumber()
+    private int GetQuestionNumber()
     {
         int questionNumber = Int32.Parse(Regex.Match(questionNumberLabel.Text, @"\d+").Value);
 
@@ -145,7 +145,7 @@ public class EditLevel : Node2D
     /// <summary>
     /// Saves a single user created question
     /// </summary>
-    private void saveQuestion()
+    private void SaveQuestion()
     {
         string option1 = option1Line.Text;
         string option2 = option2Line.Text;
@@ -154,23 +154,23 @@ public class EditLevel : Node2D
 
         int correctOption = Int32.Parse(Regex.Match(checkboxGroup.GetPressedButton().Name, @"\d+").Value);
 
-        /*GD.Print("\nQuestion Number:" + getQuestionNumber() +"\nQuestion Title: " + questionTitleLine.Text + "\nOption 1: " + option1 + "\nOption 2: " + option2 + 
+        /*GD.Print("\nQuestion Number:" + GetQuestionNumber() +"\nQuestion Title: " + questionTitleLine.Text + "\nOption 1: " + option1 + "\nOption 2: " + option2 + 
             "\nOption 3: " + option3 + "\nOption 4: " + option4 + "\nCorrect Option: " + correctOption);*/
 
-        editLevelBL.saveQuestion((getQuestionNumber() - 1), option1, option2, option3, option4, correctOption, questionTitleLine.Text); //questionNumber - 1 = questionId
+        editLevelBL.SaveQuestion((GetQuestionNumber() - 1), option1, option2, option3, option4, correctOption, questionTitleLine.Text); //questionNumber - 1 = questionId
     }
 
     /// <summary>
     /// Display corresponding question
     /// </summary>
-    private void displayQuestion()
+    private void DisplayQuestion()
     {
         
         UserCreatedQuestion q;
-        //q = editLevelBL.GetQuestion(getQuestionNumber());
+        //q = editLevelBL.GetQuestion(GetQuestionNumber());
         if (EditLevelInit.updated == 1)
-            editLevelBL.reloadTempQuestionList();
-        q = editLevelBL.GetQuestion(getQuestionNumber());
+            editLevelBL.ReloadTempQuestionList();
+        q = editLevelBL.GetQuestion(GetQuestionNumber());
 
         questionTitleLine.SetText(q.QuestionTitle);
         option1Line.SetText(q.Option1);
@@ -199,11 +199,11 @@ public class EditLevel : Node2D
     /// Find empty fields, and direct users there
     /// </summary>
     /// <returns>Return 1 if an empty field is found, else return 0</returns>
-    private int findEmptyFields()
+    private int FindEmptyFields()
     {
         /*if (questionTitleLine.Text == "" || option1Line.Text == "" || option2Line.Text == "" || option3Line.Text == "" || option4Line.Text == "")
             return true;*/
-        int questionWithMissingFields = editLevelBL.checkEmptyFieldsExist();
+        int questionWithMissingFields = editLevelBL.CheckEmptyFieldsExist();
 
         if (questionWithMissingFields != -1)
         {
@@ -213,23 +213,23 @@ public class EditLevel : Node2D
             {
                 case 1:
                     questionNumberLabel.SetText("Enter Question 1:");
-                    displayQuestion();
+                    DisplayQuestion();
                     break;
                 case 2:
                     questionNumberLabel.SetText("Enter Question 2:");
-                    displayQuestion();
+                    DisplayQuestion();
                     break;
                 case 3:
                     questionNumberLabel.SetText("Enter Question 3:");
-                    displayQuestion();
+                    DisplayQuestion();
                     break;
                 case 4:
                     questionNumberLabel.SetText("Enter Question 4:");
-                    displayQuestion();
+                    DisplayQuestion();
                     break;
                 case 5:
                     questionNumberLabel.SetText("Enter Question 5:");
-                    displayQuestion();
+                    DisplayQuestion();
                     break;
 
             }
@@ -247,9 +247,9 @@ public class EditLevel : Node2D
     /// Find a question with duplicated options, and direct users there
     /// </summary>
     /// <returns>Return 1 if an empty field is found, else return 0</returns>
-    private int findDuplicateOptions()
+    private int FindDuplicateOptions()
     {
-        int questionWithDuplicateOptions = editLevelBL.checkDuplicationOptions();
+        int questionWithDuplicateOptions = editLevelBL.CheckDuplicationOptions();
 
         if (questionWithDuplicateOptions != -1)
         {
@@ -259,23 +259,23 @@ public class EditLevel : Node2D
             {
                 case 1:
                     questionNumberLabel.SetText("Enter Question 1:");
-                    displayQuestion();
+                    DisplayQuestion();
                     break;
                 case 2:
                     questionNumberLabel.SetText("Enter Question 2:");
-                    displayQuestion();
+                    DisplayQuestion();
                     break;
                 case 3:
                     questionNumberLabel.SetText("Enter Question 3:");
-                    displayQuestion();
+                    DisplayQuestion();
                     break;
                 case 4:
                     questionNumberLabel.SetText("Enter Question 4:");
-                    displayQuestion();
+                    DisplayQuestion();
                     break;
                 case 5:
                     questionNumberLabel.SetText("Enter Question 5:");
-                    displayQuestion();
+                    DisplayQuestion();
                     break;
 
             }
@@ -294,10 +294,10 @@ public class EditLevel : Node2D
     /// </summary>
     private void _on_Question1_pressed()
     {
-        saveQuestion();
+        SaveQuestion();
 
         questionNumberLabel.SetText("Enter Question 1:");
-        displayQuestion();
+        DisplayQuestion();
     }
 
     /// <summary>
@@ -305,10 +305,10 @@ public class EditLevel : Node2D
     /// </summary>
     private void _on_Question2_pressed()
     {
-        saveQuestion();
+        SaveQuestion();
 
         questionNumberLabel.SetText("Enter Question 2:");
-        displayQuestion();
+        DisplayQuestion();
     }
 
     /// <summary>
@@ -316,10 +316,10 @@ public class EditLevel : Node2D
     /// </summary>
     private void _on_Question3_pressed()
     {
-        saveQuestion();
+        SaveQuestion();
 
         questionNumberLabel.SetText("Enter Question 3:");
-        displayQuestion();
+        DisplayQuestion();
     }
 
     /// <summary>
@@ -327,10 +327,10 @@ public class EditLevel : Node2D
     /// </summary>
     private void _on_Question4_pressed()
     {
-        saveQuestion();
+        SaveQuestion();
 
         questionNumberLabel.SetText("Enter Question 4:");
-        displayQuestion();
+        DisplayQuestion();
     }
 
     /// <summary>
@@ -338,10 +338,10 @@ public class EditLevel : Node2D
     /// </summary>
     private void _on_Question5_pressed()
     {
-        saveQuestion();
+        SaveQuestion();
 
         questionNumberLabel.SetText("Enter Question 5:");
-        displayQuestion();
+        DisplayQuestion();
     }
 
     /// <summary>
@@ -349,8 +349,8 @@ public class EditLevel : Node2D
     /// </summary>
     private void _on_BackBtn_pressed()
     {
-        saveQuestion();
-        Global.QuestionList = editLevelBL.getTempQuestionList();
+        SaveQuestion();
+        Global.QuestionList = editLevelBL.GetTempQuestionList();
         Global.CustomLevelName = levelName;
         Global.MonsterId = monsterId;
         Global.TimeLimit = timeLimit;
@@ -364,8 +364,8 @@ public class EditLevel : Node2D
     /// </summary>
     private void _on_RestoreOriginal_pressed()
     {
-        List<UserCreatedQuestion> OriginalQuestionList = editLevelBL.getOrignalQuestionList();
-        UserCreatedQuestion q = OriginalQuestionList[getQuestionNumber() - 1];
+        List<UserCreatedQuestion> OriginalQuestionList = editLevelBL.GetOrignalQuestionList();
+        UserCreatedQuestion q = OriginalQuestionList[GetQuestionNumber() - 1];
 
         questionTitleLine.SetText(q.QuestionTitle);
         option1Line.SetText(q.Option1);

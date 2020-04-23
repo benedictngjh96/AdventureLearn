@@ -23,7 +23,7 @@ public class CreateLevelBL : Node
 	/// <summary>
 	/// Reload the Questions that are save temporarily previously
 	/// </summary>
-	public void reloadTempQuestionList()
+	public void ReloadTempQuestionList()
 	{
 		TempQuestionList = Global.QuestionList;
 	}
@@ -31,7 +31,7 @@ public class CreateLevelBL : Node
 	/// <summary>
 	/// Intialize 5 Question objects
 	/// </summary>
-	public void initializeQuestions()
+	public void InitializeQuestions()
 	{
 		for (int i = 0; i < 5; i++)
 			TempQuestionList.Add(new UserCreatedQuestion(i, "", "", "", "", 1, ""));
@@ -47,7 +47,7 @@ public class CreateLevelBL : Node
 	/// <param name="option4"></param>
 	/// <param name="correctOption"></param>
 	/// <param name="questionTitle"></param>
-	public void saveQuestion(int questionId, string option1, string option2, string option3, string option4, int correctOption, string questionTitle)
+	public void SaveQuestion(int questionId, string option1, string option2, string option3, string option4, int correctOption, string questionTitle)
 	{
 		TempQuestionList[questionId].Option1 = option1;
 		TempQuestionList[questionId].Option2 = option2;
@@ -56,8 +56,8 @@ public class CreateLevelBL : Node
 		TempQuestionList[questionId].CorrectOption = correctOption;
 		TempQuestionList[questionId].QuestionTitle = questionTitle;
 
-		listQuestions();
-		GD.Print("-----------------------------------------------------");
+		//ListQuestions();
+		//GD.Print("-----------------------------------------------------");
 	}
 
 	/// <summary>
@@ -66,7 +66,7 @@ public class CreateLevelBL : Node
 	/// <param name="levelName"></param>
 	/// <param name="monsterId"></param>
 	/// <param name="timeLimit"></param>
-	public void createLevel(string levelName, int monsterId, int timeLimit)
+	public void CreateLevel(string levelName, int monsterId, int timeLimit)
 	{
 		//student
 		createLevelDAO.InsertCustomLevel(levelName, monsterId, timeLimit);
@@ -92,7 +92,7 @@ public class CreateLevelBL : Node
 	/// Find Question with empty fields
 	/// </summary>
 	/// <returns>Return the Question Number with empty fields, else return -1 if no empty fields are found</returns>
-	public int checkEmptyFieldsExist()
+	public int CheckEmptyFieldsExist()
 	{
 		foreach (UserCreatedQuestion q in TempQuestionList)
 		{
@@ -107,16 +107,16 @@ public class CreateLevelBL : Node
 	/// </summary>
 	/// <param name="levelName"></param>
 	/// <returns>Return 1 if there are no existing LevelName, else return -1 if there is an existing LevelName</returns>
-	public static int checkValidLevelName(string levelName)
+	public static int CheckValidLevelName(string levelName)
 	{
-		return CreateLevelDAO.checkValidLevelName(levelName);
+		return CreateLevelDAO.CheckValidLevelName(levelName);
 	}
 
 	/// <summary>
 	/// Find question with duplication options
 	/// </summary>
 	/// <returns>Return the Question Number with duplicate options, else return -1 if no duplicate fields are found</returns>
-	public int checkDuplicationOptions()
+	public int CheckDuplicationOptions()
 	{
 		foreach (UserCreatedQuestion q in TempQuestionList)
 		{
@@ -131,7 +131,7 @@ public class CreateLevelBL : Node
 	/// <summary>
 	/// List all questions in List
 	/// </summary>
-	public void listQuestions()
+	public void ListQuestions()
 	{
 		foreach (UserCreatedQuestion q in TempQuestionList)
 			GD.Print("\nQuestion Id: " + q.QuestionId
@@ -141,5 +141,23 @@ public class CreateLevelBL : Node
 				+ "\nOption 3: " + q.Option3
 				+ "\nOption 4: " + q.Option4
 				+ "\nCorrect Option: Option " + q.CorrectOption);
+	}
+
+	/// <summary>
+	/// Auto Generate the Questions (For testing purposes)
+	/// </summary>
+	public void AutoGenerateQuestions()
+	{
+		int i = 1;
+		foreach (UserCreatedQuestion q in TempQuestionList)
+		{
+			q.Option1 = "WrongOption1";
+			q.Option2 = "WrongOption2";
+			q.Option3 = "WrongOption3";
+			q.Option4 = "CorrectOption";
+			q.CorrectOption = 4;
+			q.QuestionTitle = String.Format("TestQuestion{0}", i);
+			i++;
+		}
 	}
 }
