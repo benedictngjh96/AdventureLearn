@@ -21,6 +21,7 @@ public class ViewCreatedLevels : Node2D
     /// </summary>
     public override void _Ready()
     {
+        NotificationPopup.DisplayPopup("Deleted Successfully!");
         popupMenu = GetNode<PopupMenu>("PopupMenu");
         vbox = GetNode<VBoxContainer>("ScrollContainer/VBoxContainer");
         gridContainer = GetNode<GridContainer>("ScrollContainer/VBoxContainer/GridContainer");
@@ -60,6 +61,12 @@ public class ViewCreatedLevels : Node2D
         lbl4.Text = "   ";
         lbl4.AddColorOverride("font_color", new Color(0, 0, 0));
         gridContainer.AddChild(lbl4);
+
+        Label lbl5 = new Label();
+        lbl5.AddFontOverride("font", dFont);
+        lbl5.Text = "   ";
+        lbl5.AddColorOverride("font_color", new Color(0, 0, 0));
+        gridContainer.AddChild(lbl5);
     }
 
     /// <summary>
@@ -76,6 +83,17 @@ public class ViewCreatedLevels : Node2D
             name.Text = customLevel.CustomLevelName + "      ";
             name.AddColorOverride("font_color", new Color(0, 0, 0));
             gridContainer.AddChild(name);
+
+            Button playBtn = new Button();
+            playBtn.RectMinSize = new Vector2(80, 30);
+            playBtn.Text = "Play";
+            string[] playArr = new string[1] { playBtn.Name };
+            Godot.Collections.Array playAr = new Godot.Collections.Array();
+            playAr.Add(playBtn);
+            playBtn.Name = customLevel.CustomLevelId.ToString();
+            playBtn.Connect("pressed", this, "PlayLevel", playAr);
+            playBtn.Theme = theme;
+            gridContainer.AddChild(playBtn);
 
             Button btn = new Button();
             btn.RectMinSize = new Vector2(80, 30);
@@ -101,7 +119,11 @@ public class ViewCreatedLevels : Node2D
         }
 
     }
-
+    private void PlayLevel(Button btn)
+    {
+        Global.CustomLevelId = Convert.ToInt32(btn.Name);
+        GetTree().ChangeScene("res://Presentation/CustomLevel/CustomLevel.tscn");
+    }
     /// <summary>
     /// Change scene to EditLevelInit when Edit button is pressed
     /// </summary>
@@ -151,6 +173,7 @@ public class ViewCreatedLevels : Node2D
         DisplayHeader();
         DisplayLevels();
         popupMenu.Visible = false;
+        NotificationPopup.DisplayPopup("Deleted Successfully!");
     }
 
 }

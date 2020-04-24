@@ -147,6 +147,7 @@ public class CreateLevelBL : Node
     public void AutoGenerateQuestions(string levelName)
     {
         int i = 1;
+        /*
         foreach (UserCreatedQuestion q in TempQuestionList)
         {
             q.Option1 = String.Format("Q{0}-Wrong1", i);
@@ -157,5 +158,58 @@ public class CreateLevelBL : Node
             q.QuestionTitle = String.Format("{0}-Question{1}", levelName, i);
             i++;
         }
+        int count = 1;
+        */
+        int count = 1;
+        foreach (UserCreatedQuestion q in TempQuestionList)
+        {
+            if (count == 1)
+            {
+                q.QuestionTitle = String.Format("1+1");
+                q.Option1 = String.Format("1");
+                q.Option2 = String.Format("3");
+                q.Option3 = String.Format("4");
+                q.Option4 = String.Format("2");
+                q.CorrectOption = 4;
+            }
+            if (count == 2)
+            {
+                q.QuestionTitle = String.Format("2+2");
+                q.Option1 = String.Format("2");
+                q.Option2 = String.Format("8");
+                q.Option3 = String.Format("6");
+                q.Option4 = String.Format("4");
+                q.CorrectOption = 4;
+            }
+            if (count == 3)
+            {
+                q.QuestionTitle = String.Format("3+3");
+                q.Option1 = String.Format("3");
+                q.Option2 = String.Format("9");
+                q.Option3 = String.Format("12");
+                q.Option4 = String.Format("6");
+                q.CorrectOption = 4;
+            }
+            if (count == 4)
+            {
+                q.QuestionTitle = String.Format("4+4");
+                q.Option1 = String.Format("4");
+                q.Option2 = String.Format("12");
+                q.Option3 = String.Format("20");
+                q.Option4 = String.Format("8");
+                q.CorrectOption = 4;
+            }
+            if (count == 5)
+            {
+                q.QuestionTitle = String.Format("5+5");
+                q.Option1 = String.Format("12");
+                q.Option2 = String.Format("16");
+                q.Option3 = String.Format("20");
+                q.Option4 = String.Format("10");
+                q.CorrectOption = 4;
+            }
+            count++;
+        }
+
     }
 }

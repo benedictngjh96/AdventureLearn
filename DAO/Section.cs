@@ -1,7 +1,9 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-
+/// <summary>
+/// DAO Object for Section
+/// </summary>
 public class Section : Node
 {
     public int SectionId { get; set; }

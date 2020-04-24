@@ -1,6 +1,9 @@
 using Godot;
 using System;
 
+/// <summary>
+/// DAO Object for Character
+/// </summary>
 public class Character : Node
 {
     public int CharId { get; set; }

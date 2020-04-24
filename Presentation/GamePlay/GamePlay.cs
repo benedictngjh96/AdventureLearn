@@ -65,7 +65,6 @@ public class GamePlay : Node2D
     {
         audioStreamPlayer = GetNode<AudioStreamPlayer>("AudioStreamPlayer2");
         audioStreamPlayer.VolumeDb = Global.SfxVol;
-
         AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/battleThemeA.ogg") as AudioStream;
         DefaultSound.playSound(sfx);
 
@@ -170,7 +169,7 @@ public class GamePlay : Node2D
     /// <param name="timeLimit"></param>
     public void SetTimeLimit(int timeLimit)
     {
-    
+
         s = timeLimit;
         this.timeLimit = timeLimit;
     }
@@ -364,8 +363,6 @@ public class GamePlay : Node2D
         int random = r.Next(1, 4);
         bool result = false;
 
-
-
         if (option == question.CorrectOption)
         {
             //UNDISABLE
@@ -394,7 +391,6 @@ public class GamePlay : Node2D
             }
             else
             {
-                shieldOn = false;
                 activeSkill.Play("default");
             }
             AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/Spell_04.wav") as AudioStream;
@@ -444,7 +440,11 @@ public class GamePlay : Node2D
         else
         {
             cross.Visible = true;
-            timerLbl2.Visible = true;
+            if (shieldOn != true)
+                timerLbl2.Visible = true;
+            else
+                shieldOn = false;
+
             timer2.Start();
         }
     }
@@ -462,7 +462,10 @@ public class GamePlay : Node2D
         else
         {
             cross2.Visible = true;
-            timerLbl2.Visible = true;
+            if (shieldOn != true)
+                timerLbl2.Visible = true;
+            else
+                shieldOn = false;
             timer2.Start();
         }
     }
@@ -505,7 +508,10 @@ public class GamePlay : Node2D
         else
         {
             cross3.Visible = true;
-            timerLbl2.Visible = true;
+            if (shieldOn != true)
+                timerLbl2.Visible = true;
+            else
+                shieldOn = false;
             timer2.Start();
         }
     }
@@ -523,7 +529,10 @@ public class GamePlay : Node2D
         else
         {
             cross4.Visible = true;
-            timerLbl2.Visible = true;
+            if (shieldOn != true)
+                timerLbl2.Visible = true;
+            else
+                shieldOn = false;
             timer2.Start();
         }
     }
@@ -635,7 +644,7 @@ public class GamePlay : Node2D
                     random = r.Next(1, 4);
                     btn = GetNode<Button>("Buttons/Option" + random.ToString());
                 }
-                while(btn.Text == question.CorrectOption);
+                while (btn.Text == question.CorrectOption);
 
                 AnimatedSprite effect = GetNode<AnimatedSprite>(String.Format("Buttons/Option{0}/Effect{0}", random));
                 effect.Play("Explosion");
@@ -777,6 +786,19 @@ public class GamePlay : Node2D
         AudioStream sfx = ResourceLoader.Load("res://Assets/SoundEffects/little town - orchestral.ogg") as AudioStream;
         DefaultSound.playSound(sfx);
         GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
+
+        switch (gameType)
+        {
+            case "Assignment":
+                GetTree().ChangeScene("res://Presentation/Assignment/ViewAssignment.tscn");
+                break;
+            case "Campaign":
+                GetTree().ChangeScene("res://Presentation/LevelSelection/LevelSelection.tscn");
+                break;
+            case "CustomLevel":
+                GetTree().ChangeScene("res://Presentation/CustomLevel/ViewCustomLevel.tscn");
+                break;
+        }
 
     }
 

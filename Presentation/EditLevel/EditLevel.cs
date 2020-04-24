@@ -99,7 +99,7 @@ public class EditLevel : Node2D
             editLevelBL.UpdateLevel();
             EditLevelInit.updated = 0;
             NotificationPopup.DisplayPopup("Edited Successfully!");
-            GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
+            GetTree().ChangeScene("res://Presentation/CustomLevel/ViewCreatedLevels.tscn");
         }
     }
 

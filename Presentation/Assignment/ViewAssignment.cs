@@ -42,6 +42,7 @@ public class ViewAssignment : Node2D
         assignmentList = assignmentBL.GetStudentAssignment(Global.StudentId);
         DisplayHeader();
         DisplayAssignment();
+        prevBtn.Disabled = true;
     }
 
     /// <summary>
@@ -237,7 +238,6 @@ public class ViewAssignment : Node2D
 
         ClearGrid();
         DisplayHeader();
-        DisplayAssignment();
         DisplayAssignment();
         prevBtn.Disabled = true;
         nextBtn.Disabled = false;

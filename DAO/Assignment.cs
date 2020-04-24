@@ -1,12 +1,12 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-
+/// <summary>
+/// DAO Object for Assignment
+/// </summary>
 public class Assignment : Node
 {
-    /// <summary>
-    /// 
-    /// </summary>
+   
     public int AssignmentId { get; set; }
     public Teacher Teacher { get; set; }
     public string AssignmentName { get; set; }

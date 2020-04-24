@@ -41,10 +41,10 @@ __meta__ = {
 }
 
 [node name="GridContainer" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
-columns = 3
+columns = 4
 
 [node name="Bg" parent="." instance=ExtResource( 5 )]
-position = Vector2( 1.22778, 0 )
+position = Vector2( 2.58813, 0 )
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
 margin_right = 20.0
@@ -55,7 +55,7 @@ __meta__ = {
 
 [node name="table" type="Sprite" parent="PopupMenu"]
 position = Vector2( 521.443, 293.947 )
-scale = Vector2( 0.326421, 0.300768 )
+scale = Vector2( 0.279, 0.301 )
 texture = ExtResource( 6 )
 
 [node name="deleteconfirmation" type="Sprite" parent="PopupMenu/table"]
@@ -69,9 +69,9 @@ scale = Vector2( 1.2201, 0.978867 )
 texture = ExtResource( 8 )
 
 [node name="No" type="Button" parent="PopupMenu"]
-margin_left = 560.523
+margin_left = 558.523
 margin_top = 323.815
-margin_right = 659.523
+margin_right = 657.523
 margin_bottom = 365.815
 theme = ExtResource( 9 )
 custom_fonts/font = SubResource( 1 )
@@ -81,9 +81,9 @@ __meta__ = {
 }
 
 [node name="Yes" type="Button" parent="PopupMenu"]
-margin_left = 406.044
+margin_left = 402.044
 margin_top = 323.815
-margin_right = 505.044
+margin_right = 501.044
 margin_bottom = 365.815
 theme = ExtResource( 9 )
 custom_fonts/font = SubResource( 1 )

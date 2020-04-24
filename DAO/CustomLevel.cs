@@ -1,7 +1,9 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-
+/// <summary>
+/// DAO Object for CustomLevel
+/// </summary>
 public class CustomLevel : Node
 {
     public int CustomLevelId { get; set; }

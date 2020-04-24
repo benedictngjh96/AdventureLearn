@@ -40,6 +40,7 @@ public class DefaultSound : Node2D
     public static void playSound(AudioStream audioStream)
     {
         audioPlayer.Stream = audioStream;
+        audioPlayer.VolumeDb  = -40.058f;
         audioPlayer.Play();
     }
 

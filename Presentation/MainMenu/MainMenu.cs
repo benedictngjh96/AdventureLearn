@@ -11,11 +11,9 @@ public class MainMenu : Node2D
     /// </summary>
     public override void _Ready()
     {
-        /*GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
+        GDScript MyGDScript = (GDScript)GD.Load("res://API/Toast.gd");
         Godot.Object myGDScriptNode = (Godot.Object)MyGDScript.New(); // This is a Godot.Object
-        myGDScriptNode.Call("displayToast");*/
-        
-        //Global.StudentId = 35;
+        myGDScriptNode.Call("displayToast");
     }
 
     /// <summary>

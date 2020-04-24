@@ -1,7 +1,9 @@
 using Godot;
 using System;
 using System.Collections.Generic;
-
+/// <summary>
+/// DAO Object for Student
+/// </summary>
 public class Student : Node
 {
     public Student(string studentName, int charId, string studentEmail,string studentUsername, string studentPassword)

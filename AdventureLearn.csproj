@@ -124,7 +124,6 @@
     <Compile Include="DAO\PublishedAssignment.cs" />
     <Compile Include="DAO\Question.cs" />
     <Compile Include="DAO\Section.cs" />
-    <Compile Include="DAO\Skills.cs" />
     <Compile Include="DAO\Student.cs" />
     <Compile Include="DAO\StudentCustomQuestion.cs" />
     <Compile Include="DAO\StudentScore.cs" />

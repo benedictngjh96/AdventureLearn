@@ -2,6 +2,9 @@ using System;
 using Godot;
 using MySql.Data.MySqlClient;
 using System.Collections.Generic;
+/// <summary>
+/// Global class to store Global variables
+/// </summary>
 public class Global : Node
 {
     /// <summary>

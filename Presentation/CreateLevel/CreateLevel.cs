@@ -119,7 +119,8 @@ public class CreateLevel : Node2D
             createLevelBL.CreateLevel(levelName, monsterId, timeLimit);
             CreateLevelInit.updated = 0;
             NotificationPopup.DisplayPopup("Created Successfully!");
-            GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
+            GetTree().ChangeScene("res://Presentation/CustomLevel/ViewCreatedLevels.tscn");
+            
         }
     }
 

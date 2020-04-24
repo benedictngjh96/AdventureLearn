@@ -14,4 +14,5 @@ func displayToast():
         var name = global.GetStudentName()
         var msg = "Welcome " + name
         toast.sendToast(msg)
+    print(global.GetFirstLoggedIn())
         

@@ -1,6 +1,8 @@
 using Godot;
 using System;
-
+/// <summary>
+/// DAO Object for UserCreatedQuestion
+/// </summary>
 public class UserCreatedQuestion : Node
 {
 	public int QuestionId { get; set; }

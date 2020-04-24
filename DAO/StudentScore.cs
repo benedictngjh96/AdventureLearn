@@ -1,6 +1,8 @@
 using Godot;
 using System;
-
+/// <summary>
+/// DAO Object for StudentScore
+/// </summary>
 public class StudentScore : Node
 {
     public string StudentId { get; set; }

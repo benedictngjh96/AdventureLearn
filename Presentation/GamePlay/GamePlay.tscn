@@ -272,15 +272,15 @@ font_data = ExtResource( 3 )
 
 [sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [  ],
-"loop": true,
-"name": "Default",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 58 ), ExtResource( 62 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 63 ), ExtResource( 66 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ) ],
 "loop": true,
 "name": "Explosion",
 "speed": 12.0
+}, {
+"frames": [  ],
+"loop": true,
+"name": "Default",
+"speed": 5.0
 } ]
 
 [sub_resource type="SpriteFrames" id=9]
@@ -362,11 +362,10 @@ animation = "Default"
 playing = true
 
 [node name="LevelTitle" type="Label" parent="."]
-visible = false
-margin_left = 33.8154
-margin_top = 12.9424
-margin_right = 637.815
-margin_bottom = 96.9424
+margin_left = -100.0
+margin_top = -200.0
+margin_right = 504.0
+margin_bottom = -116.0
 custom_fonts/font = SubResource( 6 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 __meta__ = {
@@ -561,6 +560,7 @@ frames = SubResource( 11 )
 wait_time = 0.1
 
 [node name="Bg" parent="." instance=ExtResource( 99 )]
+position = Vector2( 141.69, -195.954 )
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
 margin_left = 8.57124
@@ -715,6 +715,7 @@ scale = Vector2( 0.6, 0.6 )
 texture = ExtResource( 84 )
 
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+volume_db = -7.058
 [connection signal="animation_finished" from="CharSprite" to="." method="_on_CharSprite_animation_finished"]
 [connection signal="animation_finished" from="CharSprite/CharSkillSprite" to="." method="_on_CharSkillSprite_animation_finished"]
 [connection signal="animation_finished" from="MonsterSprite" to="." method="_on_MonsterSprite_animation_finished"]

@@ -56,14 +56,11 @@ func insert_fb():
 func _on_FbLogin_pressed():
     fbBtn.disabled = true
     facebook.login()
-    loadingNode.ShowLoading()
-    global.SetFirstLoggedIn(true)
+    global.SetFirstLoggedIn(1)
 
 
 func _on_GoogleLogin_pressed():
     googleBtn.disabled = true
     google.google_connect()
     google.gconnect()
-    loadingNode.ShowLoading()
-    var status = false
     global.SetFirstLoggedIn(1)
