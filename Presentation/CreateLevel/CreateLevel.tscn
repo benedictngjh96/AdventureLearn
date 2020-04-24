@@ -380,6 +380,7 @@ __meta__ = {
 }
 
 [node name="AutoGen" type="Button" parent="."]
+visible = false
 margin_left = 840.0
 margin_top = 104.0
 margin_right = 909.0
