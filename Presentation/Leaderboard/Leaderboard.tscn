@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Presentation/Leaderboard/LeaderboardScreen.cs" type="Script" id=1]
+[ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/GUI/leaderboardtitle.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GUI/OptionButton.tres" type="Theme" id=4]
+[ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=6]
+
+[node name="Leaderboard" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Menu" parent="." instance=ExtResource( 5 )]
+
+[node name="OptionButton" type="OptionButton" parent="."]
+margin_left = 414.368
+margin_top = 454.158
+margin_right = 598.368
+margin_bottom = 506.158
+theme = ExtResource( 4 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" parent="." instance=ExtResource( 2 )]
+
+[node name="Title" type="Sprite" parent="."]
+position = Vector2( 525.508, 109.085 )
+scale = Vector2( 0.504348, 0.407827 )
+texture = ExtResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 178.0
+margin_top = 194.0
+margin_right = 848.0
+margin_bottom = 418.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
+columns = 3
+
+[node name="Bg" parent="." instance=ExtResource( 6 )]
+[connection signal="item_selected" from="OptionButton" to="." method="_on_OptionButton_item_selected"]

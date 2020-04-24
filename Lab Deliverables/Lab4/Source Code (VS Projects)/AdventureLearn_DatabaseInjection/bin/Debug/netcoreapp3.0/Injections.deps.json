@@ -1,0 +1,68 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "Injections/1.0.0": {
+        "dependencies": {
+          "CsvHelper": "15.0.4",
+          "MySqlConnector": "0.63.1"
+        },
+        "runtime": {
+          "Injections.dll": {}
+        }
+      },
+      "CsvHelper/15.0.4": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0"
+        },
+        "runtime": {
+          "lib/netstandard2.1/CsvHelper.dll": {
+            "assemblyVersion": "15.0.0.0",
+            "fileVersion": "15.0.4.0"
+          }
+        }
+      },
+      "Microsoft.CSharp/4.5.0": {},
+      "MySqlConnector/0.63.1": {
+        "runtime": {
+          "lib/netcoreapp3.0/MySqlConnector.dll": {
+            "assemblyVersion": "0.63.1.0",
+            "fileVersion": "0.63.1.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Injections/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CsvHelper/15.0.4": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-DZKRvcaA76SEHNN/nU/DdNxHCUI86FqmjAuJvk9XTSEgeMLvzjCMsDdnCYs9pVp694Z0GN3o5i5hsvtIyrzZ+Q==",
+      "path": "csvhelper/15.0.4",
+      "hashPath": "csvhelper.15.0.4.nupkg.sha512"
+    },
+    "Microsoft.CSharp/4.5.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
+      "path": "microsoft.csharp/4.5.0",
+      "hashPath": "microsoft.csharp.4.5.0.nupkg.sha512"
+    },
+    "MySqlConnector/0.63.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-KwJYM/WLM0U/NvJ5y8jnQPNI9l01g0/ge4z9BezCKmprV7OejcMXDSJGKcLmomV8g0Q08T3SfyOADDT1CwMfWA==",
+      "path": "mysqlconnector/0.63.1",
+      "hashPath": "mysqlconnector.0.63.1.nupkg.sha512"
+    }
+  }
+}

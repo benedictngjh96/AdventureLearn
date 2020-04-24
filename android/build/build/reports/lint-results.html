@@ -173,16 +173,18 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 1 warning</span>
+      <span class="mdl-layout-title">Lint Report: 5 warnings</span>
       <div class="mdl-layout-spacer"></div>
       <nav class="mdl-navigation mdl-layout--large-screen-only">
-Check performed at Sun Feb 16 00:12:02 SGT 2020      </nav>
+Check performed at Fri Apr 24 23:22:29 SGT 2020      </nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Issue Types</span>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
+      <a class="mdl-navigation__link" href="#DefaultLocale"><i class="material-icons warning-icon">warning</i>Implied default locale in case conversion (1)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (3)</a>
       <a class="mdl-navigation__link" href="#StaticFieldLeak"><i class="material-icons warning-icon">warning</i>Static Field Leaks (1)</a>
     </nav>
   </div>
@@ -196,6 +198,14 @@ Check performed at Sun Feb 16 00:12:02 SGT 2020      </nav>
   </div>
               <div class="mdl-card__supporting-text">
 <table class="overview">
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
+</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#DefaultLocale">DefaultLocale</a>: Implied default locale in case conversion</td></tr>
+<tr>
+<td class="countColumn">3</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
@@ -206,6 +216,120 @@ Check performed at Sun Feb 16 00:12:02 SGT 2020      </nav>
 <br/>              </div>
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OverviewCardLink" onclick="hideid('OverviewCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
+<a name="Correctness"></a>
+<a name="DefaultLocale"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="DefaultLocaleCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Implied default locale in case conversion</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../../Facebook/src/GodotFacebook.java">../../../Facebook/src/GodotFacebook.java</a>:496</span>: <span class="message">Implicitly using the default locale is a common source of bugs: Use <code>String.format(Locale, ...)</code> instead</span><br /><pre class="errorlines">
+<span class="lineno"> 493 </span>        } <span class="keyword">catch</span> (Exception e) {
+<span class="lineno"> 494 </span>            <span class="comment">// Swallow</span>
+<span class="lineno"> 495 </span>        }
+<span class="caretline"><span class="lineno"> 496 </span>        String densityStr = <span class="warning">String.format(<span class="string">"%.2f"</span>, density)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 497 </span>        res[<span class="number">9</span>] = <span class="string">""</span> + width;
+<span class="lineno"> 498 </span>        res[<span class="number">10</span>] = <span class="string">""</span> + height;
+<span class="lineno"> 499 </span>        res[<span class="number">11</span>] = densityStr;
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationDefaultLocale" style="display: none;">
+Calling <code>String#toLowerCase()</code> or <code>#toUpperCase()</code> <b>without specifying an explicit locale</b> is a common source of bugs. The reason for that is that those methods will use the current locale on the user's device, and even though the code appears to work correctly when you are developing the app, it will fail in some locales. For example, in the Turkish locale, the uppercase replacement for <code>i</code> is <b>not</b> <code>I</code>.<br/>
+<br/>
+If you want the methods to just perform ASCII replacement, for example to convert an enum name, call <code>String#toUpperCase(Locale.US)</code> instead. If you really want to use the current locale, call <code>String#toUpperCase(Locale.getDefault())</code> instead.<br/><div class="moreinfo">More info: <a href="http://developer.android.com/reference/java/util/Locale.html#default_locale">http://developer.android.com/reference/java/util/Locale.html#default_locale</a>
+</div>To suppress this error, use the issue id "DefaultLocale" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">DefaultLocale</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationDefaultLocaleLink" onclick="reveal('explanationDefaultLocale');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="DefaultLocaleCardLink" onclick="hideid('DefaultLocaleCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="GradleDependency"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="GradleDependencyCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Obsolete Gradle Dependency</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:48</span>: <span class="message">A newer version of com.facebook.android:facebook-android-sdk than [5,6) is available: 5.15.3</span><br /><pre class="errorlines">
+<span class="lineno">  45 </span>        releaseImplementation fileTree(dir: <span class="string">'libs/release'</span>, include: [<span class="string">'*.jar'</span>, <span class="string">'*.aar'</span>])
+<span class="lineno">  46 </span>    }
+<span class="lineno">  47 </span><span class="comment">//CHUNK_DEPENDENCIES_BEGIN</span>
+<span class="caretline"><span class="lineno">  48 </span><span class="warning">implementation <span class="string">'com.facebook.android:facebook-android-sdk:[5,6)'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  49 </span>implementation <span class="string">'com.google.android.gms:play-services-ads:15.0.1'</span>
+<span class="lineno">  50 </span>api (<span class="string">'com.google.android.gms:play-services-games:19.0.0'</span>) { exclude group: <span class="string">'com.android.support'</span> }
+<span class="lineno">  51 </span>api (<span class="string">'com.google.android.gms:play-services-auth:17.0.0'</span>) { exclude group: <span class="string">'com.android.support'</span> }
+</pre>
+
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:49</span>: <span class="message">A newer version of com.google.android.gms:play-services-ads than 15.0.1 is available: 19.1.0</span><br /><pre class="errorlines">
+<span class="lineno">  46 </span>    }
+<span class="lineno">  47 </span><span class="comment">//CHUNK_DEPENDENCIES_BEGIN</span>
+<span class="lineno">  48 </span>implementation <span class="string">'com.facebook.android:facebook-android-sdk:[5,6)'</span>
+<span class="caretline"><span class="lineno">  49 </span><span class="warning">implementation <span class="string">'com.google.android.gms:play-services-ads:15.0.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  50 </span>api (<span class="string">'com.google.android.gms:play-services-games:19.0.0'</span>) { exclude group: <span class="string">'com.android.support'</span> }
+<span class="lineno">  51 </span>api (<span class="string">'com.google.android.gms:play-services-auth:17.0.0'</span>) { exclude group: <span class="string">'com.android.support'</span> }
+<span class="lineno">  52 </span><span class="comment">//CHUNK_DEPENDENCIES_END</span></pre>
+
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:51</span>: <span class="message">A newer version of com.google.android.gms:play-services-auth than 17.0.0 is available: 18.0.0</span><br /><pre class="errorlines">
+<span class="lineno">  48 </span>implementation <span class="string">'com.facebook.android:facebook-android-sdk:[5,6)'</span>
+<span class="lineno">  49 </span>implementation <span class="string">'com.google.android.gms:play-services-ads:15.0.1'</span>
+<span class="lineno">  50 </span>api (<span class="string">'com.google.android.gms:play-services-games:19.0.0'</span>) { exclude group: <span class="string">'com.android.support'</span> }
+<span class="caretline"><span class="lineno">  51 </span><span class="warning">api (<span class="string">'com.google.android.gms:play-services-auth:17.0.0'</span>) { exclude group: <span class="string">'com.android.support'</span> }</span>&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  52 </span><span class="comment">//CHUNK_DEPENDENCIES_END</span>
+<span class="lineno">  53 </span>}
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">
+This detector looks for usages of libraries where the version you are using is not the current stable release. Using older versions is fine, and there are cases where you deliberately want to stick with an older version. However, you may simply not be aware that a more recent version is available, and that is what this lint check helps find.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "GradleDependency" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">GradleDependency</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 4/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationGradleDependencyLink" onclick="reveal('explanationGradleDependency');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="GradleDependencyCardLink" onclick="hideid('GradleDependencyCard');">
 Dismiss</button>            </div>
             </div>
           </section>

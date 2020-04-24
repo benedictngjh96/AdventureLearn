@@ -1,0 +1,195 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Assets/GUI/button_l.png" type="Texture" id=1]
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=2]
+[ext_resource path="res://Presentation/LevelSelection/LevelSelection.cs" type="Script" id=3]
+[ext_resource path="res://Assets/GUI/lockedleftbtn.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GUI/lockedrightbtn.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Level/3 stars.png" type="Texture" id=6]
+[ext_resource path="res://Assets/LevelUI/unlocked.png" type="Texture" id=7]
+[ext_resource path="res://Assets/LevelUI/locked.png" type="Texture" id=8]
+[ext_resource path="res://Assets/GUI/button_r.png" type="Texture" id=9]
+[ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Assets/LevelUI/LvlMap03.png" type="Texture" id=21]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 2 )
+
+[node name="LevelSelection" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Bg" type="Sprite" parent="."]
+position = Vector2( 511.983, 298.152 )
+scale = Vector2( 0.484866, 0.750085 )
+texture = ExtResource( 21 )
+
+[node name="Levels" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Level1" type="TextureButton" parent="Levels"]
+margin_left = 172.695
+margin_top = 134.698
+margin_right = 266.695
+margin_bottom = 225.698
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars" type="Sprite" parent="Levels/Level1"]
+position = Vector2( 46.3777, 102.159 )
+scale = Vector2( 0.281677, 0.281511 )
+texture = ExtResource( 6 )
+
+[node name="Level2" type="TextureButton" parent="Levels"]
+margin_left = 203.898
+margin_top = 300.66
+margin_right = 350.898
+margin_bottom = 442.66
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars" type="Sprite" parent="Levels/Level2"]
+position = Vector2( 47.0702, 101.899 )
+scale = Vector2( 0.281677, 0.281511 )
+texture = ExtResource( 6 )
+
+[node name="Level3" type="TextureButton" parent="Levels"]
+margin_left = 426.098
+margin_top = 377.0
+margin_right = 520.098
+margin_bottom = 468.0
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars" type="Sprite" parent="Levels/Level3"]
+position = Vector2( 48.3833, 103.25 )
+scale = Vector2( 0.281677, 0.281511 )
+texture = ExtResource( 6 )
+
+[node name="Level4" type="TextureButton" parent="Levels"]
+margin_left = 671.973
+margin_top = 261.267
+margin_right = 765.973
+margin_bottom = 352.267
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars" type="Sprite" parent="Levels/Level4"]
+position = Vector2( 47.7448, 104.022 )
+scale = Vector2( 0.281677, 0.281511 )
+texture = ExtResource( 6 )
+
+[node name="Level5" type="TextureButton" parent="Levels"]
+margin_left = 755.0
+margin_top = 465.191
+margin_right = 852.0
+margin_bottom = 556.191
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars" type="Sprite" parent="Levels/Level5"]
+position = Vector2( 44.9562, 106.323 )
+scale = Vector2( 0.281677, 0.281511 )
+texture = ExtResource( 6 )
+
+[node name="Level6" type="TextureButton" parent="Levels"]
+margin_left = 901.921
+margin_top = 289.103
+margin_right = 995.921
+margin_bottom = 380.103
+texture_normal = ExtResource( 7 )
+texture_disabled = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Stars" type="Sprite" parent="Levels/Level6"]
+position = Vector2( 49.8625, 105.35 )
+scale = Vector2( 0.281677, 0.281511 )
+texture = ExtResource( 6 )
+
+[node name="Title" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WorldName" type="Label" parent="Title"]
+margin_left = 132.831
+margin_top = 15.0868
+margin_right = 554.831
+margin_bottom = 99.0873
+custom_fonts/font = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SectionName" type="Label" parent="Title"]
+margin_left = 349.661
+margin_top = 16.3438
+margin_right = 649.661
+margin_bottom = 100.344
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowNavigation" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ForwardButton" type="TextureButton" parent="ArrowNavigation"]
+margin_left = 954.388
+margin_top = 271.912
+margin_right = 1077.39
+margin_bottom = 404.912
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 9 )
+texture_disabled = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackwardButton" type="TextureButton" parent="ArrowNavigation"]
+margin_left = 9.385
+margin_top = 271.912
+margin_right = 132.385
+margin_bottom = 404.912
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 1 )
+texture_disabled = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" parent="." instance=ExtResource( 20 )]
+[connection signal="pressed" from="Levels/Level1" to="." method="_on_Level1_pressed"]
+[connection signal="pressed" from="Levels/Level2" to="." method="_on_Level2_pressed"]
+[connection signal="pressed" from="Levels/Level3" to="." method="_on_Level3_pressed"]
+[connection signal="pressed" from="Levels/Level4" to="." method="_on_Level4_pressed"]
+[connection signal="pressed" from="Levels/Level5" to="." method="_on_Level5_pressed"]
+[connection signal="pressed" from="Levels/Level6" to="." method="_on_Level6_pressed"]
+[connection signal="pressed" from="ArrowNavigation/ForwardButton" to="." method="_on_ForwardButton_pressed"]
+[connection signal="pressed" from="ArrowNavigation/BackwardButton" to="." method="_on_BackwardButton_pressed"]

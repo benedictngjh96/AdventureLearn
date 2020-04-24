@@ -2,52 +2,128 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+/// <summary>
+/// Class to handle Presentation for Character Select
+/// </summary>
 public class CharSelect : Node2D
 {
+
     StudentBL studentBL;
+    List<Character> characterList;
+    TextureButton enterBtn;
+    CharacterBL characterBL;
     int charId;
+    string charSelected = "";
+    AnimatedSprite charSprite;
+    Sprite skillIcon;
+    Label charName;
+    Label nameLbl;
+    Label skillNameLbl;
+    Label enterLbl;
+    Label skillDescriptionLbl;
+
+    /// <summary>
+    /// Initialization
+    /// </summary>
     public override void _Ready()
     {
+        //Hide animated sprite and button when user has not selected a character
+        charSprite = GetNode<AnimatedSprite>("Char/AnimatedSprite");
+        enterBtn = GetNode<TextureButton>("EnterBtn");
+        charSprite.Visible = false;
+        enterBtn.Visible = false;
         studentBL = new StudentBL();
-        
-        //Redirect user if has existing account
-        if (studentBL.CheckStudentExist())
-        {
-            //GetTree().ChangeScene("res://Presentation/Login/Login.tscn");
-            GD.Print("exist");
-        }
+        characterBL = new CharacterBL();
+        charName = GetNode<Label>("Char/CharName");
+        nameLbl = GetNode<Label>("Char/Name");
+        skillNameLbl = GetNode<Label>("Char/SkillName");
+        skillDescriptionLbl = GetNode<Label>("Char/SkillDescription");
+        skillIcon = GetNode<Sprite>("Char/SkillIcon");
+        enterLbl = GetNode<Label>("EnterBtnLbl");
+        characterList = characterBL.GetAllCharacters();
+
     }
 
-    private void _on_Knight1Button_pressed()
+    /// <summary>
+    /// Handles the logic when this character is pressed
+    /// </summary>
+    private void _on_Knight1_pressed()
     {
-        DisplayCharacter("Knight1");
+        DisplayCharacter("Escanor");
+        charSelected = "Escanor";
     }
-    private void _on_Knight2Button_pressed()
+
+    /// <summary>
+    /// Handles the logic when this character is pressed
+    /// </summary>
+    private void _on_Warrior1_pressed()
     {
-        DisplayCharacter("Knight2");
+        DisplayCharacter("Athena");
+        charSelected = "Athena";
     }
+
+    /// <summary>
+    /// Handles the logic when this character is pressed
+    /// </summary>
+    private void _on_Warrior2_pressed()
+    {
+        DisplayCharacter("Mjolnir");
+        charSelected = "Mjolnir";
+    }
+
+    /// <summary>
+    /// Handles the logic when this character is pressed
+    /// </summary>
+    private void _on_Zeus_pressed()
+    {
+        DisplayCharacter("Zeus");
+        charSelected = "Zeus";
+    }
+
+    /// <summary>
+    /// Display the Character stated in the parameter
+    /// </summary>
+    /// <param name="characterName"></param>
     private void DisplayCharacter(String characterName)
     {
-        AnimatedSprite charSprite = GetNode<AnimatedSprite>("AnimatedSprite");
-        Button enterBtn = GetNode<Button>("EnterBtn");
-        Label skillDescription = GetNode<Label>("SkillDescription");
-
-        charSprite.Play(characterName, false);
-        charSprite.SetVisible(true);
-        enterBtn.SetVisible(true);
-
+        charSprite.Play(characterName + "Walk", false);
+        charSprite.Visible = true;
+        enterBtn.Visible = true;
+        nameLbl.Visible = true;
+        skillNameLbl.Visible = true;
+        enterLbl.Visible = true;
+        charName.Text = characterName;
+        if (characterName == "Athena")
+            charSprite.Position = new Vector2(510.527f, 323.009f);
+        else
+            charSprite.Position = new Vector2(510.527f, 256.387f);
         //Find character obj in characterlist using charactername
-        List<Character> characterList = studentBL.GetCharacterList();
         Character result = characterList.Find(item => item.CharName == characterName);
-        skillDescription.SetText(result.CharSkill);
+        skillNameLbl.Text = result.CharSkill;
+        skillDescriptionLbl.Text = result.SkillDescription;
+
+        Texture texture = ResourceLoader.Load(String.Format("res://Skills/Icons/{0}.png", result.CharSkill)) as Texture;
+        skillIcon.Texture = texture;
         charId = result.CharId;
-        
     }
-  
+
+    /// <summary>
+    /// Handles the logic when the Enter button is pressed
+    /// </summary>
     private void _on_EnterBtn_pressed()
     {
-        GD.Print(studentBL.CheckStudentExist().ToString());
-        studentBL.InsertStudent(Global.studentId, Global.studentName, "testName", charId);
+        StudentBL studentBL = new StudentBL();
+        studentBL.UpdateStudentCharacter(charId, Global.StudentId);
+        GetTree().ChangeScene("res://Presentation/MainMenu/MainMenu.tscn");
     }
 
+    /// <summary>
+    /// Handles the logic when the Back button is pressed
+    /// </summary>
+    private void _on_BackBtn_pressed()
+    {
+        GetTree().ChangeScene("res://Presentation/UserProfile/UserProfile.tscn");
+    }
 }
+
+

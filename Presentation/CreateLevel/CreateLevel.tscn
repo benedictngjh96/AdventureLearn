@@ -1,0 +1,398 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://Presentation/CreateLevel/CreateLevel.cs" type="Script" id=1]
+[ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=3]
+[ext_resource path="res://Assets/GUI/table.png" type="Texture" id=4]
+[ext_resource path="res://Assets/GUI/button_empty_4.png" type="Texture" id=5]
+[ext_resource path="res://Assets/GUI/banner.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GUI/backbtn.png" type="Texture" id=7]
+[ext_resource path="res://Assets/GUI/createleveltitle.png" type="Texture" id=8]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=9]
+size = 32
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 24
+font_data = ExtResource( 3 )
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 9, 0 )
+script = ExtResource( 1 )
+
+[node name="Border" type="Sprite" parent="."]
+show_behind_parent = true
+position = Vector2( 502.903, 332.891 )
+scale = Vector2( 0.606264, 0.700826 )
+texture = ExtResource( 4 )
+
+[node name="QuestionNumberLabel" type="Label" parent="."]
+margin_left = 54.5509
+margin_top = 136.089
+margin_right = 293.551
+margin_bottom = 179.089
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Enter Question 1:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionTitle" type="LineEdit" parent="."]
+margin_left = 54.82
+margin_top = 178.597
+margin_right = 951.821
+margin_bottom = 258.597
+custom_fonts/font = SubResource( 2 )
+max_length = 34
+placeholder_text = "(Empty)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Control" parent="."]
+margin_left = 55.2066
+margin_top = 27.9618
+margin_right = 95.2066
+margin_bottom = 67.9618
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option1" type="LineEdit" parent="Options"]
+margin_left = 50.6732
+margin_top = 275.725
+margin_right = 425.673
+margin_bottom = 335.725
+custom_fonts/font = SubResource( 3 )
+max_length = 20
+placeholder_text = "(Empty)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox1" type="CheckBox" parent="Options/Option1"]
+margin_left = -49.3005
+margin_top = 5.92366
+margin_right = -25.3005
+margin_bottom = 29.9237
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option2" type="LineEdit" parent="Options"]
+margin_left = 500.723
+margin_top = 275.992
+margin_right = 875.723
+margin_bottom = 335.992
+custom_fonts/font = SubResource( 4 )
+max_length = 20
+placeholder_text = "(Empty)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox2" type="CheckBox" parent="Options/Option2"]
+margin_left = -48.0429
+margin_top = 6.18785
+margin_right = -24.0428
+margin_bottom = 30.1879
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option3" type="LineEdit" parent="Options"]
+margin_left = 49.4582
+margin_top = 367.517
+margin_right = 424.458
+margin_bottom = 427.517
+custom_fonts/font = SubResource( 5 )
+max_length = 20
+placeholder_text = "(Empty)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox3" type="CheckBox" parent="Options/Option3"]
+margin_left = -46.6436
+margin_top = 6.93878
+margin_right = -22.6436
+margin_bottom = 30.9388
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option4" type="LineEdit" parent="Options"]
+margin_left = 500.723
+margin_top = 368.907
+margin_right = 875.723
+margin_bottom = 428.907
+custom_fonts/font = SubResource( 6 )
+max_length = 20
+placeholder_text = "(Empty)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBox4" type="CheckBox" parent="Options/Option4"]
+margin_left = -48.8804
+margin_top = 7.47308
+margin_right = -24.8804
+margin_bottom = 31.4731
+rect_scale = Vector2( 2, 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="QuestionSelect" type="Control" parent="."]
+margin_left = 37.6227
+margin_top = 28.0754
+margin_right = 77.6227
+margin_bottom = 68.0754
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question1" type="TextureButton" parent="QuestionSelect"]
+margin_left = 378.19
+margin_top = 484.763
+margin_right = 657.19
+margin_bottom = 617.763
+rect_scale = Vector2( 0.108, 0.226 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q1" type="Label" parent="QuestionSelect"]
+margin_left = 388.944
+margin_top = 481.982
+margin_right = 402.944
+margin_bottom = 514.982
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question2" type="TextureButton" parent="QuestionSelect"]
+margin_left = 418.19
+margin_top = 484.548
+margin_right = 697.19
+margin_bottom = 617.548
+rect_scale = Vector2( 0.108, 0.226 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q2" type="Label" parent="QuestionSelect"]
+margin_left = 426.911
+margin_top = 481.789
+margin_right = 440.911
+margin_bottom = 514.789
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question3" type="TextureButton" parent="QuestionSelect"]
+margin_left = 458.19
+margin_top = 484.762
+margin_right = 737.19
+margin_bottom = 617.762
+rect_scale = Vector2( 0.108, 0.226 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q3" type="Label" parent="QuestionSelect"]
+margin_left = 467.186
+margin_top = 481.574
+margin_right = 481.186
+margin_bottom = 514.574
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question4" type="TextureButton" parent="QuestionSelect"]
+margin_left = 498.19
+margin_top = 484.762
+margin_right = 777.19
+margin_bottom = 617.762
+rect_scale = Vector2( 0.108, 0.226 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q4" type="Label" parent="QuestionSelect"]
+margin_left = 507.4
+margin_top = 482.218
+margin_right = 521.401
+margin_bottom = 515.218
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Question5" type="TextureButton" parent="QuestionSelect"]
+margin_left = 538.19
+margin_top = 484.762
+margin_right = 817.19
+margin_bottom = 617.762
+rect_scale = Vector2( 0.108, 0.226 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Q5" type="Label" parent="QuestionSelect"]
+margin_left = 547.281
+margin_top = 482.344
+margin_right = 561.281
+margin_bottom = 515.344
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "5"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InstructionLevel" type="Label" parent="."]
+margin_left = 57.7225
+margin_top = 255.365
+margin_right = 913.722
+margin_bottom = 302.365
+custom_fonts/font = SubResource( 8 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Enter Options & Select Correct Answer"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateBtn" type="TextureButton" parent="."]
+margin_left = 793.658
+margin_top = 477.106
+margin_right = 1072.66
+margin_bottom = 610.106
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 813.054
+margin_top = 486.539
+margin_right = 915.054
+margin_bottom = 529.539
+custom_fonts/font = SubResource( 9 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Create"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ErrorMessageLabel" type="Label" parent="."]
+margin_left = 212.0
+margin_top = 465.0
+margin_right = 792.0
+margin_bottom = 508.0
+custom_fonts/font = SubResource( 10 )
+custom_colors/font_color = Color( 0.835294, 0.0705882, 0.0705882, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 237.912 )
+scale = Vector2( 0.13, 0.13 )
+texture = ExtResource( 6 )
+
+[node name="Menu" parent="." instance=ExtResource( 2 )]
+visible = false
+
+[node name="createleveltitle" type="Sprite" parent="."]
+position = Vector2( 519.282, 91.8035 )
+scale = Vector2( 0.415427, 0.358245 )
+texture = ExtResource( 8 )
+
+[node name="Bg" parent="." instance=ExtResource( 9 )]
+
+[node name="BackBtn" type="TextureButton" parent="."]
+margin_left = 10.612
+margin_top = 12.674
+margin_right = 50.612
+margin_bottom = 52.674
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AutoGen" type="Button" parent="."]
+margin_left = 840.0
+margin_top = 104.0
+margin_right = 909.0
+margin_bottom = 124.0
+text = "AutoGen"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="QuestionSelect/Question1" to="." method="_on_Question1_pressed"]
+[connection signal="pressed" from="QuestionSelect/Question2" to="." method="_on_Question2_pressed"]
+[connection signal="pressed" from="QuestionSelect/Question3" to="." method="_on_Question3_pressed"]
+[connection signal="pressed" from="QuestionSelect/Question4" to="." method="_on_Question4_pressed"]
+[connection signal="pressed" from="QuestionSelect/Question5" to="." method="_on_Question5_pressed"]
+[connection signal="pressed" from="CreateBtn" to="." method="_on_CreateBtn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]
+[connection signal="pressed" from="AutoGen" to="." method="_on_AutoGen_pressed"]

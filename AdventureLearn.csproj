@@ -8,12 +8,13 @@
     <OutputPath>.mono\temp\bin\$(Configuration)</OutputPath>
     <RootNamespace>AdventureLearn</RootNamespace>
     <AssemblyName>AdventureLearn</AssemblyName>
-    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <GodotProjectGeneratorVersion>1.0.7333.3918</GodotProjectGeneratorVersion>
     <BaseIntermediateOutputPath>.mono\temp\obj</BaseIntermediateOutputPath>
     <IntermediateOutputPath>$(BaseIntermediateOutputPath)\$(Configuration)</IntermediateOutputPath>
     <ApiConfiguration Condition=" '$(Configuration)' != 'Release' ">Debug</ApiConfiguration>
     <ApiConfiguration Condition=" '$(Configuration)' == 'Release' ">Release</ApiConfiguration>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -78,23 +79,96 @@
       <HintPath>packages\System.Threading.Tasks.Extensions.4.3.0\lib\portable-net45+win8+wp8+wpa81\System.Threading.Tasks.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLogic\AssignmentBL.cs" />
+    <Compile Include="BusinessLogic\AssignmentScoreBL.cs" />
+    <Compile Include="BusinessLogic\CampaignBL.cs" />
+    <Compile Include="BusinessLogic\CharacterBL.cs" />
+    <Compile Include="BusinessLogic\CreateLevelBL.cs" />
+    <Compile Include="BusinessLogic\CustomLevelBL.cs" />
+    <Compile Include="BusinessLogic\CustomLevelScoreBL.cs" />
+    <Compile Include="BusinessLogic\EditLevelBL.cs" />
+    <Compile Include="BusinessLogic\LeaderboardBL.cs" />
+    <Compile Include="BusinessLogic\SectionBL.cs" />
     <Compile Include="BusinessLogic\StudentBL.cs" />
-    <Compile Include="BusinessLogic\LoginBL.cs" />
-    <Compile Include="DataAccess\BaseDao.cs" />
-    <Compile Include="DataAccess\CharSelectDao.cs" />
-    <Compile Include="DataAccess\StudentDao.cs" />
-    <Compile Include="Entities\Character.cs" />
-    <Compile Include="Entities\Student.cs" />
+    <Compile Include="BusinessLogic\StudentScoreBL.cs" />
+    <Compile Include="BusinessLogic\WorldBL.cs" />
+    <Compile Include="DAOImpl\AssignmentDaoImpl.cs" />
+    <Compile Include="DAOImpl\AssignmentScoreDaoImpl.cs" />
+    <Compile Include="DAOImpl\BaseDaoImpl.cs" />
+    <Compile Include="DAOImpl\CharacterDaoImpl.cs" />
+    <Compile Include="DAOImpl\CampaignDaoImpl.cs" />
+    <Compile Include="DAOImpl\CreateLevelDAOImpl.cs" />
+    <Compile Include="DAOImpl\CustomLevelDaoImpl.cs" />
+    <Compile Include="DAOImpl\CustomLevelScoreDaoImpl.cs" />
+    <Compile Include="DAOImpl\EditLevelDaoImpl.cs" />
+    <Compile Include="DAOImpl\LeaderboardDaoImpl.cs" />
+    <Compile Include="DAOImpl\SectionDaoImpl.cs" />
+    <Compile Include="DAOImpl\StudentDaoImpl.cs" />
+    <Compile Include="DAOImpl\StudentScoreDaoImpl.cs" />
+    <Compile Include="DAOImpl\WorldDaoImpl.cs" />
+    <Compile Include="DAO\Assignment.cs" />
+    <Compile Include="DAO\AssignmentScore.cs" />
+    <Compile Include="DAO\BelongClass.cs" />
+    <Compile Include="DAO\CampaignQuestion.cs" />
+    <Compile Include="DAO\Character.cs" />
+    <Compile Include="DAO\ClassGroup.cs" />
+    <Compile Include="DAO\CustomLevel.cs" />
+    <Compile Include="DAO\CustomLevelScore.cs" />
+    <Compile Include="DAO\Leaderboard.cs" />
+    <Compile Include="DAO\Level.cs" />
+    <Compile Include="DAO\Monster.cs" />
+    <Compile Include="DAO\PublishedAssignment.cs" />
+    <Compile Include="DAO\Question.cs" />
+    <Compile Include="DAO\Section.cs" />
+    <Compile Include="DAO\Student.cs" />
+    <Compile Include="DAO\StudentCustomQuestion.cs" />
+    <Compile Include="DAO\StudentScore.cs" />
+    <Compile Include="DAO\Teacher.cs" />
+    <Compile Include="DAO\TeacherCustomQuestion.cs" />
+    <Compile Include="DAO\UserCreatedQuestion.cs" />
+    <Compile Include="DAO\World.cs" />
     <Compile Include="Global\Global.cs" />
+    <Compile Include="Presentation\Assignment\AssignmentScreen.cs" />
+    <Compile Include="Presentation\Assignment\ViewAssignment.cs" />
+    <Compile Include="Presentation\BackButton.cs" />
     <Compile Include="Presentation\CharSelect\CharSelect.cs" />
+    <Compile Include="Presentation\CreateLevel\CreateLevel.cs" />
+    <Compile Include="Presentation\CreateLevel\CreateLevelInit.cs" />
+    <Compile Include="Presentation\Credits\Credits.cs" />
+    <Compile Include="Presentation\CustomLevel\CustomLevelScreen.cs" />
+    <Compile Include="Presentation\CustomLevel\ViewCreatedLevels.cs" />
+    <Compile Include="Presentation\CustomLevel\ViewCustomLevel.cs" />
+    <Compile Include="Presentation\EditLevel\EditLevel.cs" />
+    <Compile Include="Presentation\EditLevel\EditLevelInit.cs" />
+    <Compile Include="Presentation\GamePlay\Campaign.cs" />
+    <Compile Include="Presentation\GamePlay\GamePlay.cs" />
+    <Compile Include="Presentation\Leaderboard\LeaderboardScreen.cs" />
+    <Compile Include="Presentation\LevelSelection\LevelSelection.cs" />
+    <Compile Include="Presentation\Login\Login.cs" />
+    <Compile Include="Presentation\MainMenu\MainMenu.cs" />
+    <Compile Include="Presentation\NotificationPopup.cs" />
+    <Compile Include="Presentation\Settings\Settings.cs" />
+    <Compile Include="Presentation\SoundEffect\DefaultSound.cs" />
+    <Compile Include="Presentation\UserProfile\UserProfile.cs" />
+    <Compile Include="Presentation\World\WorldScreen.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Presentation\EditLevel\EditLevel.tscn" />
+    <None Include="Presentation\EditLevel\EditLevelInit.tscn" />
+    <None Include="Presentation\Leaderboard\Leaderboard.tscn" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include=".vscode\launch.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Presentation\Section\" />
+    <Folder Include="Presentation\SummaryReport\" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

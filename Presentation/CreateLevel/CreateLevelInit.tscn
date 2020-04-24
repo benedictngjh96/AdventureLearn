@@ -1,0 +1,220 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Presentation/CreateLevel/CreateLevelInit.cs" type="Script" id=1]
+[ext_resource path="res://Assets/GUI/lockedleftbtn.png" type="Texture" id=2]
+[ext_resource path="res://Assets/GUI/button_l.png" type="Texture" id=3]
+[ext_resource path="res://Assets/GUI/button_r.png" type="Texture" id=4]
+[ext_resource path="res://CharSprites/BullWarrior/Idle/Idle_00.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Background/Middle2.png" type="Texture" id=6]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=8]
+[ext_resource path="res://Assets/GUI/backbtn.png" type="Texture" id=9]
+[ext_resource path="res://Assets/GUI/button_empty_4.png" type="Texture" id=10]
+[ext_resource path="res://Assets/GUI/lockedrightbtn.png" type="Texture" id=11]
+[ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Assets/GUI/createleveltitle.png" type="Texture" id=13]
+
+[sub_resource type="DynamicFont" id=1]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 30.0
+} ]
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 32
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=8]
+size = 32
+font_data = ExtResource( 8 )
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Bg" parent="." instance=ExtResource( 7 )]
+
+[node name="Background" type="Sprite" parent="."]
+visible = false
+show_behind_parent = true
+position = Vector2( 534.736, 387.818 )
+scale = Vector2( 0.639, 0.715 )
+texture = ExtResource( 6 )
+
+[node name="LevelNameSet" type="Node" parent="."]
+
+[node name="LevelNameLabel" type="Label" parent="LevelNameSet"]
+margin_left = 189.474
+margin_top = 204.684
+margin_right = 361.474
+margin_bottom = 247.684
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Level Name:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelName" type="LineEdit" parent="LevelNameSet"]
+margin_left = 380.0
+margin_top = 196.948
+margin_right = 780.0
+margin_bottom = 256.948
+custom_fonts/font = SubResource( 2 )
+max_length = 24
+placeholder_text = "(Empty)"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title" type="Sprite" parent="LevelNameSet"]
+position = Vector2( 524.697, 108.951 )
+scale = Vector2( 0.532306, 0.390071 )
+texture = ExtResource( 13 )
+
+[node name="MonsterSelect" type="Node" parent="."]
+
+[node name="MonsterIdLabel" type="Label" parent="MonsterSelect"]
+margin_left = 192.948
+margin_top = 293.263
+margin_right = 319.948
+margin_bottom = 336.263
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Monster:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowLeft" type="TextureButton" parent="MonsterSelect"]
+margin_left = 378.79
+margin_top = 281.316
+margin_right = 501.79
+margin_bottom = 414.316
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 3 )
+texture_disabled = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowRight" type="TextureButton" parent="MonsterSelect"]
+margin_left = 641.342
+margin_top = 277.105
+margin_right = 764.342
+margin_bottom = 410.105
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 4 )
+texture_disabled = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MonsterSprite" type="AnimatedSprite" parent="MonsterSelect"]
+position = Vector2( 526.996, 279.631 )
+scale = Vector2( 0.4, 0.4 )
+frames = SubResource( 4 )
+
+[node name="TimeLimitSelect" type="Node" parent="."]
+
+[node name="TimeLimitLabel" type="Label" parent="TimeLimitSelect"]
+margin_left = 195.44
+margin_top = 368.299
+margin_right = 344.44
+margin_bottom = 411.299
+custom_fonts/font = SubResource( 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Time limit:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="TimeLimit" type="OptionButton" parent="TimeLimitSelect"]
+margin_left = 381.201
+margin_top = 363.001
+margin_right = 481.201
+margin_bottom = 412.001
+custom_fonts/font = SubResource( 6 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Menu" parent="." instance=ExtResource( 12 )]
+
+[node name="ErrorMessageLabel" type="Label" parent="."]
+margin_left = 277.0
+margin_top = 406.0
+margin_right = 747.0
+margin_bottom = 449.0
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.835294, 0.0705882, 0.0705882, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextBtn" type="TextureButton" parent="."]
+margin_left = 453.415
+margin_top = 449.828
+margin_right = 732.415
+margin_bottom = 582.828
+rect_rotation = 0.409069
+rect_scale = Vector2( 0.5, 0.5 )
+texture_normal = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 491.375
+margin_top = 458.609
+margin_right = 559.375
+margin_bottom = 501.609
+custom_fonts/font = SubResource( 8 )
+text = "Next"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BackBtn" type="TextureButton" parent="."]
+margin_left = 10.612
+margin_top = 12.674
+margin_right = 50.612
+margin_bottom = 52.674
+rect_scale = Vector2( 0.1, 0.1 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MonsterSelect/ArrowLeft" to="." method="_on_ArrowLeft_pressed"]
+[connection signal="pressed" from="MonsterSelect/ArrowRight" to="." method="_on_ArrowRight_pressed"]
+[connection signal="pressed" from="NextBtn" to="." method="_on_NextBtn_pressed"]
+[connection signal="pressed" from="BackBtn" to="." method="_on_BackBtn_pressed"]

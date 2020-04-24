@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Presentation/CustomLevel/ViewCreatedLevels.cs" type="Script" id=1]
+[ext_resource path="res://Presentation/BackButton.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Assets/GUI/createdleveltitle.png" type="Texture" id=3]
+[ext_resource path="res://Presentation/MenuUI/MenuUI.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Presentation/Background/Background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/GUI/table.png" type="Texture" id=6]
+[ext_resource path="res://Assets/GUI/deleteconfirmation.png" type="Texture" id=7]
+[ext_resource path="res://Assets/GUI/deleteleveltitle.png" type="Texture" id=8]
+[ext_resource path="res://Assets/GUI/BtnUI4.tres" type="Theme" id=9]
+[ext_resource path="res://Fonts/Candy Beans.otf" type="DynamicFontData" id=10]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 10 )
+
+[node name="ViewCreated" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="Menu" parent="." instance=ExtResource( 4 )]
+
+[node name="BackBtn" parent="." instance=ExtResource( 2 )]
+
+[node name="createdleveltitle" type="Sprite" parent="."]
+position = Vector2( 520.801, 111.784 )
+scale = Vector2( 0.445206, 0.477679 )
+texture = ExtResource( 3 )
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 256.941
+margin_top = 194.0
+margin_right = 855.941
+margin_bottom = 426.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/VBoxContainer"]
+columns = 4
+
+[node name="Bg" parent="." instance=ExtResource( 5 )]
+position = Vector2( 2.58813, 0 )
+
+[node name="PopupMenu" type="PopupMenu" parent="."]
+margin_right = 20.0
+margin_bottom = 20.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="table" type="Sprite" parent="PopupMenu"]
+position = Vector2( 521.443, 293.947 )
+scale = Vector2( 0.279, 0.301 )
+texture = ExtResource( 6 )
+
+[node name="deleteconfirmation" type="Sprite" parent="PopupMenu/table"]
+position = Vector2( 36.6448, -43.8151 )
+scale = Vector2( 0.713347, 0.549934 )
+texture = ExtResource( 7 )
+
+[node name="deleteleveltitle" type="Sprite" parent="PopupMenu/table"]
+position = Vector2( 4.23895, -221.311 )
+scale = Vector2( 1.2201, 0.978867 )
+texture = ExtResource( 8 )
+
+[node name="No" type="Button" parent="PopupMenu"]
+margin_left = 558.523
+margin_top = 323.815
+margin_right = 657.523
+margin_bottom = 365.815
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+text = "No"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Yes" type="Button" parent="PopupMenu"]
+margin_left = 402.044
+margin_top = 323.815
+margin_right = 501.044
+margin_bottom = 365.815
+theme = ExtResource( 9 )
+custom_fonts/font = SubResource( 1 )
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="PopupMenu/No" to="." method="_on_No_pressed"]
+[connection signal="pressed" from="PopupMenu/Yes" to="." method="_on_Yes_pressed"]
