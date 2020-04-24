@@ -261,7 +261,7 @@ __meta__ = {
 [node name="Athena" type="AnimatedSprite" parent="Characters"]
 position = Vector2( 382.778, 321.12 )
 frames = SubResource( 1 )
-frame = 7
+frame = 9
 playing = true
 flip_h = true
 

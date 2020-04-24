@@ -1,0 +1,14 @@
+C:\Users\nicho\source\repos\Injections\bin\Debug\netcoreapp3.0\Injections.exe
+C:\Users\nicho\source\repos\Injections\obj\Debug\netcoreapp3.0\Injections.csprojAssemblyReference.cache
+C:\Users\nicho\source\repos\Injections\obj\Debug\netcoreapp3.0\Injections.AssemblyInfoInputs.cache
+C:\Users\nicho\source\repos\Injections\obj\Debug\netcoreapp3.0\Injections.AssemblyInfo.cs
+C:\Users\nicho\source\repos\Injections\bin\Debug\netcoreapp3.0\MySqlConnector.dll
+C:\Users\nicho\source\repos\Injections\obj\Debug\netcoreapp3.0\Injections.csproj.CopyComplete
+C:\Users\nicho\source\repos\Injections\bin\Debug\netcoreapp3.0\Injections.deps.json
+C:\Users\nicho\source\repos\Injections\bin\Debug\netcoreapp3.0\Injections.runtimeconfig.json
+C:\Users\nicho\source\repos\Injections\bin\Debug\netcoreapp3.0\Injections.runtimeconfig.dev.json
+C:\Users\nicho\source\repos\Injections\bin\Debug\netcoreapp3.0\Injections.dll
+C:\Users\nicho\source\repos\Injections\bin\Debug\netcoreapp3.0\Injections.pdb
+C:\Users\nicho\source\repos\Injections\bin\Debug\netcoreapp3.0\CsvHelper.dll
+C:\Users\nicho\source\repos\Injections\obj\Debug\netcoreapp3.0\Injections.dll
+C:\Users\nicho\source\repos\Injections\obj\Debug\netcoreapp3.0\Injections.pdb

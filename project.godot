@@ -21,6 +21,7 @@ modules="org/godotengine/godot/PlayGames,org/godotengine/godot/GodotFacebook,org
 
 config/name="AdventureLearn"
 run/main_scene="res://Presentation/Login/Login.tscn"
+config/icon="res://icon.png"
 
 [autoload]
 
