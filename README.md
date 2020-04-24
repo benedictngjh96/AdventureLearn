@@ -1,7 +1,7 @@
 # AdventureLearn(Student)
- Interactive game to promote learning
+## Lab Deliverables are in "LabDeliverables" folder
  
- Lab Deliverables are in "LabDeliverables" folder
+ Interactive game to promote learning
  
  Link for AdventureLearn(Teacher)
  https://github.com/ben132473u/AdventureLearn_Teacher
